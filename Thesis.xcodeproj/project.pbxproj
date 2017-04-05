@@ -80,6 +80,30 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		E2472E951E9553A000FC95A8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E217EF991E93D3E600068876 /* calendar.png */,
+				E217EF9A1E93D3E600068876 /* home.png */,
+				E217EF9B1E93D3E600068876 /* settings.png */,
+				E217EF9C1E93D3E600068876 /* speech-bubble.png */,
+				E217EFA71E93FF6300068876 /* house1.jpg */,
+				E217EFA81E93FF6300068876 /* house2.jpg */,
+				E217EFA91E93FF6300068876 /* house3.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		E2472E961E9553D600FC95A8 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */,
+				E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */,
+				E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
 		E2A4785E1E9139AB00F843BB = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +123,8 @@
 		E2A478691E9139AB00F843BB /* Thesis */ = {
 			isa = PBXGroup;
 			children = (
+				E2472E961E9553D600FC95A8 /* TableViewCell */,
+				E2472E951E9553A000FC95A8 /* Images */,
 				E217EF831E93CD6C00068876 /* Controller */,
 				E2A4786A1E9139AB00F843BB /* AppDelegate.swift */,
 				E2A4786E1E9139AB00F843BB /* Main.storyboard */,
@@ -106,16 +132,6 @@
 				E2A478731E9139AB00F843BB /* LaunchScreen.storyboard */,
 				E2A478761E9139AB00F843BB /* Info.plist */,
 				E2A4789A1E9140DF00F843BB /* Extension.swift */,
-				E217EF991E93D3E600068876 /* calendar.png */,
-				E217EF9A1E93D3E600068876 /* home.png */,
-				E217EF9B1E93D3E600068876 /* settings.png */,
-				E217EF9C1E93D3E600068876 /* speech-bubble.png */,
-				E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */,
-				E217EFA71E93FF6300068876 /* house1.jpg */,
-				E217EFA81E93FF6300068876 /* house2.jpg */,
-				E217EFA91E93FF6300068876 /* house3.jpg */,
-				E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */,
-				E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */,
 			);
 			path = Thesis;
 			sourceTree = "<group>";
