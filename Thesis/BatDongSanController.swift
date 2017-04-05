@@ -14,7 +14,9 @@ class BatDongSanController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tbvLatestEstate: UITableView!
     @IBOutlet weak var tbvRole: UITableView!
+    
     @IBOutlet weak var tbvCare: UITableView!
+    
     @IBOutlet weak var lblRole: UILabel!
     var temp:String?
     let estates = ["house1", "house2","house3"]
@@ -48,7 +50,18 @@ class BatDongSanController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         else if ( tableView == self.tbvLatestEstate)
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! BatDongSanControllerTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! BatDongSan2ControllerTableViewCell
+            cell.imgEstate.image = UIImage(named: estates[indexPath.row] + ".jpg")
+            cell.lblEstate.text = estates[indexPath.row]
+            cell.lblOwner.text = owner[indexPath.row]
+            cell.lblPhone.text = phone[indexPath.row]
+            cell.lblAddress.text = address[indexPath.row]
+            
+            return cell
+        }
+        else if ( tableView == self.tbvCare)
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! BatDongSan3ControllerTableViewCell
             cell.imgEstate.image = UIImage(named: estates[indexPath.row] + ".jpg")
             cell.lblEstate.text = estates[indexPath.row]
             cell.lblOwner.text = owner[indexPath.row]
