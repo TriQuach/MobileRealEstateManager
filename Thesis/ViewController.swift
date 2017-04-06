@@ -24,18 +24,38 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "MuaNha")
         {
+            let firstTabbar : UITabBarController = segue.destination as! UITabBarController;
             
-
+            let Role : BatDongSanController = firstTabbar.viewControllers?[0] as! BatDongSanController;
+            
+            // Set the case number selected property of History vc
+            Role.temp2 = "Bất động sản đang quan tâm";
+            Role.role = 0
+            
+            
+            
             
         }
         else if (segue.identifier == "BanNha")
         {
-            (segue.destination as! BatDongSanController).temp = "Bất động sản của tôi"
+            let firstTabbar : UITabBarController = segue.destination as! UITabBarController;
+            
+            let Role : BatDongSanController = firstTabbar.viewControllers?[0] as! BatDongSanController;
+            
+            // Set the case number selected property of History vc
+            Role.temp2 = "Bất động sản của tôi";
+            Role.role = 1
+            
         }
         else
         {
-            (segue.destination as! BatDongSanController).temp = "Bất động sản đang quản lý"
+            let firstTabbar : UITabBarController = segue.destination as! UITabBarController;
             
+            let Role : BatDongSanController = firstTabbar.viewControllers?[0] as! BatDongSanController;
+            
+            // Set the case number selected property of History vc
+            Role.temp2 = "Bất động sản đang quản lý";
+            Role.role = 1
         }
     }
 

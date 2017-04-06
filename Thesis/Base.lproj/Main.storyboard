@@ -52,7 +52,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="wdJ-Zi-fr9" kind="show" identifier="BanNha" id="Rtj-tF-FfF"/>
+                                            <segue destination="Sop-wO-FK2" kind="show" identifier="BanNha" id="W2I-bI-Ixl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGg-1c-H9G">
@@ -62,7 +62,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="wdJ-Zi-fr9" kind="show" identifier="MoiGioi" id="VUS-8C-tRJ"/>
+                                            <segue destination="Sop-wO-FK2" kind="show" identifier="MoiGioi" id="g7y-Ui-coa"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -461,6 +461,116 @@
             </objects>
             <point key="canvasLocation" x="885.60000000000002" y="454.27286356821594"/>
         </scene>
+        <!--Estate Detail Buyer Controller-->
+        <scene sceneID="Dxo-er-0Rc">
+            <objects>
+                <viewController restorationIdentifier="EstateDetailBuyer" storyboardIdentifier="EstateDetailBuyer" id="oYN-Wd-qde" customClass="EstateDetailBuyerController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bnX-N2-kie"/>
+                        <viewControllerLayoutGuide type="bottom" id="nMU-O5-SPT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8y9-pi-FcF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqw-8x-5mj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SiY-ff-0kh">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2017-03-27 at 9.06.55 PM" translatesAutoresizingMaskIntoConstraints="NO" id="ZaX-j2-T94">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFU-8k-Z4M">
+                                                <rect key="frame" x="10" y="153" width="169" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Đặt lịch hẹn">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tu3-1T-sJO">
+                                                <rect key="frame" x="196" y="153" width="169" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Quan tâm">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="rFU-8k-Z4M" firstAttribute="leading" secondItem="SiY-ff-0kh" secondAttribute="leading" constant="10" id="2ZW-vO-5qp"/>
+                                            <constraint firstItem="ZaX-j2-T94" firstAttribute="top" secondItem="SiY-ff-0kh" secondAttribute="top" id="Avc-pf-61i"/>
+                                            <constraint firstItem="ZaX-j2-T94" firstAttribute="height" secondItem="SiY-ff-0kh" secondAttribute="height" multiplier="1/7" id="Dis-UF-wyl"/>
+                                            <constraint firstItem="Tu3-1T-sJO" firstAttribute="width" secondItem="rFU-8k-Z4M" secondAttribute="width" id="KdO-UK-KGr"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tu3-1T-sJO" secondAttribute="trailing" constant="10" id="Q42-uv-MnJ"/>
+                                            <constraint firstItem="rFU-8k-Z4M" firstAttribute="top" secondItem="ZaX-j2-T94" secondAttribute="bottom" constant="10" id="bSg-oi-A8N"/>
+                                            <constraint firstItem="rFU-8k-Z4M" firstAttribute="width" secondItem="SiY-ff-0kh" secondAttribute="width" multiplier="0.45" id="hEU-U9-WG6"/>
+                                            <constraint firstItem="ZaX-j2-T94" firstAttribute="leading" secondItem="SiY-ff-0kh" secondAttribute="leading" id="hvN-IN-gg3"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZaX-j2-T94" secondAttribute="trailing" id="i3z-FQ-Jtz"/>
+                                            <constraint firstItem="Tu3-1T-sJO" firstAttribute="top" secondItem="rFU-8k-Z4M" secondAttribute="top" id="lia-Uu-Bc8"/>
+                                            <constraint firstAttribute="height" constant="1000" id="naY-ER-ppB"/>
+                                            <constraint firstItem="Tu3-1T-sJO" firstAttribute="bottom" secondItem="rFU-8k-Z4M" secondAttribute="bottom" id="yUq-hl-Yk9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="SiY-ff-0kh" secondAttribute="bottom" id="EwU-Ye-1Al"/>
+                                    <constraint firstItem="SiY-ff-0kh" firstAttribute="leading" secondItem="Tqw-8x-5mj" secondAttribute="leading" id="cY7-ko-eff"/>
+                                    <constraint firstAttribute="trailing" secondItem="SiY-ff-0kh" secondAttribute="trailing" id="fAe-fZ-8rO"/>
+                                    <constraint firstItem="SiY-ff-0kh" firstAttribute="width" secondItem="Tqw-8x-5mj" secondAttribute="width" id="vv4-cg-bT3"/>
+                                    <constraint firstItem="SiY-ff-0kh" firstAttribute="top" secondItem="Tqw-8x-5mj" secondAttribute="top" id="wdW-5x-UvU"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nMU-O5-SPT" firstAttribute="top" secondItem="Tqw-8x-5mj" secondAttribute="bottom" id="LjG-6d-Dkw"/>
+                            <constraint firstAttribute="trailing" secondItem="Tqw-8x-5mj" secondAttribute="trailing" id="VOm-75-QZ9"/>
+                            <constraint firstItem="Tqw-8x-5mj" firstAttribute="top" secondItem="8y9-pi-FcF" secondAttribute="top" id="W8u-Pw-Zde"/>
+                            <constraint firstItem="Tqw-8x-5mj" firstAttribute="leading" secondItem="8y9-pi-FcF" secondAttribute="leading" id="jm8-Yf-WmX"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="btnDate" destination="rFU-8k-Z4M" id="lbo-I1-Umx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAc-5C-iKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="1491"/>
+        </scene>
+        <!--Estate Detail Owner Controller-->
+        <scene sceneID="8ev-M7-wK1">
+            <objects>
+                <viewController restorationIdentifier="EstateDetailOwner" storyboardIdentifier="EstateDetailOwner" id="FRC-TY-Tf9" customClass="EstateDetailOwnerController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j6F-Er-s0A"/>
+                        <viewControllerLayoutGuide type="bottom" id="tFU-qy-8jR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vAW-sA-3UF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="asdasd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1k-C9-b2a">
+                                <rect key="frame" x="111" y="194" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="abc" destination="j1k-C9-b2a" id="ibu-Oz-iHr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAR-6o-Khb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1621.5999999999999" y="1510.7946026986508"/>
+        </scene>
         <!--Cuộc hẹn-->
         <scene sceneID="WQx-dz-ZrZ">
             <objects>
@@ -521,7 +631,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="r3A-Rw-LfB">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Sop-wO-FK2" customClass="TabBarController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="TabBarController" storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Sop-wO-FK2" customClass="TabBarController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ZqH-PI-G3O">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -548,6 +658,6 @@
         <image name="speech-bubble.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dkc-xu-3WY"/>
+        <segue reference="pTo-Eq-ymM"/>
     </inferredMetricsTieBreakers>
 </document>

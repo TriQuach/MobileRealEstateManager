@@ -28,6 +28,8 @@
 		E2A478751E9139AB00F843BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A478731E9139AB00F843BB /* LaunchScreen.storyboard */; };
 		E2A4789B1E9140DF00F843BB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4789A1E9140DF00F843BB /* Extension.swift */; };
 		E2A4789F1E9144AC00F843BB /* BatDongSanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4789E1E9144AC00F843BB /* BatDongSanController.swift */; };
+		E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E1C4331E9660AA0008D0B3 /* EstateDetailOwnerController.swift */; };
+		E2E1C4361E96751B0008D0B3 /* EstateDetailBuyerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		E2A478761E9139AB00F843BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2A4789A1E9140DF00F843BB /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E2A4789E1E9144AC00F843BB /* BatDongSanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanController.swift; sourceTree = "<group>"; };
+		E2E1C4331E9660AA0008D0B3 /* EstateDetailOwnerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailOwnerController.swift; sourceTree = "<group>"; };
+		E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailBuyerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				E217EF841E93CDA700068876 /* CuocHenController.swift */,
 				E217EF861E93CE7200068876 /* CaiDatController.swift */,
 				E217EFA11E93D4EB00068876 /* TabBarController.swift */,
+				E2E1C4331E9660AA0008D0B3 /* EstateDetailOwnerController.swift */,
+				E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -215,7 +221,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E1C4361E96751B0008D0B3 /* EstateDetailBuyerController.swift in Sources */,
 				E217EF821E93CD0400068876 /* TinNhanController.swift in Sources */,
+				E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */,
 				E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */,
 				E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */,
 				E217EFA61E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift in Sources */,

@@ -17,6 +17,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 //        self.navigationItem.setHidesBackButton(true, animated:true);
         
+        
     }
     
     

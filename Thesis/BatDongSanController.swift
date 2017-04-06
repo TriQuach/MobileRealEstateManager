@@ -19,22 +19,41 @@ class BatDongSanController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var lblRole: UILabel!
     var temp:String?
+    var temp2:String?
+    var role:Int? // 0: buyer 1: seller || buyer
     let estates = ["house1", "house2","house3"]
     let owner = ["triquach","quach","tri"]
     let phone = ["123","456","789"]
     let address = ["abc","xyx","asd"]
-        override func viewDidLoad() {
+    var test:String?
+    override func viewDidLoad() {
         super.viewDidLoad()
-//            lblTest.text = temp
-           // lblRole.text = temp
-            self.navigationItem.setHidesBackButton(true, animated:true);
-            
+        //            lblTest.text = temp
+        // lblRole.text = temp
+        
+        lblRole.text = temp2
+       // print (role)
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return estates.count
     }
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        if (role! == 0)
+        {
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+            self.navigationController?.pushViewController(secondViewController, animated: true)
+        }
+        else if ( role! == 1)
+        {
+            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "EstateDetailOwner") as! EstateDetailOwnerController
+            self.navigationController?.pushViewController(secondViewController, animated: true)
+        }
+    }
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         if (tableView == self.tbvRole)
@@ -80,5 +99,6 @@ class BatDongSanController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
+    
     
 }
