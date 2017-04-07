@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E21315431E97E735003E6BDE /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = E213153C1E97E735003E6BDE /* calendar.png */; };
+		E21315441E97E735003E6BDE /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = E213153D1E97E735003E6BDE /* home.png */; };
+		E21315451E97E735003E6BDE /* house1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E213153E1E97E735003E6BDE /* house1.jpg */; };
+		E21315461E97E735003E6BDE /* house2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E213153F1E97E735003E6BDE /* house2.jpg */; };
+		E21315471E97E735003E6BDE /* house3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E21315401E97E735003E6BDE /* house3.jpg */; };
+		E21315481E97E735003E6BDE /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E21315411E97E735003E6BDE /* settings.png */; };
+		E21315491E97E735003E6BDE /* speech-bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E21315421E97E735003E6BDE /* speech-bubble.png */; };
+		E213154B1E97E878003E6BDE /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = E213154A1E97E878003E6BDE /* google.png */; };
+		E213154D1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213154C1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift */; };
 		E217EF821E93CD0400068876 /* TinNhanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EF811E93CD0400068876 /* TinNhanController.swift */; };
 		E217EF851E93CDA700068876 /* CuocHenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EF841E93CDA700068876 /* CuocHenController.swift */; };
 		E217EF871E93CE7200068876 /* CaiDatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EF861E93CE7200068876 /* CaiDatController.swift */; };
-		E217EF9D1E93D3E600068876 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = E217EF991E93D3E600068876 /* calendar.png */; };
-		E217EF9E1E93D3E600068876 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = E217EF9A1E93D3E600068876 /* home.png */; };
-		E217EF9F1E93D3E600068876 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E217EF9B1E93D3E600068876 /* settings.png */; };
-		E217EFA01E93D3E600068876 /* speech-bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E217EF9C1E93D3E600068876 /* speech-bubble.png */; };
 		E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFA11E93D4EB00068876 /* TabBarController.swift */; };
 		E217EFA61E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */; };
-		E217EFAA1E93FF6300068876 /* house1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E217EFA71E93FF6300068876 /* house1.jpg */; };
-		E217EFAB1E93FF6300068876 /* house2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E217EFA81E93FF6300068876 /* house2.jpg */; };
-		E217EFAC1E93FF6300068876 /* house3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E217EFA91E93FF6300068876 /* house3.jpg */; };
 		E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */; };
 		E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */; };
 		E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4786A1E9139AB00F843BB /* AppDelegate.swift */; };
@@ -33,18 +35,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E213153C1E97E735003E6BDE /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		E213153D1E97E735003E6BDE /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		E213153E1E97E735003E6BDE /* house1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house1.jpg; sourceTree = "<group>"; };
+		E213153F1E97E735003E6BDE /* house2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house2.jpg; sourceTree = "<group>"; };
+		E21315401E97E735003E6BDE /* house3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house3.jpg; sourceTree = "<group>"; };
+		E21315411E97E735003E6BDE /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		E21315421E97E735003E6BDE /* speech-bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speech-bubble.png"; sourceTree = "<group>"; };
+		E213154A1E97E878003E6BDE /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		E213154C1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailBuyerControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E217EF811E93CD0400068876 /* TinNhanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinNhanController.swift; sourceTree = "<group>"; };
 		E217EF841E93CDA700068876 /* CuocHenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuocHenController.swift; sourceTree = "<group>"; };
 		E217EF861E93CE7200068876 /* CaiDatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatController.swift; sourceTree = "<group>"; };
-		E217EF991E93D3E600068876 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = ../../../Desktop/calendar.png; sourceTree = "<group>"; };
-		E217EF9A1E93D3E600068876 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = ../../../Desktop/home.png; sourceTree = "<group>"; };
-		E217EF9B1E93D3E600068876 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = ../../../Desktop/settings.png; sourceTree = "<group>"; };
-		E217EF9C1E93D3E600068876 /* speech-bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "speech-bubble.png"; path = "../../../Desktop/speech-bubble.png"; sourceTree = "<group>"; };
 		E217EFA11E93D4EB00068876 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanControllerTableViewCell.swift; sourceTree = "<group>"; };
-		E217EFA71E93FF6300068876 /* house1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = house1.jpg; path = ../../../Downloads/house1.jpg; sourceTree = "<group>"; };
-		E217EFA81E93FF6300068876 /* house2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = house2.jpg; path = ../../../Downloads/house2.jpg; sourceTree = "<group>"; };
-		E217EFA91E93FF6300068876 /* house3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = house3.jpg; path = ../../../Downloads/house3.jpg; sourceTree = "<group>"; };
 		E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan2ControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan3ControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E2A478671E9139AB00F843BB /* Thesis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thesis.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,13 +93,14 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E217EF991E93D3E600068876 /* calendar.png */,
-				E217EF9A1E93D3E600068876 /* home.png */,
-				E217EF9B1E93D3E600068876 /* settings.png */,
-				E217EF9C1E93D3E600068876 /* speech-bubble.png */,
-				E217EFA71E93FF6300068876 /* house1.jpg */,
-				E217EFA81E93FF6300068876 /* house2.jpg */,
-				E217EFA91E93FF6300068876 /* house3.jpg */,
+				E213154A1E97E878003E6BDE /* google.png */,
+				E213153C1E97E735003E6BDE /* calendar.png */,
+				E213153D1E97E735003E6BDE /* home.png */,
+				E213153E1E97E735003E6BDE /* house1.jpg */,
+				E213153F1E97E735003E6BDE /* house2.jpg */,
+				E21315401E97E735003E6BDE /* house3.jpg */,
+				E21315411E97E735003E6BDE /* settings.png */,
+				E21315421E97E735003E6BDE /* speech-bubble.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 				E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */,
 				E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */,
 				E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */,
+				E213154C1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -201,15 +207,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E217EF9F1E93D3E600068876 /* settings.png in Resources */,
+				E21315471E97E735003E6BDE /* house3.jpg in Resources */,
+				E21315461E97E735003E6BDE /* house2.jpg in Resources */,
+				E213154B1E97E878003E6BDE /* google.png in Resources */,
 				E2A478751E9139AB00F843BB /* LaunchScreen.storyboard in Resources */,
-				E217EFA01E93D3E600068876 /* speech-bubble.png in Resources */,
-				E217EF9E1E93D3E600068876 /* home.png in Resources */,
-				E217EF9D1E93D3E600068876 /* calendar.png in Resources */,
+				E21315491E97E735003E6BDE /* speech-bubble.png in Resources */,
+				E21315441E97E735003E6BDE /* home.png in Resources */,
+				E21315431E97E735003E6BDE /* calendar.png in Resources */,
 				E2A478721E9139AB00F843BB /* Assets.xcassets in Resources */,
-				E217EFAA1E93FF6300068876 /* house1.jpg in Resources */,
-				E217EFAC1E93FF6300068876 /* house3.jpg in Resources */,
-				E217EFAB1E93FF6300068876 /* house2.jpg in Resources */,
+				E21315481E97E735003E6BDE /* settings.png in Resources */,
+				E21315451E97E735003E6BDE /* house1.jpg in Resources */,
 				E2A478701E9139AB00F843BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +240,7 @@
 				E2A4786D1E9139AB00F843BB /* ViewController.swift in Sources */,
 				E2A4789F1E9144AC00F843BB /* BatDongSanController.swift in Sources */,
 				E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */,
+				E213154D1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift in Sources */,
 				E217EF851E93CDA700068876 /* CuocHenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
