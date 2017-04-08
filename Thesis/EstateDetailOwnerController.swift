@@ -16,6 +16,7 @@ class EstateDetailOwnerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         abc.text = "fuck"
+        self.navigationItem.title = "Chi tiết BĐS"
         
     }
 }

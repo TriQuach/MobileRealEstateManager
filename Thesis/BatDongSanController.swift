@@ -28,11 +28,9 @@ class BatDongSanController: UIViewController, UITableViewDelegate, UITableViewDa
     var test:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        //            lblTest.text = temp
-        // lblRole.text = temp
-        
         lblRole.text = temp2
-       // print (role)
+        self.navigationItem.title = "Bất động sản"
+     
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -45,6 +43,7 @@ class BatDongSanController: UIViewController, UITableViewDelegate, UITableViewDa
         if (role! == 0)
         {
             let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+            secondViewController.name_house = estates[indexPath.row]
             self.navigationController?.pushViewController(secondViewController, animated: true)
         }
         else if ( role! == 1)

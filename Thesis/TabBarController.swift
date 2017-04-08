@@ -11,8 +11,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    @IBOutlet weak var lblTest: UILabel!
-    var temp:String?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.navigationItem.setHidesBackButton(true, animated:true);
