@@ -30,6 +30,9 @@
 		E2A478751E9139AB00F843BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A478731E9139AB00F843BB /* LaunchScreen.storyboard */; };
 		E2A4789B1E9140DF00F843BB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4789A1E9140DF00F843BB /* Extension.swift */; };
 		E2A4789F1E9144AC00F843BB /* BatDongSanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4789E1E9144AC00F843BB /* BatDongSanController.swift */; };
+		E2C702271E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C702261E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png */; };
+		E2C702291E9932AF0056696E /* more-details-circular-button.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C702281E9932AF0056696E /* more-details-circular-button.png */; };
+		E2C7022B1E9933450056696E /* more-button-of-three-dots.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C7022A1E9933450056696E /* more-button-of-three-dots.png */; };
 		E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E1C4331E9660AA0008D0B3 /* EstateDetailOwnerController.swift */; };
 		E2E1C4361E96751B0008D0B3 /* EstateDetailBuyerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +63,9 @@
 		E2A478761E9139AB00F843BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2A4789A1E9140DF00F843BB /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E2A4789E1E9144AC00F843BB /* BatDongSanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanController.swift; sourceTree = "<group>"; };
+		E2C702261E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-button-interface-symbol-of-three-horizontal-aligned-dots.png"; sourceTree = "<group>"; };
+		E2C702281E9932AF0056696E /* more-details-circular-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-details-circular-button.png"; sourceTree = "<group>"; };
+		E2C7022A1E9933450056696E /* more-button-of-three-dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-button-of-three-dots.png"; sourceTree = "<group>"; };
 		E2E1C4331E9660AA0008D0B3 /* EstateDetailOwnerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailOwnerController.swift; sourceTree = "<group>"; };
 		E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailBuyerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +99,10 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E2C7022A1E9933450056696E /* more-button-of-three-dots.png */,
 				E213154A1E97E878003E6BDE /* google.png */,
+				E2C702281E9932AF0056696E /* more-details-circular-button.png */,
+				E2C702261E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png */,
 				E213153C1E97E735003E6BDE /* calendar.png */,
 				E213153D1E97E735003E6BDE /* home.png */,
 				E213153E1E97E735003E6BDE /* house1.jpg */,
@@ -211,10 +220,13 @@
 				E21315461E97E735003E6BDE /* house2.jpg in Resources */,
 				E213154B1E97E878003E6BDE /* google.png in Resources */,
 				E2A478751E9139AB00F843BB /* LaunchScreen.storyboard in Resources */,
+				E2C702291E9932AF0056696E /* more-details-circular-button.png in Resources */,
+				E2C702271E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png in Resources */,
 				E21315491E97E735003E6BDE /* speech-bubble.png in Resources */,
 				E21315441E97E735003E6BDE /* home.png in Resources */,
 				E21315431E97E735003E6BDE /* calendar.png in Resources */,
 				E2A478721E9139AB00F843BB /* Assets.xcassets in Resources */,
+				E2C7022B1E9933450056696E /* more-button-of-three-dots.png in Resources */,
 				E21315481E97E735003E6BDE /* settings.png in Resources */,
 				E21315451E97E735003E6BDE /* house1.jpg in Resources */,
 				E2A478701E9139AB00F843BB /* Main.storyboard in Resources */,
