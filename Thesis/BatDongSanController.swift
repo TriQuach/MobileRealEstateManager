@@ -26,12 +26,25 @@ class BatDongSanController: UIViewController, UITableViewDelegate, UITableViewDa
     let phone = ["123","456","789"]
     let address = ["abc","xyx","asd"]
     var test:String?
+    
+    @IBOutlet weak var imgSearch: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         lblRole.text = temp2
         self.navigationItem.title = "Bất động sản"
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imgSearch.isUserInteractionEnabled = true
+        imgSearch.addGestureRecognizer(tapGestureRecognizer)
      
     }
+    
+    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "TimKiemController") as! TimKiemController
+        
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+            }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {

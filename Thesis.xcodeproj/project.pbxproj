@@ -23,6 +23,7 @@
 		E217EFA61E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */; };
 		E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */; };
 		E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */; };
+		E2A2C3711E9A5C8400F4EF8F /* TimKiemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */; };
 		E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4786A1E9139AB00F843BB /* AppDelegate.swift */; };
 		E2A4786D1E9139AB00F843BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4786C1E9139AB00F843BB /* ViewController.swift */; };
 		E2A478701E9139AB00F843BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A4786E1E9139AB00F843BB /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan2ControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan3ControllerTableViewCell.swift; sourceTree = "<group>"; };
+		E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimKiemController.swift; sourceTree = "<group>"; };
 		E2A478671E9139AB00F843BB /* Thesis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thesis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A4786A1E9139AB00F843BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A4786C1E9139AB00F843BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				E217EFA11E93D4EB00068876 /* TabBarController.swift */,
 				E2E1C4331E9660AA0008D0B3 /* EstateDetailOwnerController.swift */,
 				E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */,
+				E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -125,6 +128,14 @@
 			name = TableViewCell;
 			sourceTree = "<group>";
 		};
+		E2A2C3721E9A5E7D00F4EF8F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2A4789A1E9140DF00F843BB /* Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		E2A4785E1E9139AB00F843BB = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +155,7 @@
 		E2A478691E9139AB00F843BB /* Thesis */ = {
 			isa = PBXGroup;
 			children = (
+				E2A2C3721E9A5E7D00F4EF8F /* Extensions */,
 				E2472E961E9553D600FC95A8 /* TableViewCell */,
 				E2472E951E9553A000FC95A8 /* Images */,
 				E217EF831E93CD6C00068876 /* Controller */,
@@ -152,7 +164,6 @@
 				E2A478711E9139AB00F843BB /* Assets.xcassets */,
 				E2A478731E9139AB00F843BB /* LaunchScreen.storyboard */,
 				E2A478761E9139AB00F843BB /* Info.plist */,
-				E2A4789A1E9140DF00F843BB /* Extension.swift */,
 			);
 			path = Thesis;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 				E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */,
 				E217EFA61E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift in Sources */,
 				E2A4789B1E9140DF00F843BB /* Extension.swift in Sources */,
+				E2A2C3711E9A5C8400F4EF8F /* TimKiemController.swift in Sources */,
 				E217EF871E93CE7200068876 /* CaiDatController.swift in Sources */,
 				E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */,
 				E2A4786D1E9139AB00F843BB /* ViewController.swift in Sources */,
