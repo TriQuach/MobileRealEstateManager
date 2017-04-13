@@ -15,7 +15,7 @@ class EstateDetailOwnerController: UIViewController {
     @IBOutlet weak var abc: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        abc.text = "fuck"
+        abc.text = "kjsdkad"
         self.navigationItem.title = "Chi tiết BĐS"
         
     }

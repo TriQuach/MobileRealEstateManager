@@ -50,6 +50,7 @@ class BatDongSanController: UIViewController, UITableViewDelegate, UITableViewDa
     {
         return estates.count
     }
+    
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
