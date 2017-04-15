@@ -24,6 +24,7 @@
 		E217EFA61E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */; };
 		E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */; };
 		E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */; };
+		E2A2B5861EA2463100BE0FF9 /* beach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2A2B5851EA2463100BE0FF9 /* beach.jpg */; };
 		E2A2C3711E9A5C8400F4EF8F /* TimKiemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */; };
 		E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4786A1E9139AB00F843BB /* AppDelegate.swift */; };
 		E2A4786D1E9139AB00F843BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4786C1E9139AB00F843BB /* ViewController.swift */; };
@@ -60,6 +61,7 @@
 		E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan2ControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan3ControllerTableViewCell.swift; sourceTree = "<group>"; };
+		E2A2B5851EA2463100BE0FF9 /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.jpg; sourceTree = "<group>"; };
 		E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimKiemController.swift; sourceTree = "<group>"; };
 		E2A478671E9139AB00F843BB /* Thesis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thesis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A4786A1E9139AB00F843BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E2A2B5851EA2463100BE0FF9 /* beach.jpg */,
 				E2D630371E9F5469004F3E45 /* more.png */,
 				E2C7022A1E9933450056696E /* more-button-of-three-dots.png */,
 				E213154A1E97E878003E6BDE /* google.png */,
@@ -268,6 +271,7 @@
 				E21315431E97E735003E6BDE /* calendar.png in Resources */,
 				E2A478721E9139AB00F843BB /* Assets.xcassets in Resources */,
 				E2C7022B1E9933450056696E /* more-button-of-three-dots.png in Resources */,
+				E2A2B5861EA2463100BE0FF9 /* beach.jpg in Resources */,
 				E2D630381E9F5469004F3E45 /* more.png in Resources */,
 				E21315481E97E735003E6BDE /* settings.png in Resources */,
 				E21315451E97E735003E6BDE /* house1.jpg in Resources */,

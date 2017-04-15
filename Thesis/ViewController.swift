@@ -21,46 +21,15 @@ class ViewController: UIViewController {
         btnMoiGioi.ghostButton()
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "MuaNha")
-        {
-            let firstTabbar : UITabBarController = segue.destination as! UITabBarController;
-            
-            let Role : BatDongSanController = firstTabbar.viewControllers?[0] as! BatDongSanController;
-            
-            // Set the case number selected property of History vc
-            Role.temp2 = "Bất động sản đang quan tâm";
-            Role.role = 0
-            
-            
-            
-            
-        }
-        else if (segue.identifier == "BanNha")
-        {
-            let firstTabbar : UITabBarController = segue.destination as! UITabBarController;
-            
-            let Role : BatDongSanController = firstTabbar.viewControllers?[0] as! BatDongSanController;
-            
-            // Set the case number selected property of History vc
-            Role.temp2 = "Bất động sản của tôi";
-            Role.role = 1
-            
-        }
-        else
-        {
-            let firstTabbar : UITabBarController = segue.destination as! UITabBarController;
-            
-            let Role : BatDongSanController = firstTabbar.viewControllers?[0] as! BatDongSanController;
-            
-            // Set the case number selected property of History vc
-            Role.temp2 = "Bất động sản đang quản lý";
-            Role.role = 1
-        }
-    }
-
-
     
+    
+    @IBAction func btnMuaNhaClick(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        let Role : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
+        Role.temp = "BĐS đang quan tâm"
+        self.navigationController?.pushViewController(tabbar, animated: true)
+    }
 
 }
 
