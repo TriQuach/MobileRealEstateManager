@@ -16,6 +16,8 @@ class BatDongSanController: UIViewController  {
     
     
     
+    @IBOutlet weak var imgMore: UIImageView!
+    @IBOutlet weak var view1: UIView!
     @IBOutlet weak var lblRole: UILabel!
     var temp:String = ""
     var role:Int? // 0: buyer 1: seller || buyer
@@ -30,10 +32,31 @@ class BatDongSanController: UIViewController  {
         super.viewDidLoad()
        // lblRole.text = temp
         self.navigationItem.title = "Bất động sản"
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        view1.isUserInteractionEnabled = true
+        view1.addGestureRecognizer(tapGestureRecognizer)
         
-     
+        view1.ghostUIView()
+        
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
+        imgMore.isUserInteractionEnabled = true
+        imgMore.addGestureRecognizer(tap)
     }
-    
+    func imgMoreTapped()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let timkiem = storyboard.instantiateViewController(withIdentifier: "TimKiemController") as! TimKiemController
+        
+        self.navigationController?.pushViewController(timkiem, animated: true)
+    }
+    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailBuyer = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+        
+        self.navigationController?.pushViewController(detailBuyer, animated: true)
+        
+    }
     
     
     

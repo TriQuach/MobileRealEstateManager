@@ -22,7 +22,7 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         btnDate.ghostButton(borderWidth: 2, borderColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), cornerRadius: 10)
-        imgMainHouse.image = UIImage(named: name_house! + ".jpg")
+//        imgMainHouse.image = UIImage(named: name_house! + ".jpg")
        btnCare.ghostButton(borderWidth: 2, borderColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), cornerRadius: 10)
         self.navigationItem.title = "Chi tiết BĐS"
        

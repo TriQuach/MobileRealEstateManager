@@ -23,8 +23,11 @@
 		E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFA11E93D4EB00068876 /* TabBarController.swift */; };
 		E217EFA61E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */; };
 		E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */; };
+		E23DD24F1EB62DB6007652F6 /* DetailCuocHenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23DD24E1EB62DB6007652F6 /* DetailCuocHenViewController.swift */; };
+		E23DD2511EB6319E007652F6 /* DetailCuocHenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23DD2501EB6319E007652F6 /* DetailCuocHenTableViewCell.swift */; };
 		E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */; };
 		E2A2B5861EA2463100BE0FF9 /* beach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2A2B5851EA2463100BE0FF9 /* beach.jpg */; };
+		E2A2B5881EA2514F00BE0FF9 /* Extension_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2B5871EA2514F00BE0FF9 /* Extension_UIView.swift */; };
 		E2A2C3711E9A5C8400F4EF8F /* TimKiemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */; };
 		E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4786A1E9139AB00F843BB /* AppDelegate.swift */; };
 		E2A4786D1E9139AB00F843BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4786C1E9139AB00F843BB /* ViewController.swift */; };
@@ -60,8 +63,11 @@
 		E217EFA11E93D4EB00068876 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan2ControllerTableViewCell.swift; sourceTree = "<group>"; };
+		E23DD24E1EB62DB6007652F6 /* DetailCuocHenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCuocHenViewController.swift; sourceTree = "<group>"; };
+		E23DD2501EB6319E007652F6 /* DetailCuocHenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCuocHenTableViewCell.swift; sourceTree = "<group>"; };
 		E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan3ControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E2A2B5851EA2463100BE0FF9 /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.jpg; sourceTree = "<group>"; };
+		E2A2B5871EA2514F00BE0FF9 /* Extension_UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_UIView.swift; sourceTree = "<group>"; };
 		E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimKiemController.swift; sourceTree = "<group>"; };
 		E2A478671E9139AB00F843BB /* Thesis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thesis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A4786A1E9139AB00F843BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 				E2E1C4331E9660AA0008D0B3 /* EstateDetailOwnerController.swift */,
 				E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */,
 				E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */,
+				E23DD24E1EB62DB6007652F6 /* DetailCuocHenViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */,
+				E23DD2501EB6319E007652F6 /* DetailCuocHenTableViewCell.swift */,
 				E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */,
 				E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */,
 				E213154C1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift */,
@@ -160,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E2A4789A1E9140DF00F843BB /* Extension.swift */,
+				E2A2B5871EA2514F00BE0FF9 /* Extension_UIView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -340,10 +349,13 @@
 				E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */,
 				E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */,
 				E217EFA61E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift in Sources */,
+				E2A2B5881EA2514F00BE0FF9 /* Extension_UIView.swift in Sources */,
+				E23DD24F1EB62DB6007652F6 /* DetailCuocHenViewController.swift in Sources */,
 				E2A4789B1E9140DF00F843BB /* Extension.swift in Sources */,
 				E2A2C3711E9A5C8400F4EF8F /* TimKiemController.swift in Sources */,
 				E217EF871E93CE7200068876 /* CaiDatController.swift in Sources */,
 				E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */,
+				E23DD2511EB6319E007652F6 /* DetailCuocHenTableViewCell.swift in Sources */,
 				E2A4786D1E9139AB00F843BB /* ViewController.swift in Sources */,
 				E2A4789F1E9144AC00F843BB /* BatDongSanController.swift in Sources */,
 				E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */,
