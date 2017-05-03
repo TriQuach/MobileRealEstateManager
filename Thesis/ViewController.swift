@@ -27,9 +27,24 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
         let Role : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
-        Role.temp = "BĐS đang quan tâm"
+        Role.role = 0
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
 
+    @IBAction func btnBanNhaClick(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        let Role : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
+        Role.role = 1
+        self.navigationController?.pushViewController(tabbar, animated: true)
+    }
+   
+    @IBAction func btnMoiGioiClick(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        let Role : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
+        Role.role = 2
+        self.navigationController?.pushViewController(tabbar, animated: true)
+    }
 }
 

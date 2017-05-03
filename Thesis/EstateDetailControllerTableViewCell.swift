@@ -1,5 +1,5 @@
 //
-//  BatDongSanControllerTableViewCell.swift
+//  EstateDetailControllerTableViewCell.swift
 //  Thesis
 //
 //  Created by TriQuach on 5/4/17.
@@ -8,12 +8,10 @@
 
 import UIKit
 
-class BatDongSanControllerTableViewCell: UITableViewCell {
+class EstateDetailControllerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lblAdress: UILabel!
-    @IBOutlet weak var lblPhone: UILabel!
-    @IBOutlet weak var lblOwner: UILabel!
-    @IBOutlet weak var myHouse: UIImageView!
+    @IBOutlet weak var lblDescrip: UILabel!
+    @IBOutlet weak var myImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

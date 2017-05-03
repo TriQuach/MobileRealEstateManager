@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D95669C054C48BA66D1599A /* Pods_Thesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */; };
+		E212267F1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212267E1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift */; };
+		E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21226801EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift */; };
 		E21315431E97E735003E6BDE /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = E213153C1E97E735003E6BDE /* calendar.png */; };
 		E21315441E97E735003E6BDE /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = E213153D1E97E735003E6BDE /* home.png */; };
 		E21315451E97E735003E6BDE /* house1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E213153E1E97E735003E6BDE /* house1.jpg */; };
@@ -21,7 +23,6 @@
 		E217EF851E93CDA700068876 /* CuocHenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EF841E93CDA700068876 /* CuocHenController.swift */; };
 		E217EF871E93CE7200068876 /* CaiDatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EF861E93CE7200068876 /* CaiDatController.swift */; };
 		E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFA11E93D4EB00068876 /* TabBarController.swift */; };
-		E217EFA61E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */; };
 		E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */; };
 		E23DD24F1EB62DB6007652F6 /* DetailCuocHenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23DD24E1EB62DB6007652F6 /* DetailCuocHenViewController.swift */; };
 		E23DD2511EB6319E007652F6 /* DetailCuocHenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23DD2501EB6319E007652F6 /* DetailCuocHenTableViewCell.swift */; };
@@ -48,6 +49,8 @@
 		075AC13147009EEB3D0B6932 /* Pods-Thesis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.debug.xcconfig"; sourceTree = "<group>"; };
 		4D611505BE1607FDA2D3C29D /* Pods-Thesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.release.xcconfig"; sourceTree = "<group>"; };
 		85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E212267E1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanControllerTableViewCell.swift; sourceTree = "<group>"; };
+		E21226801EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E213153C1E97E735003E6BDE /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		E213153D1E97E735003E6BDE /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		E213153E1E97E735003E6BDE /* house1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house1.jpg; sourceTree = "<group>"; };
@@ -61,7 +64,6 @@
 		E217EF841E93CDA700068876 /* CuocHenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuocHenController.swift; sourceTree = "<group>"; };
 		E217EF861E93CE7200068876 /* CaiDatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatController.swift; sourceTree = "<group>"; };
 		E217EFA11E93D4EB00068876 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan2ControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E23DD24E1EB62DB6007652F6 /* DetailCuocHenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCuocHenViewController.swift; sourceTree = "<group>"; };
 		E23DD2501EB6319E007652F6 /* DetailCuocHenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCuocHenTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,11 +157,12 @@
 		E2472E961E9553D600FC95A8 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				E217EFA51E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift */,
 				E23DD2501EB6319E007652F6 /* DetailCuocHenTableViewCell.swift */,
 				E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */,
 				E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */,
 				E213154C1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift */,
+				E212267E1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift */,
+				E21226801EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -345,10 +348,11 @@
 			files = (
 				E2E1C4361E96751B0008D0B3 /* EstateDetailBuyerController.swift in Sources */,
 				E217EF821E93CD0400068876 /* TinNhanController.swift in Sources */,
+				E212267F1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift in Sources */,
+				E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */,
 				E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */,
 				E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */,
 				E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */,
-				E217EFA61E93FD2E00068876 /* BatDongSanControllerTableViewCell.swift in Sources */,
 				E2A2B5881EA2514F00BE0FF9 /* Extension_UIView.swift in Sources */,
 				E23DD24F1EB62DB6007652F6 /* DetailCuocHenViewController.swift in Sources */,
 				E2A4789B1E9140DF00F843BB /* Extension.swift in Sources */,
