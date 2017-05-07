@@ -46,6 +46,13 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
 
     }
    
+    @IBAction func btnHen(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
+        tabbar.id = "EstateDetailBuyer"
+        self.navigationController?.pushViewController(tabbar, animated: true)
+        
+    }
     
     @IBAction func btnQuanTam(_ sender: Any) {
         btnCare.backgroundColor = UIColor(patternImage: UIImage(named: "checked.png")!)

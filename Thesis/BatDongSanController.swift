@@ -21,10 +21,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     @IBOutlet weak var lblRole: UILabel!
     var temp:String = ""
     var role:Int? // 0: buyer; 1: seller; 2: broker
-    let estates = ["house1", "house2","house3"]
-    let owner = ["triquach","quach","tri"]
-    let phone = ["123","456","789"]
-    let address = ["abc","xyx","asd"]
+    var estates = ["house1", "house2","house3"]
+    var owner = ["triquach","quach","tri"]
+    var phone = ["123","456","789"]
+    var address = ["abc","xyx","asd"]
     var test:String?
     
     @IBOutlet weak var imgSearch: UIImageView!
