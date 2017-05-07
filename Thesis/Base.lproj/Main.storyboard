@@ -23,90 +23,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2017-03-27 at 9.06.55 PM" translatesAutoresizingMaskIntoConstraints="NO" id="HCd-FY-BxK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZIM-lm-A58">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhJ-58-sTi">
-                                <rect key="frame" x="93.5" y="245" width="187.5" height="241"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn là:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHP-gh-Owu">
-                                        <rect key="frame" x="0.0" y="20" width="187.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4v-0c-aaP">
-                                        <rect key="frame" x="14.5" y="71" width="159.5" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Người tìm mua nhà">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" rowHeight="156" id="8kd-Zp-DMa" customClass="StartScreenCell1TableViewCell" customModule="Thesis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="156"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8kd-Zp-DMa" id="LcG-Df-67Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="155.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6790904-free-background-wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uZN-YK-NE2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="155.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYP-h5-Zgl">
+                                                    <rect key="frame" x="149.5" y="59" width="77.5" height="38.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uZN-YK-NE2" firstAttribute="leading" secondItem="LcG-Df-67Z" secondAttribute="leading" id="Akp-Od-ysn"/>
+                                                <constraint firstItem="uZN-YK-NE2" firstAttribute="top" secondItem="LcG-Df-67Z" secondAttribute="top" id="FKI-zc-7aN"/>
+                                                <constraint firstAttribute="trailing" secondItem="uZN-YK-NE2" secondAttribute="trailing" id="LJ4-In-oTa"/>
+                                                <constraint firstAttribute="bottom" secondItem="uZN-YK-NE2" secondAttribute="bottom" id="WbD-F3-Xdo"/>
+                                                <constraint firstItem="fYP-h5-Zgl" firstAttribute="centerY" secondItem="uZN-YK-NE2" secondAttribute="centerY" id="Yfe-PL-vBP"/>
+                                                <constraint firstItem="fYP-h5-Zgl" firstAttribute="centerX" secondItem="uZN-YK-NE2" secondAttribute="centerX" id="jNR-iU-sa6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                         <connections>
-                                            <action selector="btnMuaNhaClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UdH-Sr-YxC"/>
+                                            <outlet property="myLbl" destination="fYP-h5-Zgl" id="64T-Cm-UDa"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6Y-4W-O2U">
-                                        <rect key="frame" x="14.5" y="116" width="159.5" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Người đăng bán nhà">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="93" id="Hih-Po-hSo" customClass="StartScreenCell2TableViewCell" customModule="Thesis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="184" width="375" height="93"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hih-Po-hSo" id="QgG-iW-xwg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hu-yE-kGz">
+                                                    <rect key="frame" x="166.5" y="36" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5Hu-yE-kGz" firstAttribute="centerX" secondItem="QgG-iW-xwg" secondAttribute="centerX" id="mw8-tj-IJH"/>
+                                                <constraint firstItem="5Hu-yE-kGz" firstAttribute="centerY" secondItem="QgG-iW-xwg" secondAttribute="centerY" id="wxH-Fh-eON"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                         <connections>
-                                            <action selector="btnBanNhaClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iCi-NB-4Uc"/>
+                                            <outlet property="myLbl" destination="5Hu-yE-kGz" id="50n-O5-Ec1"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGg-1c-H9G">
-                                        <rect key="frame" x="14.5" y="161" width="159.5" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Môi giới">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnMoiGioiClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pq1-xO-iPA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.54426284509202449" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="r6Y-4W-O2U" firstAttribute="height" secondItem="H4v-0c-aaP" secondAttribute="height" id="2Gd-kE-ldq"/>
-                                    <constraint firstItem="H4v-0c-aaP" firstAttribute="width" secondItem="qHP-gh-Owu" secondAttribute="width" multiplier="0.85" id="4vG-3p-kR7"/>
-                                    <constraint firstItem="H4v-0c-aaP" firstAttribute="centerX" secondItem="qHP-gh-Owu" secondAttribute="centerX" id="6jp-2o-mXx"/>
-                                    <constraint firstItem="qHP-gh-Owu" firstAttribute="top" secondItem="hhJ-58-sTi" secondAttribute="top" constant="20" id="6lv-iv-MxC"/>
-                                    <constraint firstItem="hGg-1c-H9G" firstAttribute="top" secondItem="r6Y-4W-O2U" secondAttribute="bottom" constant="15" id="Bn5-4D-rq7"/>
-                                    <constraint firstAttribute="bottom" secondItem="hGg-1c-H9G" secondAttribute="bottom" constant="50" id="ILy-XX-gva"/>
-                                    <constraint firstItem="hGg-1c-H9G" firstAttribute="trailing" secondItem="r6Y-4W-O2U" secondAttribute="trailing" id="JHe-rw-n0h"/>
-                                    <constraint firstItem="r6Y-4W-O2U" firstAttribute="top" secondItem="H4v-0c-aaP" secondAttribute="bottom" constant="15" id="M90-or-zC8"/>
-                                    <constraint firstItem="qHP-gh-Owu" firstAttribute="centerX" secondItem="hhJ-58-sTi" secondAttribute="centerX" id="Vuu-nb-dfH"/>
-                                    <constraint firstItem="r6Y-4W-O2U" firstAttribute="trailing" secondItem="H4v-0c-aaP" secondAttribute="trailing" id="XuJ-VE-RhD"/>
-                                    <constraint firstItem="hGg-1c-H9G" firstAttribute="leading" secondItem="r6Y-4W-O2U" secondAttribute="leading" id="cbv-XM-0EU"/>
-                                    <constraint firstItem="qHP-gh-Owu" firstAttribute="width" secondItem="hhJ-58-sTi" secondAttribute="width" id="dtU-pd-fBi"/>
-                                    <constraint firstItem="hGg-1c-H9G" firstAttribute="height" secondItem="r6Y-4W-O2U" secondAttribute="height" id="pG0-xQ-hck"/>
-                                    <constraint firstItem="r6Y-4W-O2U" firstAttribute="leading" secondItem="H4v-0c-aaP" secondAttribute="leading" id="qLw-0B-Tgf"/>
-                                    <constraint firstItem="H4v-0c-aaP" firstAttribute="top" secondItem="qHP-gh-Owu" secondAttribute="bottom" constant="15" id="r2I-k3-CYY"/>
-                                </constraints>
-                            </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HCd-FY-BxK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0y7-Dm-H1m"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HCd-FY-BxK" secondAttribute="bottom" id="EIK-LD-mzd"/>
-                            <constraint firstItem="hhJ-58-sTi" firstAttribute="width" secondItem="HCd-FY-BxK" secondAttribute="width" multiplier="0.5" id="agc-jj-wae"/>
-                            <constraint firstItem="hhJ-58-sTi" firstAttribute="centerY" secondItem="HCd-FY-BxK" secondAttribute="centerY" id="aqN-Fq-MPp"/>
-                            <constraint firstItem="hhJ-58-sTi" firstAttribute="centerX" secondItem="HCd-FY-BxK" secondAttribute="centerX" id="b0l-vC-ugv"/>
-                            <constraint firstItem="HCd-FY-BxK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bbp-j4-65L"/>
-                            <constraint firstAttribute="trailing" secondItem="HCd-FY-BxK" secondAttribute="trailing" id="tDh-Ou-9cg"/>
+                            <constraint firstItem="ZIM-lm-A58" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CEs-VA-P0i"/>
+                            <constraint firstItem="ZIM-lm-A58" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QUN-1U-4yI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZIM-lm-A58" secondAttribute="bottom" id="SIb-Zm-FHt"/>
+                            <constraint firstAttribute="trailing" secondItem="ZIM-lm-A58" secondAttribute="trailing" id="rOX-Nc-nAX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Quản lý nhà đất" id="Wvj-fC-2Lt"/>
                     <connections>
-                        <outlet property="btnBanNha" destination="r6Y-4W-O2U" id="di6-30-yDI"/>
-                        <outlet property="btnMoiGioi" destination="hGg-1c-H9G" id="Fcr-1h-gSE"/>
-                        <outlet property="btnMuaNha" destination="H4v-0c-aaP" id="qsa-sD-NWH"/>
+                        <outlet property="myTbv" destination="ZIM-lm-A58" id="3vq-zE-pyU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530" y="-559"/>
+            <point key="canvasLocation" x="528.79999999999995" y="-559.07046476761627"/>
         </scene>
         <!--Cài đặt-->
         <scene sceneID="BoG-zL-pYY">
@@ -255,6 +247,9 @@
                                                 <state key="normal" title="Quan tâm">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnQuanTam:" destination="oYN-Wd-qde" eventType="touchUpInside" id="FXr-8c-8Jz"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chủ nhà đất" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfB-E3-1yL">
                                                 <rect key="frame" x="10" y="259" width="375" height="18.5"/>
@@ -1006,7 +1001,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Screen Shot 2017-03-27 at 9.06.55 PM" width="1410" height="894"/>
+        <image name="6790904-free-background-wallpaper.jpg" width="1920" height="1080"/>
         <image name="calendar.png" width="32" height="32"/>
         <image name="google.png" width="32" height="32"/>
         <image name="home.png" width="32" height="32"/>

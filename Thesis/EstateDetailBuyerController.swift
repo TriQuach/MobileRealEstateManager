@@ -47,4 +47,7 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     }
    
     
+    @IBAction func btnQuanTam(_ sender: Any) {
+        btnCare.backgroundColor = UIColor(patternImage: UIImage(named: "checked.png")!)
+    }
 }
