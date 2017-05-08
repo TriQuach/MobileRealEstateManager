@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2") as! StartScreenCell2TableViewCell
         cell2.myLbl.font = UIFont.boldSystemFont(ofSize: 18.0)
         cell2.myLbl.text = role[indexPath.row]
-       cell2.selectionStyle = .none
+       //cell2.selectionStyle = .none
         //cell2.setSelected(false, animated: true)
         return cell2
     }

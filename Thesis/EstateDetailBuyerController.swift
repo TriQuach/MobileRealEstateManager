@@ -8,11 +8,12 @@
 
 import Foundation
 import UIKit
-
+import M13Checkbox
 class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     
+    @IBOutlet var lblCare: UILabel!
     @IBOutlet weak var myTbv: UITableView!
     @IBOutlet weak var btnCare: UIButton!
     @IBOutlet weak var btnDate: UIButton!
@@ -25,10 +26,11 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         myTbv.dataSource = self
         myTbv.delegate = self
-        btnDate.ghostButton(borderWidth: 2, borderColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), cornerRadius: 10)
+        
         imgMainHouse.image = UIImage(named: name_house! + ".jpg")
-       btnCare.ghostButton(borderWidth: 2, borderColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), cornerRadius: 10)
         self.navigationItem.title = "Chi tiết BĐS"
+        
+        
        
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,6 +57,18 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func btnQuanTam(_ sender: Any) {
-        btnCare.backgroundColor = UIColor(patternImage: UIImage(named: "checked.png")!)
+        var frm: CGRect = btnCare.frame
+        frm.origin.x = frm.origin.x
+        frm.origin.y = frm.origin.y
+        frm.size.width = 40
+        frm.size.height = 40
+        let checkbox = M13Checkbox()
+        checkbox.frame = frm
+        
+        checkbox.stateChangeAnimation = .fill
+        view.addSubview(checkbox)
+        
+        btnCare.isHidden = true
     }
+    
 }

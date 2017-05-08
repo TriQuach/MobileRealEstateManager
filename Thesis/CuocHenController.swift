@@ -61,5 +61,17 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let xoa = UITableViewRowAction(style: .default, title: "xoa") { (action:UITableViewRowAction, index:IndexPath) in
+            print ("fuck")
+            
+            self.myTbv.deleteRows(at: [index], with: .fade)
+        }
+        return [xoa]
+    }
+    
     
 }

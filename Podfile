@@ -7,4 +7,5 @@ target 'Thesis' do
 
   # Pods for Thesis
 pod "Dropper"
+pod 'M13Checkbox'
 end

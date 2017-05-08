@@ -7,14 +7,16 @@
 //
 
 import UIKit
-
+import M13Checkbox
 class LogInViewController: UIViewController {
 
+    @IBOutlet var myCheckBox: M13Checkbox!
     @IBOutlet var lblLogIn: UILabel!
     var id:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        myCheckBox.stateChangeAnimation = .bounce(.fill)
         
     }
 

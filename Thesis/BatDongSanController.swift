@@ -22,7 +22,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var temp:String = ""
     var role:Int? // 0: buyer; 1: seller; 2: broker
     var estates = ["house1", "house2","house3"]
-    var owner = ["triquach","quach","tri"]
+    var owner = ["triquachtriquachtriquachtrasdchtrasdchtrasdchtrasd","quachquachquachquachquac","tritritritritritritri"]
     var phone = ["123","456","789"]
     var address = ["abc","xyx","asd"]
     var test:String?
@@ -91,6 +91,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
        cell.myHouse.image = UIImage(named: estates[indexPath.row] + ".jpg")
         cell.lblAdress.text = address[indexPath.row]
         cell.lblOwner.text = owner[indexPath.row]
+        cell.lblOwner.font = UIFont.boldSystemFont(ofSize: 15)
         cell.lblPhone.text = phone[indexPath.row]
         //cell?.backgroundColor = .yellow
         return cell

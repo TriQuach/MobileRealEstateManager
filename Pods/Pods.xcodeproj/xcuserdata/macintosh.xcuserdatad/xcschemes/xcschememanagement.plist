@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>M13Checkbox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Thesis.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>20A9DD9ABBF08BC57372A26C35327BF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>35753FFAC94E4E30249C261EB4F29321</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D1AC0282B7E44E580C2B18C34A696E8</key>
+		<key>3689BF17B8E8AF94B637F1B80CB39F92</key>
 		<dict>
 			<key>primary</key>
 			<true/>
