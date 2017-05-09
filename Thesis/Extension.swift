@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import FaveButton
 extension UIButton
 {
     func ghostButton()
@@ -24,5 +24,14 @@ extension UIButton
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor.cgColor
         self.layer.cornerRadius = cornerRadius
+    }
+    func addLikeButton()
+    {
+        let faveButton = FaveButton(
+            frame: CGRect(x:0, y:0, width: 44, height: 44),
+            faveIconNormal: UIImage(named: "like.png")
+        )
+        faveButton.delegate = self
+        self.addSubview(faveButton)
     }
 }

@@ -156,8 +156,8 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6790904-free-background-wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uZN-YK-NE2">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="155.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYP-h5-Zgl">
-                                                    <rect key="frame" x="149.5" y="59" width="77.5" height="38.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYP-h5-Zgl" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                    <rect key="frame" x="188.5" y="78.5" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -173,7 +173,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="myLbl" destination="fYP-h5-Zgl" id="64T-Cm-UDa"/>
+                                            <outlet property="myLbl" destination="fYP-h5-Zgl" id="xiO-4l-pTl"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="93" id="Hih-Po-hSo" customClass="StartScreenCell2TableViewCell" customModule="Thesis" customModuleProvider="target">
@@ -183,8 +183,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hu-yE-kGz">
-                                                    <rect key="frame" x="166.5" y="36" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hu-yE-kGz" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                    <rect key="frame" x="187.5" y="46.5" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -196,7 +196,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="myLbl" destination="5Hu-yE-kGz" id="50n-O5-Ec1"/>
+                                            <outlet property="myLbl" destination="5Hu-yE-kGz" id="V6q-5g-0jj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -554,6 +554,11 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwf-jJ-E3d" customClass="FaveButton" customModule="FaveButton">
+                                                <rect key="frame" x="196" y="220" width="44" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="like.png"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -668,13 +673,14 @@
                     <connections>
                         <outlet property="btnCare" destination="Tu3-1T-sJO" id="q1h-NT-E4d"/>
                         <outlet property="btnDate" destination="rFU-8k-Z4M" id="Lb5-Nt-7Ao"/>
+                        <outlet property="btnLike" destination="Jwf-jJ-E3d" id="mSP-mt-xsK"/>
                         <outlet property="imgMainHouse" destination="ZaX-j2-T94" id="FSX-Pb-mVB"/>
                         <outlet property="myTbv" destination="dcD-GC-jpO" id="N6Y-1r-Bpj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAc-5C-iKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="1456"/>
+            <point key="canvasLocation" x="261.60000000000002" y="1455.4722638680662"/>
         </scene>
         <!--Tim Kiem Controller-->
         <scene sceneID="ZdY-eZ-8HV">
@@ -1135,6 +1141,7 @@
         <image name="calendar.png" width="32" height="32"/>
         <image name="google.png" width="32" height="32"/>
         <image name="home.png" width="32" height="32"/>
+        <image name="like.png" width="32" height="32"/>
         <image name="more-button-of-three-dots.png" width="64" height="64"/>
         <image name="settings.png" width="32" height="32"/>
         <image name="speech-bubble.png" width="32" height="32"/>

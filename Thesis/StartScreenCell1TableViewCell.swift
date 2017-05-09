@@ -7,10 +7,11 @@
 //
 
 import UIKit
-
+import LTMorphingLabel
 class StartScreenCell1TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var myLbl: UILabel!
+    
+    @IBOutlet var myLbl: LTMorphingLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

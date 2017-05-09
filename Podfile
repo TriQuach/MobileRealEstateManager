@@ -8,4 +8,6 @@ target 'Thesis' do
   # Pods for Thesis
 pod "Dropper"
 pod 'M13Checkbox'
+pod 'FaveButton', '~> 2.0.3'
+pod 'LTMorphingLabel'
 end

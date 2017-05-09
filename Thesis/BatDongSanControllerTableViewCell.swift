@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import FaveButton
 class BatDongSanControllerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var btnLike: UIButton!
     @IBOutlet weak var lblAdress: UILabel!
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblOwner: UILabel!
@@ -24,5 +25,6 @@ class BatDongSanControllerTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 
 }

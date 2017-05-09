@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 import M13Checkbox
-class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+import FaveButton
+class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITableViewDataSource,FaveButtonDelegate {
     
     
     
+    @IBOutlet var btnLike: FaveButton!
     @IBOutlet var lblCare: UILabel!
     @IBOutlet weak var myTbv: UITableView!
     @IBOutlet weak var btnCare: UIButton!
@@ -29,6 +31,8 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         
         imgMainHouse.image = UIImage(named: name_house! + ".jpg")
         self.navigationItem.title = "Chi tiết BĐS"
+        
+        btnLike.isHidden = true
         
         
        
@@ -57,18 +61,21 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func btnQuanTam(_ sender: Any) {
-        var frm: CGRect = btnCare.frame
-        frm.origin.x = frm.origin.x
-        frm.origin.y = frm.origin.y
-        frm.size.width = 40
-        frm.size.height = 40
-        let checkbox = M13Checkbox()
-        checkbox.frame = frm
+//        let faveButton = FaveButton(
+//            frame: CGRect(x:btnCare.frame.origin.x, y:btnCare.frame.origin.y, width: 44, height: 44),
+//            faveIconNormal: UIImage(named: "like.png"))
+//        faveButton.isSelected = true
+//        
+//        faveButton.delegate = self
+//        view.addSubview(faveButton)
         
-        checkbox.stateChangeAnimation = .fill
-        view.addSubview(checkbox)
+        btnLike.isHidden = false
+        btnLike.isSelected = true
         
         btnCare.isHidden = true
+    }
+    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
+        
     }
     
 }

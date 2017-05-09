@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FaveButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LTMorphingLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>M13Checkbox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3689BF17B8E8AF94B637F1B80CB39F92</key>
+		<key>4C69BF3EF4CE81852226B9442B0C2DF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C08227B6E14D87F0F5B0FD6DFFA1A3E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A1D990C6EFE8E8FDFF6BD1AA599462E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

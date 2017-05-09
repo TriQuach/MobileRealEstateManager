@@ -32,11 +32,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell1") as! StartScreenCell1TableViewCell
             cell1.myLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
             cell1.myLbl.text = role[indexPath.row]
+            cell1.myLbl.morphingEffect = .evaporate
+            cell1.myLbl.morphingDuration = 3.0
             return cell1
         }
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2") as! StartScreenCell2TableViewCell
         cell2.myLbl.font = UIFont.boldSystemFont(ofSize: 18.0)
         cell2.myLbl.text = role[indexPath.row]
+        cell2.myLbl.morphingEffect = .burn
+        cell2.myLbl.morphingDuration = 2.0
        //cell2.selectionStyle = .none
         //cell2.setSelected(false, animated: true)
         return cell2

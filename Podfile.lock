@@ -1,15 +1,21 @@
 PODS:
   - Dropper (2.7.5)
+  - FaveButton (2.0.3)
+  - LTMorphingLabel (0.4.0)
   - M13Checkbox (3.1.3)
 
 DEPENDENCIES:
   - Dropper
+  - FaveButton (~> 2.0.3)
+  - LTMorphingLabel
   - M13Checkbox
 
 SPEC CHECKSUMS:
   Dropper: 6fb3bd5977f2ade0a332321b6846180d59e75000
+  FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
+  LTMorphingLabel: d9a85f16ac306f0e07321d6819964deb2dc69638
   M13Checkbox: c132a7e0eb964731855eff67b883a0b21b7c0977
 
-PODFILE CHECKSUM: 2a2091c4565cbed071b39a5db8385714facd88fc
+PODFILE CHECKSUM: f16f354ff18db76b80f2520ad08bcfd8894bc95c
 
 COCOAPODS: 1.2.0

@@ -8,20 +8,30 @@
 
 import Foundation
 import UIKit
+import FaveButton
 
-class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewDelegate  {
+class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewDelegate  ,FaveButtonDelegate{
     
     
     
     
+    @IBOutlet weak var cell: BatDongSanControllerTableViewCell!
     
+    @IBOutlet var btnLike: UIButton!
     
     @IBOutlet weak var imgMore: UIImageView!
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var lblRole: UILabel!
+    
+    var x:CGFloat = 0
+    var y:CGFloat = 0
+    
     var temp:String = ""
+    
+    var current_like = false
     var role:Int? // 0: buyer; 1: seller; 2: broker
     var estates = ["house1", "house2","house3"]
+    var like = ["like.png","like.png","like.png"]
     var owner = ["triquachtriquachtriquachtrasdchtrasdchtrasdchtrasd","quachquachquachquachquac","tritritritritritritri"]
     var phone = ["123","456","789"]
     var address = ["abc","xyx","asd"]
@@ -89,6 +99,16 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
        cell.myHouse.image = UIImage(named: estates[indexPath.row] + ".jpg")
+        //cell.myHouse.addLikeButton()
+        
+        let faveButton = FaveButton(
+            frame: CGRect(x:0, y:0, width: 44, height: 44),
+            faveIconNormal: UIImage(named: "like.png")
+        )
+        faveButton.delegate = self
+        
+        
+        cell.addSubview(faveButton)
         cell.lblAdress.text = address[indexPath.row]
         cell.lblOwner.text = owner[indexPath.row]
         cell.lblOwner.font = UIFont.boldSystemFont(ofSize: 15)
@@ -106,6 +126,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     }
     
     
+    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
+        
+    }
     
     
 }
