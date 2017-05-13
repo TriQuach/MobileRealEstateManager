@@ -25,15 +25,6 @@ class BatDongSanControllerTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    override func prepareForReuse() {
-        if (btnLike.isSelected)
-        {
-            btnLike.isSelected = true
-        }
-        else
-        {
-            btnLike.isSelected = false
-        }
-    }
+    
 
 }

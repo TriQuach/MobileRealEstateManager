@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FaveButton
 
-class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewDelegate  ,FaveButtonDelegate{
+class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewDelegate{
     
     
     var count:Int = 0
@@ -105,21 +105,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
        cell.myHouse.image = UIImage(named: estates[indexPath.row] + ".jpg")
         //cell.myHouse.addLikeButton()
-        if (count <= num_section * 3)
-        {
-            let faveButton = FaveButton(
-                frame: CGRect(x:0, y:0, width: 44, height: 44),
-                faveIconNormal: UIImage(named: "like.png")
-            )
-            faveButton.delegate = self
-            
-            
-            cell.addSubview(faveButton)
-        }
-        cell.lblAdress.text = address[indexPath.row]
+        //cell.lblAdress.text = address[indexPath.row]
         cell.lblOwner.text = owner[indexPath.row]
-        cell.lblOwner.font = UIFont.boldSystemFont(ofSize: 15)
-        cell.lblPhone.text = phone[indexPath.row]
+        //cell.lblPhone.text = phone[indexPath.row]
         //cell?.backgroundColor = .yellow
         return cell
     }
@@ -132,10 +120,6 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
     
-    
-    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
-        
-    }
-    
+  
     
 }

@@ -60,6 +60,7 @@
 		E2F8E90C1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8E90B1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift */; };
 		E2F8E90E1EC7328100EDD5F2 /* MyImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8E90D1EC7328100EDD5F2 /* MyImageTableViewCell.swift */; };
 		E2F8E9111EC739D200EDD5F2 /* MyImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8E9101EC739D200EDD5F2 /* MyImageCollectionViewCell.swift */; };
+		E2F8E9321EC76AF100EDD5F2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8E9311EC76AF100EDD5F2 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		E2F8E90B1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerImageTableViewCell.swift; sourceTree = "<group>"; };
 		E2F8E90D1EC7328100EDD5F2 /* MyImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageTableViewCell.swift; sourceTree = "<group>"; };
 		E2F8E9101EC739D200EDD5F2 /* MyImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2F8E9311EC76AF100EDD5F2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */,
 				E23DD24E1EB62DB6007652F6 /* DetailCuocHenViewController.swift */,
 				E272A89C1EBF35F700D6A9BC /* LogInViewController.swift */,
+				E2F8E9311EC76AF100EDD5F2 /* SignUpViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 		E2A478691E9139AB00F843BB /* Thesis */ = {
 			isa = PBXGroup;
 			children = (
+				E2F8E9301EC7688900EDD5F2 /* Class */,
 				E2F8E90F1EC739A600EDD5F2 /* CollectionViewCell */,
 				E2A2C3721E9A5E7D00F4EF8F /* Extensions */,
 				E2472E961E9553D600FC95A8 /* TableViewCell */,
@@ -267,6 +271,13 @@
 				E2F8E9101EC739D200EDD5F2 /* MyImageCollectionViewCell.swift */,
 			);
 			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E2F8E9301EC7688900EDD5F2 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +432,7 @@
 				E272A89D1EBF35F700D6A9BC /* LogInViewController.swift in Sources */,
 				E217EF821E93CD0400068876 /* TinNhanController.swift in Sources */,
 				E212267F1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift in Sources */,
+				E2F8E9321EC76AF100EDD5F2 /* SignUpViewController.swift in Sources */,
 				E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */,
 				E2F8E90C1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift in Sources */,
 				E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */,
