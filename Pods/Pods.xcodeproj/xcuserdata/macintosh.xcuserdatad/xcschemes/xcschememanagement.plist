@@ -29,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PopupDialog.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReadMoreTextView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -37,7 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>28393ED9A5FD6E9C1F72114B769A84E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>35753FFAC94E4E30249C261EB4F29321</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3E9F9EE2D59317FE81595E3372C08DEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A1D990C6EFE8E8FDFF6BD1AA599462E9</key>
+		<key>895E90D3649565DA1D22B8C8209A50F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

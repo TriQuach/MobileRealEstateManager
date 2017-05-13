@@ -13,7 +13,8 @@ import FaveButton
 class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewDelegate  ,FaveButtonDelegate{
     
     
-    
+    var count:Int = 0
+    var num_section:Int = 0
     
     @IBOutlet weak var cell: BatDongSanControllerTableViewCell!
     
@@ -69,8 +70,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
         if (role == 0)
         {
+            num_section = 3
             return 3
         }
+        num_section = 1
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,18 +100,22 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        count = count + 1
+        print (count)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
        cell.myHouse.image = UIImage(named: estates[indexPath.row] + ".jpg")
         //cell.myHouse.addLikeButton()
-        
-        let faveButton = FaveButton(
-            frame: CGRect(x:0, y:0, width: 44, height: 44),
-            faveIconNormal: UIImage(named: "like.png")
-        )
-        faveButton.delegate = self
-        
-        
-        cell.addSubview(faveButton)
+        if (count <= num_section * 3)
+        {
+            let faveButton = FaveButton(
+                frame: CGRect(x:0, y:0, width: 44, height: 44),
+                faveIconNormal: UIImage(named: "like.png")
+            )
+            faveButton.delegate = self
+            
+            
+            cell.addSubview(faveButton)
+        }
         cell.lblAdress.text = address[indexPath.row]
         cell.lblOwner.text = owner[indexPath.row]
         cell.lblOwner.font = UIFont.boldSystemFont(ofSize: 15)

@@ -10,7 +10,7 @@ import UIKit
 import FaveButton
 class BatDongSanControllerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var btnLike: UIButton!
+    @IBOutlet var btnLike: FaveButton!
     @IBOutlet weak var lblAdress: UILabel!
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblOwner: UILabel!
@@ -25,6 +25,15 @@ class BatDongSanControllerTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    override func prepareForReuse() {
+        if (btnLike.isSelected)
+        {
+            btnLike.isSelected = true
+        }
+        else
+        {
+            btnLike.isSelected = false
+        }
+    }
 
 }

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
+    
     @IBOutlet weak var myTbv: UITableView!
     var role = ["Real Estate Manager","Người tìm mua nhà","Người đang bán nhà","Môi giới"]
     override func viewDidLoad() {
@@ -39,8 +40,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2") as! StartScreenCell2TableViewCell
         cell2.myLbl.font = UIFont.boldSystemFont(ofSize: 18.0)
         cell2.myLbl.text = role[indexPath.row]
-        cell2.myLbl.morphingEffect = .burn
-        cell2.myLbl.morphingDuration = 2.0
+        cell2.myLbl.morphingEffect = .evaporate
+        cell2.myLbl.morphingDuration = 1.0
        //cell2.selectionStyle = .none
         //cell2.setSelected(false, animated: true)
         return cell2

@@ -10,4 +10,6 @@ pod "Dropper"
 pod 'M13Checkbox'
 pod 'FaveButton', '~> 2.0.3'
 pod 'LTMorphingLabel'
+pod 'PopupDialog', '~> 0.5'
+pod "ReadMoreTextView"
 end

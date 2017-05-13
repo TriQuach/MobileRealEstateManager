@@ -17,7 +17,6 @@
 		E21315471E97E735003E6BDE /* house3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E21315401E97E735003E6BDE /* house3.jpg */; };
 		E21315481E97E735003E6BDE /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E21315411E97E735003E6BDE /* settings.png */; };
 		E21315491E97E735003E6BDE /* speech-bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = E21315421E97E735003E6BDE /* speech-bubble.png */; };
-		E213154B1E97E878003E6BDE /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = E213154A1E97E878003E6BDE /* google.png */; };
 		E213154D1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E213154C1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift */; };
 		E217EF821E93CD0400068876 /* TinNhanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EF811E93CD0400068876 /* TinNhanController.swift */; };
 		E217EF851E93CDA700068876 /* CuocHenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217EF841E93CDA700068876 /* CuocHenController.swift */; };
@@ -50,9 +49,17 @@
 		E2C702271E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C702261E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png */; };
 		E2C702291E9932AF0056696E /* more-details-circular-button.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C702281E9932AF0056696E /* more-details-circular-button.png */; };
 		E2C7022B1E9933450056696E /* more-button-of-three-dots.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C7022A1E9933450056696E /* more-button-of-three-dots.png */; };
+		E2C8F2261EC4342E007D04BE /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C8F2251EC4342E007D04BE /* camera.png */; };
 		E2D630381E9F5469004F3E45 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D630371E9F5469004F3E45 /* more.png */; };
 		E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E1C4331E9660AA0008D0B3 /* EstateDetailOwnerController.swift */; };
 		E2E1C4361E96751B0008D0B3 /* EstateDetailBuyerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */; };
+		E2F8E9041EC713A600EDD5F2 /* telephone (1).png in Resources */ = {isa = PBXBuildFile; fileRef = E2F8E9031EC713A600EDD5F2 /* telephone (1).png */; };
+		E2F8E9061EC71E5900EDD5F2 /* phone-symbol-of-an-auricular-inside-a-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F8E9051EC71E5900EDD5F2 /* phone-symbol-of-an-auricular-inside-a-circle.png */; };
+		E2F8E9081EC71EBB00EDD5F2 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F8E9071EC71EBB00EDD5F2 /* email.png */; };
+		E2F8E90A1EC71F0500EDD5F2 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = E2F8E9091EC71F0500EDD5F2 /* google.png */; };
+		E2F8E90C1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8E90B1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift */; };
+		E2F8E90E1EC7328100EDD5F2 /* MyImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8E90D1EC7328100EDD5F2 /* MyImageTableViewCell.swift */; };
+		E2F8E9111EC739D200EDD5F2 /* MyImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8E9101EC739D200EDD5F2 /* MyImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +75,6 @@
 		E21315401E97E735003E6BDE /* house3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house3.jpg; sourceTree = "<group>"; };
 		E21315411E97E735003E6BDE /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		E21315421E97E735003E6BDE /* speech-bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speech-bubble.png"; sourceTree = "<group>"; };
-		E213154A1E97E878003E6BDE /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
 		E213154C1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailBuyerControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E217EF811E93CD0400068876 /* TinNhanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinNhanController.swift; sourceTree = "<group>"; };
 		E217EF841E93CDA700068876 /* CuocHenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuocHenController.swift; sourceTree = "<group>"; };
@@ -103,9 +109,17 @@
 		E2C702261E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-button-interface-symbol-of-three-horizontal-aligned-dots.png"; sourceTree = "<group>"; };
 		E2C702281E9932AF0056696E /* more-details-circular-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-details-circular-button.png"; sourceTree = "<group>"; };
 		E2C7022A1E9933450056696E /* more-button-of-three-dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-button-of-three-dots.png"; sourceTree = "<group>"; };
+		E2C8F2251EC4342E007D04BE /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		E2D630371E9F5469004F3E45 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		E2E1C4331E9660AA0008D0B3 /* EstateDetailOwnerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailOwnerController.swift; sourceTree = "<group>"; };
 		E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailBuyerController.swift; sourceTree = "<group>"; };
+		E2F8E9031EC713A600EDD5F2 /* telephone (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "telephone (1).png"; sourceTree = "<group>"; };
+		E2F8E9051EC71E5900EDD5F2 /* phone-symbol-of-an-auricular-inside-a-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-symbol-of-an-auricular-inside-a-circle.png"; sourceTree = "<group>"; };
+		E2F8E9071EC71EBB00EDD5F2 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		E2F8E9091EC71F0500EDD5F2 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		E2F8E90B1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerImageTableViewCell.swift; sourceTree = "<group>"; };
+		E2F8E90D1EC7328100EDD5F2 /* MyImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageTableViewCell.swift; sourceTree = "<group>"; };
+		E2F8E9101EC739D200EDD5F2 /* MyImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +172,11 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E2F8E9091EC71F0500EDD5F2 /* google.png */,
+				E2F8E9071EC71EBB00EDD5F2 /* email.png */,
+				E2F8E9051EC71E5900EDD5F2 /* phone-symbol-of-an-auricular-inside-a-circle.png */,
+				E2F8E9031EC713A600EDD5F2 /* telephone (1).png */,
+				E2C8F2251EC4342E007D04BE /* camera.png */,
 				E21A2CCF1EC26FF3008BAAC0 /* dislike.png */,
 				E2A195D91EC24B350080914E /* like.png */,
 				E272A89E1EBF3B4600D6A9BC /* 518079-background-hd.jpg */,
@@ -167,7 +186,6 @@
 				E22E8A571EBCB61000F1CC71 /* checked.png */,
 				E2D630371E9F5469004F3E45 /* more.png */,
 				E2C7022A1E9933450056696E /* more-button-of-three-dots.png */,
-				E213154A1E97E878003E6BDE /* google.png */,
 				E2C702281E9932AF0056696E /* more-details-circular-button.png */,
 				E2C702261E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png */,
 				E213153C1E97E735003E6BDE /* calendar.png */,
@@ -192,6 +210,8 @@
 				E21226801EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift */,
 				E295D0811EBF069800A746FA /* StartScreenCell1TableViewCell.swift */,
 				E295D0831EBF06B800A746FA /* StartScreenCell2TableViewCell.swift */,
+				E2F8E90B1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift */,
+				E2F8E90D1EC7328100EDD5F2 /* MyImageTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -227,6 +247,7 @@
 		E2A478691E9139AB00F843BB /* Thesis */ = {
 			isa = PBXGroup;
 			children = (
+				E2F8E90F1EC739A600EDD5F2 /* CollectionViewCell */,
 				E2A2C3721E9A5E7D00F4EF8F /* Extensions */,
 				E2472E961E9553D600FC95A8 /* TableViewCell */,
 				E2472E951E9553A000FC95A8 /* Images */,
@@ -238,6 +259,14 @@
 				E2A478761E9139AB00F843BB /* Info.plist */,
 			);
 			path = Thesis;
+			sourceTree = "<group>";
+		};
+		E2F8E90F1EC739A600EDD5F2 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2F8E9101EC739D200EDD5F2 /* MyImageCollectionViewCell.swift */,
+			);
+			name = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,18 +336,22 @@
 				E21315461E97E735003E6BDE /* house2.jpg in Resources */,
 				E21A2CD01EC26FF3008BAAC0 /* dislike.png in Resources */,
 				E272A89F1EBF3B4600D6A9BC /* 518079-background-hd.jpg in Resources */,
-				E213154B1E97E878003E6BDE /* google.png in Resources */,
 				E2A478751E9139AB00F843BB /* LaunchScreen.storyboard in Resources */,
 				E2C702291E9932AF0056696E /* more-details-circular-button.png in Resources */,
 				E2C702271E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png in Resources */,
 				E295D0881EBF0A0900A746FA /* 6790904-free-background-wallpaper.jpg in Resources */,
+				E2F8E9041EC713A600EDD5F2 /* telephone (1).png in Resources */,
+				E2F8E90A1EC71F0500EDD5F2 /* google.png in Resources */,
 				E2A195DA1EC24B350080914E /* like.png in Resources */,
+				E2C8F2261EC4342E007D04BE /* camera.png in Resources */,
 				E21315491E97E735003E6BDE /* speech-bubble.png in Resources */,
 				E21315441E97E735003E6BDE /* home.png in Resources */,
 				E21315431E97E735003E6BDE /* calendar.png in Resources */,
 				E2A478721E9139AB00F843BB /* Assets.xcassets in Resources */,
 				E2C7022B1E9933450056696E /* more-button-of-three-dots.png in Resources */,
+				E2F8E9061EC71E5900EDD5F2 /* phone-symbol-of-an-auricular-inside-a-circle.png in Resources */,
 				E2A2B5861EA2463100BE0FF9 /* beach.jpg in Resources */,
+				E2F8E9081EC71EBB00EDD5F2 /* email.png in Resources */,
 				E2D630381E9F5469004F3E45 /* more.png in Resources */,
 				E21315481E97E735003E6BDE /* settings.png in Resources */,
 				E21315451E97E735003E6BDE /* house1.jpg in Resources */,
@@ -383,11 +416,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E295D0821EBF069800A746FA /* StartScreenCell1TableViewCell.swift in Sources */,
+				E2F8E90E1EC7328100EDD5F2 /* MyImageTableViewCell.swift in Sources */,
 				E2E1C4361E96751B0008D0B3 /* EstateDetailBuyerController.swift in Sources */,
 				E272A89D1EBF35F700D6A9BC /* LogInViewController.swift in Sources */,
 				E217EF821E93CD0400068876 /* TinNhanController.swift in Sources */,
 				E212267F1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift in Sources */,
 				E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */,
+				E2F8E90C1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift in Sources */,
 				E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */,
 				E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */,
 				E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */,
@@ -396,6 +431,7 @@
 				E2A195DC1EC24DF60080914E /* Extension_UIImageView.swift in Sources */,
 				E2A4789B1E9140DF00F843BB /* Extension.swift in Sources */,
 				E2A2C3711E9A5C8400F4EF8F /* TimKiemController.swift in Sources */,
+				E2F8E9111EC739D200EDD5F2 /* MyImageCollectionViewCell.swift in Sources */,
 				E217EF871E93CE7200068876 /* CaiDatController.swift in Sources */,
 				E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */,
 				E295D0841EBF06B800A746FA /* StartScreenCell2TableViewCell.swift in Sources */,
