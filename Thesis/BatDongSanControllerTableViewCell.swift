@@ -10,10 +10,12 @@ import UIKit
 import FaveButton
 class BatDongSanControllerTableViewCell: UITableViewCell {
 
-    @IBOutlet var btnLike: FaveButton!
-    @IBOutlet weak var lblAdress: UILabel!
-    @IBOutlet weak var lblPhone: UILabel!
-    @IBOutlet weak var lblOwner: UILabel!
+    
+    @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var lblQuan: UILabel!
+    @IBOutlet weak var lblDIenTich: UILabel!
+    @IBOutlet weak var lblGia: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var myHouse: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

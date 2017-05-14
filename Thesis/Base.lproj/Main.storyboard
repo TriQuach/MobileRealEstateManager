@@ -501,25 +501,25 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P92-12-B1I">
                                                     <rect key="frame" x="151.5" y="10" width="213.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diện tích" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wau-cK-bER">
-                                                    <rect key="frame" x="151.5" y="59" width="65" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <rect key="frame" x="151.5" y="59" width="63.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAo-Xr-Spt">
                                                     <rect key="frame" x="151" y="36" width="24" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quận/huyện" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UN0-xm-Xhm">
-                                                    <rect key="frame" x="151.5" y="82" width="89.5" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <rect key="frame" x="151.5" y="82" width="87" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -573,9 +573,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblAdress" destination="QAo-Xr-Spt" id="Zoe-w8-7Wk"/>
-                                            <outlet property="lblOwner" destination="P92-12-B1I" id="1od-pk-k4r"/>
-                                            <outlet property="lblPhone" destination="wau-cK-bER" id="uJq-aU-4dA"/>
+                                            <outlet property="lblDIenTich" destination="IMy-3D-fxf" id="6c2-Sj-5xa"/>
+                                            <outlet property="lblDate" destination="5cg-4m-Sdd" id="eDH-rx-Nfe"/>
+                                            <outlet property="lblGia" destination="6Ef-mV-0le" id="oso-62-Adx"/>
+                                            <outlet property="lblQuan" destination="QPR-aI-7Ga" id="9Oy-q2-FLc"/>
+                                            <outlet property="lblTitle" destination="P92-12-B1I" id="57w-uj-qSo"/>
                                             <outlet property="myHouse" destination="rX6-03-ub4" id="eAG-BS-pDZ"/>
                                         </connections>
                                     </tableViewCell>
