@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="93P-OD-JwY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="93P-OD-JwY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -696,7 +696,54 @@
             </objects>
             <point key="canvasLocation" x="950" y="1533"/>
         </scene>
-        <!--asdasd-->
+        <!--Estate Detail Owner View Controller-->
+        <scene sceneID="VKD-C9-KKZ">
+            <objects>
+                <viewController storyboardIdentifier="EstateDetailOwner" automaticallyAdjustsScrollViewInsets="NO" id="ga7-Vl-e1K" customClass="EstateDetailOwnerViewController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m0X-Ew-DMw"/>
+                        <viewControllerLayoutGuide type="bottom" id="MEj-Cb-PZQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QAj-o8-UXW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Zj-42-bmN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="980"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7n4-1a-9cf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="53L-iE-4et"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7n4-1a-9cf" secondAttribute="trailing" id="E1B-D6-0XE"/>
+                                    <constraint firstItem="7n4-1a-9cf" firstAttribute="leading" secondItem="6Zj-42-bmN" secondAttribute="leading" id="S64-Au-zPo"/>
+                                    <constraint firstItem="7n4-1a-9cf" firstAttribute="width" secondItem="6Zj-42-bmN" secondAttribute="width" id="XGx-bp-VoT"/>
+                                    <constraint firstItem="7n4-1a-9cf" firstAttribute="top" secondItem="6Zj-42-bmN" secondAttribute="top" id="i7K-Oi-g6D"/>
+                                    <constraint firstAttribute="bottom" secondItem="7n4-1a-9cf" secondAttribute="bottom" id="zwq-8E-pqK"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6Zj-42-bmN" secondAttribute="trailing" id="N8Q-aM-f5e"/>
+                            <constraint firstItem="MEj-Cb-PZQ" firstAttribute="top" secondItem="6Zj-42-bmN" secondAttribute="bottom" id="bCu-q3-bSJ"/>
+                            <constraint firstItem="6Zj-42-bmN" firstAttribute="top" secondItem="m0X-Ew-DMw" secondAttribute="bottom" id="x34-3p-OOk"/>
+                            <constraint firstItem="6Zj-42-bmN" firstAttribute="leading" secondItem="QAj-o8-UXW" secondAttribute="leading" id="zmA-wq-kWR"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1000"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oml-6o-WUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="2556"/>
+        </scene>
+        <!--Title-->
         <scene sceneID="Mi0-eq-fsi">
             <objects>
                 <viewController storyboardIdentifier="EstateDetailBuyer" automaticallyAdjustsScrollViewInsets="NO" id="5ud-b0-AHN" customClass="EstateDetailBuyerController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
@@ -1024,7 +1071,7 @@
                             <constraint firstItem="4ji-U5-5sp" firstAttribute="width" secondItem="TLa-Cz-5i7" secondAttribute="width" id="qnV-nI-sbs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="asdasd" id="03i-QB-Y5D"/>
+                    <navigationItem key="navigationItem" title="Title" id="2VK-rB-yWz"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
@@ -1038,36 +1085,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mE3-Tl-Org" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="101.59999999999999" y="1350.224887556222"/>
-        </scene>
-        <!--Estate Detail Owner Controller-->
-        <scene sceneID="8ev-M7-wK1">
-            <objects>
-                <viewController restorationIdentifier="EstateDetailOwner" storyboardIdentifier="EstateDetailOwner" id="FRC-TY-Tf9" customClass="EstateDetailOwnerController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="j6F-Er-s0A"/>
-                        <viewControllerLayoutGuide type="bottom" id="tFU-qy-8jR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vAW-sA-3UF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="asdasd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1k-C9-b2a">
-                                <rect key="frame" x="111" y="194" width="122" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="abc" destination="j1k-C9-b2a" id="ibu-Oz-iHr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iAR-6o-Khb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="950" y="1263"/>
         </scene>
         <!--Detail Cuoc Hen View Controller-->
         <scene sceneID="WOF-qD-lZH">

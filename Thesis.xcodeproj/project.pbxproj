@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4D95669C054C48BA66D1599A /* Pods_Thesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */; };
+		E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */; };
+		E0DE60201ECCB9EB00076CF1 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE601F1ECCB9EB00076CF1 /* edit.png */; };
+		E0DE60221ECCBBC300076CF1 /* edit2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60211ECCBBC300076CF1 /* edit2.png */; };
+		E0DE60241ECCBBEA00076CF1 /* edit3.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60231ECCBBEA00076CF1 /* edit3.png */; };
+		E0DE60261ECCBDD400076CF1 /* swift.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60251ECCBDD400076CF1 /* swift.png */; };
+		E0DE60281ECCBE4300076CF1 /* swift2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60271ECCBE4300076CF1 /* swift2.png */; };
 		E212267F1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212267E1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift */; };
 		E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21226801EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift */; };
 		E21315431E97E735003E6BDE /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = E213153C1E97E735003E6BDE /* calendar.png */; };
@@ -74,6 +80,12 @@
 		075AC13147009EEB3D0B6932 /* Pods-Thesis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.debug.xcconfig"; sourceTree = "<group>"; };
 		4D611505BE1607FDA2D3C29D /* Pods-Thesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.release.xcconfig"; sourceTree = "<group>"; };
 		85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailOwnerViewController.swift; sourceTree = "<group>"; };
+		E0DE601F1ECCB9EB00076CF1 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		E0DE60211ECCBBC300076CF1 /* edit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit2.png; sourceTree = "<group>"; };
+		E0DE60231ECCBBEA00076CF1 /* edit3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit3.png; sourceTree = "<group>"; };
+		E0DE60251ECCBDD400076CF1 /* swift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift.png; sourceTree = "<group>"; };
+		E0DE60271ECCBE4300076CF1 /* swift2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift2.png; sourceTree = "<group>"; };
 		E212267E1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E21226801EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E213153C1E97E735003E6BDE /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -182,6 +194,7 @@
 				E23DD24E1EB62DB6007652F6 /* DetailCuocHenViewController.swift */,
 				E272A89C1EBF35F700D6A9BC /* LogInViewController.swift */,
 				E2F8E9311EC76AF100EDD5F2 /* SignUpViewController.swift */,
+				E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -189,6 +202,11 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0DE60251ECCBDD400076CF1 /* swift.png */,
+				E0DE60271ECCBE4300076CF1 /* swift2.png */,
+				E0DE60211ECCBBC300076CF1 /* edit2.png */,
+				E0DE60231ECCBBEA00076CF1 /* edit3.png */,
+				E0DE601F1ECCB9EB00076CF1 /* edit.png */,
 				E27785951EC8BCF800B47FA5 /* house4.jpg */,
 				E27785961EC8BCF800B47FA5 /* house5.jpg */,
 				E27785971EC8BCF800B47FA5 /* house6.jpg */,
@@ -363,8 +381,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0DE60221ECCBBC300076CF1 /* edit2.png in Resources */,
+				E0DE60261ECCBDD400076CF1 /* swift.png in Resources */,
 				E295D0861EBF095900A746FA /* Screen Shot 2017-05-07 at 2.50.22 PM.png in Resources */,
 				E21315471E97E735003E6BDE /* house3.jpg in Resources */,
+				E0DE60201ECCB9EB00076CF1 /* edit.png in Resources */,
 				E277859E1EC8BCF800B47FA5 /* house7.jpg in Resources */,
 				E21315461E97E735003E6BDE /* house2.jpg in Resources */,
 				E21A2CD01EC26FF3008BAAC0 /* dislike.png in Resources */,
@@ -378,6 +399,7 @@
 				E2A195DA1EC24B350080914E /* like.png in Resources */,
 				E2C8F2261EC4342E007D04BE /* camera.png in Resources */,
 				E21315491E97E735003E6BDE /* speech-bubble.png in Resources */,
+				E0DE60241ECCBBEA00076CF1 /* edit3.png in Resources */,
 				E21315441E97E735003E6BDE /* home.png in Resources */,
 				E277859C1EC8BCF800B47FA5 /* house5.jpg in Resources */,
 				E21315431E97E735003E6BDE /* calendar.png in Resources */,
@@ -385,6 +407,7 @@
 				E2C7022B1E9933450056696E /* more-button-of-three-dots.png in Resources */,
 				E2F8E9061EC71E5900EDD5F2 /* phone-symbol-of-an-auricular-inside-a-circle.png in Resources */,
 				E277859F1EC8BCF800B47FA5 /* house8.jpg in Resources */,
+				E0DE60281ECCBE4300076CF1 /* swift2.png in Resources */,
 				E2A2B5861EA2463100BE0FF9 /* beach.jpg in Resources */,
 				E277859B1EC8BCF800B47FA5 /* house4.jpg in Resources */,
 				E2F8E9081EC71EBB00EDD5F2 /* email.png in Resources */,
@@ -479,6 +502,7 @@
 				E2A4786D1E9139AB00F843BB /* ViewController.swift in Sources */,
 				E2A4789F1E9144AC00F843BB /* BatDongSanController.swift in Sources */,
 				E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */,
+				E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */,
 				E213154D1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift in Sources */,
 				E217EF851E93CDA700068876 /* CuocHenController.swift in Sources */,
 			);

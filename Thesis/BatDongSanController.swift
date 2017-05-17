@@ -149,13 +149,23 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print (indexPath.row)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-        tabbar.name_house = estates[indexPath.row]
-     //   tabbar.status = temp!
-        
-        self.navigationController?.pushViewController(tabbar, animated: true)
+        if ( role == 0)
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+            tabbar.name_house = estates[indexPath.row]
+            //   tabbar.status = temp!
+            
+            self.navigationController?.pushViewController(tabbar, animated: true)
+        }
+        else
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailOwner") as! EstateDetailOwnerViewController
+            //   tabbar.status = temp!
+            
+            self.navigationController?.pushViewController(tabbar, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -187,5 +197,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         return [xoa]
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        var nav = self.navigationController?.navigationBar
+        // 2
+        nav?.barStyle = UIBarStyle.black
+        nav?.tintColor = UIColor.yellow
+    }
     
 }
