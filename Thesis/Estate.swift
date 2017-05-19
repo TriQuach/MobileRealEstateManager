@@ -9,13 +9,15 @@
 import Foundation
 class Estate
 {
+    var ID:Int
     var image:String
     var title:String
-    var gia:String
-    var dientich:String
+    var gia:Double
+    var dientich:Double
     var quan:String
     var date:String
-    init(image:String,title:String, gia:String, dientich:String, quan:String, date:String) {
+    init(ID:Int, image:String,title:String, gia:Double, dientich:Double, quan:String, date:String) {
+        self.ID = ID
         self.image = image
         self.title = title
         self.gia = gia
