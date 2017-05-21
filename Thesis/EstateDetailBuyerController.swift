@@ -15,38 +15,30 @@ import ReadMoreTextView
 class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITableViewDataSource,FaveButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
-    @IBOutlet weak var imgTest: UIImageView!
     @IBOutlet weak var myClv: UICollectionView!
     var arrayImage:[UIImage]?
-    @IBOutlet weak var myTbv2: UITableView!
     @IBOutlet weak var lblGhiChu: UILabel!
     @IBOutlet weak var myTbv1: UITableView!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var lbl: UILabel!
     
-    @IBOutlet var btnLike: FaveButton!
-    @IBOutlet var lblCare: UILabel!
-    @IBOutlet weak var myTbv: UITableView!
-    @IBOutlet weak var btnCare: UIButton!
-    @IBOutlet weak var btnDate: UIButton!
-    @IBOutlet weak var imgMainHouse: UIImageView!
+    
+    var takenImage = UIImage(named: "add2.png")
     let estates = ["house1", "house2","house3"]
     let descrip = ["abc","xyx","asd"]
-    
+    var count:Int = 0
     var name_house:String?
+    var mang:[UIImage] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        mang.append(takenImage!)
         myTbv1.dataSource = self
         myTbv1.delegate = self
         
         myClv.delegate = self
         myClv.dataSource = self
         arrayImage = []
-       //        
-//        imgMainHouse.image = UIImage(named: name_house! + ".jpg")
-//        self.navigationItem.title = "Chi tiết BĐS"
-//        
-   //     btnLike.isHidden = true
+       
         lbl.text = ""
         
         let textView = ReadMoreTextView(frame: CGRect(x: lbl.frame.origin.x, y: lbl.frame.origin.y, width: 240, height: 100))
@@ -91,14 +83,7 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
-    @IBAction func btnQuanTam(_ sender: Any) {
-
-        
-        btnLike.isHidden = false
-        btnLike.isSelected = true
-        
-        btnCare.isHidden = true
-    }
+    
     func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
         
     }
@@ -143,23 +128,25 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        var image = UIImage()
-        image = (info[UIImagePickerControllerOriginalImage] as! UIImage?)!
-        arrayImage?.append(image)
-        print (arrayImage?.count)
+        takenImage = (info[UIImagePickerControllerOriginalImage] as! UIImage?)!
         self.dismiss(animated: true, completion: nil)
-        
-        
+        if (count == 0)
+        {
+            self.mang.remove(at: 0)
+        }
+        count += 1
+        self.mang.append(takenImage!)
+        self.myClv.reloadData()
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return mang.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
      //   print(arrayImage?.count)
             
       //  print(arrayImage?[indexPath.row])
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyImageCollectionViewCell
+        cell.myImg.image = mang[indexPath.row]
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -168,6 +155,9 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         let itemWidth = (collectionView.bounds.width / itemsPerRow) - hardCodedPadding
         let itemHeight = collectionView.bounds.height - (2 * hardCodedPadding)
         return CGSize(width: itemWidth, height: itemHeight)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print (indexPath.row)
     }
     
 }

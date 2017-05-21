@@ -1025,12 +1025,11 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="135" height="140"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UVQ-zV-tRY">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVQ-zV-tRY">
                                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="140"/>
                                                                 </imageView>
                                                             </subviews>
                                                         </view>
-                                                        <color key="backgroundColor" red="0.61090159644952546" green="0.51949079436408641" blue="0.81330818965517238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="UVQ-zV-tRY" firstAttribute="top" secondItem="zD4-1h-usr" secondAttribute="top" id="Mfr-Ob-YgA"/>
                                                             <constraint firstAttribute="trailing" secondItem="UVQ-zV-tRY" secondAttribute="trailing" id="bdM-VL-OSS"/>

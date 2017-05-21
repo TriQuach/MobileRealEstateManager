@@ -59,21 +59,26 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
        parseJSON()
         
-        sleep(1)
+      //  sleep(5)
+    parseImage()
+     //   print (mang[0].image)
         
-        
-        parseImage()
-        print (mang[0].image)
+        for i in 0..<mang.count
+        {
+            print ( mang[i].image )
+        }
         
         myTbv.dataSource = self
         myTbv.delegate = self
         
         
         
+        
+        
     }
     func parseJSON()
     {
-        let req = URLRequest(url: URL(string: "http://172.29.87.135:8080/rem/rem_server/estate/getAll")!)
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -95,26 +100,28 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         as! String
                     
                     let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    
+                    print (id)
                     self.mang.append(new_estate)
                     self.mang2.append(new_estate)
                     self.mang3.append(new_estate)
                     
-                    self.myTbv.reloadData()
+                    
                 
                 }
-                
+                self.myTbv.reloadData()
             }catch{}
         }
         task.resume()
     }
     func parseImage()
     {
-        print (mang[0].image)
+   //     print (mang[0].gia)
         
         for i in 0..<mang.count
         {
             let id = mang[i].ID
-            let req = URLRequest(url: URL(string: "http://172.29.87.135:8080/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -125,7 +132,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     //print (photo)
                     self.mang[i].image = photo
                     
-                    
+                 self.myTbv.reloadData()
                 }catch{}
             }
             task.resume()
@@ -274,7 +281,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 self.mang3.remove(at: index.row)
                 self.myTbv.deleteRows(at: [index], with: .fade)
             }
-           self.count2 -= 1
+           
             
         }
         

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4D95669C054C48BA66D1599A /* Pods_Thesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */; };
+		E0A29F561ED1A511005AE69A /* camera2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F551ED1A511005AE69A /* camera2.png */; };
+		E0A29F581ED1A5E5005AE69A /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F571ED1A5E5005AE69A /* add.png */; };
+		E0A29F5A1ED1A6A3005AE69A /* add2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F591ED1A6A3005AE69A /* add2.png */; };
 		E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */; };
 		E0DE60201ECCB9EB00076CF1 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE601F1ECCB9EB00076CF1 /* edit.png */; };
 		E0DE60221ECCBBC300076CF1 /* edit2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60211ECCBBC300076CF1 /* edit2.png */; };
@@ -80,6 +83,9 @@
 		075AC13147009EEB3D0B6932 /* Pods-Thesis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.debug.xcconfig"; sourceTree = "<group>"; };
 		4D611505BE1607FDA2D3C29D /* Pods-Thesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.release.xcconfig"; sourceTree = "<group>"; };
 		85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0A29F551ED1A511005AE69A /* camera2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera2.png; sourceTree = "<group>"; };
+		E0A29F571ED1A5E5005AE69A /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		E0A29F591ED1A6A3005AE69A /* add2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add2.png; sourceTree = "<group>"; };
 		E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailOwnerViewController.swift; sourceTree = "<group>"; };
 		E0DE601F1ECCB9EB00076CF1 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		E0DE60211ECCBBC300076CF1 /* edit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit2.png; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0A29F551ED1A511005AE69A /* camera2.png */,
 				E0DE60251ECCBDD400076CF1 /* swift.png */,
 				E0DE60271ECCBE4300076CF1 /* swift2.png */,
 				E0DE60211ECCBBC300076CF1 /* edit2.png */,
@@ -236,6 +243,8 @@
 				E21315401E97E735003E6BDE /* house3.jpg */,
 				E21315411E97E735003E6BDE /* settings.png */,
 				E21315421E97E735003E6BDE /* speech-bubble.png */,
+				E0A29F571ED1A5E5005AE69A /* add.png */,
+				E0A29F591ED1A6A3005AE69A /* add2.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -387,11 +396,14 @@
 				E21315471E97E735003E6BDE /* house3.jpg in Resources */,
 				E0DE60201ECCB9EB00076CF1 /* edit.png in Resources */,
 				E277859E1EC8BCF800B47FA5 /* house7.jpg in Resources */,
+				E0A29F5A1ED1A6A3005AE69A /* add2.png in Resources */,
 				E21315461E97E735003E6BDE /* house2.jpg in Resources */,
 				E21A2CD01EC26FF3008BAAC0 /* dislike.png in Resources */,
 				E272A89F1EBF3B4600D6A9BC /* 518079-background-hd.jpg in Resources */,
+				E0A29F561ED1A511005AE69A /* camera2.png in Resources */,
 				E2A478751E9139AB00F843BB /* LaunchScreen.storyboard in Resources */,
 				E2C702291E9932AF0056696E /* more-details-circular-button.png in Resources */,
+				E0A29F581ED1A5E5005AE69A /* add.png in Resources */,
 				E2C702271E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png in Resources */,
 				E295D0881EBF0A0900A746FA /* 6790904-free-background-wallpaper.jpg in Resources */,
 				E2F8E9041EC713A600EDD5F2 /* telephone (1).png in Resources */,
