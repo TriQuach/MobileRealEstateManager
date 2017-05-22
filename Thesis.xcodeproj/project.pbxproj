@@ -17,6 +17,7 @@
 		E0DE60241ECCBBEA00076CF1 /* edit3.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60231ECCBBEA00076CF1 /* edit3.png */; };
 		E0DE60261ECCBDD400076CF1 /* swift.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60251ECCBDD400076CF1 /* swift.png */; };
 		E0DE60281ECCBE4300076CF1 /* swift2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60271ECCBE4300076CF1 /* swift2.png */; };
+		E0E2FBD91ED36CEC0048EDAD /* DangBaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */; };
 		E212267F1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212267E1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift */; };
 		E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21226801EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift */; };
 		E21315431E97E735003E6BDE /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = E213153C1E97E735003E6BDE /* calendar.png */; };
@@ -92,6 +93,7 @@
 		E0DE60231ECCBBEA00076CF1 /* edit3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit3.png; sourceTree = "<group>"; };
 		E0DE60251ECCBDD400076CF1 /* swift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift.png; sourceTree = "<group>"; };
 		E0DE60271ECCBE4300076CF1 /* swift2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift2.png; sourceTree = "<group>"; };
+		E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangBaiViewController.swift; sourceTree = "<group>"; };
 		E212267E1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E21226801EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E213153C1E97E735003E6BDE /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				E272A89C1EBF35F700D6A9BC /* LogInViewController.swift */,
 				E2F8E9311EC76AF100EDD5F2 /* SignUpViewController.swift */,
 				E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */,
+				E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				TargetAttributes = {
 					E2A478661E9139AB00F843BB = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 7E8DNHGMUK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -511,6 +515,7 @@
 				E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */,
 				E295D0841EBF06B800A746FA /* StartScreenCell2TableViewCell.swift in Sources */,
 				E23DD2511EB6319E007652F6 /* DetailCuocHenTableViewCell.swift in Sources */,
+				E0E2FBD91ED36CEC0048EDAD /* DangBaiViewController.swift in Sources */,
 				E2A4786D1E9139AB00F843BB /* ViewController.swift in Sources */,
 				E2A4789F1E9144AC00F843BB /* BatDongSanController.swift in Sources */,
 				E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */,
@@ -642,6 +647,7 @@
 			baseConfigurationReference = 075AC13147009EEB3D0B6932 /* Pods-Thesis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7E8DNHGMUK;
 				INFOPLIST_FILE = Thesis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TriQuach.Thesis;
@@ -655,6 +661,7 @@
 			baseConfigurationReference = 4D611505BE1607FDA2D3C29D /* Pods-Thesis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7E8DNHGMUK;
 				INFOPLIST_FILE = Thesis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TriQuach.Thesis;

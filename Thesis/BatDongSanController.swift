@@ -59,7 +59,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
        parseJSON()
         
-      //  sleep(5)
+        //sleep(5)
     parseImage()
      //   print (mang[0].image)
         
@@ -109,7 +109,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                 
                 }
-                self.myTbv.reloadData()
+                
+                
+                DispatchQueue.main.async(execute: {
+                    self.myTbv.reloadData()
+                })
             }catch{}
         }
         task.resume()
@@ -131,8 +135,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let photo = json["photo"] as! String
                     //print (photo)
                     self.mang[i].image = photo
+                
                     
-                 self.myTbv.reloadData()
+                    DispatchQueue.main.async(execute: {
+                        self.myTbv.reloadData()
+                    })
                 }catch{}
             }
             task.resume()

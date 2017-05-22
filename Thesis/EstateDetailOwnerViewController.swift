@@ -29,7 +29,9 @@ class EstateDetailOwnerViewController: UIViewController {
         // 3
         
         // 5
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit3.png"), style: .done, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit3.png"), style: .done, target: self, action: #selector(DangBai))
+        
+        
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imageView.contentMode = .scaleAspectFit
@@ -37,5 +39,11 @@ class EstateDetailOwnerViewController: UIViewController {
         let image = UIImage(named: "swift2.png")
         imageView.image = image
         navigationItem.titleView = imageView
+    }
+    func DangBai()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "DangBai") as! DangBaiViewController
+        self.navigationController?.pushViewController(tabbar, animated: true)
     }
 }

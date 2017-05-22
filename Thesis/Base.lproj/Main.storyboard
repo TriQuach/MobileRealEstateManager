@@ -743,6 +743,31 @@
             </objects>
             <point key="canvasLocation" x="102" y="2556"/>
         </scene>
+        <!--Dang Bai View Controller-->
+        <scene sceneID="jJr-Oo-fiD">
+            <objects>
+                <viewController storyboardIdentifier="DangBai" id="PAc-1i-yhU" customClass="DangBaiViewController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Qf-Eh-gkM"/>
+                        <viewControllerLayoutGuide type="bottom" id="yK4-g8-PHz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Etn-Ox-As0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJv-jZ-1Lk">
+                                <rect key="frame" x="181" y="217" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4c-i5-u7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="3416"/>
+        </scene>
         <!--Title-->
         <scene sceneID="Mi0-eq-fsi">
             <objects>
