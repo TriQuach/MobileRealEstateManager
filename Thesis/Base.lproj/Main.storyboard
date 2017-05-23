@@ -129,6 +129,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Đăng nhập" id="D6w-mt-FfE"/>
                     <connections>
+                        <outlet property="edtPass" destination="veP-mH-T7D" id="XmP-dC-d1q"/>
+                        <outlet property="edtUserName" destination="sAL-8l-GOF" id="ZdI-24-oAH"/>
                         <outlet property="lblLogIn" destination="OCb-Q6-33i" id="MR8-nU-Qbh"/>
                         <outlet property="lblSignUp" destination="Y56-bF-hfb" id="V6M-Nq-4BF"/>
                     </connections>

@@ -10,6 +10,8 @@ import UIKit
 import M13Checkbox
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var edtPass: UITextField!
+    @IBOutlet weak var edtUserName: UITextField!
     @IBOutlet weak var lblSignUp: UILabel!
     @IBOutlet var myCheckBox: M13Checkbox!
     @IBOutlet var lblLogIn: UILabel!
@@ -40,8 +42,80 @@ class LogInViewController: UIViewController {
 
 
     @IBAction func btnDangNhap(_ sender: Any) {
+        var check:Int = 0
         
-        self.navigationController?.popViewController(animated: true)
+        var message:String = ""
+        
+       // self.navigationController?.popViewController(animated: true)
+        var a:String = edtUserName.text!
+        let b:String = edtPass.text!
+        
+        //print (a)
+        
+        
+        let jsonObject: [String: String] = [
+            "UserName": a,
+            "Password": b
+        ]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        
+        
+        
+        
+        //  print (postString)
+        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/login")!)
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+                print (json["statuskey"])
+                
+              //  let x = json["statuskey"] as! Bool
+                
+                if (json["statuskey"] as? Bool)!
+                {
+                    
+                    print ("a")
+                    check = 1
+                    
+                    
+                }
+                else
+                {
+                    print ("fuck")
+                    check = 0
+                    message = json["message"] as! String
+                    //print (json["message"] as! String)
+                }
+              
+            }catch{}
+            
+            
+        }
+        task.resume()
+        
+        sleep(2)
+        print (message)
+        if ( check == 1)
+        {
+            self.navigationController?.popViewController(animated: true)
+        }
+        else if ( check == 0)
+        {
+            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
     }
     class UnderlinedLabel: UILabel {

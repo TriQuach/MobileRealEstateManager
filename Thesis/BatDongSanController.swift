@@ -45,6 +45,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var phone = ["123","456","789"]
     var address = ["abc","xyx","asd"]
     var test:String?
+    var newEstates:Estates!
     
     @IBOutlet weak var imgSearch: UIImageView!
     @IBOutlet weak var myTbv: UITableView!
@@ -57,16 +58,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         imgMore.isUserInteractionEnabled = true
         imgMore.addGestureRecognizer(tap)
         
-       parseJSON()
+        
+        parseUser(url: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")
+     //  parseJSON()
         
         //sleep(5)
-    parseImage()
+  //  parseImage()
      //   print (mang[0].image)
         
-        for i in 0..<mang.count
-        {
-            print ( mang[i].image )
-        }
         
         myTbv.dataSource = self
         myTbv.delegate = self
@@ -76,6 +75,71 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
     }
+    
+    func parseUser(url: String)
+    {
+        var listFullEstates:[FullEstate] = []
+        
+        
+        let req = URLRequest(url: URL(string: url)!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as AnyObject
+                let listEstates = json["estates"] as! [AnyObject]
+                for i in 0..<listEstates.count
+                {
+                    let user = listEstates[i]["owner"] as AnyObject
+                    let email = user["email"] as! String
+                    let password = user["password"] as! String
+                    let address = user["address"] as! String
+                    let typeID = user["typeId"] as! Int
+                    let fullName = user["fullName"] as! String
+                    let phone = user["phone"] as! String
+                    let id = user["id"] as! Int
+                    let name = user["name"] as! String
+//
+                    let newUser:User = User(email: email, password: password, address: address, typeID: typeID, fullName: fullName,phone: phone, id: id, name: name)
+                    
+                    let detailAddress = listEstates[i]["address"] as AnyObject
+                    let city = detailAddress["city"] as! String
+                    let district = detailAddress["district"] as! String
+                    let ward = detailAddress["ward"] as! String
+                    let street = detailAddress["street"] as! String
+                    let address2 = detailAddress["city"] as! String
+                    let id2 = detailAddress["id"] as! Int
+                    
+                    let newAdress:Address = Address(city: city, district: district, ward: ward, street: street, address: address2, id: id2)
+                    
+                    let available = listEstates[i]["available"] as! Bool
+                    let type = listEstates[i]["type"] as! String
+                    let postTime = listEstates[i]["postTime"] as! String
+                    let price = listEstates[i]["price"] as! Double
+                    let area = listEstates[i]["area"] as! Double
+                    let id3 = listEstates[i]["id"] as! Int
+                    let name3 = listEstates[i]["name"] as! String
+                    
+                    let newFullEstate:FullEstate = FullEstate(owner: newUser, address: newAdress, available: available, type: type, postTime: postTime, price: price, area: area, id: id3, name: name3)
+                    
+                    print (newFullEstate.address.street)
+                    listFullEstates.append(newFullEstate)
+                    
+                    
+
+                }
+                let statuskey = json["statuskey"] as! Bool
+                self.newEstates = Estates(listEstates: listFullEstates, statuskey: statuskey)
+             //   Estates.statuskey = statuskey
+                
+                
+                
+            }catch{}
+        }
+        task.resume()
+     //   return Estates
+       }
     func parseJSON()
     {
         let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")!)
@@ -85,6 +149,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             do
             {
                 let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
                 let estates = json["estates"] as! [AnyObject]
                 for i in 0..<estates.count
                 {
