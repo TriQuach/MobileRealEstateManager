@@ -471,7 +471,7 @@
             </objects>
             <point key="canvasLocation" x="34" y="224"/>
         </scene>
-        <!--BĐS-->
+        <!--Title-->
         <scene sceneID="EQ9-V3-XOP">
             <objects>
                 <viewController storyboardIdentifier="BDS" id="wdJ-Zi-fr9" customClass="BatDongSanController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
@@ -487,9 +487,6 @@
                                 <rect key="frame" x="0.0" y="20" width="300.5" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="b5p-TR-iJ4">
-                                <rect key="frame" x="177" y="333.5" width="20" height="20"/>
-                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more-button-of-three-dots.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
                                 <rect key="frame" x="315.5" y="20" width="44.5" height="44.5"/>
                                 <constraints>
@@ -594,10 +591,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CJF-mx-0IC">
+                                <rect key="frame" x="177" y="333.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6sX-mP-hfp" firstAttribute="leading" secondItem="bi4-Tm-bhm" secondAttribute="trailing" constant="15" id="8v2-Q8-clF"/>
+                            <constraint firstItem="CJF-mx-0IC" firstAttribute="centerX" secondItem="wpe-eh-bTF" secondAttribute="centerX" id="Gwe-1r-QAP"/>
                             <constraint firstItem="6sX-mP-hfp" firstAttribute="top" secondItem="LH5-SG-zxu" secondAttribute="bottom" id="JXB-cL-289"/>
                             <constraint firstAttribute="trailing" secondItem="6sX-mP-hfp" secondAttribute="trailing" constant="15" id="MMy-yA-gzS"/>
                             <constraint firstItem="wpe-eh-bTF" firstAttribute="leading" secondItem="Lql-Lb-otY" secondAttribute="leading" id="Q8u-ih-jPh"/>
@@ -607,16 +608,16 @@
                             <constraint firstItem="bi4-Tm-bhm" firstAttribute="width" secondItem="Lql-Lb-otY" secondAttribute="width" multiplier="0.8" id="hHl-4G-EVc"/>
                             <constraint firstItem="bi4-Tm-bhm" firstAttribute="leading" secondItem="Lql-Lb-otY" secondAttribute="leading" id="hI4-43-nPe"/>
                             <constraint firstItem="wpe-eh-bTF" firstAttribute="top" secondItem="bi4-Tm-bhm" secondAttribute="bottom" id="lH9-Yy-W1s"/>
-                            <constraint firstItem="b5p-TR-iJ4" firstAttribute="centerX" secondItem="wpe-eh-bTF" secondAttribute="centerX" id="ncU-5r-5XI"/>
-                            <constraint firstItem="b5p-TR-iJ4" firstAttribute="centerY" secondItem="wpe-eh-bTF" secondAttribute="centerY" id="oej-Qk-4ge"/>
+                            <constraint firstItem="CJF-mx-0IC" firstAttribute="centerY" secondItem="wpe-eh-bTF" secondAttribute="centerY" id="xJd-wV-C3n"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="BĐS" image="home.png" id="agD-EI-9DN"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="S6I-wQ-qXN"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imgMore" destination="6sX-mP-hfp" id="D2f-Bj-NJ7"/>
-                        <outlet property="loading" destination="b5p-TR-iJ4" id="6ev-Ww-Uuy"/>
+                        <outlet property="loading" destination="CJF-mx-0IC" id="IVh-wg-xpP"/>
                         <outlet property="myTbv" destination="wpe-eh-bTF" id="aub-YB-IHe"/>
                     </connections>
                 </viewController>

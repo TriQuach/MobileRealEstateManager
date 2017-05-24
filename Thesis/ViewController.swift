@@ -21,6 +21,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myTbv.dataSource = self
         self.automaticallyAdjustsScrollViewInsets = false
         
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -60,8 +60,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         imgMore.isUserInteractionEnabled = true
         imgMore.addGestureRecognizer(tap)
         
-        loading.isHidden = false
-        
+        loading.isHidden = true
         
         parseUser(url: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")
        
@@ -155,12 +154,15 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
        }
     func parseJSON()
     {
+        self.loading.isHidden = false
+        self.loading.startAnimating()
         let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
             do
             {
+                
                 let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
                 
                 let estates = json["estates"] as! [AnyObject]
@@ -218,6 +220,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     DispatchQueue.main.async(execute: {
                         self.myTbv.reloadData()
+                        self.loading.stopAnimating()
+                        self.loading.isHidden = true
                     })
                 }catch{}
             }
