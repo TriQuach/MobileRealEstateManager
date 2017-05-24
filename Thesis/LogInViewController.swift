@@ -10,11 +10,13 @@ import UIKit
 import M13Checkbox
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var edtPass: UITextField!
     @IBOutlet weak var edtUserName: UITextField!
     @IBOutlet weak var lblSignUp: UILabel!
     @IBOutlet var myCheckBox: M13Checkbox!
     @IBOutlet var lblLogIn: UILabel!
+    var message:String = ""
     var id:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,8 @@ class LogInViewController: UIViewController {
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         lblSignUp.isUserInteractionEnabled = true
         lblSignUp.addGestureRecognizer(tap)
+        
+        loading.isHidden = true
         
         
     }
@@ -42,9 +46,12 @@ class LogInViewController: UIViewController {
 
 
     @IBAction func btnDangNhap(_ sender: Any) {
+        
+        loading.isHidden = false
+        loading.startAnimating()
         var check:Int = 0
         
-        var message:String = ""
+        
         
        // self.navigationController?.popViewController(animated: true)
         var a:String = edtUserName.text!
@@ -78,14 +85,16 @@ class LogInViewController: UIViewController {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
                 
                 print (json["statuskey"])
-                
-              //  let x = json["statuskey"] as! Bool
-                
                 if (json["statuskey"] as? Bool)!
                 {
                     
                     print ("a")
-                    check = 1
+                    
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                        self.loading.stopAnimating()
+                        self.loading.isHidden = true
+                    }
                     
                     
                 }
@@ -93,8 +102,13 @@ class LogInViewController: UIViewController {
                 {
                     print ("fuck")
                     check = 0
-                    message = json["message"] as! String
-                    //print (json["message"] as! String)
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        self.loading.stopAnimating()
+                        self.loading.isHidden = true
+                    }
                 }
               
             }catch{}
@@ -103,19 +117,6 @@ class LogInViewController: UIViewController {
         }
         task.resume()
         
-        sleep(2)
-        print (message)
-        if ( check == 1)
-        {
-            self.navigationController?.popViewController(animated: true)
-        }
-        else if ( check == 0)
-        {
-            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            
-        }
         
     }
     class UnderlinedLabel: UILabel {

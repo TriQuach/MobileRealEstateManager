@@ -15,6 +15,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var count2 = 3
     var count:Int = 0
     var num_section:Int = 0
+    
 //    var mang:[Estate] = [Estate(image: "house1", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 123.0, dientich: 80.0, quan: "Quận 2", date: "13/5/2017"),Estate(image: "house2", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 456.6, dientich: 19.0, quan: "Quận 2", date: "13/5/2017"),Estate(image: "house3", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 234.5, dientich: 80, quan: "Quận 2", date: "13/5/2017")]
 //    
 //    var mang2:[Estate] = [Estate(image: "house4", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 345.9, dientich: 75.8, quan: "Quận 2", date: "13/5/2017"),Estate(image: "house5", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 3456.1, dientich: 90, quan: "Quận 2", date: "13/5/2017"),Estate(image: "house6", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 1234, dientich: 80, quan: "Quận 2", date: "13/5/2017")]
@@ -47,6 +48,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var test:String?
     var newEstates:Estates!
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var imgSearch: UIImageView!
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
@@ -58,12 +60,16 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         imgMore.isUserInteractionEnabled = true
         imgMore.addGestureRecognizer(tap)
         
+        loading.isHidden = false
+        
         
         parseUser(url: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")
-     //  parseJSON()
+       
+   //     print (x.listEstates[0].address)
+       parseJSON()
         
         //sleep(5)
-  //  parseImage()
+   // parseImage()
      //   print (mang[0].image)
         
         
@@ -79,7 +85,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseUser(url: String)
     {
         var listFullEstates:[FullEstate] = []
-        
+      //  var newEstates:Estates!
         
         let req = URLRequest(url: URL(string: url)!)
         
@@ -123,14 +129,19 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     let newFullEstate:FullEstate = FullEstate(owner: newUser, address: newAdress, available: available, type: type, postTime: postTime, price: price, area: area, id: id3, name: name3)
                     
-                    print (newFullEstate.address.street)
+                  //  print (newFullEstate.address.street)
                     listFullEstates.append(newFullEstate)
                     
                     
 
                 }
                 let statuskey = json["statuskey"] as! Bool
-                self.newEstates = Estates(listEstates: listFullEstates, statuskey: statuskey)
+                print (listFullEstates[1].postTime)
+                DispatchQueue.main.async {
+                      self.newEstates = Estates(listEstates: listFullEstates, statuskey: statuskey)
+                    print ( self.newEstates.statuskey)
+                }
+                
              //   Estates.statuskey = statuskey
                 
                 
@@ -138,7 +149,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             }catch{}
         }
         task.resume()
-     //   return Estates
+        
+        
+        
        }
     func parseJSON()
     {
@@ -178,6 +191,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 
                 DispatchQueue.main.async(execute: {
                     self.myTbv.reloadData()
+                    self.parseImage()
                 })
             }catch{}
         }
@@ -359,12 +373,35 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         return [xoa]
     }
-
-    override func viewDidDisappear(_ animated: Bool) {
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
         var nav = self.navigationController?.navigationBar
         // 2
         nav?.barStyle = UIBarStyle.black
         nav?.tintColor = UIColor.yellow
+        // 3
+        
+        // 5
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit3.png"), style: .done, target: self, action: #selector(DangBai))
+        
+        
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imageView.contentMode = .scaleAspectFit
+        // 4
+        let image = UIImage(named: "swift2.png")
+        imageView.image = image
+        navigationItem.titleView = imageView
     }
+    func DangBai()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "DangBai") as! DangBaiViewController
+        self.navigationController?.pushViewController(tabbar, animated: true)
+    }
+
+    
+    
     
 }
