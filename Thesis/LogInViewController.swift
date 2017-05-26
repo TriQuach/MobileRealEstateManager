@@ -26,6 +26,7 @@ class LogInViewController: UIViewController {
         lblSignUp.addGestureRecognizer(tap)
         
         loading.isHidden = true
+        loading.color = .black
         
         
     }

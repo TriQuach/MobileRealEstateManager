@@ -29,6 +29,8 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     var count:Int = 0
     var name_house:String?
     var mang:[UIImage] = []
+    
+    var passObject:Estates!
     override func viewDidLoad() {
         super.viewDidLoad()
         mang.append(takenImage!)
@@ -54,6 +56,12 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         subView.addSubview(textView)
         
         lblGhiChu.text = "Ghi chú Ghi chú Ghi chú Ghi chú Ghi chú Ghi chú Ghi chú "
+        
+        
+        for i in 0..<passObject.listEstates.count
+        {
+            print (passObject.listEstates[i].type)
+        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -16,6 +16,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var count:Int = 0
     var num_section:Int = 0
     
+    var passedObject:Estates!
+    
 //    var mang:[Estate] = [Estate(image: "house1", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 123.0, dientich: 80.0, quan: "Quận 2", date: "13/5/2017"),Estate(image: "house2", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 456.6, dientich: 19.0, quan: "Quận 2", date: "13/5/2017"),Estate(image: "house3", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 234.5, dientich: 80, quan: "Quận 2", date: "13/5/2017")]
 //    
 //    var mang2:[Estate] = [Estate(image: "house4", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 345.9, dientich: 75.8, quan: "Quận 2", date: "13/5/2017"),Estate(image: "house5", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 3456.1, dientich: 90, quan: "Quận 2", date: "13/5/2017"),Estate(image: "house6", title: "Bán chung cư Cantavil diện tích 80, 2m2 ban công Đông Nam", gia: 1234, dientich: 80, quan: "Quận 2", date: "13/5/2017")]
@@ -59,6 +61,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
         imgMore.isUserInteractionEnabled = true
         imgMore.addGestureRecognizer(tap)
+        
+        loading.color = .black
         
         loading.isHidden = true
         
@@ -118,6 +122,22 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     let newAdress:Address = Address(city: city, district: district, ward: ward, street: street, address: address2, id: id2)
                     
+                    let detail = listEstates[i]["detail"] as AnyObject
+                    let bathroom = detail["bathroom"] as! Int
+                    let bedroom = detail["bedroom"] as! Int
+                    let condition = detail["condition"] as! String
+                    let description = detail["description"] as! String
+                    let floor = detail["floor"] as! Int
+                    let length = detail["length"] as! Double
+                    let width = detail["width"] as! Double
+                    let idDetail = detail["id"] as! Int
+                    
+                    let newDetail:Detail = Detail(bathroom: bathroom, bedroom: bedroom, condition: condition, description: description, floor: floor, length: length, width: width, id: id)
+                    
+               //    print (newDetail.description)
+                    
+                    
+                    
                     let available = listEstates[i]["available"] as! Bool
                     let type = listEstates[i]["type"] as! String
                     let postTime = listEstates[i]["postTime"] as! String
@@ -126,19 +146,24 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let id3 = listEstates[i]["id"] as! Int
                     let name3 = listEstates[i]["name"] as! String
                     
-                    let newFullEstate:FullEstate = FullEstate(owner: newUser, address: newAdress, available: available, type: type, postTime: postTime, price: price, area: area, id: id3, name: name3)
+                    let newFullEstate:FullEstate = FullEstate(owner: newUser, address: newAdress, detail: newDetail, available: available, type: type, postTime: postTime, price: price, area: area, id: id3, name: name3)
+                    
+                    
+                    
                     
                   //  print (newFullEstate.address.street)
                     listFullEstates.append(newFullEstate)
+                    print (listFullEstates[i].detail.floor)
+                    
                     
                     
 
                 }
                 let statuskey = json["statuskey"] as! Bool
-                print (listFullEstates[1].postTime)
+               // print (listFullEstates[1].postTime)
                 DispatchQueue.main.async {
                       self.newEstates = Estates(listEstates: listFullEstates, statuskey: statuskey)
-                    print ( self.newEstates.statuskey)
+                   // print ( self.newEstates.statuskey)
                 }
                 
              //   Estates.statuskey = statuskey
@@ -181,7 +206,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
                     
-                    print (id)
+                   // print (id)
                     self.mang.append(new_estate)
                     self.mang2.append(new_estate)
                     self.mang3.append(new_estate)
@@ -334,6 +359,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+            tabbar.passObject = newEstates
             tabbar.name_house = estates[indexPath.row]
             //   tabbar.status = temp!
             
