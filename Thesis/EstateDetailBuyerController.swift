@@ -15,6 +15,7 @@ import ReadMoreTextView
 class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITableViewDataSource,FaveButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
+    
     @IBOutlet weak var myClv: UICollectionView!
     var arrayImage:[UIImage]?
     @IBOutlet weak var lblGhiChu: UILabel!
@@ -41,27 +42,9 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         myClv.dataSource = self
         arrayImage = []
        
-        lbl.text = ""
-        
-        let textView = ReadMoreTextView(frame: CGRect(x: lbl.frame.origin.x, y: lbl.frame.origin.y, width: 240, height: 100))
         
         
-        textView.text = "Lorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum ipsum dolorLorem ipsum"
         
-        textView.shouldTrim = true
-        textView.maximumNumberOfLines = 3
-        textView.attributedReadMoreText = NSAttributedString(string: "... Read more")
-        textView.attributedReadLessText = NSAttributedString(string: " Read less")
-       // self.view.addSubview(textView)
-        subView.addSubview(textView)
-        
-        lblGhiChu.text = "Ghi chú Ghi chú Ghi chú Ghi chú Ghi chú Ghi chú Ghi chú "
-        
-        
-        for i in 0..<passObject.listEstates.count
-        {
-            print (passObject.listEstates[i].type)
-        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -104,6 +87,8 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         // Create the dialog
         let popup = PopupDialog(title: title, message: message, image: image)
         
+        
+        
         // Create first button
         let buttonOne = CancelButton(title: "CANCEL") {
             
@@ -121,6 +106,7 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         
         // Add buttons to dialog
         popup.addButtons([buttonOne, buttonTwo, buttonThree])
+        
         
         // Present dialog
         self.present(popup, animated: true, completion: nil)
@@ -165,7 +151,7 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         return CGSize(width: itemWidth, height: itemHeight)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print (indexPath.row)
+     //   print (indexPath.row)
     }
     
     override func viewDidAppear(_ animated: Bool) {

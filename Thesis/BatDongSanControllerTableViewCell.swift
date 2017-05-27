@@ -11,6 +11,7 @@ import FaveButton
 class BatDongSanControllerTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var btnAddEstate: UIButton!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblQuan: UILabel!
     @IBOutlet weak var lblDIenTich: UILabel!

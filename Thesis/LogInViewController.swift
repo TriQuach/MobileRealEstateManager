@@ -16,6 +16,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var lblSignUp: UILabel!
     @IBOutlet var myCheckBox: M13Checkbox!
     @IBOutlet var lblLogIn: UILabel!
+    var storyboardID: String = ""
     var message:String = ""
     var id:String = ""
     override func viewDidLoad() {
@@ -92,9 +93,17 @@ class LogInViewController: UIViewController {
                     print ("a")
                     
                     DispatchQueue.main.async {
-                        self.navigationController?.popViewController(animated: true)
+                        
                         self.loading.stopAnimating()
                         self.loading.isHidden = true
+                        
+                        if (self.storyboardID == "BDS")
+                        {
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let tabbar = storyboard.instantiateViewController(withIdentifier: "DangMoi") as! DangMoiViewController
+                            
+                            self.navigationController?.pushViewController(tabbar, animated: true)
+                        }
                     }
                     
                     

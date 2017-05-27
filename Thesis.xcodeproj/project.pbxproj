@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4D95669C054C48BA66D1599A /* Pods_Thesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */; };
+		E03B4D121ED950E900C85430 /* ChuaLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B4D111ED950E900C85430 /* ChuaLoginTableViewCell.swift */; };
+		E03B4D141ED970E900C85430 /* DangMoiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B4D131ED970E900C85430 /* DangMoiViewController.swift */; };
+		E03B4D161ED9772F00C85430 /* combo-box.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D151ED9772F00C85430 /* combo-box.png */; };
+		E03B4D181ED97F1600C85430 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D171ED97F1600C85430 /* tick.png */; };
+		E03B4D1A1ED97F6D00C85430 /* tick2.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D191ED97F6D00C85430 /* tick2.png */; };
+		E03B4D1C1ED97FA600C85430 /* tick3.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1B1ED97FA600C85430 /* tick3.png */; };
+		E08F968D1ED84807009D96D7 /* interested.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F96891ED84807009D96D7 /* interested.png */; };
+		E08F968E1ED84807009D96D7 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968A1ED84807009D96D7 /* location.png */; };
+		E08F968F1ED84807009D96D7 /* phone-call.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968B1ED84807009D96D7 /* phone-call.png */; };
+		E08F96901ED84807009D96D7 /* schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968C1ED84807009D96D7 /* schedule.png */; };
 		E09C98161ED481660032C80B /* FullEstate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C98151ED481660032C80B /* FullEstate.swift */; };
 		E09C98181ED482E80032C80B /* Estates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C98171ED482E80032C80B /* Estates.swift */; };
 		E0A29F561ED1A511005AE69A /* camera2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F551ED1A511005AE69A /* camera2.png */; };
@@ -89,6 +99,16 @@
 		075AC13147009EEB3D0B6932 /* Pods-Thesis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.debug.xcconfig"; sourceTree = "<group>"; };
 		4D611505BE1607FDA2D3C29D /* Pods-Thesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.release.xcconfig"; sourceTree = "<group>"; };
 		85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E03B4D111ED950E900C85430 /* ChuaLoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuaLoginTableViewCell.swift; sourceTree = "<group>"; };
+		E03B4D131ED970E900C85430 /* DangMoiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoiViewController.swift; sourceTree = "<group>"; };
+		E03B4D151ED9772F00C85430 /* combo-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combo-box.png"; sourceTree = "<group>"; };
+		E03B4D171ED97F1600C85430 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		E03B4D191ED97F6D00C85430 /* tick2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick2.png; sourceTree = "<group>"; };
+		E03B4D1B1ED97FA600C85430 /* tick3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick3.png; sourceTree = "<group>"; };
+		E08F96891ED84807009D96D7 /* interested.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interested.png; sourceTree = "<group>"; };
+		E08F968A1ED84807009D96D7 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
+		E08F968B1ED84807009D96D7 /* phone-call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-call.png"; sourceTree = "<group>"; };
+		E08F968C1ED84807009D96D7 /* schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule.png; sourceTree = "<group>"; };
 		E09C98151ED481660032C80B /* FullEstate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullEstate.swift; sourceTree = "<group>"; };
 		E09C98171ED482E80032C80B /* Estates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estates.swift; sourceTree = "<group>"; };
 		E0A29F551ED1A511005AE69A /* camera2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera2.png; sourceTree = "<group>"; };
@@ -214,6 +234,7 @@
 				E2F8E9311EC76AF100EDD5F2 /* SignUpViewController.swift */,
 				E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */,
 				E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */,
+				E03B4D131ED970E900C85430 /* DangMoiViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -221,6 +242,14 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E03B4D171ED97F1600C85430 /* tick.png */,
+				E03B4D1B1ED97FA600C85430 /* tick3.png */,
+				E03B4D191ED97F6D00C85430 /* tick2.png */,
+				E03B4D151ED9772F00C85430 /* combo-box.png */,
+				E08F96891ED84807009D96D7 /* interested.png */,
+				E08F968A1ED84807009D96D7 /* location.png */,
+				E08F968B1ED84807009D96D7 /* phone-call.png */,
+				E08F968C1ED84807009D96D7 /* schedule.png */,
 				E0A29F551ED1A511005AE69A /* camera2.png */,
 				E0DE60251ECCBDD400076CF1 /* swift.png */,
 				E0DE60271ECCBE4300076CF1 /* swift2.png */,
@@ -275,6 +304,7 @@
 				E295D0831EBF06B800A746FA /* StartScreenCell2TableViewCell.swift */,
 				E2F8E90B1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift */,
 				E2F8E90D1EC7328100EDD5F2 /* MyImageTableViewCell.swift */,
+				E03B4D111ED950E900C85430 /* ChuaLoginTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -410,20 +440,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0DE60221ECCBBC300076CF1 /* edit2.png in Resources */,
+				E08F968F1ED84807009D96D7 /* phone-call.png in Resources */,
 				E0DE60261ECCBDD400076CF1 /* swift.png in Resources */,
 				E295D0861EBF095900A746FA /* Screen Shot 2017-05-07 at 2.50.22 PM.png in Resources */,
 				E21315471E97E735003E6BDE /* house3.jpg in Resources */,
+				E08F968E1ED84807009D96D7 /* location.png in Resources */,
 				E0DE60201ECCB9EB00076CF1 /* edit.png in Resources */,
 				E277859E1EC8BCF800B47FA5 /* house7.jpg in Resources */,
 				E0A29F5A1ED1A6A3005AE69A /* add2.png in Resources */,
 				E21315461E97E735003E6BDE /* house2.jpg in Resources */,
 				E21A2CD01EC26FF3008BAAC0 /* dislike.png in Resources */,
 				E272A89F1EBF3B4600D6A9BC /* 518079-background-hd.jpg in Resources */,
+				E08F96901ED84807009D96D7 /* schedule.png in Resources */,
 				E0A29F561ED1A511005AE69A /* camera2.png in Resources */,
 				E2A478751E9139AB00F843BB /* LaunchScreen.storyboard in Resources */,
 				E2C702291E9932AF0056696E /* more-details-circular-button.png in Resources */,
 				E0A29F581ED1A5E5005AE69A /* add.png in Resources */,
 				E2C702271E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png in Resources */,
+				E03B4D1A1ED97F6D00C85430 /* tick2.png in Resources */,
 				E295D0881EBF0A0900A746FA /* 6790904-free-background-wallpaper.jpg in Resources */,
 				E2F8E9041EC713A600EDD5F2 /* telephone (1).png in Resources */,
 				E2F8E90A1EC71F0500EDD5F2 /* google.png in Resources */,
@@ -431,9 +465,11 @@
 				E2C8F2261EC4342E007D04BE /* camera.png in Resources */,
 				E21315491E97E735003E6BDE /* speech-bubble.png in Resources */,
 				E0DE60241ECCBBEA00076CF1 /* edit3.png in Resources */,
+				E03B4D1C1ED97FA600C85430 /* tick3.png in Resources */,
 				E21315441E97E735003E6BDE /* home.png in Resources */,
 				E277859C1EC8BCF800B47FA5 /* house5.jpg in Resources */,
 				E21315431E97E735003E6BDE /* calendar.png in Resources */,
+				E03B4D181ED97F1600C85430 /* tick.png in Resources */,
 				E2A478721E9139AB00F843BB /* Assets.xcassets in Resources */,
 				E2C7022B1E9933450056696E /* more-button-of-three-dots.png in Resources */,
 				E2F8E9061EC71E5900EDD5F2 /* phone-symbol-of-an-auricular-inside-a-circle.png in Resources */,
@@ -441,9 +477,11 @@
 				E0DE60281ECCBE4300076CF1 /* swift2.png in Resources */,
 				E2A2B5861EA2463100BE0FF9 /* beach.jpg in Resources */,
 				E277859B1EC8BCF800B47FA5 /* house4.jpg in Resources */,
+				E08F968D1ED84807009D96D7 /* interested.png in Resources */,
 				E2F8E9081EC71EBB00EDD5F2 /* email.png in Resources */,
 				E2D630381E9F5469004F3E45 /* more.png in Resources */,
 				E21315481E97E735003E6BDE /* settings.png in Resources */,
+				E03B4D161ED9772F00C85430 /* combo-box.png in Resources */,
 				E27785A01EC8BCF800B47FA5 /* house9.jpg in Resources */,
 				E277859D1EC8BCF800B47FA5 /* house6.jpg in Resources */,
 				E21315451E97E735003E6BDE /* house1.jpg in Resources */,
@@ -508,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E295D0821EBF069800A746FA /* StartScreenCell1TableViewCell.swift in Sources */,
+				E03B4D121ED950E900C85430 /* ChuaLoginTableViewCell.swift in Sources */,
 				E0E7EB631ED7571D009DEE2E /* Detail.swift in Sources */,
 				E27785941EC8B55700B47FA5 /* Estate.swift in Sources */,
 				E2F8E90E1EC7328100EDD5F2 /* MyImageTableViewCell.swift in Sources */,
@@ -515,6 +554,7 @@
 				E0C7B46F1ED4452B008D7204 /* User.swift in Sources */,
 				E272A89D1EBF35F700D6A9BC /* LogInViewController.swift in Sources */,
 				E217EF821E93CD0400068876 /* TinNhanController.swift in Sources */,
+				E03B4D141ED970E900C85430 /* DangMoiViewController.swift in Sources */,
 				E212267F1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift in Sources */,
 				E2F8E9321EC76AF100EDD5F2 /* SignUpViewController.swift in Sources */,
 				E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */,
