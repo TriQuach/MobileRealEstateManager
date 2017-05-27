@@ -114,24 +114,20 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     
     
     @IBAction func btnActionCamera(_ sender: Any) {
-        let myPicker = UIImagePickerController()
-        myPicker.delegate = self
-        myPicker.sourceType = .photoLibrary
-        present(myPicker, animated: true, completion: nil)
+        
         
         
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         takenImage = (info[UIImagePickerControllerOriginalImage] as! UIImage?)!
         self.dismiss(animated: true, completion: nil)
-        if (count == 0)
-        {
-            self.mang.remove(at: 0)
-        }
-        count += 1
+        
+        self.mang.remove(at: mang.count-1)
         self.mang.append(takenImage!)
+        self.mang.append(UIImage(named: "add4.png")!)
         self.myClv.reloadData()
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mang.count
     }
@@ -151,7 +147,15 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         return CGSize(width: itemWidth, height: itemHeight)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-     //   print (indexPath.row)
+        
+        if (indexPath.row == mang.count - 1)
+        {
+            let myPicker = UIImagePickerController()
+            myPicker.delegate = self
+            myPicker.sourceType = .photoLibrary
+            present(myPicker, animated: true, completion: nil)
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

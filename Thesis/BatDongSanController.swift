@@ -406,7 +406,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             else if ( indexPath.section == 1)
             {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
-                //cell.myHouse.image = UIImage(named: mang2[indexPath.row].image + ".jpg")
+                //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
                 let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
                 cell.myHouse.image = UIImage(data: data)
                 cell.lblGia.text = String(mang2[indexPath.row].gia)
