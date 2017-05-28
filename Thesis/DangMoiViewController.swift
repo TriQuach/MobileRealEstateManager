@@ -9,16 +9,25 @@
 import UIKit
 import M13Checkbox
 import Dropper
-class DangMoiViewController: UIViewController {
+class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+    @IBOutlet weak var myClv: UICollectionView!
     @IBOutlet weak var lblThanhPho: UILabel!
     @IBOutlet weak var btnThanhPho: UIButton!
     let dropper = Dropper(width: 75, height: 200)
+    var takenImage = UIImage(named: "add2.png")
+    var mang:[UIImage] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         lblThanhPho.isHidden = true
+        myClv.delegate = self
+        myClv.dataSource = self
+        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        mang.append(takenImage!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,10 +71,53 @@ class DangMoiViewController: UIViewController {
     }
     func DangBai()
     {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let tabbar = storyboard.instantiateViewController(withIdentifier: "BDS") as! BatDongSanController
+//        tabbar.isLogin = true
+//        self.navigationController?.pushViewController(tabbar, animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabbar = storyboard.instantiateViewController(withIdentifier: "BDS") as! BatDongSanController
-        tabbar.isLogin = true
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        let login : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
+        login.isLogin = true
         self.navigationController?.pushViewController(tabbar, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return mang.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DangMoiCollectionViewCell
+        cell.myImg.image = mang[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemsPerRow:CGFloat = 2.5
+        let hardCodedPadding:CGFloat = 5
+        let itemWidth = (collectionView.bounds.width / itemsPerRow) - hardCodedPadding
+        let itemHeight = collectionView.bounds.height - (2 * hardCodedPadding)
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        takenImage = (info[UIImagePickerControllerOriginalImage] as! UIImage?)!
+        self.dismiss(animated: true, completion: nil)
+        
+        self.mang.remove(at: mang.count-1)
+        self.mang.append(takenImage!)
+        self.mang.append(UIImage(named: "add4.png")!)
+        self.myClv.reloadData()
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if (indexPath.row == mang.count - 1)
+        {
+            let myPicker = UIImagePickerController()
+            myPicker.delegate = self
+            myPicker.sourceType = .photoLibrary
+            present(myPicker, animated: true, completion: nil)
+        }
+        
     }
 
 }

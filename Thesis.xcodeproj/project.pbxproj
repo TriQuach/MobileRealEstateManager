@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D95669C054C48BA66D1599A /* Pods_Thesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */; };
+		E0267D2E1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */; };
 		E03B4D121ED950E900C85430 /* ChuaLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B4D111ED950E900C85430 /* ChuaLoginTableViewCell.swift */; };
 		E03B4D141ED970E900C85430 /* DangMoiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B4D131ED970E900C85430 /* DangMoiViewController.swift */; };
 		E03B4D161ED9772F00C85430 /* combo-box.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D151ED9772F00C85430 /* combo-box.png */; };
@@ -101,6 +102,7 @@
 		075AC13147009EEB3D0B6932 /* Pods-Thesis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.debug.xcconfig"; sourceTree = "<group>"; };
 		4D611505BE1607FDA2D3C29D /* Pods-Thesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.release.xcconfig"; sourceTree = "<group>"; };
 		85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoiCollectionViewCell.swift; sourceTree = "<group>"; };
 		E03B4D111ED950E900C85430 /* ChuaLoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuaLoginTableViewCell.swift; sourceTree = "<group>"; };
 		E03B4D131ED970E900C85430 /* DangMoiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoiViewController.swift; sourceTree = "<group>"; };
 		E03B4D151ED9772F00C85430 /* combo-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combo-box.png"; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				E2F8E9101EC739D200EDD5F2 /* MyImageCollectionViewCell.swift */,
+				E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */,
 			);
 			name = CollectionViewCell;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				E2A2B5881EA2514F00BE0FF9 /* Extension_UIView.swift in Sources */,
 				E23DD24F1EB62DB6007652F6 /* DetailCuocHenViewController.swift in Sources */,
 				E2A195DC1EC24DF60080914E /* Extension_UIImageView.swift in Sources */,
+				E0267D2E1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift in Sources */,
 				E2A4789B1E9140DF00F843BB /* Extension.swift in Sources */,
 				E2A2C3711E9A5C8400F4EF8F /* TimKiemController.swift in Sources */,
 				E2F8E9111EC739D200EDD5F2 /* MyImageCollectionViewCell.swift in Sources */,
