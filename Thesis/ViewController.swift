@@ -51,9 +51,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.row == 0)
         {
-            return (self.view.frame.height - self.topLayoutGuide.length) * 1 / 2
+            return (self.view.frame.height) * 1 / 2
         }
-        return (self.view.frame.height - self.topLayoutGuide.length)  / 4
+        return (self.view.frame.height)  / 4
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

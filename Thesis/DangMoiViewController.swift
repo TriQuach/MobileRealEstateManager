@@ -14,6 +14,25 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var myClv: UICollectionView!
     @IBOutlet weak var lblThanhPho: UILabel!
     @IBOutlet weak var btnThanhPho: UIButton!
+    
+    
+    @IBOutlet weak var edtTieuDe: UITextField!
+    @IBOutlet weak var edtGia: UITextField!
+    
+    @IBOutlet weak var edtDienTich: UITextField!
+    
+    @IBOutlet weak var edtChieuDai: UITextField!
+    @IBOutlet weak var edtChieuRong: UITextField!
+    @IBOutlet weak var edtSoTang: UITextField!
+    @IBOutlet weak var edtSoPhongNgu: UITextField!
+    @IBOutlet weak var edtSoPhongTam: UITextField!
+    @IBOutlet weak var edtTinhTrang: UITextField!
+    @IBOutlet weak var edtMoTa: UITextField!
+    @IBOutlet weak var img: UIImageView!
+    var flag:Bool = false
+    
+    @IBOutlet weak var innerView: UIView!
+    
     let dropper = Dropper(width: 75, height: 200)
     var takenImage = UIImage(named: "add2.png")
     var mang:[UIImage] = []
@@ -28,6 +47,53 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         mang.append(takenImage!)
+        
+        //let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+        //img.addCameraButton(x: 0, y: 0)
+                //btn.setImage(UIImage(named: "camera.png"), for: .normal)
+       // img.addCameraButton(btn: btn, x: 0, y: 0)
+              //  let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
+             //  img.isUserInteractionEnabled = true
+             //   img.addGestureRecognizer(tap)
+        
+        print (img.bounds.size.width)
+        print (img.bounds.size.height)
+        print ((self.navigationController?.navigationBar.frame.height)!)
+        
+//        let btn = UIButton(frame: CGRect(x: img.bounds.size.width - self.view.frame.width * 3 / 10, y: img.bounds.size.height + (self.navigationController?.navigationBar.frame.height)!, width: 20, height: 20))
+        
+        let btnCamera = UIButton(frame: CGRect(x: UIScreen.main.bounds.width * 0.8, y: img.bounds.size.height * 0.9, width: 20, height: 20))
+        
+        btnCamera.setImage(UIImage(named: "camera.png"), for: .normal)
+        
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
+          btnCamera.isUserInteractionEnabled = true
+           btnCamera.addGestureRecognizer(tap)
+        
+        let btnPhoto = UIButton(frame: CGRect(x: UIScreen.main.bounds.width * 0.9, y: img.bounds.size.height * 0.9, width: 20, height: 20))
+        
+        btnPhoto.setImage(UIImage(named: "picture.png"), for: .normal)
+        
+        let tap2:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
+        btnPhoto.isUserInteractionEnabled = true
+        btnPhoto.addGestureRecognizer(tap2)
+        
+        innerView.addSubview(btnCamera)
+        innerView.addSubview(btnPhoto)
+
+        
+        
+        
+    }
+    func imgMoreTapped()
+    {
+        let myPicker = UIImagePickerController()
+        myPicker.delegate = self
+        myPicker.sourceType = .photoLibrary
+        present(myPicker, animated: true, completion: nil)
+        flag = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,12 +169,21 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         takenImage = (info[UIImagePickerControllerOriginalImage] as! UIImage?)!
         self.dismiss(animated: true, completion: nil)
         
-        self.mang.remove(at: mang.count-1)
-        self.mang.append(takenImage!)
-        self.mang.append(UIImage(named: "add4.png")!)
-        self.myClv.reloadData()
+        if (flag)
+        {
+            img.image = takenImage
+        }
+        else
+        {
+            self.mang.remove(at: mang.count-1)
+            self.mang.append(takenImage!)
+            self.mang.append(UIImage(named: "add4.png")!)
+            self.myClv.reloadData()
+        }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        flag = false
         
         if (indexPath.row == mang.count - 1)
         {

@@ -70,7 +70,6 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
         
-        
     }
     
     func parseUser(url: String)

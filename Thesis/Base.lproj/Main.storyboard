@@ -29,7 +29,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kE2-J1-p7s">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-VR-evd">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-VR-evd">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiêu đề" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDS-Zv-3ox">
@@ -299,13 +299,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7R-Np-IUu">
-                                                <rect key="frame" x="219" y="826" width="97" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -338,6 +331,18 @@
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
                         <outlet property="btnThanhPho" destination="CT9-uG-8WG" id="MCz-QL-Lke"/>
+                        <outlet property="edtChieuDai" destination="Q7N-sd-7eD" id="fB5-iu-ukZ"/>
+                        <outlet property="edtChieuRong" destination="SBY-v6-3aU" id="fKM-c7-Z1J"/>
+                        <outlet property="edtDienTich" destination="p7f-FT-4WT" id="pfs-el-DGz"/>
+                        <outlet property="edtGia" destination="fK9-2N-mSX" id="Ppl-nf-ogN"/>
+                        <outlet property="edtMoTa" destination="9Zg-RH-AvD" id="adR-Vp-pai"/>
+                        <outlet property="edtSoPhongNgu" destination="H6d-X5-Wg9" id="jbp-Zb-dbS"/>
+                        <outlet property="edtSoPhongTam" destination="mFE-8e-7Wd" id="mxl-D6-shL"/>
+                        <outlet property="edtSoTang" destination="ngR-9T-WR7" id="2OZ-1e-E2z"/>
+                        <outlet property="edtTieuDe" destination="ngK-H3-3Af" id="19I-9N-pmj"/>
+                        <outlet property="edtTinhTrang" destination="5Db-KV-yqQ" id="tSs-Rq-MLo"/>
+                        <outlet property="img" destination="TPN-VR-evd" id="U7e-Hg-M8C"/>
+                        <outlet property="innerView" destination="kE2-J1-p7s" id="sHe-ss-D5d"/>
                         <outlet property="lblThanhPho" destination="BcU-V3-AdU" id="apr-1i-3Hc"/>
                         <outlet property="myClv" destination="qQq-SU-xd3" id="9De-OT-RNL"/>
                     </connections>
@@ -972,7 +977,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fp-Ua-zdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="880.79999999999995" y="471.8140929535233"/>
+            <point key="canvasLocation" x="831" y="436"/>
         </scene>
         <!--Tim Kiem Controller-->
         <scene sceneID="ZdY-eZ-8HV">
@@ -1813,8 +1818,8 @@
         <image name="calendar.png" width="32" height="32"/>
         <image name="camera.png" width="64" height="64"/>
         <image name="combo-box.png" width="64" height="64"/>
+        <image name="default_image.jpg" width="640" height="480"/>
         <image name="home.png" width="32" height="32"/>
-        <image name="house2.jpg" width="1024" height="629"/>
         <image name="house3.jpg" width="450" height="354"/>
         <image name="interested.png" width="64" height="64"/>
         <image name="location.png" width="64" height="64"/>
