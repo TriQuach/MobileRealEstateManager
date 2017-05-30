@@ -1,4 +1,5 @@
 PODS:
+  - DropDown (2)
   - Dropper (2.7.5)
   - FaveButton (2.0.3)
   - LTMorphingLabel (0.4.0)
@@ -7,6 +8,7 @@ PODS:
   - ReadMoreTextView (1.2.0)
 
 DEPENDENCIES:
+  - DropDown
   - Dropper
   - FaveButton (~> 2.0.3)
   - LTMorphingLabel
@@ -15,6 +17,7 @@ DEPENDENCIES:
   - ReadMoreTextView
 
 SPEC CHECKSUMS:
+  DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   Dropper: 6fb3bd5977f2ade0a332321b6846180d59e75000
   FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
   LTMorphingLabel: d9a85f16ac306f0e07321d6819964deb2dc69638
@@ -22,6 +25,6 @@ SPEC CHECKSUMS:
   PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
   ReadMoreTextView: c1207a23b3b2819a1be5230f5c8180721a88b19c
 
-PODFILE CHECKSUM: 1569f7ca8a711e5cee7cf83c6e7da469a50a02e8
+PODFILE CHECKSUM: b5327ef5d92f0d276dbedbb5666773cb74ead1c7
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

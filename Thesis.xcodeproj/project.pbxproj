@@ -19,6 +19,10 @@
 		E03B4D1C1ED97FA600C85430 /* tick3.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1B1ED97FA600C85430 /* tick3.png */; };
 		E03B4D1E1ED9F26600C85430 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1D1ED9F26600C85430 /* plus.png */; };
 		E03B4D201ED9F2DE00C85430 /* add4.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1F1ED9F2DE00C85430 /* add4.png */; };
+		E069E1421EDD4D69002B9E47 /* EstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */; };
+		E069E1441EDD4D84002B9E47 /* UserEstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */; };
+		E069E1661EDD60D1002B9E47 /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E069E1651EDD60D1002B9E47 /* down-arrow.png */; };
+		E069E1681EDD7AA9002B9E47 /* JsonSerializerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1671EDD7AA9002B9E47 /* JsonSerializerSwift.swift */; };
 		E08F968D1ED84807009D96D7 /* interested.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F96891ED84807009D96D7 /* interested.png */; };
 		E08F968E1ED84807009D96D7 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968A1ED84807009D96D7 /* location.png */; };
 		E08F968F1ED84807009D96D7 /* phone-call.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968B1ED84807009D96D7 /* phone-call.png */; };
@@ -115,6 +119,10 @@
 		E03B4D1B1ED97FA600C85430 /* tick3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick3.png; sourceTree = "<group>"; };
 		E03B4D1D1ED9F26600C85430 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		E03B4D1F1ED9F2DE00C85430 /* add4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add4.png; sourceTree = "<group>"; };
+		E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstatePostNew.swift; sourceTree = "<group>"; };
+		E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEstatePostNew.swift; sourceTree = "<group>"; };
+		E069E1651EDD60D1002B9E47 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
+		E069E1671EDD7AA9002B9E47 /* JsonSerializerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonSerializerSwift.swift; sourceTree = "<group>"; };
 		E08F96891ED84807009D96D7 /* interested.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interested.png; sourceTree = "<group>"; };
 		E08F968A1ED84807009D96D7 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		E08F968B1ED84807009D96D7 /* phone-call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-call.png"; sourceTree = "<group>"; };
@@ -252,6 +260,7 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E069E1651EDD60D1002B9E47 /* down-arrow.png */,
 				E028803E1EDC914500BEC26A /* picture.png */,
 				E028803C1EDC7B9500BEC26A /* default_image.jpg */,
 				E03B4D1F1ED9F2DE00C85430 /* add4.png */,
@@ -387,6 +396,9 @@
 				E09C98151ED481660032C80B /* FullEstate.swift */,
 				E09C98171ED482E80032C80B /* Estates.swift */,
 				E0E7EB621ED7571D009DEE2E /* Detail.swift */,
+				E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */,
+				E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */,
+				E069E1671EDD7AA9002B9E47 /* JsonSerializerSwift.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -480,6 +492,7 @@
 				E2F8E90A1EC71F0500EDD5F2 /* google.png in Resources */,
 				E2A195DA1EC24B350080914E /* like.png in Resources */,
 				E2C8F2261EC4342E007D04BE /* camera.png in Resources */,
+				E069E1661EDD60D1002B9E47 /* down-arrow.png in Resources */,
 				E21315491E97E735003E6BDE /* speech-bubble.png in Resources */,
 				E0DE60241ECCBBEA00076CF1 /* edit3.png in Resources */,
 				E03B4D1C1ED97FA600C85430 /* tick3.png in Resources */,
@@ -524,7 +537,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A295E8846A8DBA8BD1FC33AA /* [CP] Embed Pods Frameworks */ = {
@@ -565,12 +578,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E295D0821EBF069800A746FA /* StartScreenCell1TableViewCell.swift in Sources */,
+				E069E1681EDD7AA9002B9E47 /* JsonSerializerSwift.swift in Sources */,
 				E03B4D121ED950E900C85430 /* ChuaLoginTableViewCell.swift in Sources */,
 				E0E7EB631ED7571D009DEE2E /* Detail.swift in Sources */,
 				E27785941EC8B55700B47FA5 /* Estate.swift in Sources */,
 				E2F8E90E1EC7328100EDD5F2 /* MyImageTableViewCell.swift in Sources */,
 				E2E1C4361E96751B0008D0B3 /* EstateDetailBuyerController.swift in Sources */,
 				E0C7B46F1ED4452B008D7204 /* User.swift in Sources */,
+				E069E1441EDD4D84002B9E47 /* UserEstatePostNew.swift in Sources */,
 				E272A89D1EBF35F700D6A9BC /* LogInViewController.swift in Sources */,
 				E217EF821E93CD0400068876 /* TinNhanController.swift in Sources */,
 				E03B4D141ED970E900C85430 /* DangMoiViewController.swift in Sources */,
@@ -578,6 +593,7 @@
 				E2F8E9321EC76AF100EDD5F2 /* SignUpViewController.swift in Sources */,
 				E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */,
 				E09C98161ED481660032C80B /* FullEstate.swift in Sources */,
+				E069E1421EDD4D69002B9E47 /* EstatePostNew.swift in Sources */,
 				E2F8E90C1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift in Sources */,
 				E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */,
 				E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */,

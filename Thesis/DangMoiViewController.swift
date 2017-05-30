@@ -7,17 +7,31 @@
 //
 
 import UIKit
+
 import M13Checkbox
 import Dropper
+import DropDown
 class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    
+    var idOwner:Int = 0
 
     @IBOutlet weak var myClv: UICollectionView!
-    @IBOutlet weak var lblThanhPho: UILabel!
     @IBOutlet weak var btnThanhPho: UIButton!
     
     
+    @IBOutlet var isBroker: M13Checkbox!
+    @IBOutlet weak var lblLoai: UILabel!
+    @IBOutlet weak var dropLoai: UIView!
+    @IBOutlet weak var edtSoNha: UITextField!
+    @IBOutlet weak var lblThanhPho: UILabel!
+    @IBOutlet weak var dropThanhPho: UIView!
     @IBOutlet weak var edtTieuDe: UITextField!
     @IBOutlet weak var edtGia: UITextField!
+    @IBOutlet weak var dropQuan: UIView!
+    @IBOutlet weak var dropPhuong: UIView!
+    @IBOutlet weak var lblQuan: UILabel!
+    @IBOutlet weak var lblPhuong: UILabel!
     
     @IBOutlet weak var edtDienTich: UITextField!
     
@@ -33,14 +47,26 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet weak var innerView: UIView!
     
-    let dropper = Dropper(width: 75, height: 200)
+    let dropDown = DropDown()
+    let dropDown2 = DropDown()
+    let dropDown3 = DropDown()
+    let dropDown4 = DropDown()
     var takenImage = UIImage(named: "add2.png")
     var mang:[UIImage] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
+        initDropDown(x: dropThanhPho)
+        initDropDown(x: dropQuan)
+        initDropDown(x: dropPhuong)
+        initDropDown(x: dropLoai)
+        
+        
+        
 
-        // Do any additional setup after loading the view.
-        lblThanhPho.isHidden = true
         myClv.delegate = self
         myClv.dataSource = self
         
@@ -48,21 +74,10 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         mang.append(takenImage!)
         
-        //let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        
-        //img.addCameraButton(x: 0, y: 0)
-                //btn.setImage(UIImage(named: "camera.png"), for: .normal)
-       // img.addCameraButton(btn: btn, x: 0, y: 0)
-              //  let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
-             //  img.isUserInteractionEnabled = true
-             //   img.addGestureRecognizer(tap)
-        
         print (img.bounds.size.width)
         print (img.bounds.size.height)
         print ((self.navigationController?.navigationBar.frame.height)!)
-        
-//        let btn = UIButton(frame: CGRect(x: img.bounds.size.width - self.view.frame.width * 3 / 10, y: img.bounds.size.height + (self.navigationController?.navigationBar.frame.height)!, width: 20, height: 20))
-        
+    
         let btnCamera = UIButton(frame: CGRect(x: UIScreen.main.bounds.width * 0.8, y: img.bounds.size.height * 0.9, width: 20, height: 20))
         
         btnCamera.setImage(UIImage(named: "camera.png"), for: .normal)
@@ -85,6 +100,92 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         
         
+        
+    }
+    
+    func initDropDown(x:UIView)
+    {
+        x.layer.borderWidth = 1
+        x.layer.borderColor = UIColor.black.cgColor
+        
+        if ( x.tag == 0)
+        {
+            dropDown.anchorView = x // UIView or UIBarButtonItem
+            
+            dropDown.dataSource = [
+                "iPhone SE | Black | 64G",
+                "Samsung S7",
+                "Huawei P8 Lite Smartphone 4G",
+                "Asus Zenfone Max 4G",
+                "Apple Watwh | Sport Edition"
+            ]
+            dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+                self.lblThanhPho.text = item
+                
+            }
+            
+            let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped2))
+            x.isUserInteractionEnabled = true
+            x.addGestureRecognizer(tap)
+        }
+        else if (x.tag == 1)
+        {
+            dropDown2.anchorView = x // UIView or UIBarButtonItem
+            
+            dropDown2.dataSource = [
+                "iPhone SE | Black | 64G",
+                "Samsung S7",
+                "Huawei P8 Lite Smartphone 4G",
+                "Asus Zenfone Max 4G",
+                "Apple Watwh | Sport Edition"
+            ]
+            dropDown2.selectionAction = { [unowned self] (index: Int, item: String) in
+                self.lblQuan.text = item
+                
+            }
+            
+            let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped3))
+            x.isUserInteractionEnabled = true
+            x.addGestureRecognizer(tap)
+        }
+        else if (x.tag == 2)
+        {
+            dropDown3.anchorView = x
+            dropDown3.dataSource = [
+                "iPhone SE | Black | 64G",
+                "Samsung S7",
+                "Huawei P8 Lite Smartphone 4G",
+                "Asus Zenfone Max 4G",
+                "Apple Watwh | Sport Edition"
+            ]
+            dropDown3.selectionAction = { [unowned self] (index: Int, item: String) in
+                self.lblPhuong.text = item
+                
+            }
+            
+            let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped4))
+            x.isUserInteractionEnabled = true
+            x.addGestureRecognizer(tap)
+        }
+        else if (x.tag == 3)
+        {
+            dropDown4.anchorView = x
+            dropDown4.dataSource = [
+            "1","2","3","4"
+            ]
+            dropDown4.selectionAction = { [unowned self] (index: Int, item: String) in
+                self.lblLoai.text = item
+                
+            }
+            
+            let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped5))
+            x.isUserInteractionEnabled = true
+            x.addGestureRecognizer(tap)
+        }
+    }
+    func showDrop(dropDown: DropDown, x:UIView, lbl:UILabel)
+    {
+        
     }
     func imgMoreTapped()
     {
@@ -95,27 +196,28 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         flag = true
         
     }
-
+    func imgMoreTapped2()
+    {
+        dropDown.show()
+    }
+    func imgMoreTapped3()
+    {
+        dropDown2.show()
+    }
+    func imgMoreTapped4()
+    {
+        dropDown3.show()
+    }
+    func imgMoreTapped5()
+    {
+        dropDown4.show()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cityPress(_ sender: Any) {
-        if dropper.status == .hidden {
-            dropper.items = ["HCM", "Hà Nội","Hải Phòng"]
-            dropper.theme = Dropper.Themes.white
-            dropper.delegate = self as? DropperDelegate
-            dropper.cornerRadius = 3
-            //dropper.height = 20
-            dropper.showWithAnimation(0.1, options: .center, position: .bottom, button: btnThanhPho)
-            
-            
-        } else {
-            dropper.hideWithAnimation(0.1)
-        }
-    }
-    
+   
     override func viewDidAppear(_ animated: Bool) {
         var nav = self.navigationController?.navigationBar
         // 2
@@ -146,7 +248,81 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         let login : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
         login.isLogin = true
         self.navigationController?.pushViewController(tabbar, animated: true)
+        
+        
+        let owner:UserEstatePostNew = UserEstatePostNew(id: idOwner)
+        
+        let address:Address = Address(city: self.lblThanhPho.text!, district: self.lblQuan.text!, ward: self.lblPhuong.text!, address: self.edtSoNha.text!, id: 0)
+        
+        let detail:Detail = Detail(bathroom: Int(self.edtSoPhongNgu.text!)!, bedroom: Int(self.edtSoPhongTam.text!)!, condition: self.edtTinhTrang.text!, description: self.edtMoTa.text!, floor: Int(self.edtSoTang.text!)!, length: Double(self.edtChieuDai.text!)!, width: Double(self.edtChieuRong.text!)!, id: 0)
+        
+        
+        let type = Int(self.lblLoai.text!)
+        let price = Double(self.edtGia.text!)
+        let area = Double(self.edtDienTich.text!)
+        let name = self.edtTieuDe.text
+        
+        let estatePostNew:EstatePostNew = EstatePostNew(owner: owner, address: address, detail: detail, type: type!, price: price!, area: area!, name: name!, broker: self.isBroker.isEnabled)
+        
+        
+        let json = JSONSerializer.toJson(estatePostNew)
+        print (json)
+        
+        let jsonObject = convertToDictionary(text: json)
+        print (jsonObject)
+        
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/post")!)
+        
+        
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+            print (data)
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+                print (json["statuskey"])
+                print (json["name"])
+                
+                
+                
+                
+                
+            }catch{}
+            
+            
+        }
+        task.resume()
+
+        
+
+        
+        
+        
+        
+        
+        
+        
     }
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mang.count

@@ -103,11 +103,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let city = detailAddress["city"] as! String
                     let district = detailAddress["district"] as! String
                     let ward = detailAddress["ward"] as! String
-                    let street = detailAddress["street"] as! String
                     let address2 = detailAddress["city"] as! String
                     let id2 = detailAddress["id"] as! Int
                     
-                    let newAdress:Address = Address(city: city, district: district, ward: ward, street: street, address: address2, id: id2)
+                    let newAdress:Address = Address(city: city, district: district, ward: ward, address: address2, id: id2)
                     
                     let detail = listEstates[i]["detail"] as AnyObject
                     let bathroom = detail["bathroom"] as! Int
@@ -224,7 +223,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 
                 do
                 {
+                    
                     let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                    if (json["statuskey"] as! Bool)
+                    {
                     let photo = json["photo"] as! String
                     //print (photo)
                     self.mang[i].image = photo
@@ -235,6 +237,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         self.loading.stopAnimating()
                         self.loading.isHidden = true
                     })
+                    }
                 }catch{}
             }
             task.resume()

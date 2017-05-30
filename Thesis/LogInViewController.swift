@@ -73,6 +73,7 @@ class LogInViewController: UIViewController {
         
         
         
+        
         //  print (postString)
         var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/login")!)
         
@@ -90,8 +91,6 @@ class LogInViewController: UIViewController {
                 if (json["statuskey"] as? Bool)!
                 {
                     
-                    print ("a")
-                    
                     DispatchQueue.main.async {
                         
                         self.loading.stopAnimating()
@@ -101,6 +100,8 @@ class LogInViewController: UIViewController {
                         {
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let tabbar = storyboard.instantiateViewController(withIdentifier: "DangMoi") as! DangMoiViewController
+                            
+                            tabbar.idOwner = json["id"] as! Int
                             
                             self.navigationController?.pushViewController(tabbar, animated: true)
                         }

@@ -12,4 +12,5 @@ pod 'FaveButton', '~> 2.0.3'
 pod 'LTMorphingLabel'
 pod 'PopupDialog', '~> 0.5'
 pod "ReadMoreTextView"
+pod 'DropDown'
 end
