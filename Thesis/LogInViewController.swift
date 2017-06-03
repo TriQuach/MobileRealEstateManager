@@ -88,6 +88,12 @@ class LogInViewController: UIViewController {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
                 
                 print (json["statuskey"])
+                let token = json["token"] as! String
+                do
+                {
+                    try token.write(toFile: "/Users/triquach/Documents/token.txt", atomically: false, encoding: .utf8)
+                }catch{}
+                
                 if (json["statuskey"] as? Bool)!
                 {
                     
@@ -103,6 +109,19 @@ class LogInViewController: UIViewController {
                             
                             tabbar.idOwner = json["id"] as! Int
                             
+                            
+                            self.navigationController?.pushViewController(tabbar, animated: true)
+                        }
+                        else if (self.storyboardID == "EstateDetailBuyer")
+                        {
+                            
+                            
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                            let login : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
+                            login.isLogin = true
+                            login.role = 0
+                            login.idUser = json["id"] as! Int
                             self.navigationController?.pushViewController(tabbar, animated: true)
                         }
                     }

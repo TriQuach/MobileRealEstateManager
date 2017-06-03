@@ -7,8 +7,9 @@
 //
 
 import UIKit
-
+import M13Checkbox
 class DangMoiCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var myImg: UIImageView!
+    @IBOutlet var myCheckBox: M13Checkbox!
 }

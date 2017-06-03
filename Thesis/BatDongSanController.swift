@@ -19,7 +19,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var num_section:Int = 0
     
     var passedObject:Estates!
-    
+    var idUser:Int = 0
 
     var mang:[Estate] = []
     var mang2:[Estate] = []
@@ -57,7 +57,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         parseUser(url: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")
        
    //     print (x.listEstates[0].address)
-       parseJSON()
+        parseJSONgetInterested()
+        parseJSONGetNew()
+    //    parseJSONGetTopRate()
+        
         
         //sleep(5)
    // parseImage()
@@ -67,8 +70,16 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         myTbv.dataSource = self
         myTbv.delegate = self
         
+        print ("isuser" + String(idUser))
         
-        
+        do
+        {
+            let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
+            if (data != "")
+            {
+                isLogin = true
+            }
+        }catch{}
         
     }
     
@@ -163,11 +174,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
        }
-    func parseJSON()
+    func parseJSONGetNew()
     {
         self.loading.isHidden = false
         self.loading.startAnimating()
-        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")!)
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getNew/1")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -193,9 +204,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
                     
                    // print (id)
-                    self.mang.append(new_estate)
+                  //  self.mang.append(new_estate)
                     self.mang2.append(new_estate)
-                    self.mang3.append(new_estate)
+                  //  self.mang3.append(new_estate)
                     
                     
                 
@@ -204,15 +215,112 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 
                 DispatchQueue.main.async(execute: {
                     self.myTbv.reloadData()
-                    self.parseImage()
+                    self.parseImageGetNew()
                 })
             }catch{}
         }
         task.resume()
     }
-    func parseImage()
+    func parseJSONGetTopRate()
     {
-   //     print (mang[0].gia)
+        self.loading.isHidden = false
+        self.loading.startAnimating()
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getTopRate/2" + String(idUser))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let estates = json["estates"] as! [AnyObject]
+                for i in 0..<estates.count
+                {
+                    let id = estates[i]["id"] as! Int
+                    
+                    let date = estates[i]["postTime"] as! String
+                    let title = estates[i]["name"] as! String
+                    let price = estates[i]["price"] as! Double
+                    let area = estates[i]["area"] as! Double
+                    let address = estates[i]["address"] as! AnyObject
+                    
+                    let district = address["district"]
+                        as! String
+                    
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    
+                    // print (id)
+                    //  self.mang.append(new_estate)
+                    self.mang3.append(new_estate)
+                    //  self.mang3.append(new_estate)
+                    
+                    
+                    
+                }
+                
+                
+                DispatchQueue.main.async(execute: {
+                    self.myTbv.reloadData()
+                    self.parseImageTopRate()
+                 //   self.parseImage()
+                })
+            }catch{}
+        }
+        task.resume()
+    }
+    func parseJSONgetInterested()
+    {
+        self.loading.isHidden = false
+        self.loading.startAnimating()
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/getInterested/" + String(idUser))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let estates = json["estates"] as! [AnyObject]
+                for i in 0..<estates.count
+                {
+                    let id = estates[i]["id"] as! Int
+                    
+                    let date = estates[i]["postTime"] as! String
+                    let title = estates[i]["name"] as! String
+                    let price = estates[i]["price"] as! Double
+                    let area = estates[i]["area"] as! Double
+                    let address = estates[i]["address"] as! AnyObject
+                    
+                    let district = address["district"]
+                        as! String
+                    
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    
+                    // print (id)
+                    //  self.mang.append(new_estate)
+                    self.mang.append(new_estate)
+                    
+                    //  self.mang3.append(new_estate)
+                    
+                    
+                    
+                }
+                
+                
+                DispatchQueue.main.async(execute: {
+                    self.myTbv.reloadData()
+                    self.parseImageInterested()
+                 //   self.parseImage()
+                })
+            }catch{}
+        }
+        task.resume()
+    }
+    func parseImageInterested()
+    {
+  
         
         for i in 0..<mang.count
         {
@@ -229,8 +337,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     {
                     let photo = json["photo"] as! String
                     //print (photo)
-                    self.mang[i].image = photo
-                
+                        
+                        self.mang[i].image = photo
+                    
                     
                     DispatchQueue.main.async(execute: {
                         self.myTbv.reloadData()
@@ -245,6 +354,80 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
        
+    }
+    func parseImageGetNew()
+    {
+        
+        
+        for i in 0..<mang2.count
+        {
+            let id = mang2[i].ID
+            let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            
+            let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+                
+                do
+                {
+                    
+                    let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                    if (json["statuskey"] as! Bool)
+                    {
+                        let photo = json["photo"] as! String
+                        //print (photo)
+                        
+                        self.mang2[i].image = photo
+                        
+                        
+                        DispatchQueue.main.async(execute: {
+                            self.myTbv.reloadData()
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
+                        })
+                    }
+                }catch{}
+            }
+            task.resume()
+        }
+        
+        
+        
+    }
+    func parseImageTopRate()
+    {
+        
+        
+        for i in 0..<mang3.count
+        {
+            let id = mang3[i].ID
+            let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            
+            let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+                
+                do
+                {
+                    
+                    let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                    if (json["statuskey"] as! Bool)
+                    {
+                        let photo = json["photo"] as! String
+                        //print (photo)
+                        
+                        self.mang3[i].image = photo
+                        
+                        
+                        DispatchQueue.main.async(execute: {
+                            self.myTbv.reloadData()
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
+                        })
+                    }
+                }catch{}
+            }
+            task.resume()
+        }
+        
+        
+        
     }
     func imgMoreTapped()
     {
@@ -262,34 +445,24 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-            return 3
+            return 2
         }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if ( section == 0)
-//        {
-//            if ( !isLogin )
-//            {
-//                return 1
-//            }
-//            return mang.count
-//        }
-//        else if ( section == 1)
-//        {
-//            return mang2.count
-//        }
-//        return mang3.count
+
         
         if ( role == 0)
         {
             if ( section == 0)
             {
+                if ( !isLogin )
+                {
+                    return 1
+                }
                 return mang.count
             }
-            else if ( section == 1)
-            {
+            
                 return mang2.count
-            }
-            return mang3.count
+           
             
         }
         if ( section == 0)
@@ -300,11 +473,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             }
             return mang.count
         }
-        else if ( section == 1)
-        {
+        
             return mang2.count
-        }
-        return mang3.count
+        
+       
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (role == 0)
@@ -324,89 +496,47 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 return "Bất động sản đang quản lý"
             }
-            else if (section == 1)
-            {
+        
                 return "Bất động sản mới nhất"
-            }
-            return "Bất động sản được quan tâm nhiều"
+            
         
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        
-//        if ( indexPath.section == 0)
-//        {
-//            
-//            
-//            if ( isLogin )
-//            {
-//                let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
-//                
-//                
-//                let data:Data = Data(base64Encoded: mang[indexPath.row].image)!
-//                cell.myHouse.image = UIImage(data: data)
-//                
-//                cell.lblGia.text = String(mang[indexPath.row].gia) + "tỷ"
-//                cell.lblDIenTich.text = String(mang[indexPath.row].dientich)
-//                cell.lblQuan.text = mang[indexPath.row].quan
-//                cell.lblDate.text = mang[indexPath.row].date
-//                cell.lblTitle.text = mang[indexPath.row].title
-//                
-//                return cell
-//            }
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell2")
-//            return cell!
-//  
-//            
-//        }
-//        else if ( indexPath.section == 1)
-//        {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
-//            //cell.myHouse.image = UIImage(named: mang2[indexPath.row].image + ".jpg")
-//            let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
-//            cell.myHouse.image = UIImage(data: data)
-//            cell.lblGia.text = String(mang2[indexPath.row].gia)
-//            cell.lblDIenTich.text = String(mang2[indexPath.row].dientich)
-//            cell.lblQuan.text = mang2[indexPath.row].quan
-//            cell.lblDate.text = mang2[indexPath.row].date
-//            cell.lblTitle.text = mang2[indexPath.row].title
-//            return cell
-//        }
-//        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
-//        //cell.myHouse.image = UIImage(named: mang3[indexPath.row].image + ".jpg")
-//        let data:Data = Data(base64Encoded: mang3[indexPath.row].image)!
-//        cell.myHouse.image = UIImage(data: data)
-//        cell.lblGia.text = String(mang3[indexPath.row].gia)
-//        cell.lblDIenTich.text = String(mang3[indexPath.row].dientich)
-//        cell.lblQuan.text = mang3[indexPath.row].quan
-//        cell.lblDate.text = mang3[indexPath.row].date
-//        cell.lblTitle.text = mang3[indexPath.row].title
-//        return cell
-        
         if ( role == 0)
         {
             if ( indexPath.section == 0)
             {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
+                if (isLogin)
+                {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
+                    
+                    
+                    let data:Data = Data(base64Encoded: mang[indexPath.row].image)!
+                    cell.myHouse.image = UIImage(data: data)
+                    
+                    cell.lblGia.text = String(mang[indexPath.row].gia) + "tỷ"
+                    cell.lblDIenTich.text = String(mang[indexPath.row].dientich)
+                    cell.lblQuan.text = mang[indexPath.row].quan
+                    cell.lblDate.text = mang[indexPath.row].date
+                    cell.lblTitle.text = mang[indexPath.row].title
+                    
+                    return cell
+                }
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! ChuaLogInBuyerTableViewCell
                 
                 
-                let data:Data = Data(base64Encoded: mang[indexPath.row].image)!
-                cell.myHouse.image = UIImage(data: data)
-                
-                cell.lblGia.text = String(mang[indexPath.row].gia) + "tỷ"
-                cell.lblDIenTich.text = String(mang[indexPath.row].dientich)
-                cell.lblQuan.text = mang[indexPath.row].quan
-                cell.lblDate.text = mang[indexPath.row].date
-                cell.lblTitle.text = mang[indexPath.row].title
+              
                 
                 return cell
+                
+                
+                
             }
-            else if ( indexPath.section == 1)
-            {
+            
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
                 //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
                 let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
@@ -417,17 +547,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 cell.lblDate.text = mang2[indexPath.row].date
                 cell.lblTitle.text = mang2[indexPath.row].title
                 return cell
-            }
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
-            //cell.myHouse.image = UIImage(named: mang3[indexPath.row].image + ".jpg")
-            let data:Data = Data(base64Encoded: mang3[indexPath.row].image)!
-            cell.myHouse.image = UIImage(data: data)
-            cell.lblGia.text = String(mang3[indexPath.row].gia)
-            cell.lblDIenTich.text = String(mang3[indexPath.row].dientich)
-            cell.lblQuan.text = mang3[indexPath.row].quan
-            cell.lblDate.text = mang3[indexPath.row].date
-            cell.lblTitle.text = mang3[indexPath.row].title
-            return cell
+            
+           
             
         }
         if ( indexPath.section == 0)
@@ -452,8 +573,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             return cell
             
         }
-        else if ( indexPath.section == 1)
-        {
+      
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
             //cell.myHouse.image = UIImage(named: mang2[indexPath.row].image + ".jpg")
             let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
@@ -464,89 +584,43 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             cell.lblDate.text = mang2[indexPath.row].date
             cell.lblTitle.text = mang2[indexPath.row].title
             return cell
-        }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
-        //cell.myHouse.image = UIImage(named: mang3[indexPath.row].image + ".jpg")
-        let data:Data = Data(base64Encoded: mang3[indexPath.row].image)!
-        cell.myHouse.image = UIImage(data: data)
-        cell.lblGia.text = String(mang3[indexPath.row].gia)
-        cell.lblDIenTich.text = String(mang3[indexPath.row].dientich)
-        cell.lblQuan.text = mang3[indexPath.row].quan
-        cell.lblDate.text = mang3[indexPath.row].date
-        cell.lblTitle.text = mang3[indexPath.row].title
-        return cell
+        
+       
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-//        if (indexPath.section == 0)
-//        {
-//            if ( !isLogin )
-//            {
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
-//                
-//                tabbar.storyboardID = "BDS"
-//                self.navigationController?.pushViewController(tabbar, animated: true)
-//            }
-//            else
-//            {
-//                if ( role == 0)
-//                {
-//                    
-//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                    let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-//                    tabbar.passObject = newEstates
-//                    //   tabbar.status = temp!
-//                    
-//                    self.navigationController?.pushViewController(tabbar, animated: true)
-//                }
-//                else
-//                {
-//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                    let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailOwner") as! EstateDetailOwnerViewController
-//                    //   tabbar.status = temp!
-//                    
-//                    self.navigationController?.pushViewController(tabbar, animated: true)
-//                }
-//            }
-//            
-//        }
-//        else
-//        {
-//            if ( role == 0)
-//            {
-//                
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-//                tabbar.passObject = newEstates
-//                //   tabbar.status = temp!
-//                
-//                self.navigationController?.pushViewController(tabbar, animated: true)
-//            }
-//            else
-//            {
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailOwner") as! EstateDetailOwnerViewController
-//                //   tabbar.status = temp!
-//                
-//                self.navigationController?.pushViewController(tabbar, animated: true)
-//            }
-//        }
-
-        
-        
-        
         if ( role == 0)
         {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-            tabbar.passObject = newEstates
-            //   tabbar.status = temp!
-            
-            self.navigationController?.pushViewController(tabbar, animated: true)
+            if ( indexPath.section == 0)
+            {
+                if (!isLogin)
+                {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
+                    
+                    tabbar.storyboardID = "EstateDetailBuyer"
+                    self.navigationController?.pushViewController(tabbar, animated: true)
+                }
+                else
+                {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+                    
+                    self.navigationController?.pushViewController(tabbar, animated: true)
+                }
+            }
+            else
+            {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+                tabbar.passObject = newEstates
+                //   tabbar.status = temp!
+                
+                self.navigationController?.pushViewController(tabbar, animated: true)
+            }
         }
         
         else
@@ -600,11 +674,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 self.mang2.remove(at: index.row)
                 self.myTbv.deleteRows(at: [index], with: .fade)
             }
-            else
-            {
-                self.mang3.remove(at: index.row)
-                self.myTbv.deleteRows(at: [index], with: .fade)
-            }
+            
            
             
         }

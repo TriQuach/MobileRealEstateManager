@@ -29,9 +29,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kE2-J1-p7s">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-VR-evd">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiêu đề" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDS-Zv-3ox">
                                                 <rect key="frame" x="8" y="278" width="57" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -205,15 +202,26 @@
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HzD-7m-xZO">
                                                                     <rect key="frame" x="0.0" y="0.0" width="116" height="105"/>
                                                                 </imageView>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOS-yp-LET" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                                    <rect key="frame" x="44" y="38" width="28" height="29"/>
+                                                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="28" id="mfs-12-1lP"/>
+                                                                        <constraint firstAttribute="height" constant="29" id="qbl-uo-G9v"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
                                                         </view>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="HzD-7m-xZO" secondAttribute="trailing" id="18B-yo-kgQ"/>
                                                             <constraint firstAttribute="bottom" secondItem="HzD-7m-xZO" secondAttribute="bottom" id="7TF-mp-GBm"/>
                                                             <constraint firstItem="HzD-7m-xZO" firstAttribute="top" secondItem="Ab5-jF-XJE" secondAttribute="top" id="Wbb-uy-3n1"/>
+                                                            <constraint firstItem="DOS-yp-LET" firstAttribute="centerX" secondItem="HzD-7m-xZO" secondAttribute="centerX" id="Wwr-fC-57w"/>
+                                                            <constraint firstItem="DOS-yp-LET" firstAttribute="centerY" secondItem="HzD-7m-xZO" secondAttribute="centerY" id="fCj-un-H9d"/>
                                                             <constraint firstItem="HzD-7m-xZO" firstAttribute="leading" secondItem="Ab5-jF-XJE" secondAttribute="leading" id="vJj-mc-XFh"/>
                                                         </constraints>
                                                         <connections>
+                                                            <outlet property="myCheckBox" destination="DOS-yp-LET" id="5Iw-FU-GtU"/>
                                                             <outlet property="myImg" destination="HzD-7m-xZO" id="dtB-WR-BzK"/>
                                                         </connections>
                                                     </collectionViewCell>
@@ -346,10 +354,6 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="TPN-VR-evd" secondAttribute="trailing" id="9L0-rN-1ZQ"/>
-                                            <constraint firstItem="TPN-VR-evd" firstAttribute="height" secondItem="kE2-J1-p7s" secondAttribute="height" multiplier="0.23" id="V9h-5x-lMd"/>
-                                            <constraint firstItem="TPN-VR-evd" firstAttribute="leading" secondItem="kE2-J1-p7s" secondAttribute="leading" id="Wo3-hu-K3I"/>
-                                            <constraint firstItem="TPN-VR-evd" firstAttribute="top" secondItem="kE2-J1-p7s" secondAttribute="top" id="ftp-XB-1ka"/>
                                             <constraint firstAttribute="height" constant="1100" id="iqc-SJ-xjl"/>
                                         </constraints>
                                     </view>
@@ -389,7 +393,6 @@
                         <outlet property="edtSoTang" destination="ngR-9T-WR7" id="2OZ-1e-E2z"/>
                         <outlet property="edtTieuDe" destination="ngK-H3-3Af" id="19I-9N-pmj"/>
                         <outlet property="edtTinhTrang" destination="5Db-KV-yqQ" id="tSs-Rq-MLo"/>
-                        <outlet property="img" destination="TPN-VR-evd" id="U7e-Hg-M8C"/>
                         <outlet property="innerView" destination="kE2-J1-p7s" id="sHe-ss-D5d"/>
                         <outlet property="isBroker" destination="Gu2-Ma-CGd" id="cof-Ks-nVh"/>
                         <outlet property="lblLoai" destination="wfe-PY-x3a" id="q93-f7-BNl"/>
@@ -758,7 +761,7 @@
         <!--Quản lý nhà đất-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="start" id="BYZ-38-t0r" customClass="ViewController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -897,7 +900,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="2V9-mN-rwa">
-                                                    <rect key="frame" x="83" y="10" width="240" height="128"/>
+                                                    <rect key="frame" x="139" y="41" width="65" height="59"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -995,6 +998,21 @@
                                             <outlet property="myHouse" destination="rX6-03-ub4" id="eAG-BS-pDZ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" id="a7o-Ki-ohb" customClass="ChuaLogInBuyerTableViewCell" customModule="Thesis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="326" width="375" height="149"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a7o-Ki-ohb" id="iYl-76-u1a">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="148.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oc-IU-sBw">
+                                                    <rect key="frame" x="126" y="59" width="123" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Click here to login"/>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CJF-mx-0IC">
@@ -1029,7 +1047,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fp-Ua-zdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="436"/>
+            <point key="canvasLocation" x="829.60000000000002" y="435.83208395802103"/>
         </scene>
         <!--Tim Kiem Controller-->
         <scene sceneID="ZdY-eZ-8HV">
@@ -1869,7 +1887,6 @@
         <image name="add.png" width="64" height="64"/>
         <image name="calendar.png" width="32" height="32"/>
         <image name="camera.png" width="64" height="64"/>
-        <image name="default_image.jpg" width="640" height="480"/>
         <image name="down-arrow.png" width="16" height="16"/>
         <image name="home.png" width="32" height="32"/>
         <image name="house3.jpg" width="450" height="354"/>

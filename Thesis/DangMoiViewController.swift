@@ -74,28 +74,28 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         mang.append(takenImage!)
         
-        print (img.bounds.size.width)
-        print (img.bounds.size.height)
-        print ((self.navigationController?.navigationBar.frame.height)!)
-    
-        let btnCamera = UIButton(frame: CGRect(x: UIScreen.main.bounds.width * 0.8, y: img.bounds.size.height * 0.9, width: 20, height: 20))
-        
-        btnCamera.setImage(UIImage(named: "camera.png"), for: .normal)
-        
-        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
-          btnCamera.isUserInteractionEnabled = true
-           btnCamera.addGestureRecognizer(tap)
-        
-        let btnPhoto = UIButton(frame: CGRect(x: UIScreen.main.bounds.width * 0.9, y: img.bounds.size.height * 0.9, width: 20, height: 20))
-        
-        btnPhoto.setImage(UIImage(named: "picture.png"), for: .normal)
-        
-        let tap2:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
-        btnPhoto.isUserInteractionEnabled = true
-        btnPhoto.addGestureRecognizer(tap2)
-        
-        innerView.addSubview(btnCamera)
-        innerView.addSubview(btnPhoto)
+//        print (img.bounds.size.width)
+//        print (img.bounds.size.height)
+//        print ((self.navigationController?.navigationBar.frame.height)!)
+//    
+//        let btnCamera = UIButton(frame: CGRect(x: UIScreen.main.bounds.width * 0.8, y: img.bounds.size.height * 0.9, width: 20, height: 20))
+//        
+//        btnCamera.setImage(UIImage(named: "camera.png"), for: .normal)
+//        
+//        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
+//          btnCamera.isUserInteractionEnabled = true
+//           btnCamera.addGestureRecognizer(tap)
+//        
+//        let btnPhoto = UIButton(frame: CGRect(x: UIScreen.main.bounds.width * 0.9, y: img.bounds.size.height * 0.9, width: 20, height: 20))
+//        
+//        btnPhoto.setImage(UIImage(named: "picture.png"), for: .normal)
+//        
+//        let tap2:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
+//        btnPhoto.isUserInteractionEnabled = true
+//        btnPhoto.addGestureRecognizer(tap2)
+//        
+//        innerView.addSubview(btnCamera)
+//        innerView.addSubview(btnPhoto)
 
         
         
@@ -331,6 +331,8 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DangMoiCollectionViewCell
         cell.myImg.image = mang[indexPath.row]
+      //  cell.myCheckBox.setCheckState(.mixed, animated: true)
+        cell.myCheckBox.stateChangeAnimation = .fill
         return cell
     }
     
@@ -368,6 +370,9 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
             myPicker.sourceType = .photoLibrary
             present(myPicker, animated: true, completion: nil)
         }
+        
+        
+     
         
     }
 
