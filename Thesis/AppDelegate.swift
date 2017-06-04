@@ -20,31 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         do {
             let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
-            if (data != "")
-            {
-                self.window = UIWindow(frame: UIScreen.main.bounds)
+            
+            parseJsonToken(token: data)
                 
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarController")
-                
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-            }
-            else
-            {
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "start")
-                
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-            }
+            
+           
             
         } catch {
-            print(error)
+            //            print("2")
+//            self.window = UIWindow(frame: UIScreen.main.bounds)
+//            
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            
+//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "start")
+//            
+//            self.window?.rootViewController = initialViewController
+//            self.window?.makeKeyAndVisible()
         }
         
         
@@ -57,6 +48,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.barStyle = UIBarStyle.black
         navigationBarAppearace.tintColor = UIColor.yellow
         return true
+    }
+    
+    func parseJsonToken(token: String)
+    {
+        print ("1")
+        
+        let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/login/" + token
+        print (url)
+        let req = URLRequest(url: URL(string: url)!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let typeId = json["typeId"] as! Int
+                let id = json["id"] as! Int
+                
+                print (typeId)
+                
+                DispatchQueue.main.async {
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                   
+                    let login : BatDongSanController = initialViewController.viewControllers?[0] as! BatDongSanController;
+                    login.isLogin = true
+                    login.idUser = id
+                    if ( typeId == 1)
+                    {
+                        login.role = 0
+                    }
+                    else if ( typeId == 2)
+                    {
+                        login.role = 1
+                    }
+                    else
+                    {
+                        login.role = 2
+                    }
+                    
+//
+                    
+                    
+                    
+                    
+                    self.window?.rootViewController = initialViewController
+                    
+                    self.window?.makeKeyAndVisible()
+                    
+                    
+                }
+            }catch{}
+        }
+        task.resume()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

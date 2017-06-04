@@ -42,6 +42,7 @@
 		E0DE60281ECCBE4300076CF1 /* swift2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60271ECCBE4300076CF1 /* swift2.png */; };
 		E0E2FBD91ED36CEC0048EDAD /* DangBaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */; };
 		E0E7EB631ED7571D009DEE2E /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E7EB621ED7571D009DEE2E /* Detail.swift */; };
+		E0EF4B521EE33C1B009EFFA5 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF4B511EE33C1B009EFFA5 /* Appointment.swift */; };
 		E0EF6A111EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF6A101EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift */; };
 		E0F4C6801EDF0AE700402C15 /* Iron_Man_Experience.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0F4C67F1EDF0AE700402C15 /* Iron_Man_Experience.jpg */; };
 		E212267F1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E212267E1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift */; };
@@ -144,6 +145,7 @@
 		E0DE60271ECCBE4300076CF1 /* swift2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift2.png; sourceTree = "<group>"; };
 		E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangBaiViewController.swift; sourceTree = "<group>"; };
 		E0E7EB621ED7571D009DEE2E /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		E0EF4B511EE33C1B009EFFA5 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		E0EF6A101EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuaLogInBuyerTableViewCell.swift; sourceTree = "<group>"; };
 		E0F4C67F1EDF0AE700402C15 /* Iron_Man_Experience.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Iron_Man_Experience.jpg; sourceTree = "<group>"; };
 		E212267E1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanControllerTableViewCell.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */,
 				E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */,
 				E069E1671EDD7AA9002B9E47 /* JsonSerializerSwift.swift */,
+				E0EF4B511EE33C1B009EFFA5 /* Appointment.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				E2F8E9111EC739D200EDD5F2 /* MyImageCollectionViewCell.swift in Sources */,
 				E217EF871E93CE7200068876 /* CaiDatController.swift in Sources */,
 				E0EF6A111EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift in Sources */,
+				E0EF4B521EE33C1B009EFFA5 /* Appointment.swift in Sources */,
 				E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */,
 				E295D0841EBF06B800A746FA /* StartScreenCell2TableViewCell.swift in Sources */,
 				E09C98181ED482E80032C80B /* Estates.swift in Sources */,

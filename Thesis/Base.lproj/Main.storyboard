@@ -845,7 +845,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="528.79999999999995" y="-559.07046476761627"/>
+            <point key="canvasLocation" x="562" y="-565"/>
         </scene>
         <!--Cài đặt-->
         <scene sceneID="BoG-zL-pYY">
@@ -1844,7 +1844,7 @@
         <!--Navigation Controller-->
         <scene sceneID="lar-n1-WV7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="93P-OD-JwY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="tabbar" automaticallyAdjustsScrollViewInsets="NO" id="93P-OD-JwY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cjc-6d-pIw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1852,7 +1852,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gv9-s1-ctz"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zau-Xr-1uO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRJ-az-eYv" userLabel="First Responder" sceneMemberID="firstResponder"/>

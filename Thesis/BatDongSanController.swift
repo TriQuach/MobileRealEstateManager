@@ -34,7 +34,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var temp:String = ""
     
     var current_like = false
-    var role:Int? // 0: buyer; 1: seller; 2: broker
+    var role:Int = 0 // 0: buyer; 1: seller; 2: broker
     
     var test:String?
     var newEstates:Estates!
@@ -57,8 +57,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         parseUser(url: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")
        
    //     print (x.listEstates[0].address)
-        parseJSONgetInterested()
-        parseJSONGetNew()
+        
     //    parseJSONGetTopRate()
         
         
@@ -70,16 +69,21 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         myTbv.dataSource = self
         myTbv.delegate = self
         
-        print ("isuser" + String(idUser))
         
-        do
+        
+       
+        if ( role == 0)
         {
-            let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
-            if (data != "")
-            {
-                isLogin = true
-            }
-        }catch{}
+            parseJSONgetInterested()
+        }
+        else if ( role == 1)
+        {
+            parseJsonGetByOwnerID()
+        }
+        parseJSONGetNew()
+        
+        print ("isuser" + String(idUser))
+        print ("role" + String(role))
         
     }
     
@@ -202,13 +206,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         as! String
                     
                     let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
-                    
-                   // print (id)
-                  //  self.mang.append(new_estate)
+                 
                     self.mang2.append(new_estate)
-                  //  self.mang3.append(new_estate)
-                    
-                    
+                   
                 
                 }
                 
@@ -221,54 +221,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         }
         task.resume()
     }
-    func parseJSONGetTopRate()
-    {
-        self.loading.isHidden = false
-        self.loading.startAnimating()
-        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getTopRate/2" + String(idUser))!)
-        
-        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
-            
-            do
-            {
-                
-                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
-                
-                let estates = json["estates"] as! [AnyObject]
-                for i in 0..<estates.count
-                {
-                    let id = estates[i]["id"] as! Int
-                    
-                    let date = estates[i]["postTime"] as! String
-                    let title = estates[i]["name"] as! String
-                    let price = estates[i]["price"] as! Double
-                    let area = estates[i]["area"] as! Double
-                    let address = estates[i]["address"] as! AnyObject
-                    
-                    let district = address["district"]
-                        as! String
-                    
-                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
-                    
-                    // print (id)
-                    //  self.mang.append(new_estate)
-                    self.mang3.append(new_estate)
-                    //  self.mang3.append(new_estate)
-                    
-                    
-                    
-                }
-                
-                
-                DispatchQueue.main.async(execute: {
-                    self.myTbv.reloadData()
-                    self.parseImageTopRate()
-                 //   self.parseImage()
-                })
-            }catch{}
-        }
-        task.resume()
-    }
+    
     func parseJSONgetInterested()
     {
         self.loading.isHidden = false
@@ -298,15 +251,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
                     
-                    // print (id)
-                    //  self.mang.append(new_estate)
+                  
                     self.mang.append(new_estate)
                     
-                    //  self.mang3.append(new_estate)
-                    
-                    
-                    
-                }
+                                 }
                 
                 
                 DispatchQueue.main.async(execute: {
@@ -314,6 +262,91 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     self.parseImageInterested()
                  //   self.parseImage()
                 })
+            }catch{}
+        }
+        task.resume()
+    }
+    func parseJsonGetByOwnerID()
+    {
+        self.loading.isHidden = false
+        self.loading.startAnimating()
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let estates = json["estates"] as! [AnyObject]
+                for i in 0..<estates.count
+                {
+                    let id = estates[i]["id"] as! Int
+                    
+                    let date = estates[i]["postTime"] as! String
+                    let title = estates[i]["name"] as! String
+                    let price = estates[i]["price"] as! Double
+                    let area = estates[i]["area"] as! Double
+                    let address = estates[i]["address"] as! AnyObject
+                    
+                    let district = address["district"]
+                        as! String
+                    
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    
+                    // print (id)
+                    //  self.mang.append(new_estate)
+                    self.mang3.append(new_estate)
+                    
+                    //  self.mang3.append(new_estate)
+                    
+                    
+                    
+                }
+                
+                for i in 0..<self.mang3.count{
+                    print (self.mang3[i].quan)
+                }
+                
+                
+                DispatchQueue.main.async(execute: {
+                    self.myTbv.reloadData()
+                    //self.parseImageInterested()
+                    //   self.parseImage()
+                })
+            }catch{}
+        }
+        task.resume()
+    }
+    func parseJsonToken(token: String)
+    {
+        
+        let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/login/" + token
+        print (url)
+        let req = URLRequest(url: URL(string: url)!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let typeId = json["typeId"] as! Int
+                let id = json["id"] as! Int
+                
+                print (typeId)
+                
+                DispatchQueue.main.async {
+                    self.idUser = id
+                    if ( typeId == 1 )
+                    {
+                        self.role = 0
+                        self.parseJSONgetInterested()
+                        self.parseJSONGetNew()
+                    }
+                }
             }catch{}
         }
         task.resume()
@@ -392,43 +425,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
     }
-    func parseImageTopRate()
-    {
-        
-        
-        for i in 0..<mang3.count
-        {
-            let id = mang3[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
-            
-            let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
-                
-                do
-                {
-                    
-                    let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
-                    if (json["statuskey"] as! Bool)
-                    {
-                        let photo = json["photo"] as! String
-                        //print (photo)
-                        
-                        self.mang3[i].image = photo
-                        
-                        
-                        DispatchQueue.main.async(execute: {
-                            self.myTbv.reloadData()
-                            self.loading.stopAnimating()
-                            self.loading.isHidden = true
-                        })
-                    }
-                }catch{}
-            }
-            task.resume()
-        }
-        
-        
-        
-    }
+    
     func imgMoreTapped()
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -471,7 +468,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 return 1
             }
-            return mang.count
+            return mang3.count
         }
         
             return mang2.count
@@ -551,6 +548,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
            
             
         }
+        
+       
+       
         if ( indexPath.section == 0)
         {
             if (!isLogin)
@@ -558,17 +558,18 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell2")
                 return cell!
             }
+             print ("fuck")
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
             
             
-            let data:Data = Data(base64Encoded: mang[indexPath.row].image)!
+            let data:Data = Data(base64Encoded: mang3[indexPath.row].image)!
             cell.myHouse.image = UIImage(data: data)
             
-            cell.lblGia.text = String(mang[indexPath.row].gia) + "tỷ"
-            cell.lblDIenTich.text = String(mang[indexPath.row].dientich)
-            cell.lblQuan.text = mang[indexPath.row].quan
-            cell.lblDate.text = mang[indexPath.row].date
-            cell.lblTitle.text = mang[indexPath.row].title
+            cell.lblGia.text = String(mang3[indexPath.row].gia) + "tỷ"
+            cell.lblDIenTich.text = String(mang3[indexPath.row].dientich)
+            cell.lblQuan.text = mang3[indexPath.row].quan
+            cell.lblDate.text = mang3[indexPath.row].date
+            cell.lblTitle.text = mang3[indexPath.row].title
             
             return cell
             
