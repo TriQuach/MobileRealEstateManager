@@ -879,17 +879,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-Tm-bhm">
-                                <rect key="frame" x="0.0" y="20" width="300.5" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="300.5" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more-button-of-three-dots.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
-                                <rect key="frame" x="315.5" y="20" width="44.5" height="44.5"/>
+                                <rect key="frame" x="315.5" y="64" width="44.5" height="44.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6sX-mP-hfp" secondAttribute="height" id="Y0n-SB-3Nc"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpe-eh-bTF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" id="rBr-6S-cCC">
@@ -1016,7 +1016,7 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CJF-mx-0IC">
-                                <rect key="frame" x="177" y="333.5" width="20" height="20"/>
+                                <rect key="frame" x="177" y="355.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1744,7 +1744,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HA8-im-giY">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="111" id="ol9-gI-95N" customClass="DetailCuocHenTableViewCell" customModule="Thesis" customModuleProvider="target">
@@ -1844,7 +1844,7 @@
         <!--Navigation Controller-->
         <scene sceneID="lar-n1-WV7">
             <objects>
-                <navigationController storyboardIdentifier="tabbar" automaticallyAdjustsScrollViewInsets="NO" id="93P-OD-JwY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navi2" automaticallyAdjustsScrollViewInsets="NO" id="93P-OD-JwY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cjc-6d-pIw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1859,11 +1859,28 @@
             </objects>
             <point key="canvasLocation" x="-135.19999999999999" y="-559.07046476761627"/>
         </scene>
+        <!--Main Page Navi View Controller-->
+        <scene sceneID="QH6-8e-Zv9">
+            <objects>
+                <navigationController storyboardIdentifier="navi" id="xp7-04-SgS" customClass="MainPageNaviViewController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dOR-AP-jTb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Sop-wO-FK2" kind="relationship" relationship="rootViewController" id="8m0-es-6rA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lDf-Ej-vwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="-559"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="r3A-Rw-LfB">
             <objects>
                 <tabBarController restorationIdentifier="TabBarController" storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Sop-wO-FK2" customClass="TabBarController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fWl-Mc-qaB"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ZqH-PI-G3O">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1878,7 +1895,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wov-ht-ohR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="-666"/>
+            <point key="canvasLocation" x="2876" y="-559"/>
         </scene>
     </scenes>
     <resources>

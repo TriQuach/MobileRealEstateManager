@@ -66,25 +66,100 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
      //   print (mang[0].image)
         
         
-        myTbv.dataSource = self
-        myTbv.delegate = self
+       
         
+        
+        do {
+            let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
+            
+            isLogin = true
+            
+            parseJsonToken(token: data)
+            
+            
+            
+            
+        } catch {
+            //            print("2")
+            //            self.window = UIWindow(frame: UIScreen.main.bounds)
+            //
+            //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //
+            //            let initialViewController = storyboard.instantiateViewController(withIdentifier: "start")
+            //
+            //            self.window?.rootViewController = initialViewController
+            //            self.window?.makeKeyAndVisible()
+            
+            myTbv.dataSource = self
+            myTbv.delegate = self
+        }
         
         
        
-        if ( role == 0)
-        {
-            parseJSONgetInterested()
-        }
-        else if ( role == 1)
-        {
-            parseJsonGetByOwnerID()
-        }
+       
         parseJSONGetNew()
         
         print ("isuser" + String(idUser))
         print ("role" + String(role))
         
+        print ("isLogin 2")
+        print(isLogin)
+        
+        
+        
+        
+    }
+    
+    func parseJsonToken(token: String)
+    {
+        print ("1")
+        
+        let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/login/" + token
+        print (url)
+        let req = URLRequest(url: URL(string: url)!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let typeId = json["typeId"] as! Int
+                let id = json["id"] as! Int
+                
+                print (typeId)
+                
+                DispatchQueue.main.async {
+                    
+                    if ( typeId == 1)
+                    {
+                        self.role = 0
+                        self.idUser = id
+                        self.parseJSONgetInterested()
+                        self.myTbv.dataSource = self
+                        self.myTbv.delegate = self
+                        
+                    }
+                    else if ( typeId == 2)
+                    {
+                        self.role = 1
+                        self.idUser = id
+                        self.parseJsonGetByOwnerID()
+                        self.myTbv.dataSource = self
+                        self.myTbv.delegate = self
+                    }
+                    
+                    
+                    //
+                    
+                    
+                    
+                    
+                }
+            }catch{}
+        }
+        task.resume()
     }
     
     func parseUser(url: String)
@@ -319,38 +394,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         }
         task.resume()
     }
-    func parseJsonToken(token: String)
-    {
-        
-        let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/login/" + token
-        print (url)
-        let req = URLRequest(url: URL(string: url)!)
-        
-        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
-            
-            do
-            {
-                
-                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
-                
-                let typeId = json["typeId"] as! Int
-                let id = json["id"] as! Int
-                
-                print (typeId)
-                
-                DispatchQueue.main.async {
-                    self.idUser = id
-                    if ( typeId == 1 )
-                    {
-                        self.role = 0
-                        self.parseJSONgetInterested()
-                        self.parseJSONGetNew()
-                    }
-                }
-            }catch{}
-        }
-        task.resume()
-    }
+    
     func parseImageInterested()
     {
   

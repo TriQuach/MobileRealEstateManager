@@ -34,6 +34,7 @@
 		E0A29F5A1ED1A6A3005AE69A /* add2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F591ED1A6A3005AE69A /* add2.png */; };
 		E0C7B46F1ED4452B008D7204 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7B46E1ED4452B008D7204 /* User.swift */; };
 		E0C7B4711ED44724008D7204 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7B4701ED44724008D7204 /* Address.swift */; };
+		E0CB675A1EE5C242005C9731 /* MainPageNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */; };
 		E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */; };
 		E0DE60201ECCB9EB00076CF1 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE601F1ECCB9EB00076CF1 /* edit.png */; };
 		E0DE60221ECCBBC300076CF1 /* edit2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60211ECCBBC300076CF1 /* edit2.png */; };
@@ -137,6 +138,7 @@
 		E0A29F591ED1A6A3005AE69A /* add2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add2.png; sourceTree = "<group>"; };
 		E0C7B46E1ED4452B008D7204 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E0C7B4701ED44724008D7204 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageNaviViewController.swift; sourceTree = "<group>"; };
 		E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailOwnerViewController.swift; sourceTree = "<group>"; };
 		E0DE601F1ECCB9EB00076CF1 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		E0DE60211ECCBBC300076CF1 /* edit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit2.png; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */,
 				E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */,
 				E03B4D131ED970E900C85430 /* DangMoiViewController.swift */,
+				E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				E295D0841EBF06B800A746FA /* StartScreenCell2TableViewCell.swift in Sources */,
 				E09C98181ED482E80032C80B /* Estates.swift in Sources */,
 				E23DD2511EB6319E007652F6 /* DetailCuocHenTableViewCell.swift in Sources */,
+				E0CB675A1EE5C242005C9731 /* MainPageNaviViewController.swift in Sources */,
 				E0E2FBD91ED36CEC0048EDAD /* DangBaiViewController.swift in Sources */,
 				E2A4786D1E9139AB00F843BB /* ViewController.swift in Sources */,
 				E2A4789F1E9144AC00F843BB /* BatDongSanController.swift in Sources */,

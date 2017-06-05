@@ -21,21 +21,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
             
-            parseJsonToken(token: data)
-                
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController2 = storyboard.instantiateViewController(withIdentifier: "navi") 
+            
+            
+            
+            
+            //
+            
+            
+            
+            
+            self.window?.rootViewController = initialViewController2
+            
+            self.window?.makeKeyAndVisible()
+            
             
            
             
         } catch {
             //            print("2")
-//            self.window = UIWindow(frame: UIScreen.main.bounds)
-//            
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            
-//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "start")
-//            
-//            self.window?.rootViewController = initialViewController
-//            self.window?.makeKeyAndVisible()
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "navi2")
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
         }
         
         
@@ -71,36 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print (typeId)
                 
                 DispatchQueue.main.async {
-                    self.window = UIWindow(frame: UIScreen.main.bounds)
                     
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    
-                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-                   
-                    let login : BatDongSanController = initialViewController.viewControllers?[0] as! BatDongSanController;
-                    login.isLogin = true
-                    login.idUser = id
-                    if ( typeId == 1)
-                    {
-                        login.role = 0
-                    }
-                    else if ( typeId == 2)
-                    {
-                        login.role = 1
-                    }
-                    else
-                    {
-                        login.role = 2
-                    }
-                    
-//
-                    
-                    
-                    
-                    
-                    self.window?.rootViewController = initialViewController
-                    
-                    self.window?.makeKeyAndVisible()
                     
                     
                 }
