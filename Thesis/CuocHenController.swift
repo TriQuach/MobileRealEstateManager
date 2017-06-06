@@ -11,44 +11,161 @@ import UIKit
 
 class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var myTbv: UITableView!
     @IBOutlet weak var lblTest: UILabel!
     
+    var mang:[SimpleAppointment] = []
     
+    var idUser:Int = 0
     var temp:Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         myTbv.dataSource = self
         myTbv.delegate = self
         
+        print ("iduser")
+        print (idUser)
         
+        loading.color = .black
+        loading.startAnimating()
+        
+        if (idUser==0)
+        {
+            
+            do {
+                let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
+                
+                
+                
+                parseJsonToken(token: data)
+                
+                
+                
+                
+            } catch {
+             //   myTbv.dataSource = self
+               // myTbv.delegate = self
+            }
+            
+            
+        }
+        else
+        {
+            print ("vo day")
+            parseJosnGetAll()
+        }
+        
+    }
+    func parseJosnGetAll()
+    {
+        
+        
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/appointment/getAll/" + String(idUser))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let appointments = json["appointments"] as! [AnyObject]
+                for i in 0..<appointments.count
+                {
+                    let address = appointments[i]["address"] as! String
+                    let name = appointments[i]["name"] as! String
+                    let time = appointments[i]["time"] as! String
+                    let status = appointments[i]["status"] as! Int
+                    
+                    let newSimpleAppointment:SimpleAppointment = SimpleAppointment(address: address, time: time, status: status, name: name)
+     
+                    
+                    self.mang.append(newSimpleAppointment)
+                    
+                //    self.mang2.append(new_estate)
+                    
+                    
+                }
+                
+              
+                
+                
+                DispatchQueue.main.async(execute: {
+                    self.myTbv.reloadData()
+                    self.loading.stopAnimating()
+                    self.loading.isHidden = true
+              //      self.parseImageGetNew()
+                })
+            }catch{}
+        }
+        task.resume()
+    }
+    func parseJsonToken(token: String)
+    {
+        print ("1")
+        
+        let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/login/" + token
+        print (url)
+        let req = URLRequest(url: URL(string: url)!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let typeId = json["typeId"] as! Int
+                let id = json["id"] as! Int
+                
+                print (typeId)
+                
+                DispatchQueue.main.async {
+                    
+                    self.idUser = id
+                    self.parseJosnGetAll()
+                    
+                    //
+                    
+                    
+                    
+                    
+                }
+            }catch{}
+        }
+        task.resume()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return mang.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if ( indexPath.row == 0)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DetailCuocHenTableViewCell
+        cell.lblDiaChi.text = mang[indexPath.row].address
+        cell.lblTieuDe.text = mang[indexPath.row].name
+        cell.lblThoiGian.text = mang[indexPath.row].time
+        if (mang[indexPath.row].status == 1)
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DetailCuocHenTableViewCell
-            cell.tinhTrang.text = "Chờ trả lời"
-            temp = 0
-            return cell
+            cell.tinhTrang.text = "Đang chờ"
         }
-        else if ( indexPath.row == 1)
+        else if (mang[indexPath.row].status == 2)
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DetailCuocHenTableViewCell
-            cell.tinhTrang.text = "Đã chấp nhận"
-            temp = 1
-            return cell
+            cell.tinhTrang.text = "Chấp nhận"
+        }
+        else if (mang[indexPath.row].status == 3)
+        {
+            cell.tinhTrang.text = "Từ chối"
+        }
+        else
+        {
+            cell.tinhTrang.text = "Đã xong"
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DetailCuocHenTableViewCell
-        cell.tinhTrang.text = "Chờ trả lời"
-        //temp = cell.tinhTrang.text
+        
         return cell
         
     }
@@ -56,7 +173,6 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "DetailCuocHen") as! DetailCuocHenViewController
-        tabbar.status = temp!
                 
         self.navigationController?.pushViewController(tabbar, animated: true)
     }

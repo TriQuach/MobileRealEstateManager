@@ -10,6 +10,9 @@ import UIKit
 
 class DetailCuocHenTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblThoiGian: UILabel!
+    @IBOutlet weak var lblDiaChi: UILabel!
+    @IBOutlet weak var lblTieuDe: UILabel!
     @IBOutlet weak var tinhTrang: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

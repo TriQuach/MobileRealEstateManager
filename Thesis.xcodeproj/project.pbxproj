@@ -32,6 +32,8 @@
 		E0A29F561ED1A511005AE69A /* camera2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F551ED1A511005AE69A /* camera2.png */; };
 		E0A29F581ED1A5E5005AE69A /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F571ED1A5E5005AE69A /* add.png */; };
 		E0A29F5A1ED1A6A3005AE69A /* add2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F591ED1A6A3005AE69A /* add2.png */; };
+		E0B000CB1EE6CA1300426BFB /* Appointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B000CA1EE6CA1300426BFB /* Appointments.swift */; };
+		E0B000CD1EE6D9AE00426BFB /* SimpleAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B000CC1EE6D9AE00426BFB /* SimpleAppointment.swift */; };
 		E0C7B46F1ED4452B008D7204 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7B46E1ED4452B008D7204 /* User.swift */; };
 		E0C7B4711ED44724008D7204 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7B4701ED44724008D7204 /* Address.swift */; };
 		E0CB675A1EE5C242005C9731 /* MainPageNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */; };
@@ -136,6 +138,8 @@
 		E0A29F551ED1A511005AE69A /* camera2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera2.png; sourceTree = "<group>"; };
 		E0A29F571ED1A5E5005AE69A /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		E0A29F591ED1A6A3005AE69A /* add2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add2.png; sourceTree = "<group>"; };
+		E0B000CA1EE6CA1300426BFB /* Appointments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointments.swift; sourceTree = "<group>"; };
+		E0B000CC1EE6D9AE00426BFB /* SimpleAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAppointment.swift; sourceTree = "<group>"; };
 		E0C7B46E1ED4452B008D7204 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E0C7B4701ED44724008D7204 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageNaviViewController.swift; sourceTree = "<group>"; };
@@ -411,6 +415,8 @@
 				E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */,
 				E069E1671EDD7AA9002B9E47 /* JsonSerializerSwift.swift */,
 				E0EF4B511EE33C1B009EFFA5 /* Appointment.swift */,
+				E0B000CA1EE6CA1300426BFB /* Appointments.swift */,
+				E0B000CC1EE6D9AE00426BFB /* SimpleAppointment.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -607,11 +613,13 @@
 				E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */,
 				E09C98161ED481660032C80B /* FullEstate.swift in Sources */,
 				E069E1421EDD4D69002B9E47 /* EstatePostNew.swift in Sources */,
+				E0B000CB1EE6CA1300426BFB /* Appointments.swift in Sources */,
 				E2F8E90C1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift in Sources */,
 				E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */,
 				E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */,
 				E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */,
 				E0C7B4711ED44724008D7204 /* Address.swift in Sources */,
+				E0B000CD1EE6D9AE00426BFB /* SimpleAppointment.swift in Sources */,
 				E2A2B5881EA2514F00BE0FF9 /* Extension_UIView.swift in Sources */,
 				E23DD24F1EB62DB6007652F6 /* DetailCuocHenViewController.swift in Sources */,
 				E2A195DC1EC24DF60080914E /* Extension_UIImageView.swift in Sources */,

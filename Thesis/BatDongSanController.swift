@@ -52,7 +52,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         loading.color = .black
         
-        loading.isHidden = true
+        loading.startAnimating()
         
         parseUser(url: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")
        
@@ -107,6 +107,12 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
         
+        if ( isLogin )
+        {
+            var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
+            secondTab.idUser = idUser
+        }
+        
         
     }
     
@@ -139,6 +145,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         self.parseJSONgetInterested()
                         self.myTbv.dataSource = self
                         self.myTbv.delegate = self
+                        var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
+                        secondTab.idUser = self.idUser
                         
                     }
                     else if ( typeId == 2)
@@ -148,6 +156,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         self.parseJsonGetByOwnerID()
                         self.myTbv.dataSource = self
                         self.myTbv.delegate = self
+                        var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
+                        secondTab.idUser = self.idUser
                     }
                     
                     
@@ -255,8 +265,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
        }
     func parseJSONGetNew()
     {
-        self.loading.isHidden = false
-        self.loading.startAnimating()
+       
         let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getNew/1")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
@@ -299,8 +308,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     
     func parseJSONgetInterested()
     {
-        self.loading.isHidden = false
-        self.loading.startAnimating()
+       
         let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/getInterested/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
@@ -343,8 +351,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     }
     func parseJsonGetByOwnerID()
     {
-        self.loading.isHidden = false
-        self.loading.startAnimating()
+        
         let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
@@ -457,8 +464,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         
                         DispatchQueue.main.async(execute: {
                             self.myTbv.reloadData()
-                            self.loading.stopAnimating()
-                            self.loading.isHidden = true
+                            
                         })
                     }
                 }catch{}
