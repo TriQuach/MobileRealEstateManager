@@ -25,6 +25,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var mang2:[Estate] = []
     var mang3:[Estate] = []
     
+    var mang_id1:[Int] = []
+    var mang_id2:[Int] = []
+    
+    
     
     @IBOutlet weak var imgMore: UIImageView!
     
@@ -291,6 +295,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
                  
+                    let owner = estates[i]["owner"] as! AnyObject
+                    let idOwner = owner["id"] as! Int
+                    self.mang_id2.append(idOwner)
+                    
                     self.mang2.append(new_estate)
                    
                 
@@ -299,6 +307,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 
                 DispatchQueue.main.async(execute: {
                     self.myTbv.reloadData()
+                    
                     self.parseImageGetNew()
                 })
             }catch{}
@@ -334,6 +343,12 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
                     
+                    let owner = estates[i]["owner"] as! AnyObject
+                    let idOwner = owner["id"] as! Int
+                    self.mang_id1.append(idOwner)
+                    
+                    
+                    
                   
                     self.mang.append(new_estate)
                     
@@ -342,6 +357,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 
                 DispatchQueue.main.async(execute: {
                     self.myTbv.reloadData()
+                    
                     self.parseImageInterested()
                  //   self.parseImage()
                 })
@@ -374,6 +390,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     let district = address["district"]
                         as! String
+                    
+                    let owner = estates[i]["owner"] as! AnyObject
+                    let idOwner = owner["id"] as! Int
+                   
                     
                     let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
                     
@@ -659,6 +679,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+                    tabbar.idUser = mang_id1[indexPath.row]
                     
                     self.navigationController?.pushViewController(tabbar, animated: true)
                 }
@@ -667,6 +688,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+                tabbar.idUser = mang_id2[indexPath.row]
                 tabbar.passObject = newEstates
                 //   tabbar.status = temp!
                 
@@ -759,7 +781,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         let tabbar = storyboard.instantiateViewController(withIdentifier: "DangBai") as! DangBaiViewController
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
-
+    
+    
     
     
     

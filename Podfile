@@ -13,4 +13,5 @@ pod 'LTMorphingLabel'
 pod 'PopupDialog', '~> 0.5'
 pod "ReadMoreTextView"
 pod 'DropDown'
+pod 'DateTimePicker'
 end

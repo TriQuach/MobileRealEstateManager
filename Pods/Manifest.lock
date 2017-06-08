@@ -1,4 +1,5 @@
 PODS:
+  - DateTimePicker (1.1.2)
   - DropDown (2)
   - Dropper (2.7.5)
   - FaveButton (2.0.3)
@@ -8,6 +9,7 @@ PODS:
   - ReadMoreTextView (1.2.0)
 
 DEPENDENCIES:
+  - DateTimePicker
   - DropDown
   - Dropper
   - FaveButton (~> 2.0.3)
@@ -17,6 +19,7 @@ DEPENDENCIES:
   - ReadMoreTextView
 
 SPEC CHECKSUMS:
+  DateTimePicker: 518bffa5438ef83a7a687cc4d5e187e5c12012b8
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   Dropper: 6fb3bd5977f2ade0a332321b6846180d59e75000
   FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
@@ -25,6 +28,6 @@ SPEC CHECKSUMS:
   PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
   ReadMoreTextView: c1207a23b3b2819a1be5230f5c8180721a88b19c
 
-PODFILE CHECKSUM: b5327ef5d92f0d276dbedbb5666773cb74ead1c7
+PODFILE CHECKSUM: b2da22dcdda594d2f37fb8b5ce226e372fc6a627
 
 COCOAPODS: 1.2.1

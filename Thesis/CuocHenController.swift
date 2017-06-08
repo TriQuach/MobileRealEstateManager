@@ -52,7 +52,6 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
         }
         else
         {
-            print ("vo day")
             parseJosnGetAll()
         }
         

@@ -13,7 +13,7 @@ import Dropper
 import DropDown
 class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    
+    var check:Int = 9999
     var idOwner:Int = 0
 
     @IBOutlet weak var myClv: UICollectionView!
@@ -53,6 +53,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     let dropDown4 = DropDown()
     var takenImage = UIImage(named: "add2.png")
     var mang:[UIImage] = []
+    var mang2:[UIImage] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +74,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         mang.append(takenImage!)
+        mang2.append(takenImage!)
         
 //        print (img.bounds.size.width)
 //        print (img.bounds.size.height)
@@ -329,10 +331,21 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if ( indexPath.row != check)
+        {
+       
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DangMoiCollectionViewCell
         cell.myImg.image = mang[indexPath.row]
-      //  cell.myCheckBox.setCheckState(.mixed, animated: true)
+            cell.btnLike.isHidden = true
+        //  cell.myCheckBox.setCheckState(.mixed, animated: true)
         cell.myCheckBox.stateChangeAnimation = .fill
+        return cell
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! DangMoi2CollectionViewCell
+       cell.myImg.image = mang2[indexPath.row]
+        
         return cell
     }
     
@@ -356,12 +369,24 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
             self.mang.remove(at: mang.count-1)
             self.mang.append(takenImage!)
             self.mang.append(UIImage(named: "add4.png")!)
+            self.mang2.remove(at: mang2.count-1)
+            self.mang2.append(takenImage!)
+            self.mang2.append(UIImage(named: "add4.png")!)
             self.myClv.reloadData()
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         flag = false
+        if (indexPath.row != mang.count - 1 && check != indexPath.row)
+        {
+        self.check = indexPath.row
+            let currentCell = collectionView.cellForItem(at: indexPath) as! DangMoiCollectionViewCell
+            currentCell.btnLike.isHidden = false
+            self.myClv.reloadData()
+        }
+        
+        
         
         if (indexPath.row == mang.count - 1)
         {

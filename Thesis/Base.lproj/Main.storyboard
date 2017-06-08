@@ -210,6 +210,11 @@
                                                                         <constraint firstAttribute="height" constant="29" id="qbl-uo-G9v"/>
                                                                     </constraints>
                                                                 </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydo-wn-UsE">
+                                                                    <rect key="frame" x="57" y="19" width="32" height="32"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <state key="normal" image="like.png"/>
+                                                                </button>
                                                             </subviews>
                                                         </view>
                                                         <constraints>
@@ -221,8 +226,36 @@
                                                             <constraint firstItem="HzD-7m-xZO" firstAttribute="leading" secondItem="Ab5-jF-XJE" secondAttribute="leading" id="vJj-mc-XFh"/>
                                                         </constraints>
                                                         <connections>
+                                                            <outlet property="btnLike" destination="ydo-wn-UsE" id="0fP-28-vEy"/>
                                                             <outlet property="myCheckBox" destination="DOS-yp-LET" id="5Iw-FU-GtU"/>
                                                             <outlet property="myImg" destination="HzD-7m-xZO" id="dtB-WR-BzK"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell2" id="HSd-2d-rXY" customClass="DangMoi2CollectionViewCell" customModule="Thesis" customModuleProvider="target">
+                                                        <rect key="frame" x="126" y="21.5" width="116" height="105"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="116" height="105"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="04O-dv-2oA">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116" height="105"/>
+                                                                </imageView>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydi-av-jdX">
+                                                                    <rect key="frame" x="57" y="37" width="32" height="32"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <state key="normal" image="like.png"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="04O-dv-2oA" secondAttribute="bottom" id="3Og-AZ-CEr"/>
+                                                            <constraint firstItem="04O-dv-2oA" firstAttribute="top" secondItem="HSd-2d-rXY" secondAttribute="top" id="BCy-Gv-Bqd"/>
+                                                            <constraint firstAttribute="trailing" secondItem="04O-dv-2oA" secondAttribute="trailing" id="IWv-ks-T8I"/>
+                                                            <constraint firstItem="04O-dv-2oA" firstAttribute="leading" secondItem="HSd-2d-rXY" secondAttribute="leading" id="Xql-di-cbg"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="myImg" destination="04O-dv-2oA" id="9uh-pm-T5i"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -864,7 +897,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EeE-E3-bE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34" y="224"/>
+            <point key="canvasLocation" x="-310" y="242"/>
         </scene>
         <!--Title-->
         <scene sceneID="EQ9-V3-XOP">
@@ -1486,6 +1519,9 @@
                                                 <rect key="frame" x="185" y="366" width="64" height="64"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="schedule.png"/>
+                                                <connections>
+                                                    <action selector="btnDatLichHen:" destination="5ud-b0-AHN" eventType="touchUpInside" id="3ZW-AT-ttA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjm-QW-mJF">
                                                 <rect key="frame" x="272" y="366" width="64" height="64"/>
@@ -1545,6 +1581,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mE3-Tl-Org" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33" y="1331"/>
+        </scene>
+        <!--Dat Hen View Controller-->
+        <scene sceneID="9B2-wV-8Kr">
+            <objects>
+                <viewController storyboardIdentifier="DatHen" automaticallyAdjustsScrollViewInsets="NO" id="ZhQ-lX-MMP" customClass="DatHenViewController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pd0-Eb-6uY"/>
+                        <viewControllerLayoutGuide type="bottom" id="RD4-bt-pmV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ijh-lr-5sY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiêu đề" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUz-GP-56Z">
+                                <rect key="frame" x="10" y="30" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49b-4B-udT">
+                                <rect key="frame" x="108" y="30" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v1-dk-3c5">
+                                <rect key="frame" x="10" y="61" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHo-4b-aMu">
+                                <rect key="frame" x="106" y="61" width="169" height="30.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN5-aW-5sD">
+                                <rect key="frame" x="285" y="61" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnPickTime:" destination="ZhQ-lX-MMP" eventType="touchUpInside" id="wPf-B1-ezT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nHo-4b-aMu" firstAttribute="top" secondItem="6v1-dk-3c5" secondAttribute="top" id="0cs-r5-eSD"/>
+                            <constraint firstItem="BUz-GP-56Z" firstAttribute="top" secondItem="pd0-Eb-6uY" secondAttribute="bottom" constant="10" id="HV2-QM-nCb"/>
+                            <constraint firstItem="MN5-aW-5sD" firstAttribute="leading" secondItem="nHo-4b-aMu" secondAttribute="trailing" constant="10" id="Hpg-MA-Mva"/>
+                            <constraint firstItem="BUz-GP-56Z" firstAttribute="leading" secondItem="ijh-lr-5sY" secondAttribute="leading" constant="10" id="Ks0-ff-J01"/>
+                            <constraint firstItem="MN5-aW-5sD" firstAttribute="bottom" secondItem="6v1-dk-3c5" secondAttribute="bottom" id="NT3-oy-eMS"/>
+                            <constraint firstItem="MN5-aW-5sD" firstAttribute="top" secondItem="6v1-dk-3c5" secondAttribute="top" id="NsU-9g-9YT"/>
+                            <constraint firstItem="MN5-aW-5sD" firstAttribute="width" secondItem="6v1-dk-3c5" secondAttribute="width" id="XyK-3V-dth"/>
+                            <constraint firstItem="6v1-dk-3c5" firstAttribute="leading" secondItem="ijh-lr-5sY" secondAttribute="leading" constant="10" id="YNU-kh-LA0"/>
+                            <constraint firstItem="6v1-dk-3c5" firstAttribute="top" secondItem="BUz-GP-56Z" secondAttribute="bottom" constant="10" id="Z45-VU-OKZ"/>
+                            <constraint firstItem="nHo-4b-aMu" firstAttribute="bottom" secondItem="6v1-dk-3c5" secondAttribute="bottom" id="eIl-13-eh6"/>
+                            <constraint firstItem="nHo-4b-aMu" firstAttribute="leading" secondItem="6v1-dk-3c5" secondAttribute="trailing" constant="50" id="ttz-Oj-BD6"/>
+                            <constraint firstItem="nHo-4b-aMu" firstAttribute="width" secondItem="ijh-lr-5sY" secondAttribute="width" multiplier="0.45" id="zri-UY-tgL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblTime" destination="nHo-4b-aMu" id="5UT-uu-MTr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKo-99-9J6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672.79999999999995" y="1168.9655172413793"/>
         </scene>
         <!--Detail Cuoc Hen View Controller-->
         <scene sceneID="WOF-qD-lZH">
@@ -1725,6 +1830,7 @@
                     <connections>
                         <outlet property="btnLeft" destination="exB-qD-Pte" id="iQX-uM-x4U"/>
                         <outlet property="btnRight" destination="0PD-bX-ZIG" id="ntL-CR-EgA"/>
+                        <outlet property="lblName" destination="is9-aP-d1D" id="fKt-ij-QJD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D86-CH-eZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1916,6 +2022,7 @@
         <image name="home.png" width="32" height="32"/>
         <image name="house3.jpg" width="450" height="354"/>
         <image name="interested.png" width="64" height="64"/>
+        <image name="like.png" width="32" height="32"/>
         <image name="location.png" width="64" height="64"/>
         <image name="more-button-of-three-dots.png" width="64" height="64"/>
         <image name="phone-call.png" width="64" height="64"/>

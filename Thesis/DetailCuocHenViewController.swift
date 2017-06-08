@@ -12,6 +12,7 @@ class DetailCuocHenViewController: UIViewController {
     
     var status:Int = 0
     
+    @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var btnRight: UIButton!
     @IBOutlet weak var btnLeft: UIButton!
     override func viewDidLoad() {

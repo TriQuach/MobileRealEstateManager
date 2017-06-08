@@ -12,14 +12,20 @@ class DangMoiCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var myImg: UIImageView!
     @IBOutlet var myCheckBox: M13Checkbox!
+    @IBOutlet weak var btnLike: UIButton!
     
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        if (self.myCheckBox.isSelected == true)
-        {
-            self.myCheckBox.setCheckState(.checked, animated: true)
-        }
+//        if (myCheckBox.isEnabled)
+//        {
+//            myCheckBox.isEnabled = true
+//        }
+//        else
+//        {
+//            myCheckBox.setCheckState(.unchecked, animated: true)
+//        }
+      
         
     }
 }

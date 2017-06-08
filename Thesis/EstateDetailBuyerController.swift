@@ -22,6 +22,7 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var myTbv1: UITableView!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var lbl: UILabel!
+    var idUser:Int = 0
     
     
     var takenImage = UIImage(named: "add2.png")
@@ -42,6 +43,8 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
         myClv.dataSource = self
         arrayImage = []
        
+        print ("id user")
+        print (idUser)
         
         
         
@@ -181,6 +184,12 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "DangBai") as! DangBaiViewController
+        self.navigationController?.pushViewController(tabbar, animated: true)
+    }
+    @IBAction func btnDatLichHen(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "DatHen") as! DatHenViewController
+        
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
     
