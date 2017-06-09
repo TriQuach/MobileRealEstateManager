@@ -19,40 +19,114 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         do {
-            let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
+            let data = try String(contentsOfFile: "/Users/triquach/Documents/check.txt", encoding: .utf8)
             
-            self.window = UIWindow(frame: UIScreen.main.bounds)
+            if (data == "true")
+            {
+                
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let initialViewController2 = storyboard.instantiateViewController(withIdentifier: "navi2")
+                
+                self.window?.rootViewController = initialViewController2
+                
+                self.window?.makeKeyAndVisible()
+            }
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let initialViewController2 = storyboard.instantiateViewController(withIdentifier: "navi") 
-            
-            
-            
+            else
+            {
+                do {
+                    let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
+                    
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let initialViewController2 = storyboard.instantiateViewController(withIdentifier: "navi")
+                    
+                    
+                    
+                    
+                    //
+                    
+                    
+                    
+                    
+                    self.window?.rootViewController = initialViewController2
+                    
+                    self.window?.makeKeyAndVisible()
+                    
+                    
+                    
+                    
+                } catch {
+                    //            print("2")
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "navi2")
+                    
+                    self.window?.rootViewController = initialViewController
+                    self.window?.makeKeyAndVisible()
+                }
+            }
             
             //
             
             
             
-            
-            self.window?.rootViewController = initialViewController2
-            
-            self.window?.makeKeyAndVisible()
-            
-            
            
             
+            
+            
+            
         } catch {
-            //            print("2")
-            self.window = UIWindow(frame: UIScreen.main.bounds)
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            print ("lol")
+            do {
+                let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
+                
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let initialViewController2 = storyboard.instantiateViewController(withIdentifier: "navi")
+                
+                
+                
+                
+                //
+                
+                
+                
+                
+                self.window?.rootViewController = initialViewController2
+                
+                self.window?.makeKeyAndVisible()
+                
+                
+                
+                
+            } catch {
+                //            print("2")
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "navi3")
+                
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            }
             
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "navi2")
-            
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
         }
+        
+        
+        
+        
         
         
         

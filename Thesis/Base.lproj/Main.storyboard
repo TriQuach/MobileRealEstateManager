@@ -439,6 +439,22 @@
             </objects>
             <point key="canvasLocation" x="528.79999999999995" y="-2230.8845577211396"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="og1-kK-RnT">
+            <objects>
+                <navigationController storyboardIdentifier="navi2" id="LJA-MG-OaI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ktw-Ta-DEd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qkC-CA-7d2" kind="relationship" relationship="rootViewController" id="jaa-Vf-NNu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CzA-LW-Dp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-599" y="-1299"/>
+        </scene>
         <!--Đăng nhập-->
         <scene sceneID="ZUZ-yh-qD0">
             <objects>
@@ -891,6 +907,16 @@
                     <view key="view" contentMode="scaleToFill" id="0h2-Wa-WPV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YT5-TE-OKC">
+                                <rect key="frame" x="164" y="214" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnLogOut:" destination="bKm-Gq-VBh" eventType="touchUpInside" id="inb-fZ-WA0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Cài đặt" image="settings.png" id="Ugb-RG-6ql"/>
@@ -1958,7 +1984,7 @@
         <!--Navigation Controller-->
         <scene sceneID="lar-n1-WV7">
             <objects>
-                <navigationController storyboardIdentifier="navi2" automaticallyAdjustsScrollViewInsets="NO" id="93P-OD-JwY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navi3" automaticallyAdjustsScrollViewInsets="NO" id="93P-OD-JwY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cjc-6d-pIw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

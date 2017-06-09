@@ -30,6 +30,8 @@ class LogInViewController: UIViewController {
         loading.color = .black
         
         
+        
+        
     }
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
@@ -45,6 +47,62 @@ class LogInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func checkUser(token: String)
+    {
+        
+            print ("1")
+            
+            let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/login/" + token
+            print (url)
+            let req = URLRequest(url: URL(string: url)!)
+            
+            let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+                
+                do
+                {
+                    
+                    let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                    
+                    let typeId = json["typeId"] as! Int
+                    let id = json["id"] as! Int
+                    
+                    print (typeId)
+                    
+                    DispatchQueue.main.async {
+                        
+                        if (typeId == 1)
+                        {
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                            let Role : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
+                            Role.role = 0
+                            self.navigationController?.pushViewController(tabbar, animated: true)
+                        }
+                        else if ( typeId == 2)
+                        {
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                            let Role : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
+                            Role.role = 1
+                            self.navigationController?.pushViewController(tabbar, animated: true)
+                        }
+                        
+                        
+                        //
+                        
+                        
+                        
+                        
+                    }
+                }catch{}
+            }
+            task.resume()
+        
+    }
 
 
     @IBAction func btnDangNhap(_ sender: Any) {
@@ -96,14 +154,20 @@ class LogInViewController: UIViewController {
                 
                 if (json["statuskey"] as? Bool)!
                 {
+                    let check = "false"
+                    do
+                    {
+                        try check.write(toFile: "/Users/triquach/Documents/check.txt", atomically: false, encoding: .utf8)
+                    }catch{}
                     
                     DispatchQueue.main.async {
                         
-                        self.loading.stopAnimating()
-                        self.loading.isHidden = true
+                        
                         
                         if (self.storyboardID == "BDS")
                         {
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let tabbar = storyboard.instantiateViewController(withIdentifier: "DangMoi") as! DangMoiViewController
                             
@@ -111,11 +175,13 @@ class LogInViewController: UIViewController {
                             
                             
                             self.navigationController?.pushViewController(tabbar, animated: true)
+                            
                         }
                         else if (self.storyboardID == "EstateDetailBuyer")
                         {
                             
-                            
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                             let login : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
@@ -123,6 +189,14 @@ class LogInViewController: UIViewController {
                             login.role = 0
                             login.idUser = json["id"] as! Int
                             self.navigationController?.pushViewController(tabbar, animated: true)
+                        }
+                        else if (self.storyboardID == "LogOut")
+                        {
+                            self.checkUser(token: token)
+                        }
+                        else
+                        {
+                            self.checkUser(token: token)
                         }
                     }
                     
