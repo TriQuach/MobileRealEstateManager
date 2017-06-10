@@ -271,6 +271,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         print (json)
         
         let jsonObject = convertToDictionary(text: json)
+        
         print (jsonObject)
         
         
@@ -332,19 +333,24 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if ( indexPath.row != check)
+        if ( indexPath.row != check && indexPath.row != mang.count - 1)
         {
-       
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DangMoiCollectionViewCell
-        cell.myImg.image = mang[indexPath.row]
-            cell.btnLike.isHidden = true
-        //  cell.myCheckBox.setCheckState(.mixed, animated: true)
-        cell.myCheckBox.stateChangeAnimation = .fill
-        return cell
+            
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DangMoiCollectionViewCell
+            cell.myImg.image = mang[indexPath.row]
+           
+            return cell
+        }
+        if (indexPath.row == mang.count - 1)
+        {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath)
+            return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! DangMoi2CollectionViewCell
-       cell.myImg.image = mang2[indexPath.row]
+        cell.myImg.image = mang2[indexPath.row]
+        cell.myCb.stateChangeAnimation = .fill
+        cell.myCb.setCheckState(.checked, animated: true)
         
         return cell
     }
@@ -381,8 +387,6 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         if (indexPath.row != mang.count - 1 && check != indexPath.row)
         {
         self.check = indexPath.row
-            let currentCell = collectionView.cellForItem(at: indexPath) as! DangMoiCollectionViewCell
-            currentCell.btnLike.isHidden = false
             self.myClv.reloadData()
         }
         
@@ -400,6 +404,11 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
      
         
     }
+    
+    
+    
+    
+   
 
 }
 extension DangMoiViewController: DropperDelegate {
