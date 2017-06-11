@@ -12,17 +12,30 @@ import M13Checkbox
 import FaveButton
 import PopupDialog
 import ReadMoreTextView
-class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITableViewDataSource,FaveButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
-    
+    @IBOutlet weak var lblLoai: UILabel!
+    @IBOutlet weak var lblMoTa: UILabel!
+    @IBOutlet weak var lblTinhTrang: UILabel!
+    @IBOutlet weak var lblSoPhongTam: UILabel!
+    @IBOutlet weak var lblSoPhongNgu: UILabel!
+    @IBOutlet weak var lblSoTang: UILabel!
+    @IBOutlet weak var lblRong: UILabel!
+    @IBOutlet weak var lblDai: UILabel!
+    @IBOutlet weak var lblDienTich: UILabel!
+    @IBOutlet weak var lblAdressEstate: UILabel!
+    @IBOutlet weak var lblOwner: UILabel!
+    @IBOutlet weak var lblName: UILabel!
+    var passFullEstate:FullEstate!
+    @IBOutlet weak var myClv2: UICollectionView!
     @IBOutlet weak var myClv: UICollectionView!
     var arrayImage:[UIImage]?
     @IBOutlet weak var lblGhiChu: UILabel!
-    @IBOutlet weak var myTbv1: UITableView!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var lbl: UILabel!
     var idUser:Int = 0
+    var idEstate:Int = 0
     
     
     var takenImage = UIImage(named: "add2.png")
@@ -36,38 +49,36 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         mang.append(takenImage!)
-        myTbv1.dataSource = self
-        myTbv1.delegate = self
         
         myClv.delegate = self
         myClv.dataSource = self
+        
+        myClv2.delegate = self
+        myClv2.dataSource = self
         arrayImage = []
+        parsePassedFullEstate()
        
-        print ("id user")
-        print (idUser)
-        
-        
+       
         
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    
+    func parsePassedFullEstate()
+    {
+        lblName.text = passFullEstate.name
+        lblOwner.text = passFullEstate.owner.fullName
+        lblAdressEstate.text = passFullEstate.address.address + " " + passFullEstate.address.district + " " + passFullEstate.address.city
+        lblDienTich.text = String(passFullEstate.area)
+        lblDai.text = String(passFullEstate.detail.length)
+        lblRong.text = String(passFullEstate.detail.width)
+        lblLoai.text = passFullEstate.type
+        lblSoTang.text = String(passFullEstate.detail.floor)
+        lblSoPhongNgu.text = String(passFullEstate.detail.bedroom)
+        lblSoPhongTam.text = String(passFullEstate.detail.bathroom)
+        lblTinhTrang.text = passFullEstate.detail.condition
+        lblMoTa.text = passFullEstate.detail.description
+    
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if ( tableView.tag == 0)
-        {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-            //cell?.backgroundColor = .yellow
-            return cell!
-        }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! MyImageTableViewCell
-        cell.mang = arrayImage
-        //cell?.backgroundColor = .yellow
-        return cell
-
-    }
+    
    
     @IBAction func btnHen(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -132,14 +143,22 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mang.count
+        
+        
+            return mang.count
+        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
      //   print(arrayImage?.count)
             
       //  print(arrayImage?[indexPath.row])
+        if ( collectionView.tag == 0)
+        {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyImageCollectionViewCell
         cell.myImg.image = mang[indexPath.row]
+        return cell
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -151,12 +170,15 @@ class EstateDetailBuyerController: UIViewController, UITableViewDelegate, UITabl
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if (indexPath.row == mang.count - 1)
+        if ( collectionView.tag == 0)
         {
-            let myPicker = UIImagePickerController()
-            myPicker.delegate = self
-            myPicker.sourceType = .photoLibrary
-            present(myPicker, animated: true, completion: nil)
+            if (indexPath.row == mang.count - 1)
+            {
+                let myPicker = UIImagePickerController()
+                myPicker.delegate = self
+                myPicker.sourceType = .photoLibrary
+                present(myPicker, animated: true, completion: nil)
+            }
         }
         
     }

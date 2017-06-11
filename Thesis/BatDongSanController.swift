@@ -73,6 +73,13 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
        
         
         
+        
+        
+        
+    }
+    
+    func loadAfterGetAll()
+    {
         do {
             let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
             
@@ -99,16 +106,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         }
         
         
-       
-       
+        
+        
         parseJSONGetNew()
-        
-        print ("isuser" + String(idUser))
-        print ("role" + String(role))
-        
-        print ("isLogin 2")
-        print(isLogin)
-        
         
         
         if ( isLogin )
@@ -116,8 +116,6 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
             secondTab.idUser = idUser
         }
-        
-        
     }
     
     func parseJsonToken(token: String)
@@ -253,6 +251,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                // print (listFullEstates[1].postTime)
                 DispatchQueue.main.async {
                       self.newEstates = Estates(listEstates: listFullEstates, statuskey: statuskey)
+                    self.loadAfterGetAll()
                    // print ( self.newEstates.statuskey)
                 }
                 
@@ -680,6 +679,17 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
                     tabbar.idUser = mang_id1[indexPath.row]
+                    tabbar.idEstate = mang[indexPath.row].ID
+                    
+                    for i in 0..<self.newEstates.listEstates.count
+                    {
+                        if (self.newEstates.listEstates[i].id == mang[indexPath.row].ID)
+                        {
+                            tabbar.passFullEstate = self.newEstates.listEstates[i]
+                            break
+                        }
+                    }
+                    
                     
                     self.navigationController?.pushViewController(tabbar, animated: true)
                 }
@@ -689,8 +699,16 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
                 tabbar.idUser = mang_id2[indexPath.row]
-                tabbar.passObject = newEstates
+                
                 //   tabbar.status = temp!
+                for i in 0..<self.newEstates.listEstates.count
+                {
+                    if (self.newEstates.listEstates[i].id == mang2[indexPath.row].ID)
+                    {
+                        tabbar.passFullEstate = self.newEstates.listEstates[i]
+                        break
+                    }
+                }
                 
                 self.navigationController?.pushViewController(tabbar, animated: true)
             }
@@ -711,7 +729,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 else
                 {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailOwner") as! EstateDetailOwnerController
+                    let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailOwner") as! EstateDetailOwnerViewController
                     
                     self.navigationController?.pushViewController(tabbar, animated: true)
                 }
