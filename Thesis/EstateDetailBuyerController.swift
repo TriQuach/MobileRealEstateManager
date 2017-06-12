@@ -211,6 +211,9 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     @IBAction func btnDatLichHen(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "DatHen") as! DatHenViewController
+        tabbar.datLichHen = "xem nhà" + " " + passFullEstate.address.address + " " + passFullEstate.address.ward
+        tabbar.owner = passFullEstate.owner.fullName
+        tabbar.idUser = passFullEstate.owner.id
         
         self.navigationController?.pushViewController(tabbar, animated: true)
     }

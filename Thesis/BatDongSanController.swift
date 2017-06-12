@@ -205,7 +205,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let city = detailAddress["city"] as! String
                     let district = detailAddress["district"] as! String
                     let ward = detailAddress["ward"] as! String
-                    let address2 = detailAddress["city"] as! String
+                    let address2 = detailAddress["address"] as! String
                     let id2 = detailAddress["id"] as! Int
                     
                     let newAdress:Address = Address(city: city, district: district, ward: ward, address: address2, id: id2)

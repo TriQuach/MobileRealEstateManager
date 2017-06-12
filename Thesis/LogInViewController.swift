@@ -29,6 +29,8 @@ class LogInViewController: UIViewController {
         loading.isHidden = true
         loading.color = .black
         
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
         
         
         
