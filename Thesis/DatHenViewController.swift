@@ -10,20 +10,21 @@ import UIKit
 import DateTimePicker
 class DatHenViewController: UIViewController {
 
+    @IBOutlet weak var edtName: UITextField!
     @IBOutlet weak var edtNote: UITextField!
     @IBOutlet weak var lblOwner: UILabel!
-    @IBOutlet weak var lblDatLichHen: UILabel!
     @IBOutlet weak var lblTime: UILabel!
-    var idUser:Int = 0
+    var idOwner:Int = 0
+    var idUser: Int = 0
     var datLichHen:String!
     var owner:String!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print ("idUser new" + String(idUser))
-
+        
+        print ("user2" + String(idUser))
         // Do any additional setup after loading the view.
-        parsePassObject()
+      //  parsePassObject()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +34,7 @@ class DatHenViewController: UIViewController {
     
     func parsePassObject()
     {
-        lblDatLichHen.text = datLichHen
+        edtName.text = datLichHen
         lblOwner.text = owner
     }
 
@@ -59,15 +60,15 @@ class DatHenViewController: UIViewController {
     @IBAction func sendRequest(_ sender: Any) {
         
         
-        let appointmentPostNew:AppointmentPostNew = AppointmentPostNew(name: lblDatLichHen.text!, time: lblTime.text!, userid: idUser, note: edtNote.text!)
-        
-        
-        let json = JSONSerializer.toJson(appointmentPostNew)
-        print (json)
-        
-        let jsonObject = convertToDictionary(text: json)
-        
-        print (jsonObject)
+//        let appointmentPostNew:AppointmentPostNew = AppointmentPostNew(name: lblDatLichHen.text!, time: lblTime.text!, userid: idUser, note: edtNote.text!)
+//        
+//        
+//        let json = JSONSerializer.toJson(appointmentPostNew)
+//        print (json)
+//        
+//        let jsonObject = convertToDictionary(text: json)
+//        
+//        print (jsonObject)
         
         
 //        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)

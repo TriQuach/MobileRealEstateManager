@@ -34,8 +34,10 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     @IBOutlet weak var lblGhiChu: UILabel!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var lbl: UILabel!
-    var idUser:Int = 0
+    var idOwner:Int = 0
+    var idUser: Int = 0
     var idEstate:Int = 0
+    
     
     
     var takenImage = UIImage(named: "add2.png")
@@ -56,26 +58,34 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         myClv2.delegate = self
         myClv2.dataSource = self
         arrayImage = []
-        parsePassedFullEstate()
+    //    parsePassedFullEstate()
+        
+        print ("owner" + String(idOwner))
+        print ("User" + String(idUser))
        
        
         
     }
     
+    func getEstateBaseOnID()
+    {
+        
+    }
+    
     func parsePassedFullEstate()
     {
-        lblName.text = passFullEstate.name
-        lblOwner.text = passFullEstate.owner.fullName
-        lblAdressEstate.text = passFullEstate.address.address + " " + passFullEstate.address.district + " " + passFullEstate.address.city
-        lblDienTich.text = String(passFullEstate.area)
-        lblDai.text = String(passFullEstate.detail.length)
-        lblRong.text = String(passFullEstate.detail.width)
-        lblLoai.text = passFullEstate.type
-        lblSoTang.text = String(passFullEstate.detail.floor)
-        lblSoPhongNgu.text = String(passFullEstate.detail.bedroom)
-        lblSoPhongTam.text = String(passFullEstate.detail.bathroom)
-        lblTinhTrang.text = passFullEstate.detail.condition
-        lblMoTa.text = passFullEstate.detail.description
+//        lblName.text = passFullEstate.name
+//        lblOwner.text = passFullEstate.owner.fullName
+//        lblAdressEstate.text = passFullEstate.address.address + " " + passFullEstate.address.district + " " + passFullEstate.address.city
+//        lblDienTich.text = String(passFullEstate.area)
+//        lblDai.text = String(passFullEstate.detail.length)
+//        lblRong.text = String(passFullEstate.detail.width)
+//        lblLoai.text = passFullEstate.type
+//        lblSoTang.text = String(passFullEstate.detail.floor)
+//        lblSoPhongNgu.text = String(passFullEstate.detail.bedroom)
+//        lblSoPhongTam.text = String(passFullEstate.detail.bathroom)
+//        lblTinhTrang.text = passFullEstate.detail.condition
+//        lblMoTa.text = passFullEstate.detail.description
     
     }
     
@@ -211,9 +221,10 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     @IBAction func btnDatLichHen(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "DatHen") as! DatHenViewController
-        tabbar.datLichHen = "xem nhà" + " " + passFullEstate.address.address + " " + passFullEstate.address.ward
-        tabbar.owner = passFullEstate.owner.fullName
-        tabbar.idUser = passFullEstate.owner.id
+        
+      //  tabbar.owner = passFullEstate.owner.fullName
+        tabbar.idUser = idUser
+        tabbar.idOwner = idOwner
         
         self.navigationController?.pushViewController(tabbar, animated: true)
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D95669C054C48BA66D1599A /* Pods_Thesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */; };
 		E00716FF1EEEDE0E0075A818 /* AppointmentPostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00716FE1EEEDE0E0075A818 /* AppointmentPostNew.swift */; };
+		E00F0E5F1EF180FC001D5F27 /* UserIdBookAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F0E5E1EF180FC001D5F27 /* UserIdBookAppointment.swift */; };
 		E0229A8B1EE996510085283F /* DangMoi2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0229A8A1EE996510085283F /* DangMoi2CollectionViewCell.swift */; };
 		E0267D2E1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */; };
 		E028803D1EDC7B9500BEC26A /* default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E028803C1EDC7B9500BEC26A /* default_image.jpg */; };
@@ -26,6 +27,8 @@
 		E069E1441EDD4D84002B9E47 /* UserEstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */; };
 		E069E1661EDD60D1002B9E47 /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E069E1651EDD60D1002B9E47 /* down-arrow.png */; };
 		E069E1681EDD7AA9002B9E47 /* JsonSerializerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1671EDD7AA9002B9E47 /* JsonSerializerSwift.swift */; };
+		E07993A71EEFD328002AA88E /* PhotoPostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07993A61EEFD328002AA88E /* PhotoPostNew.swift */; };
+		E07993A91EEFD348002AA88E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07993A81EEFD348002AA88E /* Photo.swift */; };
 		E08F968D1ED84807009D96D7 /* interested.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F96891ED84807009D96D7 /* interested.png */; };
 		E08F968E1ED84807009D96D7 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968A1ED84807009D96D7 /* location.png */; };
 		E08F968F1ED84807009D96D7 /* phone-call.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968B1ED84807009D96D7 /* phone-call.png */; };
@@ -118,6 +121,7 @@
 		4D611505BE1607FDA2D3C29D /* Pods-Thesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thesis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thesis/Pods-Thesis.release.xcconfig"; sourceTree = "<group>"; };
 		85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00716FE1EEEDE0E0075A818 /* AppointmentPostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentPostNew.swift; sourceTree = "<group>"; };
+		E00F0E5E1EF180FC001D5F27 /* UserIdBookAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdBookAppointment.swift; sourceTree = "<group>"; };
 		E0229A8A1EE996510085283F /* DangMoi2CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoi2CollectionViewCell.swift; sourceTree = "<group>"; };
 		E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoiCollectionViewCell.swift; sourceTree = "<group>"; };
 		E028803C1EDC7B9500BEC26A /* default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_image.jpg; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 		E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEstatePostNew.swift; sourceTree = "<group>"; };
 		E069E1651EDD60D1002B9E47 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
 		E069E1671EDD7AA9002B9E47 /* JsonSerializerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonSerializerSwift.swift; sourceTree = "<group>"; };
+		E07993A61EEFD328002AA88E /* PhotoPostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPostNew.swift; sourceTree = "<group>"; };
+		E07993A81EEFD348002AA88E /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		E08F96891ED84807009D96D7 /* interested.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interested.png; sourceTree = "<group>"; };
 		E08F968A1ED84807009D96D7 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		E08F968B1ED84807009D96D7 /* phone-call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-call.png"; sourceTree = "<group>"; };
@@ -426,6 +432,9 @@
 				E0B000CA1EE6CA1300426BFB /* Appointments.swift */,
 				E0B000CC1EE6D9AE00426BFB /* SimpleAppointment.swift */,
 				E00716FE1EEEDE0E0075A818 /* AppointmentPostNew.swift */,
+				E07993A61EEFD328002AA88E /* PhotoPostNew.swift */,
+				E07993A81EEFD348002AA88E /* Photo.swift */,
+				E00F0E5E1EF180FC001D5F27 /* UserIdBookAppointment.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -613,6 +622,7 @@
 				E2F8E90E1EC7328100EDD5F2 /* MyImageTableViewCell.swift in Sources */,
 				E0229A8B1EE996510085283F /* DangMoi2CollectionViewCell.swift in Sources */,
 				E2E1C4361E96751B0008D0B3 /* EstateDetailBuyerController.swift in Sources */,
+				E00F0E5F1EF180FC001D5F27 /* UserIdBookAppointment.swift in Sources */,
 				E0C7B46F1ED4452B008D7204 /* User.swift in Sources */,
 				E069E1441EDD4D84002B9E47 /* UserEstatePostNew.swift in Sources */,
 				E272A89D1EBF35F700D6A9BC /* LogInViewController.swift in Sources */,
@@ -632,6 +642,7 @@
 				E0C7B4711ED44724008D7204 /* Address.swift in Sources */,
 				E0B000CD1EE6D9AE00426BFB /* SimpleAppointment.swift in Sources */,
 				E2A2B5881EA2514F00BE0FF9 /* Extension_UIView.swift in Sources */,
+				E07993A91EEFD348002AA88E /* Photo.swift in Sources */,
 				E23DD24F1EB62DB6007652F6 /* DetailCuocHenViewController.swift in Sources */,
 				E2A195DC1EC24DF60080914E /* Extension_UIImageView.swift in Sources */,
 				E0267D2E1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift in Sources */,
@@ -652,6 +663,7 @@
 				E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */,
 				E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */,
 				E02E48031EE7D08C00A571DE /* DatHenViewController.swift in Sources */,
+				E07993A71EEFD328002AA88E /* PhotoPostNew.swift in Sources */,
 				E213154D1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift in Sources */,
 				E217EF851E93CDA700068876 /* CuocHenController.swift in Sources */,
 			);

@@ -15,7 +15,8 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     
     var check:Int = 9999
     var idOwner:Int = 0
-
+    var mangPhotos:[Photo] = []
+    var idEstate:Int = 0
     @IBOutlet weak var myClv: UICollectionView!
     @IBOutlet weak var btnThanhPho: UIButton!
     
@@ -65,8 +66,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         initDropDown(x: dropPhuong)
         initDropDown(x: dropLoai)
         
-        
-        
+   
 
         myClv.delegate = self
         myClv.dataSource = self
@@ -99,6 +99,8 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
 //        innerView.addSubview(btnCamera)
 //        innerView.addSubview(btnPhoto)
 
+        
+        DangBai()
         
         
         
@@ -245,39 +247,113 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
 //        let tabbar = storyboard.instantiateViewController(withIdentifier: "BDS") as! BatDongSanController
 //        tabbar.isLogin = true
 //        self.navigationController?.pushViewController(tabbar, animated: true)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-        let login : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
-        login.isLogin = true
-        self.navigationController?.pushViewController(tabbar, animated: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+//        let login : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
+//        login.isLogin = true
+//        self.navigationController?.pushViewController(tabbar, animated: true)
         
         
-        let owner:UserEstatePostNew = UserEstatePostNew(id: idOwner)
+//        let owner:UserEstatePostNew = UserEstatePostNew(id: idOwner)
+//        
+//        let address:Address = Address(city: self.lblThanhPho.text!, district: self.lblQuan.text!, ward: self.lblPhuong.text!, address: self.edtSoNha.text!, id: 0)
+//        
+//        let detail:Detail = Detail(bathroom: Int(self.edtSoPhongNgu.text!)!, bedroom: Int(self.edtSoPhongTam.text!)!, condition: self.edtTinhTrang.text!, description: self.edtMoTa.text!, floor: Int(self.edtSoTang.text!)!, length: Double(self.edtChieuDai.text!)!, width: Double(self.edtChieuRong.text!)!, id: 0)
+//        
+//        
+//        let type = Int(self.lblLoai.text!)
+//        let price = Double(self.edtGia.text!)
+//        let area = Double(self.edtDienTich.text!)
+//        let name = self.edtTieuDe.text
+//        
+//        let estatePostNew:EstatePostNew = EstatePostNew(owner: owner, address: address, detail: detail, type: type!, price: price!, area: area!, name: name!, broker: self.isBroker.isEnabled)
+//        
+//        
+//        let json = JSONSerializer.toJson(estatePostNew)
+//    //    print (json)
+//        
+//        let jsonObject = convertToDictionary(text: json)
+//        
+//      //  print (jsonObject)
+//        
+//        
+//        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+//        
+//        var req = URLRequest(url: URL(string: "http://172.29.87.155:8080/rem/rem_server/estate/post")!)
+//        
+//        
+//        
+//        req.httpMethod = "POST"
+//        req.httpBody = jsonData
+//        
+//        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+//            
+//            
+//         //   print (data)
+//            do
+//            {
+//                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+//                
+//             //   print (json["statuskey"])
+//               // print (json["name"])
+//                
+//                
+//                DispatchQueue.main.async {
+//                    self.idEstate = json["id"] as! Int
+//                    self.parseImageToArray()
+//                    
+//                    self.sendRequestImageApi()
+//                    
+//                    
+//                    
+//                    
+//                    
+//                    
+//                    
+//                }
+//                
+//                
+//            }catch{}
+//            
+//            
+//        }
+//        task.resume()
         
-        let address:Address = Address(city: self.lblThanhPho.text!, district: self.lblQuan.text!, ward: self.lblPhuong.text!, address: self.edtSoNha.text!, id: 0)
+
         
-        let detail:Detail = Detail(bathroom: Int(self.edtSoPhongNgu.text!)!, bedroom: Int(self.edtSoPhongTam.text!)!, condition: self.edtTinhTrang.text!, description: self.edtMoTa.text!, floor: Int(self.edtSoTang.text!)!, length: Double(self.edtChieuDai.text!)!, width: Double(self.edtChieuRong.text!)!, id: 0)
-        
-        
-        let type = Int(self.lblLoai.text!)
-        let price = Double(self.edtGia.text!)
-        let area = Double(self.edtDienTich.text!)
-        let name = self.edtTieuDe.text
-        
-        let estatePostNew:EstatePostNew = EstatePostNew(owner: owner, address: address, detail: detail, type: type!, price: price!, area: area!, name: name!, broker: self.isBroker.isEnabled)
+        idEstate = 21
+        parseImageToArray()
+        sendRequestImageApi()
         
         
-        let json = JSONSerializer.toJson(estatePostNew)
-        print (json)
+        
+        
+    }
+    
+    func sendRequestImageApi()
+    {
+        
+        print ("self.idEstate")
+        print (self.idEstate)
+        print ("mangPhotos")
+        print (self.mangPhotos)
+        let photoPostNew:PhotoPostNew = PhotoPostNew(id: self.idEstate, photos: self.mangPhotos, avatar: self.check)
+        
+        print ("photoPostNew")
+        print (photoPostNew)
+        
+        let json = JSONSerializer.toJson(photoPostNew)
+        //    print (json)
         
         let jsonObject = convertToDictionary(text: json)
         
-        print (jsonObject)
+        //  print (jsonObject)
         
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/post")!)
+        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/upPhotoList")!)
+        
         
         
         
@@ -286,35 +362,30 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
             
-            
-            print (data)
+            print ("data:")
+               print (data)
             do
             {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                print ("asdasd")
+                let json2 = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
                 
-                print (json["statuskey"])
-                print (json["name"])
-                
-                
-                
+                   print (json2["message"] as! String)
+                 print (json2["statuskey"] as! Bool)
                 
                 
-            }catch{}
+               
+                
+                
+            }catch{
+                print ("catch")
+                print (error)
+            }
             
             
         }
         task.resume()
-
-        
-
-        
-        
-        
-        
-        
-        
-        
     }
+    
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
@@ -403,6 +474,24 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
      
         
+    }
+    func parseImage(image: UIImage) -> String
+    {
+        let imageData:NSData = UIImagePNGRepresentation(image)! as NSData
+        
+        let strBase64 = imageData.base64EncodedString(options: .endLineWithLineFeed)
+        
+        return strBase64
+    }
+    func parseImageToArray()
+    {
+        for i in 0..<mang.count - 1
+        {
+            let stringData = parseImage(image: mang[i])
+            let photo:Photo = Photo(photo: stringData)
+            mangPhotos.append(photo)
+            print (stringData)
+        }
     }
     
     

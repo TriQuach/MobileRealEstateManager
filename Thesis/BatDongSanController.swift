@@ -58,7 +58,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         loading.startAnimating()
         
-        parseUser(url: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getAll")
+       
+        loadAfterGetAll()
        
    //     print (x.listEstates[0].address)
         
@@ -269,7 +270,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONGetNew()
     {
        
-        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getNew/1")!)
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getNew/4")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -678,17 +679,12 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-                    tabbar.idUser = mang_id1[indexPath.row]
+                    tabbar.idOwner = mang_id1[indexPath.row]
                     tabbar.idEstate = mang[indexPath.row].ID
+                    tabbar.idUser = idUser
                     
-                    for i in 0..<self.newEstates.listEstates.count
-                    {
-                        if (self.newEstates.listEstates[i].id == mang[indexPath.row].ID)
-                        {
-                            tabbar.passFullEstate = self.newEstates.listEstates[i]
-                            break
-                        }
-                    }
+                    
+                   
                     
                     
                     self.navigationController?.pushViewController(tabbar, animated: true)
@@ -698,17 +694,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-                tabbar.idUser = mang_id2[indexPath.row]
-                
+                tabbar.idOwner = mang_id2[indexPath.row]
+                tabbar.idEstate = mang2[indexPath.row].ID
+                tabbar.idUser = idUser
                 //   tabbar.status = temp!
-                for i in 0..<self.newEstates.listEstates.count
-                {
-                    if (self.newEstates.listEstates[i].id == mang2[indexPath.row].ID)
-                    {
-                        tabbar.passFullEstate = self.newEstates.listEstates[i]
-                        break
-                    }
-                }
+                
                 
                 self.navigationController?.pushViewController(tabbar, animated: true)
             }
