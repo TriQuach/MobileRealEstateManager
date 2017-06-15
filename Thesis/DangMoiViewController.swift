@@ -100,7 +100,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
 //        innerView.addSubview(btnPhoto)
 
         
-        DangBai()
+        
         
         
         
@@ -243,6 +243,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     func DangBai()
     {
+        print ("asdasdasdasd")
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let tabbar = storyboard.instantiateViewController(withIdentifier: "BDS") as! BatDongSanController
 //        tabbar.isLogin = true
@@ -361,9 +362,8 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         req.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
-            
-            print ("data:")
-               print (data)
+           
+
             do
             {
                 print ("asdasd")

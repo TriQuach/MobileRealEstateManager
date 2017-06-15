@@ -10,6 +10,7 @@ import UIKit
 import DateTimePicker
 class DatHenViewController: UIViewController {
 
+    @IBOutlet weak var edtAddress: UITextField!
     @IBOutlet weak var edtName: UITextField!
     @IBOutlet weak var edtNote: UITextField!
     @IBOutlet weak var lblOwner: UILabel!
@@ -61,45 +62,45 @@ class DatHenViewController: UIViewController {
         
         
 //        let appointmentPostNew:AppointmentPostNew = AppointmentPostNew(name: lblDatLichHen.text!, time: lblTime.text!, userid: idUser, note: edtNote.text!)
+//       
+        let appointmentPostNew:AppointmentPostNew = AppointmentPostNew(name: edtName.text!, address: edtAddress.text!, time: lblTime.text!, user1: UserIdBookAppointment(id: idUser), user2: UserIdBookAppointment(id: idOwner), note: edtNote.text!)
 //        
-//        
-//        let json = JSONSerializer.toJson(appointmentPostNew)
-//        print (json)
-//        
-//        let jsonObject = convertToDictionary(text: json)
-//        
-//        print (jsonObject)
+        let json = JSONSerializer.toJson(appointmentPostNew)
+        print (json)
+        
+        let jsonObject = convertToDictionary(text: json)
+        
+        print (jsonObject)
         
         
-//        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
-//        
-//        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/post")!)
-//        
-//        
-//        
-//        req.httpMethod = "POST"
-//        req.httpBody = jsonData
-//        
-//        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
-//            
-//            
-//            print (data)
-//            do
-//            {
-//                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
-//                
-//                print (json["statuskey"])
-//                print (json["name"])
-//                
-//                
-//                
-//                
-//                
-//            }catch{}
-//            
-//            
-//        }
-//        task.resume()
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/appointment/book")!)
+        
+        
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+                print (json["message"] as! String)
+                
+                
+                
+                
+                
+                
+            }catch{}
+            
+            
+        }
+        task.resume()
     }
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {

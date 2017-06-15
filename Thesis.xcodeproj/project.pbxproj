@@ -15,6 +15,7 @@
 		E028803D1EDC7B9500BEC26A /* default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E028803C1EDC7B9500BEC26A /* default_image.jpg */; };
 		E028803F1EDC914500BEC26A /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = E028803E1EDC914500BEC26A /* picture.png */; };
 		E02E48031EE7D08C00A571DE /* DatHenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02E48021EE7D08C00A571DE /* DatHenViewController.swift */; };
+		E03A27DA1EF2C7C60021DF28 /* Extension_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A27D91EF2C7C60021DF28 /* Extension_UIImage.swift */; };
 		E03B4D121ED950E900C85430 /* ChuaLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B4D111ED950E900C85430 /* ChuaLoginTableViewCell.swift */; };
 		E03B4D141ED970E900C85430 /* DangMoiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B4D131ED970E900C85430 /* DangMoiViewController.swift */; };
 		E03B4D161ED9772F00C85430 /* combo-box.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D151ED9772F00C85430 /* combo-box.png */; };
@@ -127,6 +128,7 @@
 		E028803C1EDC7B9500BEC26A /* default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_image.jpg; sourceTree = "<group>"; };
 		E028803E1EDC914500BEC26A /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
 		E02E48021EE7D08C00A571DE /* DatHenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatHenViewController.swift; sourceTree = "<group>"; };
+		E03A27D91EF2C7C60021DF28 /* Extension_UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_UIImage.swift; sourceTree = "<group>"; };
 		E03B4D111ED950E900C85430 /* ChuaLoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuaLoginTableViewCell.swift; sourceTree = "<group>"; };
 		E03B4D131ED970E900C85430 /* DangMoiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoiViewController.swift; sourceTree = "<group>"; };
 		E03B4D151ED9772F00C85430 /* combo-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combo-box.png"; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				E2A4789A1E9140DF00F843BB /* Extension.swift */,
 				E2A2B5871EA2514F00BE0FF9 /* Extension_UIView.swift */,
 				E2A195DB1EC24DF60080914E /* Extension_UIImageView.swift */,
+				E03A27D91EF2C7C60021DF28 /* Extension_UIImage.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */,
 				E0C7B4711ED44724008D7204 /* Address.swift in Sources */,
 				E0B000CD1EE6D9AE00426BFB /* SimpleAppointment.swift in Sources */,
+				E03A27DA1EF2C7C60021DF28 /* Extension_UIImage.swift in Sources */,
 				E2A2B5881EA2514F00BE0FF9 /* Extension_UIView.swift in Sources */,
 				E07993A91EEFD348002AA88E /* Photo.swift in Sources */,
 				E23DD24F1EB62DB6007652F6 /* DetailCuocHenViewController.swift in Sources */,

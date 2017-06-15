@@ -9,12 +9,13 @@
 import Foundation
 class AppointmentPostNew
 {
-    var name:String
+   
     var address:String
+    var note:String
     var time:String
     var user1:UserIdBookAppointment
     var user2:UserIdBookAppointment
-    var note:String
+    var name:String
     init(name:String,address:String, time:String, user1:UserIdBookAppointment,user2:UserIdBookAppointment, note:String) {
         self.name = name
         self.address = address

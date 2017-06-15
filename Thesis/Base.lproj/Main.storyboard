@@ -1869,9 +1869,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN5-aW-5sD">
-                                <rect key="frame" x="340" y="61" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN5-aW-5sD">
+                                <rect key="frame" x="344" y="61" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="YOS-CQ-aP3"/>
+                                    <constraint firstAttribute="height" constant="21" id="sMc-pA-qks"/>
+                                </constraints>
                                 <state key="normal" image="schedule.png"/>
                                 <connections>
                                     <action selector="btnPickTime:" destination="ZhQ-lX-MMP" eventType="touchUpInside" id="wPf-B1-ezT"/>
@@ -1950,6 +1953,7 @@
                             <constraint firstItem="f9q-Cf-sAX" firstAttribute="top" secondItem="h6G-n4-Kq4" secondAttribute="bottom" constant="10" id="4Er-Jb-KmD"/>
                             <constraint firstItem="CGj-SG-WaZ" firstAttribute="leading" secondItem="6v1-dk-3c5" secondAttribute="leading" id="7eA-Ca-72D"/>
                             <constraint firstAttribute="trailing" secondItem="Lmc-lc-Rh8" secondAttribute="trailing" constant="10" id="ADv-0K-03B"/>
+                            <constraint firstAttribute="trailing" secondItem="MN5-aW-5sD" secondAttribute="trailing" constant="10" id="BRV-83-jCX"/>
                             <constraint firstItem="vKj-zg-Ned" firstAttribute="top" secondItem="f9q-Cf-sAX" secondAttribute="bottom" constant="10" id="BUi-vU-FLa"/>
                             <constraint firstAttribute="trailing" secondItem="QcE-vM-H7S" secondAttribute="trailing" constant="10" id="Jq3-gq-Q1O"/>
                             <constraint firstItem="BUz-GP-56Z" firstAttribute="leading" secondItem="ijh-lr-5sY" secondAttribute="leading" constant="10" id="Km2-NQ-Q01"/>
@@ -1968,6 +1972,7 @@
                             <constraint firstItem="6v1-dk-3c5" firstAttribute="leading" secondItem="BUz-GP-56Z" secondAttribute="leading" id="e5s-Zh-Lgr"/>
                             <constraint firstItem="keX-zf-6b1" firstAttribute="top" secondItem="CGj-SG-WaZ" secondAttribute="bottom" constant="10" id="fad-vm-72U"/>
                             <constraint firstItem="CGj-SG-WaZ" firstAttribute="trailing" secondItem="6v1-dk-3c5" secondAttribute="trailing" id="fxb-9e-gv9"/>
+                            <constraint firstItem="MN5-aW-5sD" firstAttribute="top" secondItem="QcE-vM-H7S" secondAttribute="bottom" constant="10" id="g64-9g-Y1j"/>
                             <constraint firstItem="vKj-zg-Ned" firstAttribute="width" secondItem="ijh-lr-5sY" secondAttribute="width" multiplier="0.5" id="jzW-Lz-bMw"/>
                             <constraint firstItem="h6G-n4-Kq4" firstAttribute="top" secondItem="Zbq-Ja-zWD" secondAttribute="bottom" constant="10" id="lvb-BS-3Aj"/>
                             <constraint firstItem="keX-zf-6b1" firstAttribute="leading" secondItem="CGj-SG-WaZ" secondAttribute="leading" id="nbk-D3-xd4"/>
@@ -1979,6 +1984,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="edtAddress" destination="Lmc-lc-Rh8" id="Dlr-Ug-v8f"/>
                         <outlet property="edtName" destination="QcE-vM-H7S" id="jhd-9A-ZgW"/>
                         <outlet property="edtNote" destination="f9q-Cf-sAX" id="3UL-AR-SjH"/>
                         <outlet property="lblOwner" destination="Zbq-Ja-zWD" id="A6s-Oa-iMT"/>
