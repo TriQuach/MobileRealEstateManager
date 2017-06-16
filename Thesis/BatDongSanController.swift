@@ -60,6 +60,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
        
         loadAfterGetAll()
+        
+        
        
    //     print (x.listEstates[0].address)
         
@@ -87,6 +89,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             isLogin = true
             
             parseJsonToken(token: data)
+            print ("idUser:" + String(idUser))
             
             
             
@@ -414,6 +417,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 
                 DispatchQueue.main.async(execute: {
                     self.myTbv.reloadData()
+                    self.parseImageGetByOwnerID()
                     //self.parseImageInterested()
                     //   self.parseImage()
                 })
@@ -458,6 +462,38 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
        
+    }
+    func parseImageGetByOwnerID()
+    {
+        for i in 0..<mang3.count
+        {
+            let id = mang3[i].ID
+            let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            
+            let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+                
+                do
+                {
+                    
+                    let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                    if (json["statuskey"] as! Bool)
+                    {
+                        let photo = json["photo"] as! String
+                        //print (photo)
+                        
+                        self.mang3[i].image = photo
+                        
+                        
+                        DispatchQueue.main.async(execute: {
+                            self.myTbv.reloadData()
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
+                        })
+                    }
+                }catch{}
+            }
+            task.resume()
+        }
     }
     func parseImageGetNew()
     {

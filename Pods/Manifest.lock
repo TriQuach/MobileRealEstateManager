@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.4.0)
   - DateTimePicker (1.1.2)
   - DropDown (2)
   - Dropper (2.7.5)
@@ -9,6 +10,7 @@ PODS:
   - ReadMoreTextView (1.2.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.4)
   - DateTimePicker
   - DropDown
   - Dropper
@@ -19,6 +21,7 @@ DEPENDENCIES:
   - ReadMoreTextView
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   DateTimePicker: 518bffa5438ef83a7a687cc4d5e187e5c12012b8
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   Dropper: 6fb3bd5977f2ade0a332321b6846180d59e75000
@@ -28,6 +31,6 @@ SPEC CHECKSUMS:
   PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
   ReadMoreTextView: c1207a23b3b2819a1be5230f5c8180721a88b19c
 
-PODFILE CHECKSUM: b2da22dcdda594d2f37fb8b5ce226e372fc6a627
+PODFILE CHECKSUM: e285559f1c5c86173d42621e69fcbe5fed5934fa
 
 COCOAPODS: 1.2.1

@@ -13,6 +13,7 @@ import Dropper
 import DropDown
 class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     var check:Int = 9999
     var idOwner:Int = 0
     var mangPhotos:[Photo] = []
@@ -100,7 +101,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
 //        innerView.addSubview(btnPhoto)
 
         
-        
+        loading.isHidden = true
         
         
         
@@ -243,88 +244,81 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     func DangBai()
     {
+        self.loading.isHidden = false
+        self.loading.startAnimating()
         print ("asdasdasdasd")
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let tabbar = storyboard.instantiateViewController(withIdentifier: "BDS") as! BatDongSanController
-//        tabbar.isLogin = true
-//        self.navigationController?.pushViewController(tabbar, animated: true)
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-//        let login : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
-//        login.isLogin = true
-//        self.navigationController?.pushViewController(tabbar, animated: true)
         
         
-//        let owner:UserEstatePostNew = UserEstatePostNew(id: idOwner)
-//        
-//        let address:Address = Address(city: self.lblThanhPho.text!, district: self.lblQuan.text!, ward: self.lblPhuong.text!, address: self.edtSoNha.text!, id: 0)
-//        
-//        let detail:Detail = Detail(bathroom: Int(self.edtSoPhongNgu.text!)!, bedroom: Int(self.edtSoPhongTam.text!)!, condition: self.edtTinhTrang.text!, description: self.edtMoTa.text!, floor: Int(self.edtSoTang.text!)!, length: Double(self.edtChieuDai.text!)!, width: Double(self.edtChieuRong.text!)!, id: 0)
-//        
-//        
-//        let type = Int(self.lblLoai.text!)
-//        let price = Double(self.edtGia.text!)
-//        let area = Double(self.edtDienTich.text!)
-//        let name = self.edtTieuDe.text
-//        
-//        let estatePostNew:EstatePostNew = EstatePostNew(owner: owner, address: address, detail: detail, type: type!, price: price!, area: area!, name: name!, broker: self.isBroker.isEnabled)
-//        
-//        
-//        let json = JSONSerializer.toJson(estatePostNew)
-//    //    print (json)
-//        
-//        let jsonObject = convertToDictionary(text: json)
-//        
-//      //  print (jsonObject)
-//        
-//        
-//        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
-//        
-//        var req = URLRequest(url: URL(string: "http://172.29.87.155:8080/rem/rem_server/estate/post")!)
-//        
-//        
-//        
-//        req.httpMethod = "POST"
-//        req.httpBody = jsonData
-//        
-//        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
-//            
-//            
-//         //   print (data)
-//            do
-//            {
-//                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
-//                
-//             //   print (json["statuskey"])
-//               // print (json["name"])
-//                
-//                
-//                DispatchQueue.main.async {
-//                    self.idEstate = json["id"] as! Int
-//                    self.parseImageToArray()
-//                    
-//                    self.sendRequestImageApi()
-//                    
-//                    
-//                    
-//                    
-//                    
-//                    
-//                    
-//                }
-//                
-//                
-//            }catch{}
-//            
-//            
-//        }
-//        task.resume()
+        
+        
+        let owner:UserEstatePostNew = UserEstatePostNew(id: idOwner)
+        
+        let address:Address = Address(city: self.lblThanhPho.text!, district: self.lblQuan.text!, ward: self.lblPhuong.text!, address: self.edtSoNha.text!, id: 0)
+        
+        let detail:Detail = Detail(bathroom: Int(self.edtSoPhongNgu.text!)!, bedroom: Int(self.edtSoPhongTam.text!)!, condition: self.edtTinhTrang.text!, description: self.edtMoTa.text!, floor: Int(self.edtSoTang.text!)!, length: Double(self.edtChieuDai.text!)!, width: Double(self.edtChieuRong.text!)!, id: 0)
+        
+        
+        let type = Int(self.lblLoai.text!)
+        let price = Double(self.edtGia.text!)
+        let area = Double(self.edtDienTich.text!)
+        let name = self.edtTieuDe.text
+        
+        let estatePostNew:EstatePostNew = EstatePostNew(owner: owner, address: address, detail: detail, type: type!, price: price!, area: area!, name: name!, broker: self.isBroker.isEnabled)
+        
+        
+        let json = JSONSerializer.toJson(estatePostNew)
+    //    print (json)
+        
+        let jsonObject = convertToDictionary(text: json)
+        
+      //  print (jsonObject)
+        
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/post")!)
+        
+        
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+         //   print (data)
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+             //   print (json["statuskey"])
+               // print (json["name"])
+                
+                
+                DispatchQueue.main.async {
+                    self.idEstate = json["id"] as! Int
+                    self.parseImageToArray()
+                    
+                    self.sendRequestImageApi()
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                }
+                
+                
+            }catch{}
+            
+            
+        }
+        task.resume()
         
 
         
-        idEstate = 21
-        parseImageToArray()
-        sendRequestImageApi()
+   
         
         
         
@@ -363,7 +357,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
            
-
+        
             do
             {
                 print ("asdasd")
@@ -372,7 +366,16 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
                    print (json2["message"] as! String)
                  print (json2["statuskey"] as! Bool)
                 
-                
+                DispatchQueue.main.async {
+                    self.loading.isHidden = true
+                    self.loading.stopAnimating()
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                    let login : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
+                    login.isLogin = true
+                    login.role = 1
+                    self.navigationController?.pushViewController(tabbar, animated: true)
+                }
                
                 
                 
@@ -487,10 +490,10 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     {
         for i in 0..<mang.count - 1
         {
-            let stringData = parseImage(image: mang[i])
-            let photo:Photo = Photo(photo: stringData)
+            let stringData = mang[i].base64(format: .jpeg(0.2))
+            let photo:Photo = Photo(photo: stringData!)
             mangPhotos.append(photo)
-            print (stringData)
+        //    print (stringData)
         }
     }
     

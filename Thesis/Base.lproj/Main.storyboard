@@ -391,11 +391,16 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7IY-zm-pqg">
+                                                <rect key="frame" x="177.5" y="425" width="20" height="20"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="qQq-SU-xd3" secondAttribute="trailing" id="0XQ-X0-7uw"/>
                                             <constraint firstItem="Rb9-w3-XT0" firstAttribute="top" secondItem="soc-1p-4ks" secondAttribute="bottom" constant="10" id="0wY-lJ-jcX"/>
+                                            <constraint firstItem="7IY-zm-pqg" firstAttribute="centerY" secondItem="kE2-J1-p7s" secondAttribute="centerY" id="13C-jM-ZhF"/>
+                                            <constraint firstItem="7IY-zm-pqg" firstAttribute="centerX" secondItem="kE2-J1-p7s" secondAttribute="centerX" id="13O-Wu-sEk"/>
                                             <constraint firstItem="q7X-yV-VKT" firstAttribute="leading" secondItem="kE2-J1-p7s" secondAttribute="leading" constant="10" id="18C-T0-Uvw"/>
                                             <constraint firstItem="8mR-or-gdm" firstAttribute="top" secondItem="Qiu-K4-U8B" secondAttribute="bottom" constant="10" id="3rS-HG-Pf5"/>
                                             <constraint firstItem="5Db-KV-yqQ" firstAttribute="trailing" secondItem="mFE-8e-7Wd" secondAttribute="trailing" id="4P9-QF-WiB"/>
@@ -539,6 +544,7 @@
                         <outlet property="lblPhuong" destination="7Vj-rP-tLW" id="tmZ-m7-h2d"/>
                         <outlet property="lblQuan" destination="tBB-GE-IPI" id="TA0-yM-Cx5"/>
                         <outlet property="lblThanhPho" destination="47Y-vL-XhH" id="rOO-eE-NUD"/>
+                        <outlet property="loading" destination="7IY-zm-pqg" id="Rk1-3L-Tq5"/>
                         <outlet property="myClv" destination="qQq-SU-xd3" id="9De-OT-RNL"/>
                     </connections>
                 </viewController>

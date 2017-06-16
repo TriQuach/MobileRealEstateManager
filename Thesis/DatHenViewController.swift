@@ -47,13 +47,15 @@ class DatHenViewController: UIViewController {
         picker.darkColor = UIColor.darkGray
         picker.doneButtonTitle = "!! DONE DONE !!"
         picker.todayButtonTitle = "Today"
-        picker.is12HourFormat = true
+      //  picker.is12HourFormat = true
         picker.dateFormat = "hh:mm aa dd/MM/YYYY"
+        
         
         picker.completionHandler = { date in
             // do something after tapping done
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm aa dd/MM/YYYY"
+            
             self.lblTime.text = formatter.string(from: date)
         }
     }

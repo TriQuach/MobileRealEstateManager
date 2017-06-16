@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DateTimePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,6 +57,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0E56BEF3BBFF882CFD6BB3B7D39553F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>20A9DD9ABBF08BC57372A26C35327BF1</key>
 		<dict>
 			<key>primary</key>
@@ -72,7 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6A3E40CF7BC8C5DF09F9911752F1C0E0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7C08227B6E14D87F0F5B0FD6DFFA1A3E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,17 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A1049D3BF4B9FD2F77AF345655AFF81C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A1BB6AB18A6A15DB36943AC4F569C573</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE72E2CB2CEA0D79EF7711EA77F084AA</key>
+		<key>C71DDAD94AAB9C763DEB33A3CAEEE1B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

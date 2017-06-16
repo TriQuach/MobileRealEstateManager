@@ -14,4 +14,5 @@ pod 'PopupDialog', '~> 0.5'
 pod "ReadMoreTextView"
 pod 'DropDown'
 pod 'DateTimePicker'
+pod 'Alamofire', '~> 4.4'
 end
