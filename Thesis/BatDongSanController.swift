@@ -28,6 +28,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var mang_id1:[Int] = []
     var mang_id2:[Int] = []
     
+    var nameOwner:[String] = []
+    var addressOwner:[String] = []
+    
+    var nameOwner2:[String] = []
+    var addressOwner2:[String] = []
     
     
     @IBOutlet weak var imgMore: UIImageView!
@@ -304,6 +309,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     self.mang2.append(new_estate)
                    
+                    self.nameOwner2.append(owner["fullName"] as! String)
+                    self.addressOwner2.append(owner["address"] as! String)
                 
                 }
                 
@@ -349,6 +356,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let owner = estates[i]["owner"] as! AnyObject
                     let idOwner = owner["id"] as! Int
                     self.mang_id1.append(idOwner)
+                    self.nameOwner.append(owner["fullName"] as! String)
+                    self.addressOwner.append(owner["address"] as! String)
+                    
                     
                     
                     
@@ -664,7 +674,6 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell2")
                 return cell!
             }
-             print ("fuck")
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
             
             
@@ -718,7 +727,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     tabbar.idOwner = mang_id1[indexPath.row]
                     tabbar.idEstate = mang[indexPath.row].ID
                     tabbar.idUser = idUser
-                    
+                    tabbar.passEstate = mang[indexPath.row]
+                    tabbar.passOwner = nameOwner[indexPath.row]
+                    tabbar.passAdress = addressOwner[indexPath.row]
                     
                    
                     
@@ -734,6 +745,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 tabbar.idEstate = mang2[indexPath.row].ID
                 tabbar.idUser = idUser
                 //   tabbar.status = temp!
+                tabbar.passEstate = mang2[indexPath.row]
+                tabbar.passOwner = nameOwner2[indexPath.row]
+                tabbar.passAdress = addressOwner2[indexPath.row]
                 
                 
                 self.navigationController?.pushViewController(tabbar, animated: true)

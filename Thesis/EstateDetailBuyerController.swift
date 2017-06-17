@@ -15,6 +15,8 @@ import ReadMoreTextView
 class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
+    @IBOutlet weak var passImg: UIImageView!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var lblLoai: UILabel!
     @IBOutlet weak var lblMoTa: UILabel!
     @IBOutlet weak var lblTinhTrang: UILabel!
@@ -37,6 +39,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     var idOwner:Int = 0
     var idUser: Int = 0
     var idEstate:Int = 0
+    var mangImage:[String] = []
     
     
     
@@ -47,7 +50,9 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     var name_house:String?
     var mang:[UIImage] = []
     
-    var passObject:Estates!
+    var passEstate:Estate!
+    var passOwner:String!
+    var passAdress:String!
     override func viewDidLoad() {
         super.viewDidLoad()
         mang.append(takenImage!)
@@ -55,37 +60,89 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         myClv.delegate = self
         myClv.dataSource = self
         
-        myClv2.delegate = self
-        myClv2.dataSource = self
+        
         arrayImage = []
     //    parsePassedFullEstate()
         
         print ("owner" + String(idOwner))
         print ("User" + String(idUser))
+        
+        print ("idEstate:" + String(idEstate))
+        loading.startAnimating()
        
-       
+       getEstateBaseOnID()
         
     }
     
     func getEstateBaseOnID()
     {
         
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getDetail/" + String(idEstate))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                DispatchQueue.main.async {
+                    self.lblSoPhongTam.text = String(json["bathroom"] as! Int)
+                    self.lblSoPhongNgu.text = String(json["bedroom"] as! Int)
+                    self.lblTinhTrang.text = json["condition"] as! String
+                    self.lblMoTa.text = json["description"] as! String
+                    self.lblSoTang.text = String(json["floor"] as! Int)
+                    self.lblDai.text = String(json["length"] as! Double)
+                    self.lblRong.text = String(json["width"] as! Double)
+                    self.parsePassEstate()
+                    self.getPhotoList()
+                }
+                
+                
+            }catch{}
+        }
+        task.resume()
+    }
+    func getPhotoList()
+    {
+        
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                let photos = json["photos"] as! [AnyObject]
+                for i in 0..<photos.count
+                {
+                    let photo = photos[i]["photo"] as! String
+                    self.mangImage.append(photo)
+                }
+                
+                DispatchQueue.main.async {
+                    self.loading.isHidden = true
+                    self.myClv2.delegate = self
+                    self.myClv2.dataSource = self
+                    self.myClv2.reloadData()
+                }
+                
+                
+            }catch{}
+        }
+        task.resume()
     }
     
-    func parsePassedFullEstate()
+    func parsePassEstate()
     {
-//        lblName.text = passFullEstate.name
-//        lblOwner.text = passFullEstate.owner.fullName
-//        lblAdressEstate.text = passFullEstate.address.address + " " + passFullEstate.address.district + " " + passFullEstate.address.city
-//        lblDienTich.text = String(passFullEstate.area)
-//        lblDai.text = String(passFullEstate.detail.length)
-//        lblRong.text = String(passFullEstate.detail.width)
-//        lblLoai.text = passFullEstate.type
-//        lblSoTang.text = String(passFullEstate.detail.floor)
-//        lblSoPhongNgu.text = String(passFullEstate.detail.bedroom)
-//        lblSoPhongTam.text = String(passFullEstate.detail.bathroom)
-//        lblTinhTrang.text = passFullEstate.detail.condition
-//        lblMoTa.text = passFullEstate.detail.description
+
+        lblName.text = passEstate.title
+        lblDienTich.text = String(passEstate.dientich)
+        lblAdressEstate.text = passAdress
+        lblOwner.text = passOwner
+        let data:Data = Data(base64Encoded: passEstate.image)!
+        passImg.image = UIImage(data: data)
+        
     
     }
     
@@ -155,7 +212,11 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         
+        if ( collectionView.tag == 0)
+        {
             return mang.count
+        }
+        return mangImage.count
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -168,7 +229,10 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         cell.myImg.image = mang[indexPath.row]
         return cell
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! ImageServerCollectionViewCell
+        let data:Data = Data(base64Encoded: mangImage[indexPath.row])!
+        cell.myImg.image = UIImage(data: data)
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
