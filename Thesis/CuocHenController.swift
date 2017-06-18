@@ -19,6 +19,7 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
     
     var idUser:Int = 0
     var temp:Int?
+    var role:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         myTbv.dataSource = self
@@ -76,8 +77,20 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
                     let name = appointments[i]["name"] as! String
                     let time = appointments[i]["time"] as! String
                     let status = appointments[i]["status"] as! Int
+                    let note = appointments[i]["note"] as! String
+                    let id  = appointments[i]["id"] as! Int
                     
-                    let newSimpleAppointment:SimpleAppointment = SimpleAppointment(address: address, time: time, status: status, name: name)
+                    let user1 = appointments[i]["user1"] as! AnyObject
+                    
+                    let newUser1Name = user1["fullName"] as! String
+                    
+                    let user2 = appointments[i]["user2"] as! AnyObject
+                    
+                    let newUser2Name = user2["fullName"] as! String
+                    
+                    
+                    
+                    let newSimpleAppointment:SimpleAppointment = SimpleAppointment(address: address, time: time, status: status, name: name, user1: newUser1Name, user2: newUser2Name, note: note, id: id)
      
                     
                     self.mang.append(newSimpleAppointment)
@@ -172,6 +185,8 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "DetailCuocHen") as! DetailCuocHenViewController
+        tabbar.passAppoint = mang[indexPath.row]
+        tabbar.role = self.role
                 
         self.navigationController?.pushViewController(tabbar, animated: true)
     }

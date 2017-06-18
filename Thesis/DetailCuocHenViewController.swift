@@ -10,31 +10,160 @@ import UIKit
 
 class DetailCuocHenViewController: UIViewController {
     
-    var status:Int = 0
+    var passAppoint:SimpleAppointment!
+    var role:Int!
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    @IBOutlet weak var lblNote: UILabel!
+    @IBOutlet weak var lblUser2: UILabel!
+    @IBOutlet weak var lblUser1: UILabel!
+    @IBOutlet weak var lblAddress: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var btnRight: UIButton!
     @IBOutlet weak var btnLeft: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loading.isHidden = true
+        parseAppoint()
+        
+    }
+    func parseAppoint()
+    {
+        if (role == 0)
+        {
+            if ( passAppoint.status == 1)
+            {
+                self.lblStatus.text = "Chờ trả lời"
+                self.btnLeft.isHidden = true
+                btnRight.setTitle("Hủy yêu cầu", for: .normal)
+                parseTime()
+            }
+            else if ( passAppoint.status == 2)
+            {
+                self.lblStatus.text = "Đã chấp nhận"
+                self.btnLeft.isHidden = true
+                btnRight.setTitle("Hủy cuộc hẹn", for: .normal)
+                parseTime()
+            }
+        }
+        else if (role == 1)
+        {
+            if ( passAppoint.status == 1)
+            {
+                self.lblStatus.text = "Chờ trả lời"
+                btnLeft.setTitle("Chấp nhận", for: .normal)
+                parseTime()
+                btnRight.setTitle("Từ chối", for: .normal)
+                parseTime()
+            }
+            else if ( passAppoint.status == 2 )
+            {
+                self.lblStatus.text = "Đã chấp nhận"
+                self.btnLeft.isHidden = true
+                btnRight.setTitle("Hủy cuộc hẹn", for: .normal)
+                parseTime()
+            }
+            
+        }
 
-        if ( status == 0)
+    }
+    func parseTime()
+    {
+        self.lblDate.text = passAppoint.time
+        self.lblAddress.text = passAppoint.address
+        self.lblNote.text = passAppoint.note
+        if (role == 0)
         {
-           self.btnLeft.isHidden = true
-            btnRight.setTitle("Hủy yêu cầu", for: .normal)
+            self.lblUser1.text = passAppoint.user2
         }
-        else if ( status == 1)
+        else if (role == 1)
         {
-            self.btnLeft.isHidden = false
-            btnRight.setTitle("Hủy cuộc hẹn", for: .normal)
-            btnLeft.setTitle("Nhắc nhở", for: .normal)
+            self.lblUser1.text = passAppoint.user1
         }
-    
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
        
+    }
+    @IBAction func actionLeftButton(_ sender: Any) {
+        
+        
+       loading.isHidden = false
+        loading.startAnimating()
+        let updateStatus: AppointmentStatusUpdate = AppointmentStatusUpdate(ApptID: passAppoint.id, Status: 2)
+        
+        
+        let json = JSONSerializer.toJson(updateStatus)
+        //    print (json)
+        
+        let jsonObject = convertToDictionary(text: json)
+        
+        //  print (jsonObject)
+        
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/appointment/updateStatus")!)
+        
+        
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+            //   print (data)
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+                DispatchQueue.main.async {
+                    if ( json["statuskey"] as! Bool )
+                    {
+                        self.loading.isHidden = true
+                        self.loading.stopAnimating()
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                        
+                        self.navigationController?.pushViewController(tabbar, animated: true)
+                    }
+                    else
+                    {
+                        
+                       
+                            let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
+                        
+                    }
+                }
+                
+                
+                
+                
+            }catch{}
+            
+            
+        }
+        task.resume()
+        
+    }
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
     }
     
 }

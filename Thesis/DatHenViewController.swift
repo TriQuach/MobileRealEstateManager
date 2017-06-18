@@ -10,6 +10,7 @@ import UIKit
 import DateTimePicker
 class DatHenViewController: UIViewController {
 
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var edtAddress: UITextField!
     @IBOutlet weak var edtName: UITextField!
     @IBOutlet weak var edtNote: UITextField!
@@ -19,13 +20,15 @@ class DatHenViewController: UIViewController {
     var idUser: Int = 0
     var datLichHen:String!
     var owner:String!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        loading.isHidden = true
         print ("user2" + String(idUser))
         // Do any additional setup after loading the view.
-      //  parsePassObject()
+        parsePassObject()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +65,8 @@ class DatHenViewController: UIViewController {
     
     @IBAction func sendRequest(_ sender: Any) {
         
+        loading.isHidden = false
+        loading.startAnimating()
         
 //        let appointmentPostNew:AppointmentPostNew = AppointmentPostNew(name: lblDatLichHen.text!, time: lblTime.text!, userid: idUser, note: edtNote.text!)
 //       
@@ -93,7 +98,28 @@ class DatHenViewController: UIViewController {
                 
                 print (json["message"] as! String)
                 
-                
+                DispatchQueue.main.async {
+                    if ( json["statuskey"] as! Bool )
+                    {
+                        self.loading.isHidden = true
+                        self.loading.stopAnimating()
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                        
+                        self.navigationController?.pushViewController(tabbar, animated: true)
+                    }
+                    else
+                    {
+                        
+                        
+                        let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        self.loading.stopAnimating()
+                        self.loading.isHidden = true
+                        
+                    }
+                }
                 
                 
                 

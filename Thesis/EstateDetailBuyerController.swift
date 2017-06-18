@@ -289,6 +289,8 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
       //  tabbar.owner = passFullEstate.owner.fullName
         tabbar.idUser = idUser
         tabbar.idOwner = idOwner
+        tabbar.owner = passOwner
+        tabbar.datLichHen = "Xem nhà tại " + passAdress
         
         self.navigationController?.pushViewController(tabbar, animated: true)
     }

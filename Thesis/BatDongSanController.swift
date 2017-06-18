@@ -124,6 +124,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         {
             var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
             secondTab.idUser = idUser
+            secondTab.role = self.role
         }
     }
     
