@@ -172,6 +172,10 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
         {
             cell.tinhTrang.text = "Từ chối"
         }
+        else if (mang[indexPath.row].status == 5)
+        {
+            cell.tinhTrang.text = "Đã hủy"
+        }
         else
         {
             cell.tinhTrang.text = "Đã xong"

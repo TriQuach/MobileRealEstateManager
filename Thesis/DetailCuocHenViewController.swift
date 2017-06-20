@@ -48,6 +48,20 @@ class DetailCuocHenViewController: UIViewController {
                 btnRight.setTitle("Hủy cuộc hẹn", for: .normal)
                 parseTime()
             }
+            else if ( passAppoint.status == 3)
+            {
+                self.lblStatus.text = "Đã từ chối"
+                self.btnLeft.isHidden = true
+                self.btnRight.isHidden = true
+                parseTime()
+            }
+            else if ( passAppoint.status == 5)
+            {
+                self.lblStatus.text = "Đã hủy"
+                self.btnLeft.isHidden = true
+                self.btnRight.isHidden = true
+                parseTime()
+            }
         }
         else if (role == 1)
         {
@@ -94,7 +108,38 @@ class DetailCuocHenViewController: UIViewController {
         
        loading.isHidden = false
         loading.startAnimating()
-        let updateStatus: AppointmentStatusUpdate = AppointmentStatusUpdate(ApptID: passAppoint.id, Status: 2)
+        sendRequest(status: 2)
+        
+        
+    }
+    
+    @IBAction func actionButtonRight(_ sender: Any) {
+        loading.isHidden = false
+        loading.startAnimating()
+        if (role == 0)
+        {
+            if (passAppoint.status == 1 || passAppoint.status == 2 )
+            {
+                sendRequest(status: 5)
+            }
+            
+        }
+        else if ( role == 1)
+        {
+            if (passAppoint.status == 1) // pending
+            {
+                sendRequest(status: 3)
+            }
+            else if (passAppoint.status == 2)
+            {
+                sendRequest(status: 5)
+            }
+        
+        }
+    }
+    func sendRequest(status: Int)
+    {
+        let updateStatus: AppointmentStatusUpdate = AppointmentStatusUpdate(ApptID: passAppoint.id, Status: status)
         
         
         let json = JSONSerializer.toJson(updateStatus)
@@ -135,12 +180,12 @@ class DetailCuocHenViewController: UIViewController {
                     else
                     {
                         
-                       
-                            let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                            self.present(alert, animated: true, completion: nil)
-                            self.loading.stopAnimating()
-                            self.loading.isHidden = true
+                        
+                        let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        self.loading.stopAnimating()
+                        self.loading.isHidden = true
                         
                     }
                 }
@@ -153,7 +198,6 @@ class DetailCuocHenViewController: UIViewController {
             
         }
         task.resume()
-        
     }
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {

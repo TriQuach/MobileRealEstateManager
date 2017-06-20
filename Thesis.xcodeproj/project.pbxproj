@@ -24,6 +24,8 @@
 		E03B4D1C1ED97FA600C85430 /* tick3.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1B1ED97FA600C85430 /* tick3.png */; };
 		E03B4D1E1ED9F26600C85430 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1D1ED9F26600C85430 /* plus.png */; };
 		E03B4D201ED9F2DE00C85430 /* add4.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1F1ED9F2DE00C85430 /* add4.png */; };
+		E04236101EF9450C001EE037 /* CaiDatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */; };
+		E04236121EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */; };
 		E069E1421EDD4D69002B9E47 /* EstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */; };
 		E069E1441EDD4D84002B9E47 /* UserEstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */; };
 		E069E1661EDD60D1002B9E47 /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E069E1651EDD60D1002B9E47 /* down-arrow.png */; };
@@ -144,6 +146,8 @@
 		E03B4D1B1ED97FA600C85430 /* tick3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick3.png; sourceTree = "<group>"; };
 		E03B4D1D1ED9F26600C85430 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		E03B4D1F1ED9F2DE00C85430 /* add4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add4.png; sourceTree = "<group>"; };
+		E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTableViewCell.swift; sourceTree = "<group>"; };
+		E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTaiKhoanViewController.swift; sourceTree = "<group>"; };
 		E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstatePostNew.swift; sourceTree = "<group>"; };
 		E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEstatePostNew.swift; sourceTree = "<group>"; };
 		E069E1651EDD60D1002B9E47 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
@@ -377,6 +381,7 @@
 				E2F8E90D1EC7328100EDD5F2 /* MyImageTableViewCell.swift */,
 				E03B4D111ED950E900C85430 /* ChuaLoginTableViewCell.swift */,
 				E0EF6A101EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift */,
+				E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 				E07993A81EEFD348002AA88E /* Photo.swift */,
 				E00F0E5E1EF180FC001D5F27 /* UserIdBookAppointment.swift */,
 				E0F937811EF6BADC003599A3 /* AppointmentStatusUpdate.swift */,
+				E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -665,6 +671,7 @@
 				E069E1421EDD4D69002B9E47 /* EstatePostNew.swift in Sources */,
 				E0B000CB1EE6CA1300426BFB /* Appointments.swift in Sources */,
 				E2F8E90C1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift in Sources */,
+				E04236121EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift in Sources */,
 				E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */,
 				E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */,
 				E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */,
@@ -696,6 +703,7 @@
 				E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */,
 				E02E48031EE7D08C00A571DE /* DatHenViewController.swift in Sources */,
 				E07993A71EEFD328002AA88E /* PhotoPostNew.swift in Sources */,
+				E04236101EF9450C001EE037 /* CaiDatTableViewCell.swift in Sources */,
 				E213154D1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift in Sources */,
 				E217EF851E93CDA700068876 /* CuocHenController.swift in Sources */,
 			);

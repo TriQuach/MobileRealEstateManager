@@ -225,6 +225,11 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
       //  print(arrayImage?[indexPath.row])
         if ( collectionView.tag == 0)
         {
+            if ( indexPath.row == mang.count - 1)
+            {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath)
+                return cell
+            }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyImageCollectionViewCell
         cell.myImg.image = mang[indexPath.row]
         return cell

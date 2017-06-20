@@ -110,6 +110,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func initDropDown(x:UIView)
     {
+        
         x.layer.borderWidth = 1
         x.layer.borderColor = UIColor.black.cgColor
         
@@ -118,11 +119,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
             dropDown.anchorView = x // UIView or UIBarButtonItem
             
             dropDown.dataSource = [
-                "iPhone SE | Black | 64G",
-                "Samsung S7",
-                "Huawei P8 Lite Smartphone 4G",
-                "Asus Zenfone Max 4G",
-                "Apple Watwh | Sport Edition"
+                "Thành phố Hồ Chí Minh"
             ]
             dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
                 self.lblThanhPho.text = item
@@ -138,12 +135,39 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
             dropDown2.anchorView = x // UIView or UIBarButtonItem
             
             dropDown2.dataSource = [
-                "iPhone SE | Black | 64G",
-                "Samsung S7",
-                "Huawei P8 Lite Smartphone 4G",
-                "Asus Zenfone Max 4G",
-                "Apple Watwh | Sport Edition"
+                "Quận 12",
+                "Quận Thủ Đức",
+                "Quận 9",
+                "Quận Gò Vấp",
+                "Quận Bình Thạnh",
+                "Quận Tân Bình",
+                "Quận Tân Phú",
+                "Quận Phú Nhuận",
+                "Quận 2",
+                "Quận 3",
+                "Quận 10",
+                "Quận 11",
+                "Quận 4",
+                "Quận 5",
+                "Quận 6",
+                "Quận 8",
+                "Quận Bình Tân",
+                "Quận 7",
+                "Huyện Củ Chi",
+                "Huyện Hóc Môn",
+                "Huyện Bình Chánh",
+                "Huyện Nhà Bè",
+                "Huyện Cần Giờ"
+                
             ]
+            
+            
+            
+            
+            
+            
+            
+            
             dropDown2.selectionAction = { [unowned self] (index: Int, item: String) in
                 self.lblQuan.text = item
                 

@@ -140,7 +140,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             
             do
             {
-                
+                print ("error:")
+                print (e)
                 let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
                 
                 let typeId = json["typeId"] as! Int
@@ -159,6 +160,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         self.myTbv.delegate = self
                         var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
                         secondTab.idUser = self.idUser
+                        secondTab.role = 0
                         
                     }
                     else if ( typeId == 2)
@@ -170,6 +172,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         self.myTbv.delegate = self
                         var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
                         secondTab.idUser = self.idUser
+                        secondTab.role = 1
                     }
                     
                     
@@ -179,7 +182,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     
                 }
-            }catch{}
+            }catch{
+                print ("catch:")
+                print (error)
+                
+            }
         }
         task.resume()
     }
@@ -282,6 +289,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getNew/4")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
             
             do
             {
