@@ -13,10 +13,51 @@ import Dropper
 import DropDown
 class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    @IBOutlet weak var loading2: UIActivityIndicatorView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     var check:Int = 9999
+    var loai:Int!
     var idOwner:Int = 0
     var mangPhotos:[Photo] = []
+    var mangWard:[String] = []
+    var mangDistrict:[String] = [
+        "Quận 1",
+        "Quận 2",
+        "Quận 3",
+        "Quận 4",
+        "Quận 5",
+        "Quận 6",
+        "Quận 7",
+        "Quận 8",
+        "Quận 9",
+        "Quận 10",
+        "Quận 11",
+        "Quận 12",
+        "Quận Thủ Đức",
+        "Quận Gò Vấp",
+        "Quận Bình Thạnh",
+        "Quận Tân Bình",
+        "Quận Tân Phú",
+        "Quận Phú Nhuận",
+        "Quận Bình Tân",
+        "Huyện Củ Chi",
+        "Huyện Hóc Môn",
+        "Huyện Bình Chánh",
+        "Huyện Nhà Bè",
+        "Huyện Cần Giờ"
+    ]
+    var mangLoai:[String] = [
+        "Căn hộ chung cư",
+        "Nhà riêng",
+        "Biệt thự",
+        "Nhà mặt phố",
+        "Đất",
+        "Đất nền dự án",
+        "Trang trại",
+        "Khu nghỉ dưỡng",
+        "Kho, xưởng"
+    
+    ]
     var idEstate:Int = 0
     @IBOutlet weak var myClv: UICollectionView!
     @IBOutlet weak var btnThanhPho: UIButton!
@@ -102,6 +143,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
 
         
         loading.isHidden = true
+        loading2.isHidden = true
         
         
         
@@ -134,32 +176,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         {
             dropDown2.anchorView = x // UIView or UIBarButtonItem
             
-            dropDown2.dataSource = [
-                "Quận 12",
-                "Quận Thủ Đức",
-                "Quận 9",
-                "Quận Gò Vấp",
-                "Quận Bình Thạnh",
-                "Quận Tân Bình",
-                "Quận Tân Phú",
-                "Quận Phú Nhuận",
-                "Quận 2",
-                "Quận 3",
-                "Quận 10",
-                "Quận 11",
-                "Quận 4",
-                "Quận 5",
-                "Quận 6",
-                "Quận 8",
-                "Quận Bình Tân",
-                "Quận 7",
-                "Huyện Củ Chi",
-                "Huyện Hóc Môn",
-                "Huyện Bình Chánh",
-                "Huyện Nhà Bè",
-                "Huyện Cần Giờ"
-                
-            ]
+            dropDown2.dataSource = self.mangDistrict
             
             
             
@@ -169,8 +186,10 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
             
             
             dropDown2.selectionAction = { [unowned self] (index: Int, item: String) in
-                self.lblQuan.text = item
                 
+                print ("index:::" + String(index))
+                self.lblQuan.text = item
+                self.sendRequestGetWard(idWard: index)
             }
             
             let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped3))
@@ -180,14 +199,9 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         else if (x.tag == 2)
         {
             dropDown3.anchorView = x
-            dropDown3.dataSource = [
-                "iPhone SE | Black | 64G",
-                "Samsung S7",
-                "Huawei P8 Lite Smartphone 4G",
-                "Asus Zenfone Max 4G",
-                "Apple Watwh | Sport Edition"
-            ]
+            dropDown3.dataSource = self.mangWard
             dropDown3.selectionAction = { [unowned self] (index: Int, item: String) in
+                
                 self.lblPhuong.text = item
                 
             }
@@ -199,11 +213,10 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         else if (x.tag == 3)
         {
             dropDown4.anchorView = x
-            dropDown4.dataSource = [
-            "1","2","3","4"
-            ]
+            dropDown4.dataSource = self.mangLoai
             dropDown4.selectionAction = { [unowned self] (index: Int, item: String) in
                 self.lblLoai.text = item
+                self.loai = index + 1
                 
             }
             
@@ -282,7 +295,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         let detail:Detail = Detail(bathroom: Int(self.edtSoPhongNgu.text!)!, bedroom: Int(self.edtSoPhongTam.text!)!, condition: self.edtTinhTrang.text!, description: self.edtMoTa.text!, floor: Int(self.edtSoTang.text!)!, length: Double(self.edtChieuDai.text!)!, width: Double(self.edtChieuRong.text!)!, id: 0)
         
         
-        let type = Int(self.lblLoai.text!)
+        let type = self.loai
         let price = Double(self.edtGia.text!)
         let area = Double(self.edtDienTich.text!)
         let name = self.edtTieuDe.text
@@ -413,6 +426,46 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         task.resume()
     }
     
+    func sendRequestGetWard(idWard: Int)
+    {
+        self.mangWard = []
+        self.loading2.isHidden = false
+        self.loading2.startAnimating()
+        let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/data/getWard/" + String(idWard + 1)
+        print (url)
+        let req = URLRequest(url: URL(string: url)!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let wards = json["wards"] as! [AnyObject]
+                
+                for i in 0..<wards.count
+                {
+                    let ward = wards[i]["name"] as! String
+                    self.mangWard.append(ward)
+                }
+                
+                for i in 0..<self.mangWard.count
+                {
+                    print (self.mangWard[i])
+                }
+                DispatchQueue.main.async {
+                    self.loading2.isHidden = true
+                    self.initDropDown(x: self.dropPhuong)
+                }
+            }catch{
+                print ("catch:")
+                print (error)
+                
+            }
+        }
+        task.resume()
+    }
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
