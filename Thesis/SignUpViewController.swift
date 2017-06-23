@@ -23,6 +23,8 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         loading.isHidden = true
         
+        
+        
             }
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
@@ -43,6 +45,7 @@ class SignUpViewController: UIViewController {
         let pass = edtPass.text
         let email = edtEmail.text
         let phone = edtPhone.text
+       
         if (cb1.checkState == .checked)
         {
             cb2.isEnabled = false
@@ -93,13 +96,20 @@ class SignUpViewController: UIViewController {
                         self.loading.stopAnimating()
                         self.loading.isHidden = true
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-                        let login : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
-                        login.isLogin = true
-                        login.role = 0
-                        login.idUser = json["id"] as! Int
+                        let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
+                        
                         self.navigationController?.pushViewController(tabbar, animated: true)
                         
+                    }
+                    else
+                    {
+                        DispatchQueue.main.async {
+                            let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
+                        }
                     }
 
                 }

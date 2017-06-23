@@ -625,6 +625,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if ( role == 0)
