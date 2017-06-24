@@ -13,6 +13,7 @@ import DropDown
 class TimKiemController: UIViewController {
     
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     let dropDown = DropDown()
     let dropDown2 = DropDown()
     let dropDown3 = DropDown()
@@ -23,6 +24,7 @@ class TimKiemController: UIViewController {
     let dropDown8 = DropDown()
     let dropDown9 = DropDown()
     let dropDown10 = DropDown()
+    @IBOutlet weak var edtDiaChi: UITextField!
     
     @IBOutlet weak var dropThanhPho: UIView!
     
@@ -46,6 +48,12 @@ class TimKiemController: UIViewController {
     @IBOutlet weak var lblSoPhongNgu: UILabel!
     @IBOutlet weak var lblSoPhongTam: UILabel!
     @IBOutlet weak var lblHuongNha: UILabel!
+    
+    var indexDienTich:Int!
+    var indexGia:Int!
+    var indexSoTang:Int!
+    var indexSoPhongNgu:Int!
+    var indexSoPhongTam:Int!
     
     var mangWard:[String] = []
     var mangDistrict:[String] = [
@@ -175,6 +183,7 @@ class TimKiemController: UIViewController {
         
         
         loading2.isHidden = true
+        loading.isHidden = true
                
         
 //        spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: self.view.frame.width, height: CGFloat(44))
@@ -288,6 +297,7 @@ class TimKiemController: UIViewController {
             dropDown5.selectionAction = { [unowned self] (index: Int, item: String) in
                 
                 self.lblDienTich.text = item
+                self.indexDienTich = index
                 
             }
             
@@ -302,6 +312,7 @@ class TimKiemController: UIViewController {
             dropDown6.selectionAction = { [unowned self] (index: Int, item: String) in
                 
                 self.lblGia.text = item
+                self.indexGia = index
                 
             }
             
@@ -316,6 +327,7 @@ class TimKiemController: UIViewController {
             dropDown7.selectionAction = { [unowned self] (index: Int, item: String) in
                 
                 self.lblSoTang.text = item
+                self.indexSoTang = index
                 
             }
             
@@ -330,7 +342,7 @@ class TimKiemController: UIViewController {
             dropDown8.selectionAction = { [unowned self] (index: Int, item: String) in
                 
                 self.lblSoPhongNgu.text = item
-                
+                self.indexSoPhongNgu = index
             }
             
             let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped8))
@@ -344,7 +356,7 @@ class TimKiemController: UIViewController {
             dropDown9.selectionAction = { [unowned self] (index: Int, item: String) in
                 
                 self.lblSoPhongTam.text = item
-                
+                self.indexSoPhongTam = index
             }
             
             let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped9))
@@ -463,5 +475,142 @@ class TimKiemController: UIViewController {
     }
     
    
+    @IBAction func actionSearch(_ sender: Any) {
+        loading.isHidden = false
+        loading.startAnimating()
+        var city = lblThanhPho.text
+        var district = lblQuan.text
+        var ward = lblPhuong.text
+        var address = edtDiaChi.text
+        
+        
+        var bathroom = indexSoPhongTam
+        var bedroom = indexSoPhongNgu
+        var condition = lblHuongNha.text
+        var floor = indexSoTang
+        
+        
+        
+        var type = lblLoai.text
+        var price = indexGia
+        var area = indexDienTich
+        
+        if (city == "Không xác định")
+        {
+            city = ""
+        }
+        if ( district == "Không xác định")
+        {
+            district = ""
+        }
+        if ( ward == "Không xác định")
+        {
+            ward = ""
+        }
+        if ( type == "Không xác định")
+        {
+           type = ""
+        }
+        if ( condition == "Không xác định")
+        {
+           condition = ""
+        }
+        if (bathroom == 0)
+        {
+            bathroom = -1
+        }
+        if (bedroom == 0)
+        {
+            bedroom = -1
+        }
+        if ( floor == 0)
+        {
+            floor = -1
+        }
+        if ( price == 0)
+        {
+            price = -1
+        }
+        if ( area == 0)
+        {
+            area = -1
+        }
+        
+        let addressSearch:AddressSearch = AddressSearch(city: city!, district: district!, ward: ward!, address: address!)
+
+        
+        let detail:DetailSearch = DetailSearch(bathroom: bathroom!, bedroom: bedroom!, condition: condition!, floor: floor!)
+        
+        let postNewSearch:PostNewSearch = PostNewSearch(address: addressSearch, detail: detail, type: type!, price: price!, area: area!)
+        
+        
+        let json2 = JSONSerializer.toJson(postNewSearch)
+        
+        
+            print (json2)
+        
+        let jsonObject = convertToDictionary(text: json2)
+        
+        //  print (jsonObject)
+        
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        
+        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/search/0")!)
+        
+        
+        
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+            do
+            {
+               // print ("asdasd")
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+                if ( json["statuskey"] as! Bool)
+                {
+                    DispatchQueue.main.async {
+                        self.loading.isHidden = true
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let tabbar = storyboard.instantiateViewController(withIdentifier: "ResultSearchEstateViewController") as! ResultSearchEstateViewController
+                        
+                        tabbar.json = json2
+                        
+                        
+                        self.navigationController?.pushViewController(tabbar, animated: true)
+                    }
+                }
+                else
+                {
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        self.loading.stopAnimating()
+                        self.loading.isHidden = true
+                    }
+                }
+                
+                
+                
+            }catch{
+                print ("catch")
+                print (error)
+            }
+            
+            
+        }
+        task.resume()
+        
+    }
+    
+    
     
 }

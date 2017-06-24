@@ -49,6 +49,10 @@
 		E0C7B46F1ED4452B008D7204 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7B46E1ED4452B008D7204 /* User.swift */; };
 		E0C7B4711ED44724008D7204 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7B4701ED44724008D7204 /* Address.swift */; };
 		E0CB675A1EE5C242005C9731 /* MainPageNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */; };
+		E0D816B21EFE4FA000FE04B2 /* AddressSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D816B11EFE4FA000FE04B2 /* AddressSearch.swift */; };
+		E0D816B41EFE738600FE04B2 /* DetailSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D816B31EFE738600FE04B2 /* DetailSearch.swift */; };
+		E0D816B61EFE74CA00FE04B2 /* PostNewSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D816B51EFE74CA00FE04B2 /* PostNewSearch.swift */; };
+		E0D816BA1EFE8FD500FE04B2 /* ResultSearchEstateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D816B91EFE8FD500FE04B2 /* ResultSearchEstateViewController.swift */; };
 		E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */; };
 		E0DE60201ECCB9EB00076CF1 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE601F1ECCB9EB00076CF1 /* edit.png */; };
 		E0DE60221ECCBBC300076CF1 /* edit2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60211ECCBBC300076CF1 /* edit2.png */; };
@@ -173,6 +177,10 @@
 		E0C7B46E1ED4452B008D7204 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E0C7B4701ED44724008D7204 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageNaviViewController.swift; sourceTree = "<group>"; };
+		E0D816B11EFE4FA000FE04B2 /* AddressSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressSearch.swift; sourceTree = "<group>"; };
+		E0D816B31EFE738600FE04B2 /* DetailSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSearch.swift; sourceTree = "<group>"; };
+		E0D816B51EFE74CA00FE04B2 /* PostNewSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNewSearch.swift; sourceTree = "<group>"; };
+		E0D816B91EFE8FD500FE04B2 /* ResultSearchEstateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultSearchEstateViewController.swift; sourceTree = "<group>"; };
 		E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailOwnerViewController.swift; sourceTree = "<group>"; };
 		E0DE601F1ECCB9EB00076CF1 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		E0DE60211ECCBBC300076CF1 /* edit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit2.png; sourceTree = "<group>"; };
@@ -303,6 +311,7 @@
 				E03B4D131ED970E900C85430 /* DangMoiViewController.swift */,
 				E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */,
 				E02E48021EE7D08C00A571DE /* DatHenViewController.swift */,
+				E0D816B91EFE8FD500FE04B2 /* ResultSearchEstateViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -471,6 +480,9 @@
 				E0F937811EF6BADC003599A3 /* AppointmentStatusUpdate.swift */,
 				E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */,
 				E032979C1EFA5B6800032277 /* PostNewRegister.swift */,
+				E0D816B11EFE4FA000FE04B2 /* AddressSearch.swift */,
+				E0D816B31EFE738600FE04B2 /* DetailSearch.swift */,
+				E0D816B51EFE74CA00FE04B2 /* PostNewSearch.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -693,6 +705,7 @@
 				E2A195DC1EC24DF60080914E /* Extension_UIImageView.swift in Sources */,
 				E0267D2E1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift in Sources */,
 				E2A4789B1E9140DF00F843BB /* Extension.swift in Sources */,
+				E0D816B41EFE738600FE04B2 /* DetailSearch.swift in Sources */,
 				E2A2C3711E9A5C8400F4EF8F /* TimKiemController.swift in Sources */,
 				E2F8E9111EC739D200EDD5F2 /* MyImageCollectionViewCell.swift in Sources */,
 				E217EF871E93CE7200068876 /* CaiDatController.swift in Sources */,
@@ -701,6 +714,7 @@
 				E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */,
 				E295D0841EBF06B800A746FA /* StartScreenCell2TableViewCell.swift in Sources */,
 				E09C98181ED482E80032C80B /* Estates.swift in Sources */,
+				E0D816BA1EFE8FD500FE04B2 /* ResultSearchEstateViewController.swift in Sources */,
 				E23DD2511EB6319E007652F6 /* DetailCuocHenTableViewCell.swift in Sources */,
 				E0CB675A1EE5C242005C9731 /* MainPageNaviViewController.swift in Sources */,
 				E0E2FBD91ED36CEC0048EDAD /* DangBaiViewController.swift in Sources */,
@@ -713,6 +727,8 @@
 				E07993A71EEFD328002AA88E /* PhotoPostNew.swift in Sources */,
 				E04236101EF9450C001EE037 /* CaiDatTableViewCell.swift in Sources */,
 				E213154D1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift in Sources */,
+				E0D816B21EFE4FA000FE04B2 /* AddressSearch.swift in Sources */,
+				E0D816B61EFE74CA00FE04B2 /* PostNewSearch.swift in Sources */,
 				E217EF851E93CDA700068876 /* CuocHenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
