@@ -16,6 +16,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
     var mang:[Estate]!
     var pages:Int = 1
     var loadingData = false
+    
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,7 +127,8 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
             
             
        
-                
+             if ( data != nil)
+             {
             do
             {
                 // print ("asdasd")
@@ -186,7 +188,8 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
                         self.spinner.isHidden = true
                    //     self.myTbv.tableFooterView = spinner
                         self.myTbv.tableFooterView?.isHidden = true
-                        self.myTbv.reloadData()
+                        self.loadingData = false
+                        //self.myTbv.reloadData()
                     }
                 }
                 
@@ -195,6 +198,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
                 print (error)
                 
                 
+            }
             }
         }
         task.resume()
