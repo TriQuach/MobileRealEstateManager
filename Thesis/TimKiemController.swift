@@ -12,6 +12,20 @@ import Dropper
 import DropDown
 class TimKiemController: UIViewController {
     
+    var mang:[Estate] = []
+    var mang2:[Estate] = []
+    var mang3:[Estate] = []
+    
+    var mang_id1:[Int] = []
+    var mang_id2:[Int] = []
+    
+    var nameOwner:[String] = []
+    var addressOwner:[String] = []
+    
+    var nameOwner2:[String] = []
+    var addressOwner2:[String] = []
+
+    
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
     let dropDown = DropDown()
@@ -227,7 +241,7 @@ class TimKiemController: UIViewController {
             
             dropDown.dataSource = [
                 "Không xác định",
-                "Thành phố Hồ Chí Minh"
+                "Hồ Chí Minh"
             ]
             dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
                 self.lblThanhPho.text = item
@@ -476,6 +490,7 @@ class TimKiemController: UIViewController {
     
    
     @IBAction func actionSearch(_ sender: Any) {
+        self.mang = []
         loading.isHidden = false
         loading.startAnimating()
         var city = lblThanhPho.text
@@ -572,6 +587,46 @@ class TimKiemController: UIViewController {
             {
                // print ("asdasd")
                 let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                let estates = json["estates"] as! [AnyObject]
+                for i in 0..<estates.count
+                {
+                    let id = estates[i]["id"] as! Int
+                    
+                    let date = estates[i]["postTime"] as! String
+                    let title = estates[i]["name"] as! String
+                    let price = estates[i]["price"] as! Double
+                    let area = estates[i]["area"] as! Double
+                    let address = estates[i]["address"] as! AnyObject
+                    
+                    let district = address["district"]
+                        as! String
+                    
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    
+                    let owner = estates[i]["owner"] as! AnyObject
+                    let idOwner = owner["id"] as! Int
+                    self.mang_id1.append(idOwner)
+                    self.nameOwner.append(owner["fullName"] as! String)
+                    self.addressOwner.append(owner["address"] as! String)
+                    
+                    
+                    
+                    
+                    
+                    self.mang.append(new_estate)
+                    
+                }
+                for i in 0..<self.mang.count
+                {
+                    print (self.mang[i].title)
+                }
+                
+//                DispatchQueue.main.async(execute: {
+//                    self.myTbv.reloadData()
+//                    
+//                    self.parseImageInterested()
+//                    //   self.parseImage()
+//                })
                 
                 if ( json["statuskey"] as! Bool)
                 {
@@ -582,6 +637,7 @@ class TimKiemController: UIViewController {
                         let tabbar = storyboard.instantiateViewController(withIdentifier: "ResultSearchEstateViewController") as! ResultSearchEstateViewController
                         
                         tabbar.json = json2
+                        tabbar.mang = self.mang
                         
                         
                         self.navigationController?.pushViewController(tabbar, animated: true)
@@ -610,6 +666,8 @@ class TimKiemController: UIViewController {
         task.resume()
         
     }
+    
+    
     
     
     

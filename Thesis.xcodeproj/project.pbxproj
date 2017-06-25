@@ -61,6 +61,7 @@
 		E0DE60281ECCBE4300076CF1 /* swift2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DE60271ECCBE4300076CF1 /* swift2.png */; };
 		E0E2FBD91ED36CEC0048EDAD /* DangBaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */; };
 		E0E7EB631ED7571D009DEE2E /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E7EB621ED7571D009DEE2E /* Detail.swift */; };
+		E0EBA5CB1EFFC02300F8726B /* ResultSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EBA5CA1EFFC02300F8726B /* ResultSearchTableViewCell.swift */; };
 		E0EF4B521EE33C1B009EFFA5 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF4B511EE33C1B009EFFA5 /* Appointment.swift */; };
 		E0EF6A111EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF6A101EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift */; };
 		E0F4C6801EDF0AE700402C15 /* Iron_Man_Experience.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0F4C67F1EDF0AE700402C15 /* Iron_Man_Experience.jpg */; };
@@ -189,6 +190,7 @@
 		E0DE60271ECCBE4300076CF1 /* swift2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift2.png; sourceTree = "<group>"; };
 		E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangBaiViewController.swift; sourceTree = "<group>"; };
 		E0E7EB621ED7571D009DEE2E /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		E0EBA5CA1EFFC02300F8726B /* ResultSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultSearchTableViewCell.swift; sourceTree = "<group>"; };
 		E0EF4B511EE33C1B009EFFA5 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		E0EF6A101EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuaLogInBuyerTableViewCell.swift; sourceTree = "<group>"; };
 		E0F4C67F1EDF0AE700402C15 /* Iron_Man_Experience.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Iron_Man_Experience.jpg; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				E0EF6A101EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift */,
 				E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */,
 				E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */,
+				E0EBA5CA1EFFC02300F8726B /* ResultSearchTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				E2F8E9321EC76AF100EDD5F2 /* SignUpViewController.swift in Sources */,
 				E00716FF1EEEDE0E0075A818 /* AppointmentPostNew.swift in Sources */,
 				E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */,
+				E0EBA5CB1EFFC02300F8726B /* ResultSearchTableViewCell.swift in Sources */,
 				E09C98161ED481660032C80B /* FullEstate.swift in Sources */,
 				E032979D1EFA5B6800032277 /* PostNewRegister.swift in Sources */,
 				E069E1421EDD4D69002B9E47 /* EstatePostNew.swift in Sources */,
