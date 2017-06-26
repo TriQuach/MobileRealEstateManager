@@ -14,6 +14,9 @@ import PopupDialog
 import ReadMoreTextView
 class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var edtNote: UITextField!
+    @IBOutlet weak var tvNote: UITextView!
+    @IBOutlet weak var loading3: UIActivityIndicatorView!
     
     @IBOutlet weak var passImg: UIImageView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
@@ -40,7 +43,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     var idUser: Int = 0
     var idEstate:Int = 0
     var mangImage:[String] = []
-    
+    var photos:[Photo] = []
     
     
     var takenImage = UIImage(named: "add2.png")
@@ -55,10 +58,15 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     var passAdress:String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        mang.append(takenImage!)
+        
         
         myClv.delegate = self
         myClv.dataSource = self
+        
+        tvNote.layer.borderWidth = 1
+        tvNote.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        
+        loading3.isHidden = true
         
         
         arrayImage = []
@@ -121,10 +129,11 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
                 }
                 
                 DispatchQueue.main.async {
-                    self.loading.isHidden = true
+                    
                     self.myClv2.delegate = self
                     self.myClv2.dataSource = self
                     self.myClv2.reloadData()
+                    self.getNote()
                 }
                 
                 
@@ -298,6 +307,187 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         tabbar.datLichHen = "Xem nhà tại " + passAdress
         
         self.navigationController?.pushViewController(tabbar, animated: true)
+    }
+    @IBAction func actionThemGhiChu(_ sender: Any) {
+        loading3.isHidden = false
+        loading3.startAnimating()
+        let Note = self.tvNote.text
+        print ("note:" + Note!)
+        let noteUpdate:NoteUpdate = NoteUpdate(userId: idUser, estateId: idEstate, note: Note!)
+        
+    //    let json = JSONSerializer.toJson(noteUpdate)
+        
+        
+        var jsonObject = Dictionary<String, Any>()
+        jsonObject["UserID"] = idUser
+        jsonObject["EstateID"] = idEstate
+        jsonObject["Note"] = Note
+        
+        
+        
+        
+        print (jsonObject)
+        
+       // let jsonObject = convertToDictionary(text: json)
+        
+      //  print (jsonObject)
+        
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/updateNote")!)
+        
+        
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+                print (json["message"] as! String)
+                
+                DispatchQueue.main.async {
+                    //self.loading3.isHidden = true
+                    self.photoNote()
+                }
+                
+                
+                
+                
+            }catch{}
+            
+            
+        }
+        task.resume()
+        
+        
+        
+    }
+    func photoNote()
+    {
+        self.parseImageNote()
+        let photoNote:PhotoNote = PhotoNote(UserID: idUser, EstateID: idEstate, photos: photos)
+        
+        let json = JSONSerializer.toJson(photoNote)
+        print (json)
+        
+        let jsonObject = convertToDictionary(text: json)
+        
+        //  print (jsonObject)
+        
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/upPhotoNote")!)
+        
+        
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+                print (json["message"] as! String)
+                
+                DispatchQueue.main.async {
+                    self.loading3.isHidden = true
+                    
+                }
+                
+                
+                
+                
+            }catch{}
+            
+            
+        }
+        task.resume()
+        
+    }
+    func parseImageNote()
+    {
+        for i in 0..<mang.count-1
+        {
+            let string = mang[i].base64(format: .jpeg(0.01))
+            let photo:Photo = Photo(photo: string!)
+            self.photos.append(photo)
+        }
+    }
+    func getNote()
+    {
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/getNote/" + String(idUser) + "-" + String(idEstate))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                let note = json["note"] as! String
+                
+                
+                DispatchQueue.main.async {
+                    self.tvNote.text = note
+                    self.getPhotoNote()
+                }
+                
+                
+            }catch{}
+        }
+        task.resume()
+    }
+    func getPhotoNote()
+    {
+       // self.mang = []
+        
+        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/getPhotoNote/" + String(idUser) + "-" + String(idEstate))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                let photos = json["photos"] as! [AnyObject]
+                for i in 0..<photos.count
+                {
+                    let string = photos[i]["photo"] as! String
+                    let data:Data = Data(base64Encoded: string)!
+                    let photo:UIImage = UIImage(data: data)!
+                    self.mang.append(photo)
+                }
+                
+                DispatchQueue.main.async {
+                    self.loading.isHidden = true
+                    self.mang.append(self.takenImage!)
+                   self.myClv.reloadData()
+                    
+                }
+                
+                
+            }catch{}
+        }
+        task.resume()
+    }
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
     }
     
 }
