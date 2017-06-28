@@ -44,6 +44,7 @@
 		E0A29F581ED1A5E5005AE69A /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F571ED1A5E5005AE69A /* add.png */; };
 		E0A29F5A1ED1A6A3005AE69A /* add2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F591ED1A6A3005AE69A /* add2.png */; };
 		E0A721A81EF6A9D2002E01C4 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A721A71EF6A9D2002E01C4 /* tag.png */; };
+		E0ACCFA61F0383A70046A727 /* splash_screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0ACCFA51F0383A70046A727 /* splash_screen.jpg */; };
 		E0B000CB1EE6CA1300426BFB /* Appointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B000CA1EE6CA1300426BFB /* Appointments.swift */; };
 		E0B000CD1EE6D9AE00426BFB /* SimpleAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B000CC1EE6D9AE00426BFB /* SimpleAppointment.swift */; };
 		E0C7B46F1ED4452B008D7204 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7B46E1ED4452B008D7204 /* User.swift */; };
@@ -175,6 +176,7 @@
 		E0A29F571ED1A5E5005AE69A /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		E0A29F591ED1A6A3005AE69A /* add2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add2.png; sourceTree = "<group>"; };
 		E0A721A71EF6A9D2002E01C4 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
+		E0ACCFA51F0383A70046A727 /* splash_screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash_screen.jpg; sourceTree = "<group>"; };
 		E0B000CA1EE6CA1300426BFB /* Appointments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointments.swift; sourceTree = "<group>"; };
 		E0B000CC1EE6D9AE00426BFB /* SimpleAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAppointment.swift; sourceTree = "<group>"; };
 		E0C7B46E1ED4452B008D7204 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0ACCFA51F0383A70046A727 /* splash_screen.jpg */,
 				E0F937791EF6AB92003599A3 /* alarm-clock.png */,
 				E0F9377A1EF6AB92003599A3 /* location3.png */,
 				E0F9377B1EF6AB92003599A3 /* directions2.png */,
@@ -592,6 +595,7 @@
 				E0DE60241ECCBBEA00076CF1 /* edit3.png in Resources */,
 				E03B4D1C1ED97FA600C85430 /* tick3.png in Resources */,
 				E21315441E97E735003E6BDE /* home.png in Resources */,
+				E0ACCFA61F0383A70046A727 /* splash_screen.jpg in Resources */,
 				E277859C1EC8BCF800B47FA5 /* house5.jpg in Resources */,
 				E21315431E97E735003E6BDE /* calendar.png in Resources */,
 				E03B4D181ED97F1600C85430 /* tick.png in Resources */,

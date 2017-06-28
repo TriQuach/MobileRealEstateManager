@@ -72,30 +72,30 @@ class TimKiemController: UIViewController {
     var mangWard:[String] = []
     var mangDistrict:[String] = [
         "Không xác định",
-        "Quận 1",
-        "Quận 2",
-        "Quận 3",
-        "Quận 4",
-        "Quận 5",
-        "Quận 6",
-        "Quận 7",
-        "Quận 8",
-        "Quận 9",
-        "Quận 10",
-        "Quận 11",
-        "Quận 12",
-        "Quận Thủ Đức",
-        "Quận Gò Vấp",
-        "Quận Bình Thạnh",
-        "Quận Tân Bình",
-        "Quận Tân Phú",
-        "Quận Phú Nhuận",
-        "Quận Bình Tân",
-        "Huyện Củ Chi",
-        "Huyện Hóc Môn",
-        "Huyện Bình Chánh",
-        "Huyện Nhà Bè",
-        "Huyện Cần Giờ"
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "Thủ Đức",
+        "Gò Vấp",
+        "Bình Thạnh",
+        "Tân Bình",
+        "Tân Phú",
+        "Phú Nhuận",
+        "Bình Tân",
+        "Củ Chi",
+        "Hóc Môn",
+        "Bình Chánh",
+        "Nhà Bè",
+        "Cần Giờ"
     ]
     
     var mangLoai:[String] = [
@@ -510,43 +510,43 @@ class TimKiemController: UIViewController {
         var price = indexGia
         var area = indexDienTich
         
-        if (city == "Không xác định")
+        if (city == "Không xác định" || city == nil)
         {
             city = ""
         }
-        if ( district == "Không xác định")
+        if ( district == "Không xác định" || district == nil)
         {
             district = ""
         }
-        if ( ward == "Không xác định")
+        if ( ward == "Không xác định" || ward == nil)
         {
             ward = ""
         }
-        if ( type == "Không xác định")
+        if ( type == "Không xác định" || type == nil)
         {
            type = ""
         }
-        if ( condition == "Không xác định")
+        if ( condition == "Không xác định" || condition == nil)
         {
            condition = ""
         }
-        if (bathroom == 0)
+        if (bathroom == 0 || bathroom == nil)
         {
             bathroom = -1
         }
-        if (bedroom == 0)
+        if (bedroom == 0 || bedroom == nil)
         {
             bedroom = -1
         }
-        if ( floor == 0)
+        if ( floor == 0 || floor == nil)
         {
             floor = -1
         }
-        if ( price == 0)
+        if ( price == 0 || price == nil)
         {
             price = -1
         }
-        if ( area == 0)
+        if ( area == 0 || area == nil)
         {
             area = -1
         }

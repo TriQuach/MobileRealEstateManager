@@ -59,7 +59,7 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
         
         
         
-        return (self.view.frame.height / 7)
+        return (self.view.frame.height / 9)
     }
     
     @IBAction func btnLogOut(_ sender: Any) {

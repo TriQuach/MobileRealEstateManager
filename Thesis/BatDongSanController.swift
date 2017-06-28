@@ -144,44 +144,60 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 print (e)
                 let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
                 
-                let typeId = json["typeId"] as! Int
-                let id = json["id"] as! Int
                 
-                print (typeId)
-                
-                DispatchQueue.main.async {
+                if (json["statuskey"] as! Bool)
+                {
+                    let typeId = json["typeId"] as! Int
+                    let id = json["id"] as! Int
                     
-                    if ( typeId == 1)
-                    {
-                        self.role = 0
-                        self.idUser = id
-                        self.parseJSONgetInterested()
-                        self.myTbv.dataSource = self
-                        self.myTbv.delegate = self
-                        var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
-                        secondTab.idUser = self.idUser
-                        secondTab.role = 0
+                    print (typeId)
+                    
+                    DispatchQueue.main.async {
+                        
+                        if ( typeId == 1)
+                        {
+                            self.role = 0
+                            self.idUser = id
+                            self.parseJSONgetInterested()
+                            self.myTbv.dataSource = self
+                            self.myTbv.delegate = self
+                            var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
+                            secondTab.idUser = self.idUser
+                            secondTab.role = 0
+                            
+                        }
+                        else if ( typeId == 2)
+                        {
+                            self.role = 1
+                            self.idUser = id
+                            self.parseJsonGetByOwnerID()
+                            self.myTbv.dataSource = self
+                            self.myTbv.delegate = self
+                            var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
+                            secondTab.idUser = self.idUser
+                            secondTab.role = 1
+                        }
+                        
+                        
+                        //
+                        
+                        
+                        
                         
                     }
-                    else if ( typeId == 2)
-                    {
-                        self.role = 1
-                        self.idUser = id
-                        self.parseJsonGetByOwnerID()
-                        self.myTbv.dataSource = self
-                        self.myTbv.delegate = self
-                        var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
-                        secondTab.idUser = self.idUser
-                        secondTab.role = 1
-                    }
-                    
-                    
-                    //
-                    
-                    
-                    
-                    
                 }
+                else
+                {
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        self.loading.stopAnimating()
+                        self.loading.isHidden = true
+                    }
+                }
+                
+                
             }catch{
                 print ("catch:")
                 print (error)

@@ -147,15 +147,16 @@ class LogInViewController: UIViewController {
             {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
                 
-                print (json["statuskey"])
-                let token = json["token"] as! String
-                do
-                {
-                    try token.write(toFile: "/Users/triquach/Documents/token.txt", atomically: false, encoding: .utf8)
-                }catch{}
+                
                 
                 if (json["statuskey"] as? Bool)!
                 {
+                    print (json["statuskey"])
+                    let token = json["token"] as! String
+                    do
+                    {
+                        try token.write(toFile: "/Users/triquach/Documents/token.txt", atomically: false, encoding: .utf8)
+                    }catch{}
                     let check = "false"
                     do
                     {
