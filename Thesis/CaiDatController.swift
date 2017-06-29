@@ -53,8 +53,16 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
             tabbar.storyboardID = "LogOut"
             self.navigationController?.pushViewController(tabbar, animated: true)
         }
+        else if ( indexPath.row == 1 || indexPath.row == 5 )
+        {
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Thông báo", message: "Chức năng đang phát triển", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+        }
     }
-    
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         

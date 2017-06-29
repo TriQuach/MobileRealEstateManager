@@ -20,7 +20,7 @@ class DatHenViewController: UIViewController {
     var idUser: Int = 0
     var datLichHen:String!
     var owner:String!
-    
+    var passAdress:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,7 @@ class DatHenViewController: UIViewController {
     {
         edtName.text = datLichHen
         lblOwner.text = owner
+        edtAddress.text = passAdress
     }
 
    
@@ -48,7 +49,7 @@ class DatHenViewController: UIViewController {
         let picker = DateTimePicker.show()
         picker.highlightColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1)
         picker.darkColor = UIColor.darkGray
-        picker.doneButtonTitle = "!! DONE DONE !!"
+        picker.doneButtonTitle = "Chọn"
         picker.todayButtonTitle = "Today"
       //  picker.is12HourFormat = true
         picker.dateFormat = "hh:mm aa dd/MM/YYYY"

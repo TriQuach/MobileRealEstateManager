@@ -210,7 +210,7 @@ class LogInViewController: UIViewController {
                     print ("fuck")
                     check = 0
                     DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
                         self.loading.stopAnimating()
