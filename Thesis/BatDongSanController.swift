@@ -555,6 +555,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         
                         DispatchQueue.main.async(execute: {
                             self.myTbv.reloadData()
+                            if (!self.isLogin)
+                            {
+                                self.loading.stopAnimating()
+                                self.loading.isHidden = true
+                            }
                             
                         })
                     }
@@ -775,7 +780,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 tabbar.passEstate = mang2[indexPath.row]
                 tabbar.passOwner = nameOwner2[indexPath.row]
                 tabbar.passAdress = addressOwner2[indexPath.row]
-                
+                tabbar.isLogin = self.isLogin
                 
                 self.navigationController?.pushViewController(tabbar, animated: true)
             }

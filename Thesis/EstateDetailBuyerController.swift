@@ -44,7 +44,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     var idEstate:Int = 0
     var mangImage:[String] = []
     var photos:[Photo] = []
-    
+    var isLogin:Bool!
     
     var takenImage = UIImage(named: "add2.png")
     let estates = ["house1", "house2","house3"]
@@ -65,6 +65,10 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         
         tvNote.layer.borderWidth = 1
         tvNote.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        if ( !isLogin )
+        {
+            tvNote.isEditable = false
+        }
         
         loading3.isHidden = true
         
@@ -260,12 +264,19 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         
         if ( collectionView.tag == 0)
         {
-            if (indexPath.row == mang.count - 1)
+            if ( self.isLogin )
             {
-                let myPicker = UIImagePickerController()
-                myPicker.delegate = self
-                myPicker.sourceType = .photoLibrary
-                present(myPicker, animated: true, completion: nil)
+                if (indexPath.row == mang.count - 1)
+                {
+                    let myPicker = UIImagePickerController()
+                    myPicker.delegate = self
+                    myPicker.sourceType = .photoLibrary
+                    present(myPicker, animated: true, completion: nil)
+                }
+            }
+            else
+            {
+                self.login()
             }
         }
         
@@ -300,16 +311,54 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "DatHen") as! DatHenViewController
         
-      //  tabbar.owner = passFullEstate.owner.fullName
-        tabbar.idUser = idUser
-        tabbar.idOwner = idOwner
-        tabbar.owner = passOwner
-        tabbar.datLichHen = passEstate.title
-        tabbar.passAdress = passAdress
+        if ( isLogin )
+        {
+            //  tabbar.owner = passFullEstate.owner.fullName
+            tabbar.idUser = idUser
+            tabbar.idOwner = idOwner
+            tabbar.owner = passOwner
+            tabbar.datLichHen = passEstate.title
+            tabbar.passAdress = passAdress
+            
+            self.navigationController?.pushViewController(tabbar, animated: true)
+        }
+        else
+        {
+//            let alert = UIAlertController(title: "Lỗi", message: "Bạn phải đăng nhập!", preferredStyle: UIAlertControllerStyle.alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+            login()
+            
+        }
+    }
+    func login()
+    {
+        let alertController = UIAlertController(title: "Thông báo", message: "Bạn chưa đăng nhập", preferredStyle: .alert)
         
-        self.navigationController?.pushViewController(tabbar, animated: true)
+        // Create the actions
+        let okAction = UIAlertAction(title: "Đăng nhập", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
+            
+            tabbar.storyboardID = "EstateDetailBuyer"
+            self.navigationController?.pushViewController(tabbar, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            NSLog("Cancel Pressed")
+        }
+        
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
     }
     @IBAction func actionThemGhiChu(_ sender: Any) {
+        if (isLogin)
+        {
         loading3.isHidden = false
         loading3.startAnimating()
         let Note = self.tvNote.text
@@ -366,7 +415,11 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         }
         task.resume()
         
-        
+        }
+        else
+        {
+            login()
+        }
         
     }
     func photoNote()

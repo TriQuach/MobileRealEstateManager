@@ -45,8 +45,7 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
                 
                 
             } catch {
-             //   myTbv.dataSource = self
-               // myTbv.delegate = self
+                login()
             }
             
             
@@ -64,6 +63,31 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
         
         self.navigationItem.rightBarButtonItem = rightButtonItem
         
+    }
+    func login()
+    {
+        let alertController = UIAlertController(title: "Thông báo", message: "Bạn chưa đăng nhập", preferredStyle: .alert)
+        
+        // Create the actions
+        let okAction = UIAlertAction(title: "Đăng nhập", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
+            
+            tabbar.storyboardID = "EstateDetailBuyer"
+            self.navigationController?.pushViewController(tabbar, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            self.loading.isHidden = true
+        }
+        
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
     }
     func parseJosnGetAll()
     {
