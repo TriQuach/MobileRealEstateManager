@@ -442,7 +442,7 @@ class TimKiemController: UIViewController {
         self.mangWard.append("Không xác định")
         self.loading2.isHidden = false
         self.loading2.startAnimating()
-        let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/data/getWard/" + String(idWard)
+        let url = "http://rem-bt.azurewebsites.net/rem/rem_server/data/getWard/" + String(idWard)
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         
@@ -572,7 +572,7 @@ class TimKiemController: UIViewController {
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
         
-        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/search/0")!)
+        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/search/0")!)
         
         
         

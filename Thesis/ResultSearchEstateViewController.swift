@@ -71,7 +71,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         for i in 0..<mang.count
         {
             let id = mang[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -114,7 +114,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
         
-        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/search/" + String(pages))!)
+        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/search/" + String(pages))!)
         
         
         

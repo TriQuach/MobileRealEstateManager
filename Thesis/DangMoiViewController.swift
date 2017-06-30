@@ -313,7 +313,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/post")!)
+        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/post")!)
         
         
         
@@ -384,7 +384,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/upPhotoList")!)
+        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/upPhotoList")!)
         
         
         
@@ -431,7 +431,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         self.mangWard = []
         self.loading2.isHidden = false
         self.loading2.startAnimating()
-        let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/data/getWard/" + String(idWard + 1)
+        let url = "http://rem-bt.azurewebsites.net/rem/rem_server/data/getWard/" + String(idWard + 1)
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         

@@ -144,7 +144,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         print ("1")
         
-        let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/login/" + token
+        let url = "http://rem-bt.azurewebsites.net/rem/rem_server/user/login/" + token
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         

@@ -146,11 +146,11 @@
 		E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoiCollectionViewCell.swift; sourceTree = "<group>"; };
 		E028803C1EDC7B9500BEC26A /* default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_image.jpg; sourceTree = "<group>"; };
 		E028803E1EDC914500BEC26A /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
-		E02E48021EE7D08C00A571DE /* DatHenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatHenViewController.swift; sourceTree = "<group>"; };
+		E02E48021EE7D08C00A571DE /* DatHenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DatHenViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E032979C1EFA5B6800032277 /* PostNewRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNewRegister.swift; sourceTree = "<group>"; };
 		E03A27D91EF2C7C60021DF28 /* Extension_UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_UIImage.swift; sourceTree = "<group>"; };
 		E03B4D111ED950E900C85430 /* ChuaLoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuaLoginTableViewCell.swift; sourceTree = "<group>"; };
-		E03B4D131ED970E900C85430 /* DangMoiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoiViewController.swift; sourceTree = "<group>"; };
+		E03B4D131ED970E900C85430 /* DangMoiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DangMoiViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E03B4D151ED9772F00C85430 /* combo-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combo-box.png"; sourceTree = "<group>"; };
 		E03B4D171ED97F1600C85430 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		E03B4D191ED97F6D00C85430 /* tick2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick2.png; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		E0D816B11EFE4FA000FE04B2 /* AddressSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressSearch.swift; sourceTree = "<group>"; };
 		E0D816B31EFE738600FE04B2 /* DetailSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSearch.swift; sourceTree = "<group>"; };
 		E0D816B51EFE74CA00FE04B2 /* PostNewSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNewSearch.swift; sourceTree = "<group>"; };
-		E0D816B91EFE8FD500FE04B2 /* ResultSearchEstateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultSearchEstateViewController.swift; sourceTree = "<group>"; };
+		E0D816B91EFE8FD500FE04B2 /* ResultSearchEstateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResultSearchEstateViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E0DE601D1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailOwnerViewController.swift; sourceTree = "<group>"; };
 		E0DE601F1ECCB9EB00076CF1 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		E0DE60211ECCBBC300076CF1 /* edit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit2.png; sourceTree = "<group>"; };
@@ -217,16 +217,16 @@
 		E21315421E97E735003E6BDE /* speech-bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speech-bubble.png"; sourceTree = "<group>"; };
 		E213154C1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailBuyerControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E217EF811E93CD0400068876 /* TinNhanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinNhanController.swift; sourceTree = "<group>"; };
-		E217EF841E93CDA700068876 /* CuocHenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuocHenController.swift; sourceTree = "<group>"; };
+		E217EF841E93CDA700068876 /* CuocHenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CuocHenController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E217EF861E93CE7200068876 /* CaiDatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatController.swift; sourceTree = "<group>"; };
 		E217EFA11E93D4EB00068876 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E217EFAD1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan2ControllerTableViewCell.swift; sourceTree = "<group>"; };
 		E21A2CCF1EC26FF3008BAAC0 /* dislike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dislike.png; sourceTree = "<group>"; };
 		E22E8A571EBCB61000F1CC71 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
-		E23DD24E1EB62DB6007652F6 /* DetailCuocHenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCuocHenViewController.swift; sourceTree = "<group>"; };
+		E23DD24E1EB62DB6007652F6 /* DetailCuocHenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DetailCuocHenViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E23DD2501EB6319E007652F6 /* DetailCuocHenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCuocHenTableViewCell.swift; sourceTree = "<group>"; };
 		E2472E931E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSan3ControllerTableViewCell.swift; sourceTree = "<group>"; };
-		E272A89C1EBF35F700D6A9BC /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		E272A89C1EBF35F700D6A9BC /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LogInViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E272A89E1EBF3B4600D6A9BC /* 518079-background-hd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "518079-background-hd.jpg"; sourceTree = "<group>"; };
 		E27785931EC8B55700B47FA5 /* Estate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estate.swift; sourceTree = "<group>"; };
 		E27785951EC8BCF800B47FA5 /* house4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house4.jpg; sourceTree = "<group>"; };
@@ -243,23 +243,23 @@
 		E2A195DB1EC24DF60080914E /* Extension_UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_UIImageView.swift; sourceTree = "<group>"; };
 		E2A2B5851EA2463100BE0FF9 /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.jpg; sourceTree = "<group>"; };
 		E2A2B5871EA2514F00BE0FF9 /* Extension_UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_UIView.swift; sourceTree = "<group>"; };
-		E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimKiemController.swift; sourceTree = "<group>"; };
+		E2A2C3701E9A5C8400F4EF8F /* TimKiemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TimKiemController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E2A478671E9139AB00F843BB /* Thesis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thesis.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2A4786A1E9139AB00F843BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2A4786A1E9139AB00F843BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E2A4786C1E9139AB00F843BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2A4786F1E9139AB00F843BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2A478711E9139AB00F843BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2A478741E9139AB00F843BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2A478761E9139AB00F843BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2A4789A1E9140DF00F843BB /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		E2A4789E1E9144AC00F843BB /* BatDongSanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatDongSanController.swift; sourceTree = "<group>"; };
+		E2A4789E1E9144AC00F843BB /* BatDongSanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BatDongSanController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E2C702261E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-button-interface-symbol-of-three-horizontal-aligned-dots.png"; sourceTree = "<group>"; };
 		E2C702281E9932AF0056696E /* more-details-circular-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-details-circular-button.png"; sourceTree = "<group>"; };
 		E2C7022A1E9933450056696E /* more-button-of-three-dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-button-of-three-dots.png"; sourceTree = "<group>"; };
 		E2C8F2251EC4342E007D04BE /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		E2D630371E9F5469004F3E45 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		E2E1C4331E9660AA0008D0B3 /* EstateDetailOwnerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailOwnerController.swift; sourceTree = "<group>"; };
-		E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailBuyerController.swift; sourceTree = "<group>"; };
+		E2E1C4351E96751B0008D0B3 /* EstateDetailBuyerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EstateDetailBuyerController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E2F8E9031EC713A600EDD5F2 /* telephone (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "telephone (1).png"; sourceTree = "<group>"; };
 		E2F8E9051EC71E5900EDD5F2 /* phone-symbol-of-an-auricular-inside-a-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-symbol-of-an-auricular-inside-a-circle.png"; sourceTree = "<group>"; };
 		E2F8E9071EC71EBB00EDD5F2 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 		E2F8E90B1EC72B5E00EDD5F2 /* ServerImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerImageTableViewCell.swift; sourceTree = "<group>"; };
 		E2F8E90D1EC7328100EDD5F2 /* MyImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageTableViewCell.swift; sourceTree = "<group>"; };
 		E2F8E9101EC739D200EDD5F2 /* MyImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		E2F8E9311EC76AF100EDD5F2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E2F8E9311EC76AF100EDD5F2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SignUpViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

@@ -89,7 +89,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     func getEstateBaseOnID()
     {
         
-        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getDetail/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getDetail/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -117,7 +117,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     func getPhotoList()
     {
         
-        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -273,15 +273,48 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
                     myPicker.sourceType = .photoLibrary
                     present(myPicker, animated: true, completion: nil)
                 }
+                else
+                {
+                    let newImageView = UIImageView(image: self.mang[indexPath.row])
+                    newImageView.frame = UIScreen.main.bounds
+                    
+                    newImageView.backgroundColor = .black
+                    newImageView.contentMode = .scaleAspectFit
+                    newImageView.isUserInteractionEnabled = true
+                    let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+                    newImageView.addGestureRecognizer(tap)
+                    self.view.addSubview(newImageView)
+                    self.navigationController?.isNavigationBarHidden = true
+                    self.tabBarController?.tabBar.isHidden = true
+                }
             }
             else
             {
                 self.login()
             }
         }
+        else
+        {
+            let data:Data = Data(base64Encoded: mangImage[indexPath.row])!
+            let newImageView = UIImageView(image: UIImage(data: data))
+            newImageView.frame = UIScreen.main.bounds
+            
+            newImageView.backgroundColor = .black
+            newImageView.contentMode = .scaleAspectFit
+            newImageView.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+            newImageView.addGestureRecognizer(tap)
+            self.view.addSubview(newImageView)
+            self.navigationController?.isNavigationBarHidden = true
+            self.tabBarController?.tabBar.isHidden = true
+        }
         
     }
-    
+    func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        sender.view?.removeFromSuperview()
+    }
     override func viewDidAppear(_ animated: Bool) {
         var nav = self.navigationController?.navigationBar
         // 2
@@ -385,7 +418,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/updateNote")!)
+        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/updateNote")!)
         
         
         
@@ -437,7 +470,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/upPhotoNote")!)
+        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/upPhotoNote")!)
         
         
         
@@ -479,7 +512,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     }
     func getNote()
     {
-        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/getNote/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/getNote/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -504,7 +537,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     {
        // self.mang = []
         
-        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/getPhotoNote/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/getPhotoNote/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             

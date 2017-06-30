@@ -132,7 +132,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     {
         print ("1")
         
-        let url = "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/login/" + token
+        let url = "http://rem-bt.azurewebsites.net/rem/rem_server/user/login/" + token
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         
@@ -302,7 +302,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONGetNew()
     {
        
-        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getNew/4")!)
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getNew/4")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -353,7 +353,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONgetInterested()
     {
        
-        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/user/getInterested/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/getInterested/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -406,7 +406,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJsonGetByOwnerID()
     {
         
-        let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -468,7 +468,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang.count
         {
             let id = mang[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -503,7 +503,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang3.count
         {
             let id = mang3[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -537,7 +537,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang2.count
         {
             let id = mang2[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-real-estate-manager.1d35.starter-us-east-1.openshiftapps.com/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -762,7 +762,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     tabbar.passEstate = mang[indexPath.row]
                     tabbar.passOwner = nameOwner[indexPath.row]
                     tabbar.passAdress = addressOwner[indexPath.row]
-                    
+                    tabbar.isLogin = isLogin
                    
                     
                     
