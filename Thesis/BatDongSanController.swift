@@ -621,31 +621,102 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
        
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        if (role == 0)
+//        {
+//            if (section == 0)
+//            {
+//                return "Bất động sản đang quan tâm"
+//            }
+//            else if (section == 1)
+//            {
+//                return "Bất động sản mới nhất"
+//            }
+//            return "Bất động sản được quan tâm nhiều"
+//        }
+//        
+//            if (section == 0)
+//            {
+//                return "Bất động sản đang quản lý"
+//            }
+//        
+//                return "Bất động sản mới nhất"
+//            
+//        
+//        
+//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        
+        
+        
+        
+        
+        view.backgroundColor = UIColor(cgColor: #colorLiteral(red: 0.9395621827, green: 0.9395621827, blue: 0.9395621827, alpha: 1).cgColor)
+        let title = UILabel()
+        title.font = UIFont.boldSystemFont(ofSize: 16)
         if (role == 0)
         {
             if (section == 0)
             {
-                return "Bất động sản đang quan tâm"
+                title.text = "Bất động sản đang quan tâm"
             }
             else if (section == 1)
             {
-                return "Bất động sản mới nhất"
+                title.text = "Bất động sản mới nhất"
             }
-            return "Bất động sản được quan tâm nhiều"
         }
-        
-            if (section == 0)
+        else
+        {
+            if ( section == 0)
             {
-                return "Bất động sản đang quản lý"
+                title.text = "Bất động sản đang quản lý"
             }
+            else
+            {
+                title.text = "Bất động sản mới nhất"
+            }
+        }
+        title.frame = CGRect(x: 5, y: 5, width: self.view.frame.width * 0.75, height: 15)
+        view.addSubview(title)
         
-                return "Bất động sản mới nhất"
-            
+        
+        let more = UILabel()
+        more.text = ">"
+        more.frame = CGRect(x: self.view.frame.width - 20, y: 5, width: 10, height: 15)
+        view.addSubview(more)
+        
+        if (section == 0)
+        {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+       // tapRecognizer.delegate = self
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.numberOfTouchesRequired = 1
+        view.addGestureRecognizer(tapRecognizer)
+        }
+        else
+        {
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap2))
+            // tapRecognizer.delegate = self
+            tapRecognizer.numberOfTapsRequired = 1
+            tapRecognizer.numberOfTouchesRequired = 1
+            view.addGestureRecognizer(tapRecognizer)
+        }
+        return view
         
         
     }
-    
+    func handleTap(gestureRecognizer: UIGestureRecognizer)
+    {
+        print("Tapped")
+    }
+    func handleTap2(gestureRecognizer: UIGestureRecognizer)
+    {
+        print("Tapped2")
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
