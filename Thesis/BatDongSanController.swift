@@ -708,11 +708,26 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     }
     func handleTap(gestureRecognizer: UIGestureRecognizer)
     {
-        print("Tapped")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "SeemoreViewController") as! SeemoreViewController
+        if (role == 0)
+        {
+            tabbar.role = 0
+        }
+        else if (role == 1)
+        {
+            tabbar.role = 1
+        }
+        tabbar.idUser = idUser
+        self.navigationController?.pushViewController(tabbar, animated: true)
     }
     func handleTap2(gestureRecognizer: UIGestureRecognizer)
     {
-        print("Tapped2")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "SeemoreViewController") as! SeemoreViewController
+        tabbar.role = 1
+        tabbar.idUser = idUser
+        self.navigationController?.pushViewController(tabbar, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25

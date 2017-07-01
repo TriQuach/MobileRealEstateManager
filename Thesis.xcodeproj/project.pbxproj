@@ -25,6 +25,8 @@
 		E03B4D1C1ED97FA600C85430 /* tick3.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1B1ED97FA600C85430 /* tick3.png */; };
 		E03B4D1E1ED9F26600C85430 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1D1ED9F26600C85430 /* plus.png */; };
 		E03B4D201ED9F2DE00C85430 /* add4.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1F1ED9F2DE00C85430 /* add4.png */; };
+		E040448C1F079CFA0008F42C /* SeemoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040448B1F079CFA0008F42C /* SeemoreTableViewCell.swift */; };
+		E040448E1F079F500008F42C /* SeemoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040448D1F079F500008F42C /* SeemoreViewController.swift */; };
 		E04236101EF9450C001EE037 /* CaiDatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */; };
 		E04236121EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */; };
 		E044E85D1EFC06D100728300 /* TimKiemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */; };
@@ -157,6 +159,8 @@
 		E03B4D1B1ED97FA600C85430 /* tick3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick3.png; sourceTree = "<group>"; };
 		E03B4D1D1ED9F26600C85430 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		E03B4D1F1ED9F2DE00C85430 /* add4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add4.png; sourceTree = "<group>"; };
+		E040448B1F079CFA0008F42C /* SeemoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeemoreTableViewCell.swift; sourceTree = "<group>"; };
+		E040448D1F079F500008F42C /* SeemoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeemoreViewController.swift; sourceTree = "<group>"; };
 		E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTableViewCell.swift; sourceTree = "<group>"; };
 		E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTaiKhoanViewController.swift; sourceTree = "<group>"; };
 		E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimKiemTableViewCell.swift; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 				E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */,
 				E02E48021EE7D08C00A571DE /* DatHenViewController.swift */,
 				E0D816B91EFE8FD500FE04B2 /* ResultSearchEstateViewController.swift */,
+				E040448D1F079F500008F42C /* SeemoreViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 				E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */,
 				E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */,
 				E0EBA5CA1EFFC02300F8726B /* ResultSearchTableViewCell.swift */,
+				E040448B1F079CFA0008F42C /* SeemoreTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -717,6 +723,7 @@
 				E044E85D1EFC06D100728300 /* TimKiemTableViewCell.swift in Sources */,
 				E07993A91EEFD348002AA88E /* Photo.swift in Sources */,
 				E23DD24F1EB62DB6007652F6 /* DetailCuocHenViewController.swift in Sources */,
+				E040448C1F079CFA0008F42C /* SeemoreTableViewCell.swift in Sources */,
 				E07915E71EF53F6E00256BCF /* ImageServerCollectionViewCell.swift in Sources */,
 				E2A195DC1EC24DF60080914E /* Extension_UIImageView.swift in Sources */,
 				E0267D2E1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift in Sources */,
@@ -740,6 +747,7 @@
 				E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */,
 				E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */,
 				E02E48031EE7D08C00A571DE /* DatHenViewController.swift in Sources */,
+				E040448E1F079F500008F42C /* SeemoreViewController.swift in Sources */,
 				E07993A71EEFD328002AA88E /* PhotoPostNew.swift in Sources */,
 				E04236101EF9450C001EE037 /* CaiDatTableViewCell.swift in Sources */,
 				E213154D1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift in Sources */,
