@@ -2399,7 +2399,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loại" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5K-V3-qRj">
-                                <rect key="frame" x="40" y="323" width="120" height="21"/>
+                                <rect key="frame" x="60" y="323" width="120" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="soh-ep-FUe"/>
                                 </constraints>
@@ -2408,37 +2408,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diện tích(m2)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tms-Op-bD9">
-                                <rect key="frame" x="40" y="354" width="120" height="21"/>
+                                <rect key="frame" x="60" y="354" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá(triệu VND)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOE-AE-N2C">
-                                <rect key="frame" x="40" y="385" width="120" height="21"/>
+                                <rect key="frame" x="60" y="385" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số tầng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8u-Cp-AWz">
-                                <rect key="frame" x="40" y="416" width="120" height="21"/>
+                                <rect key="frame" x="60" y="416" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số phòng ngủ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bif-xp-bF5">
-                                <rect key="frame" x="40" y="447" width="120" height="21"/>
+                                <rect key="frame" x="60" y="447" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số phòng tắm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSx-Vx-Pg9">
-                                <rect key="frame" x="40" y="478" width="120" height="21"/>
+                                <rect key="frame" x="60" y="478" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hướng nhà" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPr-w4-TW2">
-                                <rect key="frame" x="40" y="509" width="120" height="21"/>
+                                <rect key="frame" x="60" y="509" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2690,7 +2690,7 @@
                             <constraint firstItem="qFw-B3-jJn" firstAttribute="top" secondItem="cl4-3S-hDa" secondAttribute="bottom" constant="10" id="IhU-TI-T3v"/>
                             <constraint firstItem="Tms-Op-bD9" firstAttribute="leading" secondItem="r5K-V3-qRj" secondAttribute="leading" id="JgR-sc-KLp"/>
                             <constraint firstItem="bSx-Vx-Pg9" firstAttribute="top" secondItem="Bif-xp-bF5" secondAttribute="bottom" constant="10" id="Jpg-3D-FCx"/>
-                            <constraint firstItem="r5K-V3-qRj" firstAttribute="leading" secondItem="I9d-3x-r2N" secondAttribute="leading" constant="40" id="JtV-iJ-QMS"/>
+                            <constraint firstItem="r5K-V3-qRj" firstAttribute="leading" secondItem="I9d-3x-r2N" secondAttribute="leading" constant="60" id="JtV-iJ-QMS"/>
                             <constraint firstItem="cl4-3S-hDa" firstAttribute="height" secondItem="wyc-oS-gfH" secondAttribute="height" id="KFq-Tw-xFy"/>
                             <constraint firstItem="Sdv-br-xeD" firstAttribute="top" secondItem="buG-7s-MRn" secondAttribute="bottom" constant="10" id="Kcn-Rh-2MY"/>
                             <constraint firstItem="huL-Sn-z2G" firstAttribute="trailing" secondItem="Sdv-br-xeD" secondAttribute="trailing" id="Mfs-Rx-Mlr"/>

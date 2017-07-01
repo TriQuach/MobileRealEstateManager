@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import UserNotifications
 class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
@@ -16,7 +16,7 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
     @IBOutlet weak var lblTest: UILabel!
     
     var mang:[SimpleAppointment] = []
-    
+    var numBadge:Int = 0
     var idUser:Int = 0
     var temp:Int?
     var role:Int!
@@ -62,6 +62,7 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
         )
         
         self.navigationItem.rightBarButtonItem = rightButtonItem
+        
         
     }
     func login()
@@ -137,6 +138,11 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
                 
                 DispatchQueue.main.async(execute: {
                     self.myTbv.reloadData()
+                    self.getBadge()
+                    let tabItems = self.tabBarController?.tabBar.items as NSArray!
+                    let tabItem = tabItems?[2] as! UITabBarItem
+                    tabItem.badgeValue = String(self.numBadge)
+                    self.appBadge()
                     self.loading.stopAnimating()
                     self.loading.isHidden = true
               //      self.parseImageGetNew()
@@ -144,6 +150,28 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
             }catch{}
         }
         task.resume()
+    }
+    func getBadge()
+    {
+        for i in 0..<mang.count
+        {
+            if (mang[i].status == 1 || mang[i].status == 2)
+            {
+                self.numBadge += 1
+            }
+        }
+    }
+    func appBadge()
+    {
+        
+        
+        let application = UIApplication.shared
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = numBadge
     }
     func parseJsonToken(token: String)
     {
