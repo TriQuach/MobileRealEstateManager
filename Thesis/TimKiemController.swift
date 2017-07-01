@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Dropper
 import DropDown
+import M13Checkbox
 class TimKiemController: UIViewController {
     
     var mang:[Estate] = []
@@ -27,6 +28,8 @@ class TimKiemController: UIViewController {
 
     
     
+    @IBOutlet weak var cbTimDiaChi: M13Checkbox!
+    @IBOutlet weak var cbTimQuanhDay: M13Checkbox!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     let dropDown = DropDown()
     let dropDown2 = DropDown()
@@ -38,10 +41,14 @@ class TimKiemController: UIViewController {
     let dropDown8 = DropDown()
     let dropDown9 = DropDown()
     let dropDown10 = DropDown()
+    let dropDown11 = DropDown()
+    
     @IBOutlet weak var edtDiaChi: UITextField!
     
     @IBOutlet weak var dropThanhPho: UIView!
     
+    @IBOutlet weak var lblBanKinh: UILabel!
+    @IBOutlet weak var dropBanKinh: UIView!
     @IBOutlet weak var dropQuan: UIView!
     @IBOutlet weak var dropPhuong: UIView!
     @IBOutlet weak var lblThanhPho: UILabel!
@@ -175,6 +182,10 @@ class TimKiemController: UIViewController {
         "Tây-Nam",
         "Đông-Nam"
     ]
+    var mangBanKinh:[String] = [
+        "2-5km",
+        "6-10km"
+    ]
     
 //    var spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
 //    
@@ -194,6 +205,7 @@ class TimKiemController: UIViewController {
         initDropDown(x: dropSoPhongNgu)
         initDropDown(x: dropSoPhongTam)
         initDropDown(x: dropHuongNha)
+        initDropDown(x: dropBanKinh)
         
         
         loading2.isHidden = true
@@ -391,6 +403,21 @@ class TimKiemController: UIViewController {
             x.isUserInteractionEnabled = true
             x.addGestureRecognizer(tap)
         }
+        else if ( x.tag == 11)
+        {
+            dropDown11.anchorView = x
+            dropDown11.dataSource = self.mangBanKinh
+            dropDown11.selectionAction = { [unowned self] (index: Int, item: String) in
+                
+                self.lblBanKinh.text = item
+                self.dropThanhPho.isUserInteractionEnabled = false
+                
+            }
+            
+            let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped11))
+            x.isUserInteractionEnabled = true
+            x.addGestureRecognizer(tap)
+        }
       
     }
     
@@ -433,6 +460,10 @@ class TimKiemController: UIViewController {
     func imgMoreTapped10()
     {
         dropDown10.show()
+    }
+    func imgMoreTapped11()
+    {
+        dropDown11.show()
     }
     
     func sendRequestGetWard(idWard: Int)
@@ -668,7 +699,23 @@ class TimKiemController: UIViewController {
     }
     
     
+    @IBAction func actionTimQuanhDay(_ sender: Any) {
+        cbTimDiaChi.setCheckState(.unchecked, animated: true)
+        self.dropThanhPho.isUserInteractionEnabled = false
+        self.dropQuan.isUserInteractionEnabled = false
+        self.dropPhuong.isUserInteractionEnabled = false
+        self.edtDiaChi.isEnabled = false
+        self.dropBanKinh.isUserInteractionEnabled = true
+    }
     
+    @IBAction func actionTimDiaChi(_ sender: Any) {
+        cbTimQuanhDay.setCheckState(.unchecked, animated: true)
+        self.dropThanhPho.isUserInteractionEnabled = true
+        self.dropQuan.isUserInteractionEnabled = true
+        self.dropPhuong.isUserInteractionEnabled = true
+        self.edtDiaChi.isEnabled = true
+        self.dropBanKinh.isUserInteractionEnabled = false
+    }
     
     
 }
