@@ -11,20 +11,104 @@ import UIKit
 
 class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     
-    var mang:[String] = ["Tài khoản","Lịch sử","Tác giả", "Liên hệ", "Feedback", "Rate","LogOut"]
-    
+    var mang:[String] = ["Tài khoản","Lịch sử","Tác giả", "Liên hệ", "Feedback", "Rate","Đăng xuất"]
+    var idUser:Int = 0
+    var newUser:User!
+    var isLogin:Bool!
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myTbv.dataSource = self
-        myTbv.delegate = self
         
-        print (self.view.frame.height - (self.navigationController?.navigationBar.frame.size.height)!)
+        
+        do {
+            let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
+            
+            isLogin = true
+            
+            parseJsonToken(token: data)
+            
+            
+            
+            
+        } catch {
+            myTbv.dataSource = self
+            myTbv.delegate = self
+            isLogin = false
+            login()
+            mang[mang.count-1] = "Đăng nhập"
+        }
         
         
     }
-    
+    func login()
+    {
+        let alertController = UIAlertController(title: "Thông báo", message: "Bạn chưa đăng nhập", preferredStyle: .alert)
+        
+        // Create the actions
+        let okAction = UIAlertAction(title: "Đăng nhập", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
+            
+            tabbar.storyboardID = "EstateDetailBuyer"
+            self.navigationController?.pushViewController(tabbar, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            
+        }
+        
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+    }
+    func parseJsonToken(token: String)
+    {
+        
+        let url = "http://rem-bt.azurewebsites.net/rem/rem_server/user/login/" + token
+        print (url)
+        let req = URLRequest(url: URL(string: url)!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let email = json["email"] as! String
+                let password = json["password"] as! String
+                let address = json["address"] as! String
+                let fullName = json["fullName"] as! String
+                let phone = json["phone"] as! String
+                let name = json["name"] as! String
+                let typeId = json["typeId"] as! Int
+                let id = json["id"] as! Int
+                 let user:User = User(email: email, password: password, address: address, typeID: typeId, fullName: fullName, phone: phone, id: id, name: name)
+                
+                DispatchQueue.main.async {
+                    
+                    self.myTbv.dataSource = self
+                    self.myTbv.delegate = self
+                    self.myTbv.reloadData()
+                    
+                    self.idUser = id
+                    self.newUser = user
+                    
+                    //
+                    
+                    
+                    
+                    
+                }
+            }catch{}
+        }
+        task.resume()
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -60,8 +144,27 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 
+            }
+            
         }
-    }
+        else if ( indexPath.row == 0 )
+        {
+            if (!isLogin)
+            {
+                login()
+               
+            }
+            else
+            {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabbar = storyboard.instantiateViewController(withIdentifier: "CaiDatTaiKhoanViewController") as! CaiDatTaiKhoanViewController
+                
+                tabbar.user = newUser
+                
+                
+                self.navigationController?.pushViewController(tabbar, animated: true)
+            }
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         

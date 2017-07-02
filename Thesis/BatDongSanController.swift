@@ -161,6 +161,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                             self.parseJSONgetInterested()
                             self.myTbv.dataSource = self
                             self.myTbv.delegate = self
+                            self.myTbv.reloadData()
                             var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
                             secondTab.idUser = self.idUser
                             secondTab.role = 0
