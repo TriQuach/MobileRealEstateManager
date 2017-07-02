@@ -75,7 +75,7 @@ class TimKiemController: UIViewController {
     var indexSoTang:Int!
     var indexSoPhongNgu:Int!
     var indexSoPhongTam:Int!
-    
+    var idUser:Int!
     var mangWard:[String] = []
     var mangDistrict:[String] = [
         "Không xác định",
@@ -669,7 +669,7 @@ class TimKiemController: UIViewController {
                         
                         tabbar.json = json2
                         tabbar.mang = self.mang
-                        
+                        tabbar.idUser = self.idUser
                         
                         self.navigationController?.pushViewController(tabbar, animated: true)
                     }

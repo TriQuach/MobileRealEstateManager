@@ -16,7 +16,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
     var mang:[Estate]!
     var pages:Int = 1
     var loadingData = false
-    
+    var idUser:Int!
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +61,17 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         return cell
         
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+        
+       
+            tabbar.idEstate = mang[indexPath.row].ID
+            tabbar.isLogin = true
+            tabbar.idUser = self.idUser
+        
+        self.navigationController?.pushViewController(tabbar, animated: true)
+    }
     func parseImageInterested()
     {
         

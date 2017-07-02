@@ -129,7 +129,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
                         let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
                         
-                        let owner = estates[i]["owner"] as! AnyObject
+                        let owner = estates[i]["owner"] as!     AnyObject
                         let idOwner = owner["id"] as! Int
                         
                         
@@ -337,7 +337,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let id3 = json["id"] as! Int
                 let name3 = json["name"] as! String
                 
-                let newFullEstate:FullEstate = FullEstate(owner: newUser, address: newAdress, detail: newDetail, available: available, type: type, postTime: postTime, price: price, area: area, id: id3, name: name3)
+                let _:FullEstate = FullEstate(owner: newUser, address: newAdress, detail: newDetail, available: available, type: type, postTime: postTime, editTime: "", price: price, area: area, id: id3, name: name3)
                 
              //   self.mang.append(newFullEstate)
                
@@ -448,6 +448,30 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+        
+        if (role == 0)
+        {
+            tabbar.idEstate = mang[indexPath.row].ID
+            tabbar.isLogin = true
+            tabbar.idUser = self.idUser
+        }
+        else if ( role == 1)
+        {
+            tabbar.idEstate = mang3[indexPath.row].ID
+            tabbar.isLogin = true
+            tabbar.idUser = self.idUser
+        }
+        else
+        {
+            tabbar.idEstate = mang2[indexPath.row].ID
+            tabbar.isLogin = true
+            tabbar.idUser = self.idUser
+        }
+        self.navigationController?.pushViewController(tabbar, animated: true)
     }
 
 }

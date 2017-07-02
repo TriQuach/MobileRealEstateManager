@@ -18,6 +18,8 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     @IBOutlet weak var tvNote: UITextView!
     @IBOutlet weak var loading3: UIActivityIndicatorView!
     
+    @IBOutlet weak var lblEdit: UILabel!
+    @IBOutlet weak var lblPosdate: UILabel!
     @IBOutlet weak var passImg: UIImageView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var lblLoai: UILabel!
@@ -32,7 +34,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     @IBOutlet weak var lblAdressEstate: UILabel!
     @IBOutlet weak var lblOwner: UILabel!
     @IBOutlet weak var lblName: UILabel!
-    var passFullEstate:FullEstate!
+  //  var passFullEstate:FullEstate!
     @IBOutlet weak var myClv2: UICollectionView!
     @IBOutlet weak var myClv: UICollectionView!
     var arrayImage:[UIImage]?
@@ -52,6 +54,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     var count:Int = 0
     var name_house:String?
     var mang:[UIImage] = []
+    var passFullEstate:FullEstate!
     
     var passEstate:Estate!
     var passOwner:String!
@@ -82,7 +85,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         print ("idEstate:" + String(idEstate))
         loading.startAnimating()
        
-       getEstateBaseOnID()
+       getAvatar()
         
     }
     
@@ -349,9 +352,9 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
             //  tabbar.owner = passFullEstate.owner.fullName
             tabbar.idUser = idUser
             tabbar.idOwner = idOwner
-            tabbar.owner = passOwner
-            tabbar.datLichHen = passEstate.title
-            tabbar.passAdress = passAdress
+            tabbar.owner = self.passFullEstate.owner.fullName
+            tabbar.datLichHen = passFullEstate.name
+            tabbar.passAdress = passFullEstate.address.address + " " + passFullEstate.address.ward + " " + passFullEstate.address.district + " " + passFullEstate.address.city
             
             self.navigationController?.pushViewController(tabbar, animated: true)
         }
@@ -575,6 +578,128 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
             }
         }
         return nil
+    }
+    func getJsonEstate()
+    {
+        
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getByID/" + String(idEstate))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let user = json["owner"] as AnyObject
+                let email = user["email"] as! String
+                let password = user["password"] as! String
+                let address = user["address"] as! String
+                let typeID = user["typeId"] as! Int
+                let fullName = user["fullName"] as! String
+                let phone = user["phone"] as! String
+                let id = user["id"] as! Int
+                let name = user["name"] as! String
+                //
+                let newUser:User = User(email: email, password: password, address: address, typeID: typeID, fullName: fullName,phone: phone, id: id, name: name)
+                
+                let detailAddress = json["address"] as AnyObject
+                let city = detailAddress["city"] as! String
+                let district = detailAddress["district"] as! String
+                let ward = detailAddress["ward"] as! String
+                let address2 = detailAddress["address"] as! String
+                let id2 = detailAddress["id"] as! Int
+                
+                let newAdress:Address = Address(city: city, district: district, ward: ward, address: address2, id: id2)
+                
+                let detail = json["detail"] as AnyObject
+                let bathroom = detail["bathroom"] as! Int
+                let bedroom = detail["bedroom"] as! Int
+                let condition = detail["condition"] as! String
+                let description = detail["description"] as! String
+                let floor = detail["floor"] as! Int
+                let length = detail["length"] as! Double
+                let width = detail["width"] as! Double
+                let idDetail = detail["id"] as! Int
+                
+                let newDetail:Detail = Detail(bathroom: bathroom, bedroom: bedroom, condition: condition, description: description, floor: floor, length: length, width: width, id: idDetail)
+                
+                //    print (newDetail.description)
+                
+                
+                
+                let available = json["available"] as! Bool
+                let type = json["type"] as! String
+                let postTime = json["postTime"] as! String
+                let editTime = json["editTime"] as! String
+                let price = json["price"] as! Double
+                let area = json["area"] as! Double
+                let id3 = json["id"] as! Int
+                let name3 = json["name"] as! String
+                
+                let newFullEstate:FullEstate = FullEstate(owner: newUser, address: newAdress, detail: newDetail, available: available, type: type, postTime: postTime, editTime: editTime, price: price, area: area, id: id3, name: name3)
+                
+                //   self.mang.append(newFullEstate)
+                
+                
+                
+                
+                
+                DispatchQueue.main.async(execute: {
+                    self.passFullEstate = newFullEstate
+                    self.lblSoPhongTam.text = String(newFullEstate.detail.bathroom)
+                    self.lblSoPhongNgu.text = String(newFullEstate.detail.bedroom)
+                    self.lblTinhTrang.text = newFullEstate.detail.condition
+                    self.lblMoTa.text = newFullEstate.detail.description
+                    self.lblSoTang.text = String(newFullEstate.detail.floor)
+                    self.lblDai.text = String(newFullEstate.detail.length)
+                    self.lblRong.text = String(newFullEstate.detail.width)
+                    self.lblName.text = newFullEstate.name
+                    self.lblOwner.text = newFullEstate.owner.fullName
+                    self.lblAdressEstate.text = newFullEstate.address.city
+                    self.lblPosdate.text = newFullEstate.postTime
+                    self.lblEdit.text = newFullEstate.editTime
+                    self.lblLoai.text = newFullEstate.type
+                    self.idOwner = newFullEstate.owner.id
+                    self.getPhotoList()
+                    
+                    
+                })
+            }catch{}
+        }
+        task.resume()
+        
+        
+        
+        
+        
+        
+    }
+    func getAvatar()
+    {
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(idEstate))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let string = json["photo"] as! String
+                
+                
+                
+                DispatchQueue.main.async(execute: {
+                    let data:Data = Data(base64Encoded: string)!
+                    self.passImg.image = UIImage(data: data)
+                    self.getJsonEstate()
+                })
+            }catch{}
+        }
+        task.resume()
     }
     
 }

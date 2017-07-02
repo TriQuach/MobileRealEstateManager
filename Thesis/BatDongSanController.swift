@@ -270,7 +270,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let id3 = listEstates[i]["id"] as! Int
                     let name3 = listEstates[i]["name"] as! String
                     
-                    let newFullEstate:FullEstate = FullEstate(owner: newUser, address: newAdress, detail: newDetail, available: available, type: type, postTime: postTime, price: price, area: area, id: id3, name: name3)
+                    let newFullEstate:FullEstate = FullEstate(owner: newUser, address: newAdress, detail: newDetail, available: available, type: type, postTime: postTime, editTime: "", price: price, area: area, id: id3, name: name3)
                     
                     
                     
@@ -501,6 +501,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
        
     }
+    
     func parseImageGetByOwnerID()
     {
         for i in 0..<mang3.count
@@ -579,6 +580,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let timkiem = storyboard.instantiateViewController(withIdentifier: "TimKiemController") as! TimKiemController
+        timkiem.idUser = idUser
         
         self.navigationController?.pushViewController(timkiem, animated: true)
     }
