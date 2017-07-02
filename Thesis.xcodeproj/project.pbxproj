@@ -37,6 +37,12 @@
 		E0556E471F09104100010016 /* notification-bell.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E441F09104100010016 /* notification-bell.png */; };
 		E0556E491F0910E000010016 /* splash4.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E481F0910E000010016 /* splash4.png */; };
 		E0556E4B1F09115700010016 /* house-add.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E4A1F09115700010016 /* house-add.png */; };
+		E0556E4D1F09483D00010016 /* UnderlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0556E4C1F09483D00010016 /* UnderlinedLabel.swift */; };
+		E0556E4F1F0948E900010016 /* search5.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E4E1F0948E900010016 /* search5.png */; };
+		E0556E511F094A3000010016 /* calendar3.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E501F094A3000010016 /* calendar3.png */; };
+		E0556E551F094B5B00010016 /* house-of-your-dreams2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E521F094B5B00010016 /* house-of-your-dreams2.png */; };
+		E0556E561F094B5B00010016 /* phone-receiver2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E531F094B5B00010016 /* phone-receiver2.png */; };
+		E0556E571F094B5B00010016 /* placeholder2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E541F094B5B00010016 /* placeholder2.png */; };
 		E069E1421EDD4D69002B9E47 /* EstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */; };
 		E069E1441EDD4D84002B9E47 /* UserEstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */; };
 		E069E1661EDD60D1002B9E47 /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E069E1651EDD60D1002B9E47 /* down-arrow.png */; };
@@ -179,6 +185,12 @@
 		E0556E441F09104100010016 /* notification-bell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification-bell.png"; sourceTree = "<group>"; };
 		E0556E481F0910E000010016 /* splash4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash4.png; sourceTree = "<group>"; };
 		E0556E4A1F09115700010016 /* house-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house-add.png"; sourceTree = "<group>"; };
+		E0556E4C1F09483D00010016 /* UnderlinedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedLabel.swift; sourceTree = "<group>"; };
+		E0556E4E1F0948E900010016 /* search5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search5.png; sourceTree = "<group>"; };
+		E0556E501F094A3000010016 /* calendar3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar3.png; sourceTree = "<group>"; };
+		E0556E521F094B5B00010016 /* house-of-your-dreams2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house-of-your-dreams2.png"; sourceTree = "<group>"; };
+		E0556E531F094B5B00010016 /* phone-receiver2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-receiver2.png"; sourceTree = "<group>"; };
+		E0556E541F094B5B00010016 /* placeholder2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder2.png; sourceTree = "<group>"; };
 		E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstatePostNew.swift; sourceTree = "<group>"; };
 		E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEstatePostNew.swift; sourceTree = "<group>"; };
 		E069E1651EDD60D1002B9E47 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
@@ -348,6 +360,11 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0556E521F094B5B00010016 /* house-of-your-dreams2.png */,
+				E0556E531F094B5B00010016 /* phone-receiver2.png */,
+				E0556E541F094B5B00010016 /* placeholder2.png */,
+				E0556E501F094A3000010016 /* calendar3.png */,
+				E0556E4E1F0948E900010016 /* search5.png */,
 				E0556E4A1F09115700010016 /* house-add.png */,
 				E0556E481F0910E000010016 /* splash4.png */,
 				E0556E421F09104100010016 /* appt.png */,
@@ -525,6 +542,7 @@
 				E0D816B51EFE74CA00FE04B2 /* PostNewSearch.swift */,
 				E0E011211F01355000D3BD4B /* NoteUpdate.swift */,
 				E0E011231F014FA400D3BD4B /* PhotoNote.swift */,
+				E0556E4C1F09483D00010016 /* UnderlinedLabel.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -593,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0DE60221ECCBBC300076CF1 /* edit2.png in Resources */,
+				E0556E511F094A3000010016 /* calendar3.png in Resources */,
 				E0F9377E1EF6AB92003599A3 /* location3.png in Resources */,
 				E08F968F1ED84807009D96D7 /* phone-call.png in Resources */,
 				E0DE60261ECCBDD400076CF1 /* swift.png in Resources */,
@@ -615,6 +634,7 @@
 				E2C702291E9932AF0056696E /* more-details-circular-button.png in Resources */,
 				E0A29F581ED1A5E5005AE69A /* add.png in Resources */,
 				E2C702271E9931430056696E /* more-button-interface-symbol-of-three-horizontal-aligned-dots.png in Resources */,
+				E0556E571F094B5B00010016 /* placeholder2.png in Resources */,
 				E03B4D1A1ED97F6D00C85430 /* tick2.png in Resources */,
 				E295D0881EBF0A0900A746FA /* 6790904-free-background-wallpaper.jpg in Resources */,
 				E2F8E9041EC713A600EDD5F2 /* telephone (1).png in Resources */,
@@ -643,9 +663,11 @@
 				E0556E471F09104100010016 /* notification-bell.png in Resources */,
 				E0F937781EF6AB55003599A3 /* location2.png in Resources */,
 				E08F968D1ED84807009D96D7 /* interested.png in Resources */,
+				E0556E561F094B5B00010016 /* phone-receiver2.png in Resources */,
 				E0556E451F09104100010016 /* appt.png in Resources */,
 				E0556E411F090FD600010016 /* settings2.png in Resources */,
 				E2F8E9081EC71EBB00EDD5F2 /* email.png in Resources */,
+				E0556E4F1F0948E900010016 /* search5.png in Resources */,
 				E028803F1EDC914500BEC26A /* picture.png in Resources */,
 				E2D630381E9F5469004F3E45 /* more.png in Resources */,
 				E21315481E97E735003E6BDE /* settings.png in Resources */,
@@ -660,6 +682,7 @@
 				E22E8A581EBCB61000F1CC71 /* checked.png in Resources */,
 				E0556E4B1F09115700010016 /* house-add.png in Resources */,
 				E2A478701E9139AB00F843BB /* Main.storyboard in Resources */,
+				E0556E551F094B5B00010016 /* house-of-your-dreams2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +751,7 @@
 				E2E1C4361E96751B0008D0B3 /* EstateDetailBuyerController.swift in Sources */,
 				E00F0E5F1EF180FC001D5F27 /* UserIdBookAppointment.swift in Sources */,
 				E0C7B46F1ED4452B008D7204 /* User.swift in Sources */,
+				E0556E4D1F09483D00010016 /* UnderlinedLabel.swift in Sources */,
 				E069E1441EDD4D84002B9E47 /* UserEstatePostNew.swift in Sources */,
 				E272A89D1EBF35F700D6A9BC /* LogInViewController.swift in Sources */,
 				E217EF821E93CD0400068876 /* TinNhanController.swift in Sources */,

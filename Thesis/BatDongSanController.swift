@@ -192,9 +192,25 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 else
                 {
                     DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
+                        let alertController = UIAlertController(title: "Thông báo", message: json["message"] as! String, preferredStyle: .alert)
+                        
+                        // Create the actions
+                        let okAction = UIAlertAction(title: "Đăng nhập", style: UIAlertActionStyle.default) {
+                            UIAlertAction in
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
+                            
+                            tabbar.storyboardID = "EstateDetailBuyer"
+                            self.navigationController?.pushViewController(tabbar, animated: true)
+                        }
+                        
+                        
+                        // Add the actions
+                        alertController.addAction(okAction)
+                       
+                        
+                        // Present the controller
+                        self.present(alertController, animated: true, completion: nil)
                         self.loading.stopAnimating()
                         self.loading.isHidden = true
                     }

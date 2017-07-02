@@ -615,7 +615,7 @@
                                             <action selector="btnDangNhap:" destination="qkC-CA-7d2" eventType="touchUpInside" id="9t4-zi-Lmo"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="✉️email@gamil.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sAL-8l-GOF">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="✉️Tên đăng nhập" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sAL-8l-GOF">
                                         <rect key="frame" x="10" y="123" width="261" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -745,7 +745,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên Đăng nhập" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5l-Xz-P7Q">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên đăng nhập" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5l-Xz-P7Q">
                                         <rect key="frame" x="10" y="132" width="261" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1340,6 +1340,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Click here to login">
                                                             <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
                                                                 <font key="NSOriginalFont" size="17" name=".AppleSystemUIFont"/>
                                                                 <integer key="NSUnderline" value="1"/>
@@ -1371,7 +1372,7 @@
                                     <action selector="actionDangBai:" destination="wdJ-Zi-fr9" eventType="touchUpInside" id="lJF-YS-yMr"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search5.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
                                 <rect key="frame" x="302" y="69" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Ig4-Oi-kq6"/>
@@ -1849,25 +1850,25 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfG-KE-nq4">
                                                 <rect key="frame" x="124.5" y="368" width="41.5" height="41.5"/>
-                                                <state key="normal" image="location2.png"/>
+                                                <state key="normal" image="placeholder2.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20o-Y1-XEp">
                                                 <rect key="frame" x="207.5" y="368" width="41.5" height="41.5"/>
-                                                <state key="normal" image="schedule.png"/>
+                                                <state key="normal" image="calendar3.png"/>
                                                 <connections>
                                                     <action selector="btnDatLichHen:" destination="5ud-b0-AHN" eventType="touchUpInside" id="3ZW-AT-ttA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjm-QW-mJF">
                                                 <rect key="frame" x="290" y="368" width="41.5" height="41.5"/>
-                                                <state key="normal" image="interested.png"/>
+                                                <state key="normal" image="house-of-your-dreams2.png"/>
                                                 <connections>
                                                     <action selector="btnXemChiTiet:" destination="5ud-b0-AHN" eventType="touchUpInside" id="adl-91-knF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItG-zP-7xf">
                                                 <rect key="frame" x="41.5" y="368" width="41.5" height="41.5"/>
-                                                <state key="normal" image="phone-call.png"/>
+                                                <state key="normal" image="phone-receiver2.png"/>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onr-QU-F8M">
                                                 <rect key="frame" x="0.0" y="368" width="41.5" height="41.5"/>
@@ -2264,6 +2265,7 @@
                         <outlet property="loading3" destination="lOo-88-jl1" id="kyJ-hb-1uI"/>
                         <outlet property="myClv" destination="CE4-G0-o49" id="onA-yz-mPs"/>
                         <outlet property="myClv2" destination="IpH-k7-CDK" id="Zp3-yM-Zzp"/>
+                        <outlet property="outletDatLichHen" destination="20o-Y1-XEp" id="cPv-42-0dH"/>
                         <outlet property="passImg" destination="DPK-no-AXA" id="dBW-no-HRG"/>
                         <outlet property="subView" destination="4ji-U5-5sp" id="sVe-Sq-LhP"/>
                         <outlet property="tvNote" destination="Sw5-Np-iTX" id="jkP-tQ-n6L"/>
@@ -2347,16 +2349,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKj-zg-Ned">
-                                <rect key="frame" x="94.5" y="256" width="187.5" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Gửi yêu cầu">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendRequest:" destination="ZhQ-lX-MMP" eventType="touchUpInside" id="Xd5-5f-iN8"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QcE-vM-H7S">
                                 <rect key="frame" x="110" y="30" width="255" height="21"/>
                                 <constraints>
@@ -2378,27 +2370,51 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mNQ-GE-nVO">
                                 <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BĐS liên quan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHU-hv-cfF">
+                                <rect key="frame" x="10" y="256" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkH-gh-uWo" customClass="UnderlinedLabel" customModule="Thesis" customModuleProvider="target">
+                                <rect key="frame" x="10" y="287" width="355" height="21"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKj-zg-Ned">
+                                <rect key="frame" x="93.5" y="627" width="187.5" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Gửi yêu cầu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendRequest:" destination="ZhQ-lX-MMP" eventType="touchUpInside" id="Xd5-5f-iN8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="keX-zf-6b1" firstAttribute="height" secondItem="CGj-SG-WaZ" secondAttribute="height" id="0fg-IU-JHz"/>
+                            <constraint firstItem="VkH-gh-uWo" firstAttribute="leading" secondItem="ijh-lr-5sY" secondAttribute="leading" constant="10" id="1SM-gu-7OB"/>
                             <constraint firstItem="6v1-dk-3c5" firstAttribute="width" secondItem="BUz-GP-56Z" secondAttribute="width" id="2Qp-ST-mFg"/>
                             <constraint firstItem="h6G-n4-Kq4" firstAttribute="leading" secondItem="ijh-lr-5sY" secondAttribute="leading" constant="10" id="48m-UZ-30Z"/>
                             <constraint firstItem="f9q-Cf-sAX" firstAttribute="top" secondItem="h6G-n4-Kq4" secondAttribute="bottom" constant="10" id="4Er-Jb-KmD"/>
                             <constraint firstItem="CGj-SG-WaZ" firstAttribute="leading" secondItem="6v1-dk-3c5" secondAttribute="leading" id="7eA-Ca-72D"/>
                             <constraint firstAttribute="trailing" secondItem="Lmc-lc-Rh8" secondAttribute="trailing" constant="10" id="ADv-0K-03B"/>
                             <constraint firstAttribute="trailing" secondItem="MN5-aW-5sD" secondAttribute="trailing" constant="10" id="BRV-83-jCX"/>
-                            <constraint firstItem="vKj-zg-Ned" firstAttribute="top" secondItem="f9q-Cf-sAX" secondAttribute="bottom" constant="10" id="BUi-vU-FLa"/>
+                            <constraint firstItem="GHU-hv-cfF" firstAttribute="top" secondItem="f9q-Cf-sAX" secondAttribute="bottom" constant="10" id="CFl-85-Mb7"/>
                             <constraint firstAttribute="trailing" secondItem="QcE-vM-H7S" secondAttribute="trailing" constant="10" id="Jq3-gq-Q1O"/>
                             <constraint firstItem="BUz-GP-56Z" firstAttribute="leading" secondItem="ijh-lr-5sY" secondAttribute="leading" constant="10" id="Km2-NQ-Q01"/>
                             <constraint firstItem="Lmc-lc-Rh8" firstAttribute="top" secondItem="nHo-4b-aMu" secondAttribute="bottom" constant="10" id="MDN-Wb-YEO"/>
                             <constraint firstItem="CGj-SG-WaZ" firstAttribute="height" secondItem="6v1-dk-3c5" secondAttribute="height" id="MuC-lx-lvz"/>
+                            <constraint firstItem="RD4-bt-pmV" firstAttribute="top" secondItem="vKj-zg-Ned" secondAttribute="bottom" constant="10" id="MyO-KE-QkK"/>
                             <constraint firstItem="QcE-vM-H7S" firstAttribute="top" secondItem="pd0-Eb-6uY" secondAttribute="bottom" constant="10" id="Obf-ij-MW6"/>
                             <constraint firstItem="keX-zf-6b1" firstAttribute="trailing" secondItem="CGj-SG-WaZ" secondAttribute="trailing" id="PnG-bN-lVn"/>
                             <constraint firstItem="nHo-4b-aMu" firstAttribute="leading" secondItem="6v1-dk-3c5" secondAttribute="trailing" constant="40" id="Qwb-t4-7jg"/>
-                            <constraint firstItem="vKj-zg-Ned" firstAttribute="centerX" secondItem="f9q-Cf-sAX" secondAttribute="centerX" id="TaV-Gk-rIr"/>
                             <constraint firstItem="Lmc-lc-Rh8" firstAttribute="leading" secondItem="CGj-SG-WaZ" secondAttribute="trailing" constant="40" id="VV5-XP-MBe"/>
                             <constraint firstItem="nHo-4b-aMu" firstAttribute="top" secondItem="QcE-vM-H7S" secondAttribute="bottom" constant="10" id="X2b-Pg-HrZ"/>
+                            <constraint firstItem="VkH-gh-uWo" firstAttribute="top" secondItem="GHU-hv-cfF" secondAttribute="bottom" constant="10" id="aBd-cI-C7b"/>
                             <constraint firstItem="Zbq-Ja-zWD" firstAttribute="leading" secondItem="ijh-lr-5sY" secondAttribute="leading" constant="40" id="apV-7s-aEA"/>
                             <constraint firstItem="BUz-GP-56Z" firstAttribute="top" secondItem="pd0-Eb-6uY" secondAttribute="bottom" constant="10" id="c9b-ZB-Mc3"/>
                             <constraint firstItem="Zbq-Ja-zWD" firstAttribute="top" secondItem="keX-zf-6b1" secondAttribute="bottom" constant="10" id="cWz-fK-JfY"/>
@@ -2408,14 +2424,17 @@
                             <constraint firstItem="keX-zf-6b1" firstAttribute="top" secondItem="CGj-SG-WaZ" secondAttribute="bottom" constant="10" id="fad-vm-72U"/>
                             <constraint firstItem="CGj-SG-WaZ" firstAttribute="trailing" secondItem="6v1-dk-3c5" secondAttribute="trailing" id="fxb-9e-gv9"/>
                             <constraint firstItem="MN5-aW-5sD" firstAttribute="top" secondItem="QcE-vM-H7S" secondAttribute="bottom" constant="10" id="g64-9g-Y1j"/>
-                            <constraint firstItem="vKj-zg-Ned" firstAttribute="width" secondItem="ijh-lr-5sY" secondAttribute="width" multiplier="0.5" id="jzW-Lz-bMw"/>
                             <constraint firstItem="h6G-n4-Kq4" firstAttribute="top" secondItem="Zbq-Ja-zWD" secondAttribute="bottom" constant="10" id="lvb-BS-3Aj"/>
                             <constraint firstItem="mNQ-GE-nVO" firstAttribute="centerX" secondItem="ijh-lr-5sY" secondAttribute="centerX" id="ly2-dj-UNN"/>
                             <constraint firstItem="keX-zf-6b1" firstAttribute="leading" secondItem="CGj-SG-WaZ" secondAttribute="leading" id="nbk-D3-xd4"/>
+                            <constraint firstItem="vKj-zg-Ned" firstAttribute="centerX" secondItem="ijh-lr-5sY" secondAttribute="centerX" id="nlR-hh-Pt9"/>
+                            <constraint firstItem="GHU-hv-cfF" firstAttribute="leading" secondItem="ijh-lr-5sY" secondAttribute="leading" constant="10" id="nvB-4L-Ic7"/>
                             <constraint firstItem="QcE-vM-H7S" firstAttribute="leading" secondItem="BUz-GP-56Z" secondAttribute="trailing" constant="40" id="oAI-ki-hKV"/>
                             <constraint firstItem="f9q-Cf-sAX" firstAttribute="leading" secondItem="ijh-lr-5sY" secondAttribute="leading" constant="10" id="ov1-pt-BoL"/>
                             <constraint firstItem="CGj-SG-WaZ" firstAttribute="top" secondItem="6v1-dk-3c5" secondAttribute="bottom" constant="10" id="pPN-UN-9bG"/>
                             <constraint firstAttribute="trailing" secondItem="f9q-Cf-sAX" secondAttribute="trailing" constant="10" id="q0Z-cO-Zsl"/>
+                            <constraint firstItem="vKj-zg-Ned" firstAttribute="width" secondItem="ijh-lr-5sY" secondAttribute="width" multiplier="0.5" id="sm7-FY-QJ0"/>
+                            <constraint firstAttribute="trailing" secondItem="VkH-gh-uWo" secondAttribute="trailing" constant="10" id="vvd-xf-Nh0"/>
                             <constraint firstItem="6v1-dk-3c5" firstAttribute="top" secondItem="BUz-GP-56Z" secondAttribute="bottom" constant="10" id="xBe-gH-Sit"/>
                         </constraints>
                     </view>
@@ -2423,6 +2442,7 @@
                         <outlet property="edtAddress" destination="Lmc-lc-Rh8" id="Dlr-Ug-v8f"/>
                         <outlet property="edtName" destination="QcE-vM-H7S" id="jhd-9A-ZgW"/>
                         <outlet property="edtNote" destination="f9q-Cf-sAX" id="3UL-AR-SjH"/>
+                        <outlet property="lblBDSLienQuan" destination="VkH-gh-uWo" id="u2l-vA-tbS"/>
                         <outlet property="lblOwner" destination="Zbq-Ja-zWD" id="A6s-Oa-iMT"/>
                         <outlet property="lblTime" destination="nHo-4b-aMu" id="5UT-uu-MTr"/>
                         <outlet property="loading" destination="mNQ-GE-nVO" id="Ny2-2x-9Vq"/>
@@ -3313,16 +3333,17 @@
         <image name="alarm-clock.png" width="512" height="512"/>
         <image name="appt.png" width="32" height="32"/>
         <image name="bds2.png" width="32" height="32"/>
+        <image name="calendar3.png" width="64" height="64"/>
         <image name="default_image.jpg" width="640" height="480"/>
         <image name="directions2.png" width="512" height="512"/>
         <image name="down-arrow.png" width="16" height="16"/>
         <image name="house-add.png" width="64" height="64"/>
-        <image name="interested.png" width="64" height="64"/>
-        <image name="location2.png" width="64" height="64"/>
+        <image name="house-of-your-dreams2.png" width="64" height="64"/>
         <image name="notification-bell.png" width="32" height="32"/>
-        <image name="phone-call.png" width="64" height="64"/>
+        <image name="phone-receiver2.png" width="64" height="64"/>
+        <image name="placeholder2.png" width="64" height="64"/>
         <image name="schedule.png" width="64" height="64"/>
-        <image name="search.png" width="64" height="64"/>
+        <image name="search5.png" width="64" height="64"/>
         <image name="settings2.png" width="32" height="32"/>
         <image name="tag.png" width="512" height="512"/>
         <image name="user.png" width="512" height="512"/>

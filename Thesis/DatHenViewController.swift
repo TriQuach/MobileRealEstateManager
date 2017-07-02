@@ -10,6 +10,7 @@ import UIKit
 import DateTimePicker
 class DatHenViewController: UIViewController {
 
+    @IBOutlet weak var lblBDSLienQuan: UILabel!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var edtAddress: UITextField!
     @IBOutlet weak var edtName: UITextField!
@@ -21,6 +22,7 @@ class DatHenViewController: UIViewController {
     var datLichHen:String!
     var owner:String!
     var passAdress:String!
+    var idEstate:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +31,21 @@ class DatHenViewController: UIViewController {
         print ("user2" + String(idUser))
         // Do any additional setup after loading the view.
         parsePassObject()
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
+        lblBDSLienQuan.isUserInteractionEnabled = true
+        lblBDSLienQuan.addGestureRecognizer(tap)
     }
 
+    func imgMoreTapped()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let timkiem = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+        timkiem.idUser = idUser
+        timkiem.isLogin = true
+        timkiem.idEstate = idEstate
+        
+        self.navigationController?.pushViewController(timkiem, animated: true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,6 +56,7 @@ class DatHenViewController: UIViewController {
         edtName.text = datLichHen
         lblOwner.text = owner
         edtAddress.text = passAdress
+        lblBDSLienQuan.text = datLichHen
     }
 
    

@@ -14,6 +14,7 @@ import PopupDialog
 import ReadMoreTextView
 class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var outletDatLichHen: UIButton!
     @IBOutlet weak var edtNote: UITextField!
     @IBOutlet weak var tvNote: UITextView!
     @IBOutlet weak var loading3: UIActivityIndicatorView!
@@ -47,7 +48,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     var mangImage:[String] = []
     var photos:[Photo] = []
     var isLogin:Bool!
-    
+    var role:Int!
     var takenImage = UIImage(named: "add2.png")
     let estates = ["house1", "house2","house3"]
     let descrip = ["abc","xyx","asd"]
@@ -74,7 +75,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         }
         
         loading3.isHidden = true
-        
+        outletDatLichHen.isEnabled = false
         
         arrayImage = []
     //    parsePassedFullEstate()
@@ -355,7 +356,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
             tabbar.owner = self.passFullEstate.owner.fullName
             tabbar.datLichHen = passFullEstate.name
             tabbar.passAdress = passFullEstate.address.address + " " + passFullEstate.address.ward + " " + passFullEstate.address.district + " " + passFullEstate.address.city
-            
+            tabbar.idEstate = idEstate
             self.navigationController?.pushViewController(tabbar, animated: true)
         }
         else
@@ -647,6 +648,7 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
                 
                 
                 DispatchQueue.main.async(execute: {
+                    self.outletDatLichHen.isEnabled = true
                     self.passFullEstate = newFullEstate
                     self.lblSoPhongTam.text = String(newFullEstate.detail.bathroom)
                     self.lblSoPhongNgu.text = String(newFullEstate.detail.bedroom)
