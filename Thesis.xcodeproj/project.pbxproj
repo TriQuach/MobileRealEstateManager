@@ -30,6 +30,13 @@
 		E04236101EF9450C001EE037 /* CaiDatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */; };
 		E04236121EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */; };
 		E044E85D1EFC06D100728300 /* TimKiemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */; };
+		E0556E3F1F090E3600010016 /* bds.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E3E1F090E3600010016 /* bds.png */; };
+		E0556E411F090FD600010016 /* settings2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E401F090FD600010016 /* settings2.png */; };
+		E0556E451F09104100010016 /* appt.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E421F09104100010016 /* appt.png */; };
+		E0556E461F09104100010016 /* bds2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E431F09104100010016 /* bds2.png */; };
+		E0556E471F09104100010016 /* notification-bell.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E441F09104100010016 /* notification-bell.png */; };
+		E0556E491F0910E000010016 /* splash4.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E481F0910E000010016 /* splash4.png */; };
+		E0556E4B1F09115700010016 /* house-add.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E4A1F09115700010016 /* house-add.png */; };
 		E069E1421EDD4D69002B9E47 /* EstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */; };
 		E069E1441EDD4D84002B9E47 /* UserEstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */; };
 		E069E1661EDD60D1002B9E47 /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E069E1651EDD60D1002B9E47 /* down-arrow.png */; };
@@ -165,6 +172,13 @@
 		E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTableViewCell.swift; sourceTree = "<group>"; };
 		E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTaiKhoanViewController.swift; sourceTree = "<group>"; };
 		E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimKiemTableViewCell.swift; sourceTree = "<group>"; };
+		E0556E3E1F090E3600010016 /* bds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bds.png; sourceTree = "<group>"; };
+		E0556E401F090FD600010016 /* settings2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings2.png; sourceTree = "<group>"; };
+		E0556E421F09104100010016 /* appt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appt.png; sourceTree = "<group>"; };
+		E0556E431F09104100010016 /* bds2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bds2.png; sourceTree = "<group>"; };
+		E0556E441F09104100010016 /* notification-bell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification-bell.png"; sourceTree = "<group>"; };
+		E0556E481F0910E000010016 /* splash4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash4.png; sourceTree = "<group>"; };
+		E0556E4A1F09115700010016 /* house-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house-add.png"; sourceTree = "<group>"; };
 		E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstatePostNew.swift; sourceTree = "<group>"; };
 		E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEstatePostNew.swift; sourceTree = "<group>"; };
 		E069E1651EDD60D1002B9E47 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
@@ -334,6 +348,13 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0556E4A1F09115700010016 /* house-add.png */,
+				E0556E481F0910E000010016 /* splash4.png */,
+				E0556E421F09104100010016 /* appt.png */,
+				E0556E431F09104100010016 /* bds2.png */,
+				E0556E441F09104100010016 /* notification-bell.png */,
+				E0556E3E1F090E3600010016 /* bds.png */,
+				E0556E401F090FD600010016 /* settings2.png */,
 				E0A891A41F08FBCE00A19106 /* search.png */,
 				E0ACCFA51F0383A70046A727 /* splash_screen.jpg */,
 				E0F937791EF6AB92003599A3 /* alarm-clock.png */,
@@ -577,6 +598,7 @@
 				E0DE60261ECCBDD400076CF1 /* swift.png in Resources */,
 				E295D0861EBF095900A746FA /* Screen Shot 2017-05-07 at 2.50.22 PM.png in Resources */,
 				E21315471E97E735003E6BDE /* house3.jpg in Resources */,
+				E0556E461F09104100010016 /* bds2.png in Resources */,
 				E03B4D1E1ED9F26600C85430 /* plus.png in Resources */,
 				E0DE60201ECCB9EB00076CF1 /* edit.png in Resources */,
 				E277859E1EC8BCF800B47FA5 /* house7.jpg in Resources */,
@@ -613,12 +635,16 @@
 				E2C7022B1E9933450056696E /* more-button-of-three-dots.png in Resources */,
 				E2F8E9061EC71E5900EDD5F2 /* phone-symbol-of-an-auricular-inside-a-circle.png in Resources */,
 				E277859F1EC8BCF800B47FA5 /* house8.jpg in Resources */,
+				E0556E491F0910E000010016 /* splash4.png in Resources */,
 				E0DE60281ECCBE4300076CF1 /* swift2.png in Resources */,
 				E2A2B5861EA2463100BE0FF9 /* beach.jpg in Resources */,
 				E0F4C6801EDF0AE700402C15 /* Iron_Man_Experience.jpg in Resources */,
 				E277859B1EC8BCF800B47FA5 /* house4.jpg in Resources */,
+				E0556E471F09104100010016 /* notification-bell.png in Resources */,
 				E0F937781EF6AB55003599A3 /* location2.png in Resources */,
 				E08F968D1ED84807009D96D7 /* interested.png in Resources */,
+				E0556E451F09104100010016 /* appt.png in Resources */,
+				E0556E411F090FD600010016 /* settings2.png in Resources */,
 				E2F8E9081EC71EBB00EDD5F2 /* email.png in Resources */,
 				E028803F1EDC914500BEC26A /* picture.png in Resources */,
 				E2D630381E9F5469004F3E45 /* more.png in Resources */,
@@ -630,7 +656,9 @@
 				E03B4D201ED9F2DE00C85430 /* add4.png in Resources */,
 				E0A891A51F08FBCE00A19106 /* search.png in Resources */,
 				E21315451E97E735003E6BDE /* house1.jpg in Resources */,
+				E0556E3F1F090E3600010016 /* bds.png in Resources */,
 				E22E8A581EBCB61000F1CC71 /* checked.png in Resources */,
+				E0556E4B1F09115700010016 /* house-add.png in Resources */,
 				E2A478701E9139AB00F843BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

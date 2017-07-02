@@ -1190,7 +1190,7 @@
                             <constraint firstItem="keH-BG-MJ2" firstAttribute="top" secondItem="1tM-Lo-VmN" secondAttribute="bottom" id="f94-yX-96m"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cài đặt" image="settings.png" id="Ugb-RG-6ql"/>
+                    <tabBarItem key="tabBarItem" title="Cài đặt" image="settings2.png" id="Ugb-RG-6ql"/>
                     <connections>
                         <outlet property="myTbv" destination="keH-BG-MJ2" id="EbE-0d-6vP"/>
                     </connections>
@@ -1212,19 +1212,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-Tm-bhm">
-                                <rect key="frame" x="0.0" y="64" width="225" height="35"/>
+                                <rect key="frame" x="0.0" y="64" width="281.5" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="cDg-BC-Gaf"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
-                                <rect key="frame" x="345" y="71" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="fC1-nx-L0S"/>
-                                    <constraint firstAttribute="height" constant="25" id="p8E-Kx-c3V"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpe-eh-bTF">
                                 <rect key="frame" x="0.0" y="99" width="375" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1367,29 +1360,40 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CJF-mx-0IC">
                                 <rect key="frame" x="177" y="351" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOs-xb-1Nc">
-                                <rect key="frame" x="259" y="69" width="61" height="30"/>
-                                <state key="normal" title="Đăng bài"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgo-VX-sjF">
+                                <rect key="frame" x="342" y="69" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="W27-O7-EBg"/>
+                                    <constraint firstAttribute="width" constant="28" id="h8X-4m-0m3"/>
+                                </constraints>
+                                <state key="normal" image="house-add.png"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
+                                <rect key="frame" x="302" y="69" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Ig4-Oi-kq6"/>
+                                    <constraint firstAttribute="width" constant="25" id="iPH-aP-6Mk"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Mgo-VX-sjF" firstAttribute="leading" secondItem="6sX-mP-hfp" secondAttribute="trailing" constant="15" id="FRr-4U-K9w"/>
                             <constraint firstItem="CJF-mx-0IC" firstAttribute="centerX" secondItem="wpe-eh-bTF" secondAttribute="centerX" id="Gwe-1r-QAP"/>
-                            <constraint firstItem="6sX-mP-hfp" firstAttribute="leading" secondItem="SOs-xb-1Nc" secondAttribute="trailing" constant="25" id="Jjx-EP-zPR"/>
+                            <constraint firstItem="Mgo-VX-sjF" firstAttribute="top" secondItem="LH5-SG-zxu" secondAttribute="bottom" constant="5" id="KC6-vO-qtJ"/>
                             <constraint firstItem="wpe-eh-bTF" firstAttribute="leading" secondItem="Lql-Lb-otY" secondAttribute="leading" id="Q8u-ih-jPh"/>
                             <constraint firstItem="mxa-0g-uM5" firstAttribute="top" secondItem="wpe-eh-bTF" secondAttribute="bottom" id="Ra8-JQ-XNd"/>
-                            <constraint firstItem="6sX-mP-hfp" firstAttribute="top" secondItem="LH5-SG-zxu" secondAttribute="bottom" constant="7" id="SyH-cZ-nVg"/>
-                            <constraint firstAttribute="trailing" secondItem="6sX-mP-hfp" secondAttribute="trailing" constant="5" id="ZIR-HC-YGN"/>
+                            <constraint firstItem="6sX-mP-hfp" firstAttribute="top" secondItem="LH5-SG-zxu" secondAttribute="bottom" constant="5" id="WWR-Vh-oXd"/>
                             <constraint firstItem="bi4-Tm-bhm" firstAttribute="top" secondItem="LH5-SG-zxu" secondAttribute="bottom" id="eLd-SS-wTv"/>
                             <constraint firstAttribute="trailing" secondItem="wpe-eh-bTF" secondAttribute="trailing" id="ey9-jW-fix"/>
-                            <constraint firstItem="bi4-Tm-bhm" firstAttribute="width" secondItem="Lql-Lb-otY" secondAttribute="width" multiplier="0.6" id="hHl-4G-EVc"/>
+                            <constraint firstItem="bi4-Tm-bhm" firstAttribute="width" secondItem="Lql-Lb-otY" secondAttribute="width" multiplier="0.75" id="hHl-4G-EVc"/>
                             <constraint firstItem="bi4-Tm-bhm" firstAttribute="leading" secondItem="Lql-Lb-otY" secondAttribute="leading" id="hI4-43-nPe"/>
                             <constraint firstItem="wpe-eh-bTF" firstAttribute="top" secondItem="bi4-Tm-bhm" secondAttribute="bottom" id="lH9-Yy-W1s"/>
-                            <constraint firstItem="SOs-xb-1Nc" firstAttribute="top" secondItem="LH5-SG-zxu" secondAttribute="bottom" constant="5" id="o7g-1I-ADh"/>
+                            <constraint firstAttribute="trailing" secondItem="Mgo-VX-sjF" secondAttribute="trailing" constant="5" id="ma3-jC-PbW"/>
                             <constraint firstItem="CJF-mx-0IC" firstAttribute="centerY" secondItem="wpe-eh-bTF" secondAttribute="centerY" id="xJd-wV-C3n"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="BĐS" image="home.png" id="agD-EI-9DN"/>
+                    <tabBarItem key="tabBarItem" title="BĐS" image="bds2.png" id="agD-EI-9DN"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="S6I-wQ-qXN"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -3164,7 +3168,7 @@
                             <constraint firstItem="JlD-Cr-ChB" firstAttribute="top" secondItem="HA8-im-giY" secondAttribute="bottom" id="ri4-mT-Mf2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cuộc hẹn" image="calendar.png" id="d7d-yL-NMX"/>
+                    <tabBarItem key="tabBarItem" title="Cuộc hẹn" image="appt.png" id="d7d-yL-NMX"/>
                     <connections>
                         <outlet property="loading" destination="9xP-JL-fpf" id="Et9-s8-Cdb"/>
                         <outlet property="myTbv" destination="HA8-im-giY" id="hbh-LX-x9S"/>
@@ -3174,7 +3178,7 @@
             </objects>
             <point key="canvasLocation" x="1661.5999999999999" y="303.59820089955025"/>
         </scene>
-        <!--Tin Nhắn-->
+        <!--Thông báo-->
         <scene sceneID="eHq-M1-JMd">
             <objects>
                 <viewController id="eR4-Wg-Uda" customClass="TinNhanController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
@@ -3187,7 +3191,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tin Nhắn" image="speech-bubble.png" id="ZrJ-Wb-u3w"/>
+                    <tabBarItem key="tabBarItem" title="Thông báo" image="notification-bell.png" id="ZrJ-Wb-u3w"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dz4-F5-nfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3256,18 +3260,19 @@
         <image name="add.png" width="64" height="64"/>
         <image name="add4.png" width="256" height="256"/>
         <image name="alarm-clock.png" width="512" height="512"/>
-        <image name="calendar.png" width="32" height="32"/>
+        <image name="appt.png" width="32" height="32"/>
+        <image name="bds2.png" width="32" height="32"/>
         <image name="default_image.jpg" width="640" height="480"/>
         <image name="directions2.png" width="512" height="512"/>
         <image name="down-arrow.png" width="16" height="16"/>
-        <image name="home.png" width="32" height="32"/>
+        <image name="house-add.png" width="64" height="64"/>
         <image name="interested.png" width="64" height="64"/>
         <image name="location2.png" width="64" height="64"/>
+        <image name="notification-bell.png" width="32" height="32"/>
         <image name="phone-call.png" width="64" height="64"/>
         <image name="schedule.png" width="64" height="64"/>
         <image name="search.png" width="64" height="64"/>
-        <image name="settings.png" width="32" height="32"/>
-        <image name="speech-bubble.png" width="32" height="32"/>
+        <image name="settings2.png" width="32" height="32"/>
         <image name="tag.png" width="512" height="512"/>
         <image name="user.png" width="512" height="512"/>
     </resources>
