@@ -132,10 +132,33 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
             {
                 try check.write(toFile: "/Users/triquach/Documents/check.txt", atomically: false, encoding: .utf8)
             }catch{}
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
-            tabbar.storyboardID = "LogOut"
-            self.navigationController?.pushViewController(tabbar, animated: true)
+            
+            let alertController = UIAlertController(title: "Thông báo", message: "Bạn chắc chắn muốn đăng xuất? ", preferredStyle: .alert)
+            
+            // Create the actions
+            let okAction = UIAlertAction(title: "Đăng xuất", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
+                tabbar.storyboardID = "LogOut"
+                self.navigationController?.pushViewController(tabbar, animated: true)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+                UIAlertAction in
+                NSLog("Cancel Pressed")
+            }
+            
+            // Add the actions
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            
+            // Present the controller
+            self.present(alertController, animated: true, completion: nil)
+            
+            
+            
+            
+            
         }
         else if ( indexPath.row == 1 || indexPath.row == 5 )
         {
