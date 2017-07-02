@@ -1212,17 +1212,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-Tm-bhm">
-                                <rect key="frame" x="0.0" y="64" width="300" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="225" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="cDg-BC-Gaf"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more-button-of-three-dots.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
-                                <rect key="frame" x="315" y="64" width="45" height="45"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
+                                <rect key="frame" x="345" y="71" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="6sX-mP-hfp" secondAttribute="height" id="Y0n-SB-3Nc"/>
+                                    <constraint firstAttribute="width" constant="25" id="fC1-nx-L0S"/>
+                                    <constraint firstAttribute="height" constant="25" id="p8E-Kx-c3V"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpe-eh-bTF">
-                                <rect key="frame" x="0.0" y="108" width="375" height="515"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" id="rBr-6S-cCC">
@@ -1361,22 +1365,27 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CJF-mx-0IC">
-                                <rect key="frame" x="177" y="355.5" width="20" height="20"/>
+                                <rect key="frame" x="177" y="351" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOs-xb-1Nc">
+                                <rect key="frame" x="259" y="69" width="61" height="30"/>
+                                <state key="normal" title="Đăng bài"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6sX-mP-hfp" firstAttribute="leading" secondItem="bi4-Tm-bhm" secondAttribute="trailing" constant="15" id="8v2-Q8-clF"/>
                             <constraint firstItem="CJF-mx-0IC" firstAttribute="centerX" secondItem="wpe-eh-bTF" secondAttribute="centerX" id="Gwe-1r-QAP"/>
-                            <constraint firstItem="6sX-mP-hfp" firstAttribute="top" secondItem="LH5-SG-zxu" secondAttribute="bottom" id="JXB-cL-289"/>
-                            <constraint firstAttribute="trailing" secondItem="6sX-mP-hfp" secondAttribute="trailing" constant="15" id="MMy-yA-gzS"/>
+                            <constraint firstItem="6sX-mP-hfp" firstAttribute="leading" secondItem="SOs-xb-1Nc" secondAttribute="trailing" constant="25" id="Jjx-EP-zPR"/>
                             <constraint firstItem="wpe-eh-bTF" firstAttribute="leading" secondItem="Lql-Lb-otY" secondAttribute="leading" id="Q8u-ih-jPh"/>
                             <constraint firstItem="mxa-0g-uM5" firstAttribute="top" secondItem="wpe-eh-bTF" secondAttribute="bottom" id="Ra8-JQ-XNd"/>
+                            <constraint firstItem="6sX-mP-hfp" firstAttribute="top" secondItem="LH5-SG-zxu" secondAttribute="bottom" constant="7" id="SyH-cZ-nVg"/>
+                            <constraint firstAttribute="trailing" secondItem="6sX-mP-hfp" secondAttribute="trailing" constant="5" id="ZIR-HC-YGN"/>
                             <constraint firstItem="bi4-Tm-bhm" firstAttribute="top" secondItem="LH5-SG-zxu" secondAttribute="bottom" id="eLd-SS-wTv"/>
                             <constraint firstAttribute="trailing" secondItem="wpe-eh-bTF" secondAttribute="trailing" id="ey9-jW-fix"/>
-                            <constraint firstItem="bi4-Tm-bhm" firstAttribute="width" secondItem="Lql-Lb-otY" secondAttribute="width" multiplier="0.8" id="hHl-4G-EVc"/>
+                            <constraint firstItem="bi4-Tm-bhm" firstAttribute="width" secondItem="Lql-Lb-otY" secondAttribute="width" multiplier="0.6" id="hHl-4G-EVc"/>
                             <constraint firstItem="bi4-Tm-bhm" firstAttribute="leading" secondItem="Lql-Lb-otY" secondAttribute="leading" id="hI4-43-nPe"/>
                             <constraint firstItem="wpe-eh-bTF" firstAttribute="top" secondItem="bi4-Tm-bhm" secondAttribute="bottom" id="lH9-Yy-W1s"/>
+                            <constraint firstItem="SOs-xb-1Nc" firstAttribute="top" secondItem="LH5-SG-zxu" secondAttribute="bottom" constant="5" id="o7g-1I-ADh"/>
                             <constraint firstItem="CJF-mx-0IC" firstAttribute="centerY" secondItem="wpe-eh-bTF" secondAttribute="centerY" id="xJd-wV-C3n"/>
                         </constraints>
                     </view>
@@ -1392,7 +1401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fp-Ua-zdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="711" y="588"/>
+            <point key="canvasLocation" x="709.60000000000002" y="587.85607196401804"/>
         </scene>
         <!--Estate Detail Owner View Controller-->
         <scene sceneID="VKD-C9-KKZ">
@@ -3254,9 +3263,9 @@
         <image name="home.png" width="32" height="32"/>
         <image name="interested.png" width="64" height="64"/>
         <image name="location2.png" width="64" height="64"/>
-        <image name="more-button-of-three-dots.png" width="64" height="64"/>
         <image name="phone-call.png" width="64" height="64"/>
         <image name="schedule.png" width="64" height="64"/>
+        <image name="search.png" width="64" height="64"/>
         <image name="settings.png" width="32" height="32"/>
         <image name="speech-bubble.png" width="32" height="32"/>
         <image name="tag.png" width="512" height="512"/>

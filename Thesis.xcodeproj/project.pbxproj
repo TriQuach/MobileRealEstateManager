@@ -46,6 +46,7 @@
 		E0A29F581ED1A5E5005AE69A /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F571ED1A5E5005AE69A /* add.png */; };
 		E0A29F5A1ED1A6A3005AE69A /* add2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A29F591ED1A6A3005AE69A /* add2.png */; };
 		E0A721A81EF6A9D2002E01C4 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A721A71EF6A9D2002E01C4 /* tag.png */; };
+		E0A891A51F08FBCE00A19106 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A891A41F08FBCE00A19106 /* search.png */; };
 		E0ACCFA61F0383A70046A727 /* splash_screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0ACCFA51F0383A70046A727 /* splash_screen.jpg */; };
 		E0B000CB1EE6CA1300426BFB /* Appointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B000CA1EE6CA1300426BFB /* Appointments.swift */; };
 		E0B000CD1EE6D9AE00426BFB /* SimpleAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B000CC1EE6D9AE00426BFB /* SimpleAppointment.swift */; };
@@ -180,6 +181,7 @@
 		E0A29F571ED1A5E5005AE69A /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		E0A29F591ED1A6A3005AE69A /* add2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add2.png; sourceTree = "<group>"; };
 		E0A721A71EF6A9D2002E01C4 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
+		E0A891A41F08FBCE00A19106 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		E0ACCFA51F0383A70046A727 /* splash_screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash_screen.jpg; sourceTree = "<group>"; };
 		E0B000CA1EE6CA1300426BFB /* Appointments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointments.swift; sourceTree = "<group>"; };
 		E0B000CC1EE6D9AE00426BFB /* SimpleAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAppointment.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0A891A41F08FBCE00A19106 /* search.png */,
 				E0ACCFA51F0383A70046A727 /* splash_screen.jpg */,
 				E0F937791EF6AB92003599A3 /* alarm-clock.png */,
 				E0F9377A1EF6AB92003599A3 /* location3.png */,
@@ -625,6 +628,7 @@
 				E27785A01EC8BCF800B47FA5 /* house9.jpg in Resources */,
 				E277859D1EC8BCF800B47FA5 /* house6.jpg in Resources */,
 				E03B4D201ED9F2DE00C85430 /* add4.png in Resources */,
+				E0A891A51F08FBCE00A19106 /* search.png in Resources */,
 				E21315451E97E735003E6BDE /* house1.jpg in Resources */,
 				E22E8A581EBCB61000F1CC71 /* checked.png in Resources */,
 				E2A478701E9139AB00F843BB /* Main.storyboard in Resources */,
