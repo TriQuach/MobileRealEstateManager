@@ -94,6 +94,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     let dropDown2 = DropDown()
     let dropDown3 = DropDown()
     let dropDown4 = DropDown()
+    var flag2:Int = 0
     var takenImage = UIImage(named: "add2.png")
     var mang:[UIImage] = []
     var mang2:[UIImage] = []
@@ -113,8 +114,10 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         myClv.delegate = self
         myClv.dataSource = self
         
+        if(flag2 != 0)
+        {
         self.navigationItem.setHidesBackButton(true, animated: true)
-        
+        }
         mang.append(takenImage!)
         mang2.append(takenImage!)
         

@@ -16,6 +16,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
     var mang:[Estate] = []
     var url:String = ""
     var mang3:[Estate] = []
+    var mang2:[Estate] = []
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,10 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
             parseJsonGetByOwnerID()
             
         }
+        else
+        {
+            parseJSONGetNew()
+        }
        
         
         
@@ -44,8 +49,11 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         {
             return mang.count
         }
-        
+        else if (role == 1)
+        {
             return mang3.count
+        }
+        return mang2.count
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,18 +72,31 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
         
         }
+        else if (role == 1)
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SeemoreTableViewCell
+            
+            
+            let data:Data = Data(base64Encoded: mang3[indexPath.row].image)!
+            cell.myHouse.image = UIImage(data: data)
+            
+            cell.lblGia.text = String(mang3[indexPath.row].gia) + "tỷ"
+            cell.lblDIenTich.text = String(mang3[indexPath.row].dientich)
+            cell.lblQuan.text = mang3[indexPath.row].quan
+            cell.lblDate.text = mang3[indexPath.row].date
+            cell.lblTitle.text = mang3[indexPath.row].title
+            
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SeemoreTableViewCell
-        
-        
-        let data:Data = Data(base64Encoded: mang3[indexPath.row].image)!
+        //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
+        let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
         cell.myHouse.image = UIImage(data: data)
-        
-        cell.lblGia.text = String(mang3[indexPath.row].gia) + "tỷ"
-        cell.lblDIenTich.text = String(mang3[indexPath.row].dientich)
-        cell.lblQuan.text = mang3[indexPath.row].quan
-        cell.lblDate.text = mang3[indexPath.row].date
-        cell.lblTitle.text = mang3[indexPath.row].title
-        
+        cell.lblGia.text = String(mang2[indexPath.row].gia)
+        cell.lblDIenTich.text = String(mang2[indexPath.row].dientich)
+        cell.lblQuan.text = mang2[indexPath.row].quan
+        cell.lblDate.text = mang2[indexPath.row].date
+        cell.lblTitle.text = mang2[indexPath.row].title
         return cell
     }
     
@@ -341,6 +362,92 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         
     }
-
+    func parseJSONGetNew()
+    {
+        
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getNew/4")!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let estates = json["estates"] as! [AnyObject]
+                for i in 0..<estates.count
+                {
+                    let id = estates[i]["id"] as! Int
+                    
+                    let date = estates[i]["postTime"] as! String
+                    let title = estates[i]["name"] as! String
+                    let price = estates[i]["price"] as! Double
+                    let area = estates[i]["area"] as! Double
+                    let address = estates[i]["address"] as! AnyObject
+                    
+                    let district = address["district"]
+                        as! String
+                    
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    
+                    let owner = estates[i]["owner"] as! AnyObject
+                    let idOwner = owner["id"] as! Int
+                    
+                    
+                    self.mang2.append(new_estate)
+                    
+                   
+                    
+                }
+                
+                
+                DispatchQueue.main.async(execute: {
+                    self.myTbv.reloadData()
+                    
+                    self.parseImageGetNew()
+                })
+            }catch{}
+        }
+        task.resume()
+    }
+    func parseImageGetNew()
+    {
+        
+        
+        for i in 0..<mang2.count
+        {
+            let id = mang2[i].ID
+            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            
+            let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+                
+                do
+                {
+                    
+                    let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                    if (json["statuskey"] as! Bool)
+                    {
+                        let photo = json["photo"] as! String
+                        //print (photo)
+                        
+                        self.mang2[i].image = photo
+                        
+                        
+                        DispatchQueue.main.async(execute: {
+                            self.myTbv.reloadData()
+                            self.loading.isHidden = true
+                            
+                            
+                        })
+                    }
+                }catch{}
+            }
+            task.resume()
+        }
+        
+        
+        
+    }
 
 }

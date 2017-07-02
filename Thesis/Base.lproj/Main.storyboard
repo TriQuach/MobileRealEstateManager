@@ -1367,6 +1367,9 @@
                                     <constraint firstAttribute="width" constant="28" id="h8X-4m-0m3"/>
                                 </constraints>
                                 <state key="normal" image="house-add.png"/>
+                                <connections>
+                                    <action selector="actionDangBai:" destination="wdJ-Zi-fr9" eventType="touchUpInside" id="lJF-YS-yMr"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
                                 <rect key="frame" x="302" y="69" width="25" height="25"/>
@@ -1398,6 +1401,7 @@
                     <navigationItem key="navigationItem" title="Title" id="S6I-wQ-qXN"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnDangBai" destination="Mgo-VX-sjF" id="vjO-Fo-bBo"/>
                         <outlet property="imgMore" destination="6sX-mP-hfp" id="D2f-Bj-NJ7"/>
                         <outlet property="loading" destination="CJF-mx-0IC" id="IVh-wg-xpP"/>
                         <outlet property="myTbv" destination="wpe-eh-bTF" id="aub-YB-IHe"/>

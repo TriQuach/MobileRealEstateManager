@@ -175,7 +175,7 @@ class LogInViewController: UIViewController {
                             let tabbar = storyboard.instantiateViewController(withIdentifier: "DangMoi") as! DangMoiViewController
                             
                             tabbar.idOwner = json["id"] as! Int
-                            
+                            tabbar.flag2 = 1
                             
                             self.navigationController?.pushViewController(tabbar, animated: true)
                             

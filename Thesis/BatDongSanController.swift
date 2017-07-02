@@ -48,6 +48,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var test:String?
     var newEstates:Estates!
     
+    @IBOutlet weak var btnDangBai: UIButton!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
@@ -165,6 +166,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                             var secondTab = self.tabBarController?.viewControllers?[2] as! CuocHenController
                             secondTab.idUser = self.idUser
                             secondTab.role = 0
+                            self.btnDangBai.isEnabled = false
                             
                         }
                         else if ( typeId == 2)
@@ -726,7 +728,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "SeemoreViewController") as! SeemoreViewController
-        tabbar.role = 1
+        tabbar.role = 2
         tabbar.idUser = idUser
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
@@ -959,7 +961,46 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
     
-    
+    @IBAction func actionDangBai(_ sender: Any) {
+        if (isLogin)
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabbar = storyboard.instantiateViewController(withIdentifier: "DangMoi") as! DangMoiViewController
+            
+            
+            
+            self.navigationController?.pushViewController(tabbar, animated: true)
+        }
+        else
+        {
+            login()
+        }
+    }
+    func login()
+    {
+        let alertController = UIAlertController(title: "Thông báo", message: "Bạn chưa đăng nhập", preferredStyle: .alert)
+        
+        // Create the actions
+        let okAction = UIAlertAction(title: "Đăng nhập", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
+            
+            tabbar.storyboardID = "EstateDetailBuyer"
+            self.navigationController?.pushViewController(tabbar, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+            UIAlertAction in
+            NSLog("Cancel Pressed")
+        }
+        
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     
     
