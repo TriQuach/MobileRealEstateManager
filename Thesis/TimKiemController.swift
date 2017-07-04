@@ -11,7 +11,8 @@ import UIKit
 import Dropper
 import DropDown
 import M13Checkbox
-class TimKiemController: UIViewController {
+import CoreLocation
+class TimKiemController: UIViewController,CLLocationManagerDelegate {
     
     var mang:[Estate] = []
     var mang2:[Estate] = []
@@ -25,9 +26,11 @@ class TimKiemController: UIViewController {
     
     var nameOwner2:[String] = []
     var addressOwner2:[String] = []
-
-    
-    
+    let locationManager = CLLocationManager()
+    var lat:Double!
+    var long:Double!
+    var check:Bool = true
+    var role:Int!
     @IBOutlet weak var cbTimDiaChi: M13Checkbox!
     @IBOutlet weak var cbTimQuanhDay: M13Checkbox!
     @IBOutlet weak var loading: UIActivityIndicatorView!
@@ -187,11 +190,11 @@ class TimKiemController: UIViewController {
         "6-10km"
     ]
     
-//    var spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-//    
-//    var mang:[String] = ["asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad"]
-//    let dropper = Dropper(width: 75, height: 200)
-       override func viewDidLoad() {
+    //    var spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    //
+    //    var mang:[String] = ["asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad","asdsad"]
+    //    let dropper = Dropper(width: 75, height: 200)
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         
@@ -210,35 +213,35 @@ class TimKiemController: UIViewController {
         
         loading2.isHidden = true
         loading.isHidden = true
-               
         
-//        spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: self.view.frame.width, height: CGFloat(44))
+        
+        //        spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: self.view.frame.width, height: CGFloat(44))
         
     }
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return mang.count
-//    }
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        print (indexPath.row)
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TimKiemTableViewCell
-//        if ( indexPath.row == mang.count - 1)
-//        {
-//            
-//            spinner.startAnimating()
-//            
-//            
-//           
-//            
-//         //   self.myTbv.tableFooterView = spinner
-//         //   self.myTbv.tableFooterView?.isHidden = false
-//        }
-//        return cell
-//    }
+    //    func numberOfSections(in tableView: UITableView) -> Int {
+    //        return 1
+    //    }
+    //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //        return mang.count
+    //    }
+    //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //
+    //        print (indexPath.row)
+    //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TimKiemTableViewCell
+    //        if ( indexPath.row == mang.count - 1)
+    //        {
+    //
+    //            spinner.startAnimating()
+    //
+    //
+    //
+    //
+    //         //   self.myTbv.tableFooterView = spinner
+    //         //   self.myTbv.tableFooterView?.isHidden = false
+    //        }
+    //        return cell
+    //    }
     
     
     func initDropDown(x:UIView)
@@ -418,7 +421,7 @@ class TimKiemController: UIViewController {
             x.isUserInteractionEnabled = true
             x.addGestureRecognizer(tap)
         }
-      
+        
     }
     
     func imgMoreTapped()
@@ -519,83 +522,238 @@ class TimKiemController: UIViewController {
         return nil
     }
     
-   
+    
     @IBAction func actionSearch(_ sender: Any) {
-        self.mang = []
         loading.isHidden = false
         loading.startAnimating()
-        var city = lblThanhPho.text
-        var district = lblQuan.text
-        var ward = lblPhuong.text
-        var address = edtDiaChi.text
-        
-        
-        var bathroom = indexSoPhongTam
-        var bedroom = indexSoPhongNgu
-        var condition = lblHuongNha.text
-        var floor = indexSoTang
-        
-        
-        
-        var type = lblLoai.text
-        var price = indexGia
-        var area = indexDienTich
-        
-        if (city == "Không xác định" || city == nil)
+        if (cbTimDiaChi.checkState == .checked)
         {
-            city = ""
-        }
-        if ( district == "Không xác định" || district == nil)
-        {
-            district = ""
-        }
-        if ( ward == "Không xác định" || ward == nil)
-        {
-            ward = ""
-        }
-        if ( type == "Không xác định" || type == nil)
-        {
-           type = ""
-        }
-        if ( condition == "Không xác định" || condition == nil)
-        {
-           condition = ""
-        }
-        if (bathroom == 0 || bathroom == nil)
-        {
-            bathroom = -1
-        }
-        if (bedroom == 0 || bedroom == nil)
-        {
-            bedroom = -1
-        }
-        if ( floor == 0 || floor == nil)
-        {
-            floor = -1
-        }
-        if ( price == 0 || price == nil)
-        {
-            price = -1
-        }
-        if ( area == 0 || area == nil)
-        {
-            area = -1
-        }
-        
-        let addressSearch:AddressSearch = AddressSearch(city: city!, district: district!, ward: ward!, address: address!)
-
-        
-        let detail:DetailSearch = DetailSearch(bathroom: bathroom!, bedroom: bedroom!, condition: condition!, floor: floor!)
-        
-        let postNewSearch:PostNewSearch = PostNewSearch(address: addressSearch, detail: detail, type: type!, price: price!, area: area!)
-        
-        
-        let json2 = JSONSerializer.toJson(postNewSearch)
-        
-        
+            self.mang = []
+            
+            var city = lblThanhPho.text
+            var district = lblQuan.text
+            var ward = lblPhuong.text
+            var address = edtDiaChi.text
+            
+            
+            var bathroom = indexSoPhongTam
+            var bedroom = indexSoPhongNgu
+            var condition = lblHuongNha.text
+            var floor = indexSoTang
+            
+            
+            
+            var type = lblLoai.text
+            var price = indexGia
+            var area = indexDienTich
+            
+            if (city == "Không xác định" || city == nil)
+            {
+                city = ""
+            }
+            if ( district == "Không xác định" || district == nil)
+            {
+                district = ""
+            }
+            if ( ward == "Không xác định" || ward == nil)
+            {
+                ward = ""
+            }
+            if ( type == "Không xác định" || type == nil)
+            {
+                type = ""
+            }
+            if ( condition == "Không xác định" || condition == nil)
+            {
+                condition = ""
+            }
+            if (bathroom == 0 || bathroom == nil)
+            {
+                bathroom = -1
+            }
+            if (bedroom == 0 || bedroom == nil)
+            {
+                bedroom = -1
+            }
+            if ( floor == 0 || floor == nil)
+            {
+                floor = -1
+            }
+            if ( price == 0 || price == nil)
+            {
+                price = -1
+            }
+            if ( area == 0 || area == nil)
+            {
+                area = -1
+            }
+            
+            let addressSearch:AddressSearch = AddressSearch(city: city!, district: district!, ward: ward!, address: address!)
+            
+            
+            let detail:DetailSearch = DetailSearch(bathroom: bathroom!, bedroom: bedroom!, condition: condition!, floor: floor!)
+            
+            let postNewSearch:PostNewSearch = PostNewSearch(address: addressSearch, detail: detail, type: type!, price: price!, area: area!)
+            
+            
+            let json2 = JSONSerializer.toJson(postNewSearch)
+            
+            
             print (json2)
+            
+            let jsonObject = convertToDictionary(text: json2)
+            
+            //  print (jsonObject)
+            
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+            
+            
+            var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/search/0")!)
+            
+            
+            
+            
+            req.httpMethod = "POST"
+            req.httpBody = jsonData
+            
+            let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+                
+                
+                do
+                {
+                    // print ("asdasd")
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                    let estates = json["estates"] as! [AnyObject]
+                    for i in 0..<estates.count
+                    {
+                        let id = estates[i]["id"] as! Int
+                        
+                        let date = estates[i]["postTime"] as! String
+                        let title = estates[i]["name"] as! String
+                        let price = estates[i]["price"] as! Double
+                        let area = estates[i]["area"] as! Double
+                        let address = estates[i]["address"] as! AnyObject
+                        
+                        let district = address["district"]
+                            as! String
+                        
+                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
+                        
+                        let owner = estates[i]["owner"] as! AnyObject
+                        let idOwner = owner["id"] as! Int
+                        self.mang_id1.append(idOwner)
+                        self.nameOwner.append(owner["fullName"] as! String)
+                        self.addressOwner.append(owner["address"] as! String)
+                        
+                        
+                        
+                        
+                        
+                        self.mang.append(new_estate)
+                        
+                    }
+                    for i in 0..<self.mang.count
+                    {
+                        print (self.mang[i].title)
+                    }
+                    
+                    //                DispatchQueue.main.async(execute: {
+                    //                    self.myTbv.reloadData()
+                    //
+                    //                    self.parseImageInterested()
+                    //                    //   self.parseImage()
+                    //                })
+                    
+                    if ( json["statuskey"] as! Bool)
+                    {
+                        DispatchQueue.main.async {
+                            self.loading.isHidden = true
+                            
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let tabbar = storyboard.instantiateViewController(withIdentifier: "ResultSearchEstateViewController") as! ResultSearchEstateViewController
+                            
+                            tabbar.json = json2
+                            tabbar.mang = self.mang
+                            tabbar.idUser = self.idUser
+                            tabbar.typeSearch = 0
+                            tabbar.role = self.role
+                            
+                            self.navigationController?.pushViewController(tabbar, animated: true)
+                        }
+                    }
+                    else
+                    {
+                        DispatchQueue.main.async {
+                            let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
+                        }
+                    }
+                    
+                    
+                    
+                }catch{
+                    print ("catch")
+                    print (error)
+                }
+                
+                
+            }
+            task.resume()
+        }
+        else
+        {
+            locationManager.delegate = self;
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            //getLocationGoogleApi()
+            
+        }
+    }
+    func getLocationGoogleApi()
+    {
+        let url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + String(lat) + "," + String(long) + "&key=AIzaSyBQrSLHhtVml0KSdfz7px3fmwwlH-XdauA"
+       // print (url)
+        let req = URLRequest(url: URL(string: url)!)
         
-        let jsonObject = convertToDictionary(text: json2)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let results = json["results"] as! [AnyObject]
+                let formatted_address = results[0]["formatted_address"] as! String
+                print (formatted_address)
+                DispatchQueue.main.async {
+                    self.searchGPS(address: formatted_address)
+                }
+                
+                
+                
+                
+            }catch{}
+        }
+        task.resume()
+    }
+    func searchGPS(address: String)
+    {
+        let searchGPS:SearchGPS = SearchGPS(address: address)
+        
+        
+        let json2 = JSONSerializer.toJson(searchGPS)
+        
+        
+        print (json2)
+        
+        let jsonObject = self.convertToDictionary(text: json2)
         
         //  print (jsonObject)
         
@@ -603,10 +761,9 @@ class TimKiemController: UIViewController {
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
         
-        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/search/0")!)
         
-        
-        
+        //  print (postString)
+        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/searchGPS/0")!)
         
         req.httpMethod = "POST"
         req.httpBody = jsonData
@@ -616,7 +773,7 @@ class TimKiemController: UIViewController {
             
             do
             {
-               // print ("asdasd")
+                // print ("asdasd")
                 let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
                 let estates = json["estates"] as! [AnyObject]
                 for i in 0..<estates.count
@@ -632,7 +789,7 @@ class TimKiemController: UIViewController {
                     let district = address["district"]
                         as! String
                     
-                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
                     
                     let owner = estates[i]["owner"] as! AnyObject
                     let idOwner = owner["id"] as! Int
@@ -652,12 +809,7 @@ class TimKiemController: UIViewController {
                     print (self.mang[i].title)
                 }
                 
-//                DispatchQueue.main.async(execute: {
-//                    self.myTbv.reloadData()
-//                    
-//                    self.parseImageInterested()
-//                    //   self.parseImage()
-//                })
+                
                 
                 if ( json["statuskey"] as! Bool)
                 {
@@ -670,7 +822,8 @@ class TimKiemController: UIViewController {
                         tabbar.json = json2
                         tabbar.mang = self.mang
                         tabbar.idUser = self.idUser
-                        
+                        tabbar.typeSearch = 1
+                        tabbar.role = self.role
                         self.navigationController?.pushViewController(tabbar, animated: true)
                     }
                 }
@@ -695,9 +848,20 @@ class TimKiemController: UIViewController {
             
         }
         task.resume()
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print ("1")
+        var locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        lat = locValue.latitude
+        long = locValue.longitude
+        if (check)
+        {
+            check = false
+            self.getLocationGoogleApi()
+        }
         
     }
-    
     
     @IBAction func actionTimQuanhDay(_ sender: Any) {
         cbTimDiaChi.setCheckState(.unchecked, animated: true)

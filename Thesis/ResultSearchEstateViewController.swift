@@ -17,6 +17,9 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
     var pages:Int = 1
     var loadingData = false
     var idUser:Int!
+    var url:String!
+    var typeSearch:Int! // 0: search thuong  1:GPS
+    var role:Int!
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,14 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         
         print ("json:" + json)
         loading.startAnimating()
+        if (typeSearch == 0)
+        {
+            url = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/search/"
+        }
+        else
+        {
+            url = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/searchGPS/"
+        }
         parseImageInterested()
     }
     
@@ -55,7 +66,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
             spinner.startAnimating()
             self.myTbv.tableFooterView = spinner
             self.myTbv.tableFooterView?.isHidden = false
-            self.requestSearchPage()
+            self.requestSearchPage(url: url)
         }
         
         return cell
@@ -69,6 +80,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
             tabbar.idEstate = mang[indexPath.row].ID
             tabbar.isLogin = true
             tabbar.idUser = self.idUser
+        tabbar.role = self.role
         
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
@@ -110,8 +122,9 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         
         
     }
-    func requestSearchPage()
+    func requestSearchPage(url:String)
     {
+        
         
         print ("pages:" + String(pages))
         let jsonObject = convertToDictionary(text: json)
@@ -122,7 +135,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
         
-        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/search/" + String(pages))!)
+        var req = URLRequest(url: URL(string: url + String(pages))!)
         
         
         
@@ -157,7 +170,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
                         let district = address["district"]
                             as! String
                         
-                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
                         
                         let owner = estates[i]["owner"] as! AnyObject
                         let idOwner = owner["id"] as! Int
@@ -210,6 +223,8 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
             }
         }
         task.resume()
+        
+        
     }
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {

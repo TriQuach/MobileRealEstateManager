@@ -16,7 +16,8 @@ class Estate
     var dientich:Double
     var quan:String
     var date:String
-    init(ID:Int, image:String,title:String, gia:Double, dientich:Double, quan:String, date:String) {
+    var idOwner:Int
+    init(ID:Int, image:String,title:String, gia:Double, dientich:Double, quan:String, date:String,idOwner:Int) {
         self.ID = ID
         self.image = image
         self.title = title
@@ -24,5 +25,6 @@ class Estate
         self.dientich = dientich
         self.quan = quan
         self.date = date
+        self.idOwner = idOwner
     }
 }

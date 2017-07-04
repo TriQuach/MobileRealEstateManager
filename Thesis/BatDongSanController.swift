@@ -321,7 +321,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONGetNew()
     {
        
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getNew/4")!)
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getNew/0")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -345,10 +345,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let district = address["district"]
                         as! String
                     
-                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    
                  
                     let owner = estates[i]["owner"] as! AnyObject
                     let idOwner = owner["id"] as! Int
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
                     self.mang_id2.append(idOwner)
                     
                     self.mang2.append(new_estate)
@@ -395,10 +396,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let district = address["district"]
                         as! String
                     
-                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    
                     
                     let owner = estates[i]["owner"] as! AnyObject
                     let idOwner = owner["id"] as! Int
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
                     self.mang_id1.append(idOwner)
                     self.nameOwner.append(owner["fullName"] as! String)
                     self.addressOwner.append(owner["address"] as! String)
@@ -422,6 +424,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         }
         task.resume()
     }
+    
     func parseJsonGetByOwnerID()
     {
         
@@ -452,7 +455,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let idOwner = owner["id"] as! Int
                    
                     
-                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
                     
                     // print (id)
                     //  self.mang.append(new_estate)
@@ -597,6 +600,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let timkiem = storyboard.instantiateViewController(withIdentifier: "TimKiemController") as! TimKiemController
         timkiem.idUser = idUser
+        timkiem.role = self.role
         
         self.navigationController?.pushViewController(timkiem, animated: true)
     }
@@ -863,13 +867,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-                    tabbar.idOwner = mang_id1[indexPath.row]
+                    tabbar.idOwner = mang[indexPath.row].idOwner
                     tabbar.idEstate = mang[indexPath.row].ID
                     tabbar.idUser = idUser
                     tabbar.passEstate = mang[indexPath.row]
                     tabbar.passOwner = nameOwner[indexPath.row]
                     tabbar.passAdress = addressOwner[indexPath.row]
                     tabbar.isLogin = isLogin
+                    tabbar.role = self.role
                    
                     
                     
@@ -880,7 +885,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-                tabbar.idOwner = mang_id2[indexPath.row]
+                tabbar.idOwner = mang2[indexPath.row].idOwner
                 tabbar.idEstate = mang2[indexPath.row].ID
                 tabbar.idUser = idUser
                 //   tabbar.status = temp!
@@ -888,6 +893,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 tabbar.passOwner = nameOwner2[indexPath.row]
                 tabbar.passAdress = addressOwner2[indexPath.row]
                 tabbar.isLogin = self.isLogin
+                tabbar.role = role
                 
                 self.navigationController?.pushViewController(tabbar, animated: true)
             }
@@ -908,7 +914,13 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 else
                 {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailOwner") as! EstateDetailOwnerViewController
+                    let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+                    
+                    tabbar.idEstate = mang3[indexPath.row].ID
+                    tabbar.isLogin = self.isLogin
+                    tabbar.idUser = idUser
+                    tabbar.role = role
+                    tabbar.idOwner = mang3[indexPath.row].idOwner
                     
                     self.navigationController?.pushViewController(tabbar, animated: true)
                 }
@@ -916,7 +928,13 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             else
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailOwner") as! EstateDetailOwnerViewController
+                let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+                
+                tabbar.idEstate = mang2[indexPath.row].ID
+                tabbar.idOwner = mang2[indexPath.row].idOwner
+                tabbar.isLogin = self.isLogin
+                tabbar.idUser = idUser
+                tabbar.role = role
                 
                 self.navigationController?.pushViewController(tabbar, animated: true)
             }
@@ -954,10 +972,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     
     
     override func viewDidAppear(_ animated: Bool) {
-        var nav = self.navigationController?.navigationBar
-        // 2
-        nav?.barStyle = UIBarStyle.black
-        nav?.tintColor = UIColor.yellow
+//        var navigationBarAppearace = UINavigationBar.appearance()
+//        
+//        navigationBarAppearace.barTintColor = UIColor(cgColor: #colorLiteral(red: 0.2352941176, green: 0.3529411765, blue: 0.6078431373, alpha: 1).cgColor)
+//        navigationBarAppearace.tintColor = UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor)
         // 3
         
         // 5

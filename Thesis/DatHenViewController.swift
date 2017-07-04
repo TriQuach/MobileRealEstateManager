@@ -88,7 +88,7 @@ class DatHenViewController: UIViewController {
         
 //        let appointmentPostNew:AppointmentPostNew = AppointmentPostNew(name: lblDatLichHen.text!, time: lblTime.text!, userid: idUser, note: edtNote.text!)
 //       
-        let appointmentPostNew:AppointmentPostNew = AppointmentPostNew(name: edtName.text!, address: edtAddress.text!, time: lblTime.text!, user1: UserIdBookAppointment(id: idUser), user2: UserIdBookAppointment(id: idOwner), note: edtNote.text!)
+        let appointmentPostNew:AppointmentPostNew = AppointmentPostNew(name: edtName.text!, address: edtAddress.text!, time: lblTime.text!, user1: UserIdBookAppointment(id: idUser), user2: UserIdBookAppointment(id: idOwner), note: edtNote.text!, estate: idEstate)
 //        
         let json = JSONSerializer.toJson(appointmentPostNew)
         print (json)

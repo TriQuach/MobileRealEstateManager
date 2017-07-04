@@ -10,8 +10,12 @@ import UIKit
 
 class DetailCuocHenViewController: UIViewController {
     
+    @IBOutlet weak var lblBdsLienQuan: UnderlinedLabel!
     var passAppoint:SimpleAppointment!
     var role:Int!
+    var idUser:Int!
+    var idEstate:Int!
+    var name:String!
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var lblNote: UILabel!
@@ -27,8 +31,21 @@ class DetailCuocHenViewController: UIViewController {
         super.viewDidLoad()
         
         loading.isHidden = true
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
+        lblBdsLienQuan.isUserInteractionEnabled = true
+        lblBdsLienQuan.addGestureRecognizer(tap)
         parseAppoint()
         
+    }
+    func imgMoreTapped()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let timkiem = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+        timkiem.idUser = idUser
+        timkiem.isLogin = true
+        timkiem.idEstate = idEstate
+        
+        self.navigationController?.pushViewController(timkiem, animated: true)
     }
     func parseAppoint()
     {
@@ -97,6 +114,7 @@ class DetailCuocHenViewController: UIViewController {
         {
             self.lblUser1.text = passAppoint.user1
         }
+        lblBdsLienQuan.text = name
     }
 
     override func didReceiveMemoryWarning() {

@@ -20,6 +20,7 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
     var idUser:Int = 0
     var temp:Int?
     var role:Int!
+    var idEstate:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         myTbv.dataSource = self
@@ -112,7 +113,7 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
                     let status = appointments[i]["status"] as! Int
                     let note = appointments[i]["note"] as! String
                     let id  = appointments[i]["id"] as! Int
-                    
+                    let estate = appointments[i]["estate"] as! Int
                     let user1 = appointments[i]["user1"] as! AnyObject
                     
                     let newUser1Name = user1["fullName"] as! String
@@ -123,7 +124,7 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
                     
                     
                     
-                    let newSimpleAppointment:SimpleAppointment = SimpleAppointment(address: address, time: time, status: status, name: name, user1: newUser1Name, user2: newUser2Name, note: note, id: id)
+                    let newSimpleAppointment:SimpleAppointment = SimpleAppointment(address: address, time: time, status: status, name: name, user1: newUser1Name, user2: newUser2Name, note: note, estate: estate, id: id)
      
                     
                     self.mang.append(newSimpleAppointment)
@@ -145,6 +146,7 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
                     self.appBadge()
                     self.loading.stopAnimating()
                     self.loading.isHidden = true
+                    
               //      self.parseImageGetNew()
                 })
             }catch{}
@@ -251,7 +253,9 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
         let tabbar = storyboard.instantiateViewController(withIdentifier: "DetailCuocHen") as! DetailCuocHenViewController
         tabbar.passAppoint = mang[indexPath.row]
         tabbar.role = self.role
-                
+        tabbar.idUser = idUser
+        tabbar.idEstate = mang[indexPath.row].estate
+        tabbar.name = mang[indexPath.row].name
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
     

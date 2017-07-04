@@ -264,10 +264,10 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     
    
     override func viewDidAppear(_ animated: Bool) {
-        var nav = self.navigationController?.navigationBar
-        // 2
-        nav?.barStyle = UIBarStyle.black
-        nav?.tintColor = UIColor.yellow
+//        var navigationBarAppearace = UINavigationBar.appearance()
+//        
+//        navigationBarAppearace.barTintColor = UIColor(cgColor: #colorLiteral(red: 0.2352941176, green: 0.3529411765, blue: 0.6078431373, alpha: 1).cgColor)
+//        navigationBarAppearace.tintColor = UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor)
         // 3
         
         // 5

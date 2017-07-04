@@ -127,7 +127,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
                         let district = address["district"]
                             as! String
                         
-                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
                         
                         let owner = estates[i]["owner"] as!     AnyObject
                         let idOwner = owner["id"] as! Int
@@ -183,7 +183,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let idOwner = owner["id"] as! Int
                     
                     
-                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
                     
                     // print (id)
                     //  self.mang.append(new_estate)
@@ -389,7 +389,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let district = address["district"]
                         as! String
                     
-                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date)
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
                     
                     let owner = estates[i]["owner"] as! AnyObject
                     let idOwner = owner["id"] as! Int

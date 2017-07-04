@@ -226,6 +226,14 @@ class LogInViewController: UIViewController {
         
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+                var navigationBarAppearace = UINavigationBar.appearance()
+        
+                navigationBarAppearace.barTintColor = .black
+                navigationBarAppearace.tintColor = .white
+       
+        
+    }
     class UnderlinedLabel: UILabel {
         
         override var text: String? {

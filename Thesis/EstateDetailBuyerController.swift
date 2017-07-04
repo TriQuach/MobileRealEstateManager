@@ -42,9 +42,9 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     @IBOutlet weak var lblGhiChu: UILabel!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var lbl: UILabel!
-    var idOwner:Int = 0
-    var idUser: Int = 0
-    var idEstate:Int = 0
+    var idOwner:Int!
+    var idUser: Int!
+    var idEstate:Int!
     var mangImage:[String] = []
     var photos:[Photo] = []
     var isLogin:Bool!
@@ -320,23 +320,23 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
         sender.view?.removeFromSuperview()
     }
     override func viewDidAppear(_ animated: Bool) {
-        var nav = self.navigationController?.navigationBar
-        // 2
-        nav?.barStyle = UIBarStyle.black
-        nav?.tintColor = UIColor.yellow
+//        var nav = self.navigationController?.navigationBar
+//        // 2
+//        nav?.barStyle = UIBarStyle.black
+//        nav?.tintColor = UIColor.white
         // 3
         
         // 5
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit3.png"), style: .done, target: self, action: #selector(DangBai))
+        if (self.role == 1 || self.role == 2)
+        {
+            if (idUser == idOwner)
+            {
+                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit3.png"), style: .done, target: self, action: #selector(DangBai))
+            }
+        }
         
         
         
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        imageView.contentMode = .scaleAspectFit
-        // 4
-        let image = UIImage(named: "swift2.png")
-        imageView.image = image
-        navigationItem.titleView = imageView
     }
     func DangBai()
     {
@@ -648,23 +648,67 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
                 
                 
                 DispatchQueue.main.async(execute: {
+                  //  self.idOwner = newFullEstate.owner.id
                     self.outletDatLichHen.isEnabled = true
                     self.passFullEstate = newFullEstate
+                    if (newFullEstate.detail.bathroom == 0 || newFullEstate.detail.bathroom == -1)
+                    {
+                        self.lblSoPhongTam.text = "Không xác định"
+                    }
+                    else
+                    {
                     self.lblSoPhongTam.text = String(newFullEstate.detail.bathroom)
+                    }
+                    if (newFullEstate.detail.bedroom == 0 || newFullEstate.detail.bedroom == -1)
+                    {
+                        self.lblSoPhongNgu.text = "Không xác định"
+                    }
+                    else
+                    {
                     self.lblSoPhongNgu.text = String(newFullEstate.detail.bedroom)
+                    }
                     self.lblTinhTrang.text = newFullEstate.detail.condition
                     self.lblMoTa.text = newFullEstate.detail.description
+                    if (newFullEstate.detail.floor == 0 || newFullEstate.detail.floor == -1)
+                    {
+                        self.lblSoTang.text = "Không xác định"
+                    }
+                    else
+                    {
                     self.lblSoTang.text = String(newFullEstate.detail.floor)
+                    }
+                    if (newFullEstate.detail.length == 0 || newFullEstate.detail.length == -1)
+                    {
+                        self.lblDai.text = "Không xác định"
+                    }
+                    else
+                    {
                     self.lblDai.text = String(newFullEstate.detail.length)
+                    }
+                    if (newFullEstate.detail.width == 0 || newFullEstate.detail.width == -1)
+                    {
+                        self.lblRong.text = "Không xác định"
+                    }
+                    else
+                    {
                     self.lblRong.text = String(newFullEstate.detail.width)
-                    self.lblName.text = newFullEstate.name
+                    }
+                        self.lblName.text = newFullEstate.name
                     self.lblOwner.text = newFullEstate.owner.fullName
                     self.lblAdressEstate.text = newFullEstate.address.city
                     self.lblPosdate.text = newFullEstate.postTime
                     self.lblEdit.text = newFullEstate.editTime
                     self.lblLoai.text = newFullEstate.type
-                    self.idOwner = newFullEstate.owner.id
-                    self.getPhotoList()
+                    //self.idOwner = newFullEstate.owner.id
+                    if (newFullEstate.area == 0 || newFullEstate.area == -1)
+                    {
+                        self.lblDienTich.text = "Không xác định"
+                    }
+                    else
+                    {
+                    self.lblDienTich.text = String(newFullEstate.area) + " m2"
+                    }
+                        self.getPhotoList()
                     
                     
                 })
@@ -702,6 +746,11 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
             }catch{}
         }
         task.resume()
+    }
+    @IBAction func actionMap(_ sender: Any) {
+        let alert = UIAlertController(title: "Thông báo", message: "Tính năng đang phát triển", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
