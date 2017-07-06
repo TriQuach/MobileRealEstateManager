@@ -598,9 +598,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func imgMoreTapped()
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let timkiem = storyboard.instantiateViewController(withIdentifier: "TimKiemController") as! TimKiemController
-        timkiem.idUser = idUser
-        timkiem.role = self.role
+        let timkiem = storyboard.instantiateViewController(withIdentifier: "SearchNewViewController") as! SearchNewViewController
+      //  timkiem.idUser = idUser
+     //   timkiem.role = self.role
         
         self.navigationController?.pushViewController(timkiem, animated: true)
     }

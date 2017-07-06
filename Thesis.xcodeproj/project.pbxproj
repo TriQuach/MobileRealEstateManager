@@ -14,6 +14,7 @@
 		E0267D2E1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */; };
 		E028803D1EDC7B9500BEC26A /* default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E028803C1EDC7B9500BEC26A /* default_image.jpg */; };
 		E028803F1EDC914500BEC26A /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = E028803E1EDC914500BEC26A /* picture.png */; };
+		E02A282D1F0EBAFE00E63DEA /* SearchNewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A282C1F0EBAFE00E63DEA /* SearchNewTableViewCell.swift */; };
 		E02E48031EE7D08C00A571DE /* DatHenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02E48021EE7D08C00A571DE /* DatHenViewController.swift */; };
 		E032979D1EFA5B6800032277 /* PostNewRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E032979C1EFA5B6800032277 /* PostNewRegister.swift */; };
 		E03A27DA1EF2C7C60021DF28 /* Extension_UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A27D91EF2C7C60021DF28 /* Extension_UIImage.swift */; };
@@ -43,6 +44,8 @@
 		E0556E551F094B5B00010016 /* house-of-your-dreams2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E521F094B5B00010016 /* house-of-your-dreams2.png */; };
 		E0556E561F094B5B00010016 /* phone-receiver2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E531F094B5B00010016 /* phone-receiver2.png */; };
 		E0556E571F094B5B00010016 /* placeholder2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E541F094B5B00010016 /* placeholder2.png */; };
+		E059EF6A1F0EAEFE001C606A /* SearchNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E059EF691F0EAEFE001C606A /* SearchNewViewController.swift */; };
+		E059EF6C1F0EAFCB001C606A /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = E059EF6B1F0EAFCB001C606A /* navigation.png */; };
 		E0648F861F0B77E600472D2D /* app icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0648F851F0B77E600472D2D /* app icon.png */; };
 		E069E1421EDD4D69002B9E47 /* EstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */; };
 		E069E1441EDD4D84002B9E47 /* UserEstatePostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */; };
@@ -164,6 +167,7 @@
 		E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoiCollectionViewCell.swift; sourceTree = "<group>"; };
 		E028803C1EDC7B9500BEC26A /* default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_image.jpg; sourceTree = "<group>"; };
 		E028803E1EDC914500BEC26A /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
+		E02A282C1F0EBAFE00E63DEA /* SearchNewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNewTableViewCell.swift; sourceTree = "<group>"; };
 		E02E48021EE7D08C00A571DE /* DatHenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DatHenViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E032979C1EFA5B6800032277 /* PostNewRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNewRegister.swift; sourceTree = "<group>"; };
 		E03A27D91EF2C7C60021DF28 /* Extension_UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_UIImage.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 		E0556E521F094B5B00010016 /* house-of-your-dreams2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house-of-your-dreams2.png"; sourceTree = "<group>"; };
 		E0556E531F094B5B00010016 /* phone-receiver2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-receiver2.png"; sourceTree = "<group>"; };
 		E0556E541F094B5B00010016 /* placeholder2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder2.png; sourceTree = "<group>"; };
+		E059EF691F0EAEFE001C606A /* SearchNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNewViewController.swift; sourceTree = "<group>"; };
+		E059EF6B1F0EAFCB001C606A /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
 		E0648F851F0B77E600472D2D /* app icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon.png"; sourceTree = "<group>"; };
 		E069E1411EDD4D69002B9E47 /* EstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstatePostNew.swift; sourceTree = "<group>"; };
 		E069E1431EDD4D84002B9E47 /* UserEstatePostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEstatePostNew.swift; sourceTree = "<group>"; };
@@ -364,6 +370,7 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E059EF6B1F0EAFCB001C606A /* navigation.png */,
 				E0648F851F0B77E600472D2D /* app icon.png */,
 				E0556E521F094B5B00010016 /* house-of-your-dreams2.png */,
 				E0556E531F094B5B00010016 /* phone-receiver2.png */,
@@ -458,6 +465,8 @@
 				E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */,
 				E0EBA5CA1EFFC02300F8726B /* ResultSearchTableViewCell.swift */,
 				E040448B1F079CFA0008F42C /* SeemoreTableViewCell.swift */,
+				E059EF691F0EAEFE001C606A /* SearchNewViewController.swift */,
+				E02A282C1F0EBAFE00E63DEA /* SearchNewTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -659,6 +668,7 @@
 				E2A478721E9139AB00F843BB /* Assets.xcassets in Resources */,
 				E0A721A81EF6A9D2002E01C4 /* tag.png in Resources */,
 				E2C7022B1E9933450056696E /* more-button-of-three-dots.png in Resources */,
+				E059EF6C1F0EAFCB001C606A /* navigation.png in Resources */,
 				E2F8E9061EC71E5900EDD5F2 /* phone-symbol-of-an-auricular-inside-a-circle.png in Resources */,
 				E277859F1EC8BCF800B47FA5 /* house8.jpg in Resources */,
 				E0556E491F0910E000010016 /* splash4.png in Resources */,
@@ -809,10 +819,12 @@
 				E2A4789F1E9144AC00F843BB /* BatDongSanController.swift in Sources */,
 				E0F937821EF6BADC003599A3 /* AppointmentStatusUpdate.swift in Sources */,
 				E2A4786B1E9139AB00F843BB /* AppDelegate.swift in Sources */,
+				E059EF6A1F0EAEFE001C606A /* SearchNewViewController.swift in Sources */,
 				E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */,
 				E02E48031EE7D08C00A571DE /* DatHenViewController.swift in Sources */,
 				E040448E1F079F500008F42C /* SeemoreViewController.swift in Sources */,
 				E07993A71EEFD328002AA88E /* PhotoPostNew.swift in Sources */,
+				E02A282D1F0EBAFE00E63DEA /* SearchNewTableViewCell.swift in Sources */,
 				E04236101EF9450C001EE037 /* CaiDatTableViewCell.swift in Sources */,
 				E213154D1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift in Sources */,
 				E0D816B21EFE4FA000FE04B2 /* AddressSearch.swift in Sources */,
