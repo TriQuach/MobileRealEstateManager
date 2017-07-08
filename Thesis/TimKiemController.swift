@@ -638,10 +638,11 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
                         let district = address["district"]
                             as! String
                         
-                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
+                        
                         
                         let owner = estates[i]["owner"] as! AnyObject
                         let idOwner = owner["id"] as! Int
+                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
                         self.mang_id1.append(idOwner)
                         self.nameOwner.append(owner["fullName"] as! String)
                         self.addressOwner.append(owner["address"] as! String)
@@ -789,10 +790,11 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
                     let district = address["district"]
                         as! String
                     
-                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
+                   
                     
                     let owner = estates[i]["owner"] as! AnyObject
                     let idOwner = owner["id"] as! Int
+                     let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
                     self.mang_id1.append(idOwner)
                     self.nameOwner.append(owner["fullName"] as! String)
                     self.addressOwner.append(owner["address"] as! String)

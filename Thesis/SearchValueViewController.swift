@@ -13,7 +13,7 @@ class SearchValueViewController: UIViewController,UITableViewDataSource,UITableV
     
     var value:String = "Không xác định"
     var valueIndex:Int = 0
-    var idWard:Int!
+    var idWard:Int = 999
     var mangCity:[String] = [
         "Không xác định",
         "Hồ Chí Minh"

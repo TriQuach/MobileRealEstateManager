@@ -11,6 +11,8 @@ import CoreLocation
 import M13Checkbox
 class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet weak var outletSliderBanKinh: UISlider!
+    @IBOutlet weak var lblBanKinh: UILabel!
     @IBOutlet weak var cbTimQuanhDay: M13Checkbox!
     @IBOutlet weak var cbTimDiaChi: M13Checkbox!
     @IBOutlet weak var loading: UIActivityIndicatorView!
@@ -180,7 +182,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         super.viewDidLoad()
         myTbv.delegate = self
         myTbv.dataSource = self
-        
+        lblBanKinh.text = String(outletSliderBanKinh.value) + " km"
         loading.isHidden = true
         cbTimQuanhDay.checkState = .checked
 
@@ -200,8 +202,17 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         {
             index2 = 0
             loading.isHidden = false
+            
             loading.startAnimating()
-            sendRequestGetWard(idWard: idWard)
+            
+            if (idWard != 999)
+            {
+                sendRequestGetWard(idWard: idWard)
+            }
+            else
+            {
+                loading.isHidden = true
+            }
         }
         print ("start")
         for i in 0..<mangIndex.count
@@ -457,13 +468,13 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
                         let district = address["district"]
                             as! String
                         
-                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
+                        
                         
                         let owner = estates[i]["owner"] as! AnyObject
                         let idOwner = owner["id"] as! Int
                         
                         
-                        
+                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
                         
                         
                         
@@ -585,12 +596,12 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
                     let district = address["district"]
                         as! String
                     
-                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
+                    
                     
                     let owner = estates[i]["owner"] as! AnyObject
                     let idOwner = owner["id"] as! Int
                     
-                    
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
                     
                     
                     
@@ -642,5 +653,8 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
             
         }
         task.resume()
+    }
+    @IBAction func sliderBanKinh(_ sender: Any) {
+        lblBanKinh.text = String(Int(outletSliderBanKinh.value)) + " km"
     }
 }

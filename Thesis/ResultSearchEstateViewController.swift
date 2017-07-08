@@ -80,6 +80,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
             tabbar.idEstate = mang[indexPath.row].ID
             tabbar.isLogin = true
             tabbar.idUser = self.idUser
+        tabbar.idOwner = mang[indexPath.row].idOwner
         tabbar.role = self.role
         
         self.navigationController?.pushViewController(tabbar, animated: true)
@@ -170,10 +171,11 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
                         let district = address["district"]
                             as! String
                         
-                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: 0)
+                        
                         
                         let owner = estates[i]["owner"] as! AnyObject
                         let idOwner = owner["id"] as! Int
+                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
                         
                         self.mang.append(new_estate)
                         
