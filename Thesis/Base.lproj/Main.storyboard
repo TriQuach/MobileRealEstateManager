@@ -1478,6 +1478,9 @@
                                     <constraint firstAttribute="width" constant="20" id="bhJ-Xd-5KX"/>
                                     <constraint firstAttribute="height" constant="20" id="gev-ld-mWp"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="actionTimQuanhDay:" destination="GVm-Mi-QXK" eventType="valueChanged" id="Qoq-P4-l4K"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm quanh đây" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cpf-hr-jXY">
                                 <rect key="frame" x="40" y="30" width="113" height="21"/>
@@ -1561,6 +1564,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQg-Eg-FEm">
                                         <rect key="frame" x="302" y="12" width="63" height="30"/>
                                         <state key="normal" title="Tìm kiếm"/>
+                                        <connections>
+                                            <action selector="actionSearch:" destination="GVm-Mi-QXK" eventType="touchUpInside" id="OPO-RB-m7w"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93504864248274122" green="0.93504864248274122" blue="0.93504864248274122" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1581,6 +1587,9 @@
                                     <constraint firstAttribute="height" constant="20" id="BL0-Dv-u4W"/>
                                     <constraint firstAttribute="width" constant="20" id="Rxu-6k-vq5"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="actionTimDiaChi:" destination="GVm-Mi-QXK" eventType="valueChanged" id="7vk-Lu-dZU"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm theo địa chỉ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFG-yZ-xbC">
                                 <rect key="frame" x="40" y="156" width="122" height="21"/>
@@ -1588,6 +1597,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aW8-uj-YRl">
+                                <rect key="frame" x="177.5" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1598,6 +1610,7 @@
                             <constraint firstItem="Pnl-I7-oRN" firstAttribute="leading" secondItem="Xqe-h5-6yl" secondAttribute="leading" constant="10" id="9LL-EM-WLk"/>
                             <constraint firstItem="wWY-4p-a4n" firstAttribute="leading" secondItem="Xqe-h5-6yl" secondAttribute="leading" constant="10" id="CdI-Se-wQO"/>
                             <constraint firstItem="9V0-BW-I6D" firstAttribute="height" secondItem="Xqe-h5-6yl" secondAttribute="height" multiplier="0.08" id="J9y-6w-CUm"/>
+                            <constraint firstItem="aW8-uj-YRl" firstAttribute="centerY" secondItem="Xqe-h5-6yl" secondAttribute="centerY" id="K2N-XE-VxX"/>
                             <constraint firstItem="LTR-s4-W9Y" firstAttribute="leading" secondItem="Xqe-h5-6yl" secondAttribute="leading" id="Nfd-Ol-Gim"/>
                             <constraint firstItem="FfC-r4-ZTx" firstAttribute="top" secondItem="qbx-S6-WbX" secondAttribute="bottom" constant="10" id="O6a-zo-xG5"/>
                             <constraint firstItem="wWY-4p-a4n" firstAttribute="top" secondItem="p34-MG-AFK" secondAttribute="bottom" constant="15" id="OVP-5i-lNG"/>
@@ -1615,18 +1628,82 @@
                             <constraint firstItem="FfC-r4-ZTx" firstAttribute="leading" secondItem="Xqe-h5-6yl" secondAttribute="leading" constant="10" id="kRA-dj-pnp"/>
                             <constraint firstItem="9V0-BW-I6D" firstAttribute="leading" secondItem="Xqe-h5-6yl" secondAttribute="leading" id="nwg-Sj-Jo7"/>
                             <constraint firstItem="Cpf-hr-jXY" firstAttribute="leading" secondItem="p34-MG-AFK" secondAttribute="trailing" constant="10" id="sdI-Al-ip7"/>
+                            <constraint firstItem="aW8-uj-YRl" firstAttribute="centerX" secondItem="Xqe-h5-6yl" secondAttribute="centerX" id="sf1-6J-m7B"/>
                             <constraint firstAttribute="trailing" secondItem="cjz-6j-jLA" secondAttribute="trailing" id="tbv-2Y-mbM"/>
                             <constraint firstItem="Cpf-hr-jXY" firstAttribute="top" secondItem="bHQ-I0-Wj2" secondAttribute="bottom" constant="10" id="wJk-ei-Bd2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cbTimDiaChi" destination="Pnl-I7-oRN" id="j2z-KN-UVR"/>
+                        <outlet property="cbTimQuanhDay" destination="p34-MG-AFK" id="saf-Kj-lbO"/>
                         <outlet property="edtAddress" destination="qbx-S6-WbX" id="DlG-nR-HLv"/>
+                        <outlet property="loading" destination="aW8-uj-YRl" id="Qpb-Te-0bH"/>
                         <outlet property="myTbv" destination="LTR-s4-W9Y" id="vcZ-vc-j9D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMz-Mc-5vV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1116" y="2695.5022488755626"/>
+        </scene>
+        <!--Search Value View Controller-->
+        <scene sceneID="cl6-Xm-dXd">
+            <objects>
+                <viewController storyboardIdentifier="SearchValueViewController" automaticallyAdjustsScrollViewInsets="NO" id="RM8-QX-eKR" customClass="SearchValueViewController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hI8-r1-Fl7"/>
+                        <viewControllerLayoutGuide type="bottom" id="JkM-ea-EPo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YbC-gC-AYg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="usS-qE-uOA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="piF-FQ-eVf" customClass="SearchValueTableViewCell" customModule="Thesis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="piF-FQ-eVf" id="Yym-95-NAS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkY-l5-FSx">
+                                                    <rect key="frame" x="10" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QkY-l5-FSx" firstAttribute="leading" secondItem="Yym-95-NAS" secondAttribute="leading" constant="10" id="4M5-sf-XKV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="QkY-l5-FSx" firstAttribute="centerY" secondItem="piF-FQ-eVf" secondAttribute="centerY" id="gDv-3B-Z9L"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="lblValue" destination="QkY-l5-FSx" id="p3G-6I-z5a"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="usS-qE-uOA" secondAttribute="trailing" id="Gqg-dP-wx9"/>
+                            <constraint firstItem="usS-qE-uOA" firstAttribute="top" secondItem="hI8-r1-Fl7" secondAttribute="bottom" id="dg7-3O-hNC"/>
+                            <constraint firstItem="JkM-ea-EPo" firstAttribute="top" secondItem="usS-qE-uOA" secondAttribute="bottom" id="p2W-vK-A9e"/>
+                            <constraint firstItem="usS-qE-uOA" firstAttribute="leading" secondItem="YbC-gC-AYg" secondAttribute="leading" id="ynd-sI-ueD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTbv" destination="usS-qE-uOA" id="LAe-zE-94F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P4a-ZI-zDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2071" y="2694"/>
         </scene>
         <!--Result Search Estate View Controller-->
         <scene sceneID="VVy-VU-CRS">
