@@ -321,9 +321,11 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let floor = detail["floor"] as! Int
                 let length = detail["length"] as! Double
                 let width = detail["width"] as! Double
+                let longitude = detail["longitude"] as! Double
+                let latitude = detail["latitude"] as! Double
                 let idDetail = detail["id"] as! Int
                 
-                let newDetail:Detail = Detail(bathroom: bathroom, bedroom: bedroom, condition: condition, description: description, floor: floor, length: length, width: width, id: idDetail)
+                let newDetail:Detail = Detail(bathroom: bathroom, bedroom: bedroom, condition: condition, description: description, floor: floor, length: length, width: width, longitude: longitude, latitude: latitude, id: idDetail)
                 
                 //    print (newDetail.description)
                 

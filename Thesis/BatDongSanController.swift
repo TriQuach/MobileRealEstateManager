@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import FaveButton
 
 class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewDelegate{
     
@@ -270,9 +269,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let floor = detail["floor"] as! Int
                     let length = detail["length"] as! Double
                     let width = detail["width"] as! Double
+                    let longitude = detail["longitude"] as! Double
+                    let latitude = detail["latitude"] as! Double
                     let idDetail = detail["id"] as! Int
                     
-                    let newDetail:Detail = Detail(bathroom: bathroom, bedroom: bedroom, condition: condition, description: description, floor: floor, length: length, width: width, id: id)
+                    let newDetail:Detail = Detail(bathroom: bathroom, bedroom: bedroom, condition: condition, description: description, floor: floor, length: length, width: width, longitude: longitude, latitude: latitude, id: id)
                     
                //    print (newDetail.description)
                     
@@ -330,6 +331,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 
                 let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+            
                 
                 let estates = json["estates"] as! [AnyObject]
                 for i in 0..<estates.count

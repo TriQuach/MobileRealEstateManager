@@ -9,10 +9,7 @@
 import Foundation
 import UIKit
 import M13Checkbox
-import FaveButton
-import PopupDialog
-import ReadMoreTextView
-class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var outletDatLichHen: UIButton!
     @IBOutlet weak var edtNote: UITextField!
@@ -173,42 +170,9 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
     }
     
     
-    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
-        
-    }
     
-    @IBAction func btnXemChiTiet(_ sender: Any) {
-        let title = "THIS IS THE DIALOG TITLE"
-        let message = "This is the message section of the popup dialog default view"
-        let image = UIImage(named: "house1.jpg")
-        
-        // Create the dialog
-        let popup = PopupDialog(title: title, message: message, image: image)
-        
-        
-        
-        // Create first button
-        let buttonOne = CancelButton(title: "CANCEL") {
-            
-        }
-        
-        // Create second button
-        let buttonTwo = DefaultButton(title: "ADMIRE CAR") {
-            
-        }
-        
-        // Create third button
-        let buttonThree = DefaultButton(title: "BUY CAR") {
-            
-        }
-        
-        // Add buttons to dialog
-        popup.addButtons([buttonOne, buttonTwo, buttonThree])
-        
-        
-        // Present dialog
-        self.present(popup, animated: true, completion: nil)
-    }
+    
+    
     
     
     @IBAction func btnActionCamera(_ sender: Any) {
@@ -622,9 +586,11 @@ class EstateDetailBuyerController: UIViewController,FaveButtonDelegate, UIImageP
                 let floor = detail["floor"] as! Int
                 let length = detail["length"] as! Double
                 let width = detail["width"] as! Double
+                let longitude = detail["longitude"] as! Double
+                let latitude = detail["latitude"] as! Double
                 let idDetail = detail["id"] as! Int
                 
-                let newDetail:Detail = Detail(bathroom: bathroom, bedroom: bedroom, condition: condition, description: description, floor: floor, length: length, width: width, id: idDetail)
+                let newDetail:Detail = Detail(bathroom: bathroom, bedroom: bedroom, condition: condition, description: description, floor: floor, length: length, width: width, longitude: longitude, latitude: latitude, id: idDetail)
                 
                 //    print (newDetail.description)
                 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FaveButton
+
 class BatDongSanControllerTableViewCell: UITableViewCell {
 
     

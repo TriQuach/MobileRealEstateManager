@@ -2125,9 +2125,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjm-QW-mJF">
                                                 <rect key="frame" x="290" y="368" width="41.5" height="41.5"/>
                                                 <state key="normal" image="house-of-your-dreams2.png"/>
-                                                <connections>
-                                                    <action selector="btnXemChiTiet:" destination="5ud-b0-AHN" eventType="touchUpInside" id="adl-91-knF"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItG-zP-7xf">
                                                 <rect key="frame" x="41.5" y="368" width="41.5" height="41.5"/>

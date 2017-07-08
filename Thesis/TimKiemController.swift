@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Dropper
 import DropDown
 import M13Checkbox
 import CoreLocation

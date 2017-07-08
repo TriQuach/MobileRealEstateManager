@@ -1,36 +1,21 @@
 PODS:
-  - Alamofire (4.4.0)
   - DateTimePicker (1.1.2)
   - DropDown (2)
-  - Dropper (2.7.5)
-  - FaveButton (2.0.3)
   - LTMorphingLabel (0.4.0)
   - M13Checkbox (3.1.3)
-  - PopupDialog (0.5.3)
-  - ReadMoreTextView (1.2.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.4)
   - DateTimePicker
   - DropDown
-  - Dropper
-  - FaveButton (~> 2.0.3)
   - LTMorphingLabel
   - M13Checkbox
-  - PopupDialog (~> 0.5)
-  - ReadMoreTextView
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   DateTimePicker: 518bffa5438ef83a7a687cc4d5e187e5c12012b8
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
-  Dropper: 6fb3bd5977f2ade0a332321b6846180d59e75000
-  FaveButton: cfcbc5e73da159c4f916613da5687357b5bb4783
   LTMorphingLabel: d9a85f16ac306f0e07321d6819964deb2dc69638
   M13Checkbox: c132a7e0eb964731855eff67b883a0b21b7c0977
-  PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
-  ReadMoreTextView: c1207a23b3b2819a1be5230f5c8180721a88b19c
 
-PODFILE CHECKSUM: e285559f1c5c86173d42621e69fcbe5fed5934fa
+PODFILE CHECKSUM: 309a6162fc51f660f40af2284edcf8f095c87eb5
 
 COCOAPODS: 1.2.1

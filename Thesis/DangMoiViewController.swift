@@ -9,7 +9,6 @@
 import UIKit
 
 import M13Checkbox
-import Dropper
 import DropDown
 class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -17,6 +16,8 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var loading: UIActivityIndicatorView!
     var check:Int = 9999
     var loai:Int!
+    var lat:Double!
+    var lng:Double!
     var idOwner:Int = 0
     var mangPhotos:[Photo] = []
     var mangWard:[String] = []
@@ -100,7 +101,6 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     var mang2:[UIImage] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         
@@ -290,12 +290,63 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         
         
+      getLatLong()
         
+        
+
+        
+   
+        
+        
+        
+        
+    }
+    func getLatLong()
+    {
+        
+        
+        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=" + edtSoNha.text! + ", " + lblPhuong.text! + ", " + lblQuan.text! + ", " + lblThanhPho.text! + ", " + "Viet Nam"  + "&key=AIzaSyBQrSLHhtVml0KSdfz7px3fmwwlH-XdauA"
+        let escapedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let url = URL(string: escapedString!)
+        let req = URLRequest(url: url!)
+       
+        
+        
+        //let req = URLRequest(url: URL(string: "https://maps.googleapis.com/maps/api/geocode/json?address=" + edtSoNha.text! + ", " + lblPhuong.text! + ", " + lblQuan.text! + ", " + lblThanhPho.text! + ", " + "Viet Nam"  + "&key=AIzaSyBQrSLHhtVml0KSdfz7px3fmwwlH-XdauA")!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                
+                let results = json["results"] as! [AnyObject]
+                let geometry = results[0]["geometry"] as! AnyObject
+                let location = geometry["location"] as! AnyObject
+                let lat = location["lat"] as! Double
+                let lng = location["lng"] as! Double
+                
+                DispatchQueue.main.async(execute: {
+                    self.lat = lat
+                    self.lng = lng
+                    print ("lat:" + String(self.lat))
+                    self.postEstate()
+                    
+                })
+            }catch{}
+        }
+        task.resume()
+    }
+    func postEstate()
+    {
         let owner:UserEstatePostNew = UserEstatePostNew(id: idOwner)
         
         let address:Address = Address(city: self.lblThanhPho.text!, district: self.lblQuan.text!, ward: self.lblPhuong.text!, address: self.edtSoNha.text!, id: 0)
         
-        let detail:Detail = Detail(bathroom: Int(self.edtSoPhongNgu.text!)!, bedroom: Int(self.edtSoPhongTam.text!)!, condition: self.edtTinhTrang.text!, description: self.edtMoTa.text!, floor: Int(self.edtSoTang.text!)!, length: Double(self.edtChieuDai.text!)!, width: Double(self.edtChieuRong.text!)!, id: 0)
+        let detail:Detail = Detail(bathroom: Int(self.edtSoPhongNgu.text!)!, bedroom: Int(self.edtSoPhongTam.text!)!, condition: self.edtTinhTrang.text!, description: self.edtMoTa.text!, floor: Int(self.edtSoTang.text!)!, length: Double(self.edtChieuDai.text!)!, width: Double(self.edtChieuRong.text!)!, longitude: lng, latitude: lat, id: 0)
         
         
         let type = self.loai
@@ -307,11 +358,11 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         
         let json = JSONSerializer.toJson(estatePostNew)
-    //    print (json)
+        //    print (json)
         
         let jsonObject = convertToDictionary(text: json)
         
-      //  print (jsonObject)
+        //  print (jsonObject)
         
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
@@ -326,13 +377,13 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
             
             
-         //   print (data)
+            //   print (data)
             do
             {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
                 
-             //   print (json["statuskey"])
-               // print (json["name"])
+                //   print (json["statuskey"])
+                // print (json["name"])
                 
                 
                 DispatchQueue.main.async {
@@ -355,14 +406,6 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
             
         }
         task.resume()
-        
-
-        
-   
-        
-        
-        
-        
     }
     
     func sendRequestImageApi()
@@ -582,13 +625,4 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     
    
 
-}
-extension DangMoiViewController: DropperDelegate {
-    func DropperSelectedRow(_ path: IndexPath, contents: String) {
-        
-        
-        self.lblThanhPho.text = contents
-        self.lblThanhPho.isHidden = false
-        
-    }
 }

@@ -16,8 +16,10 @@ class Detail
     var floor: Int
     var length: Double
     var width: Double
+    var longitude:Double
+    var latitude:Double
     var id: Int
-    init(bathroom: Int, bedroom: Int, condition: String, description: String, floor: Int, length: Double, width: Double, id: Int) {
+    init(bathroom: Int, bedroom: Int, condition: String, description: String, floor: Int, length: Double, width: Double, longitude:Double,latitude:Double,  id: Int) {
         self.bathroom = bathroom
         self.bedroom = bedroom
         self.condition = condition
@@ -25,6 +27,8 @@ class Detail
         self.floor = floor
         self.length = length
         self.width = width
+        self.longitude = longitude
+        self.latitude = latitude
         self.id = id
     }
 }
