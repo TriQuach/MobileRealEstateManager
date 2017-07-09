@@ -22,6 +22,7 @@ class DatHenViewController: UIViewController {
     var datLichHen:String!
     var owner:String!
     var passAdress:String!
+    var role:Int!
     var idEstate:Int!
     
     override func viewDidLoad() {
@@ -43,7 +44,8 @@ class DatHenViewController: UIViewController {
         timkiem.idUser = idUser
         timkiem.isLogin = true
         timkiem.idEstate = idEstate
-        
+        timkiem.idOwner = idOwner
+        timkiem.role = role
         self.navigationController?.pushViewController(timkiem, animated: true)
     }
     override func didReceiveMemoryWarning() {

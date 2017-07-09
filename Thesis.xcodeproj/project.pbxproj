@@ -88,6 +88,9 @@
 		E0E2FBD91ED36CEC0048EDAD /* DangBaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */; };
 		E0E7EB631ED7571D009DEE2E /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E7EB621ED7571D009DEE2E /* Detail.swift */; };
 		E0EBA5CB1EFFC02300F8726B /* ResultSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EBA5CA1EFFC02300F8726B /* ResultSearchTableViewCell.swift */; };
+		E0EDE6671F12377000A6F88A /* EditEstateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDE6661F12377000A6F88A /* EditEstateViewController.swift */; };
+		E0EDE6691F125C9100A6F88A /* ImageServer2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDE6681F125C9100A6F88A /* ImageServer2CollectionViewCell.swift */; };
+		E0EDE66B1F125CDB00A6F88A /* MyImage2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDE66A1F125CDB00A6F88A /* MyImage2CollectionViewCell.swift */; };
 		E0EF4B521EE33C1B009EFFA5 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF4B511EE33C1B009EFFA5 /* Appointment.swift */; };
 		E0EF6A111EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF6A101EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift */; };
 		E0F4C6801EDF0AE700402C15 /* Iron_Man_Experience.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0F4C67F1EDF0AE700402C15 /* Iron_Man_Experience.jpg */; };
@@ -243,6 +246,9 @@
 		E0E2FBD81ED36CEC0048EDAD /* DangBaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangBaiViewController.swift; sourceTree = "<group>"; };
 		E0E7EB621ED7571D009DEE2E /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		E0EBA5CA1EFFC02300F8726B /* ResultSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultSearchTableViewCell.swift; sourceTree = "<group>"; };
+		E0EDE6661F12377000A6F88A /* EditEstateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEstateViewController.swift; sourceTree = "<group>"; };
+		E0EDE6681F125C9100A6F88A /* ImageServer2CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageServer2CollectionViewCell.swift; sourceTree = "<group>"; };
+		E0EDE66A1F125CDB00A6F88A /* MyImage2CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImage2CollectionViewCell.swift; sourceTree = "<group>"; };
 		E0EF4B511EE33C1B009EFFA5 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		E0EF6A101EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuaLogInBuyerTableViewCell.swift; sourceTree = "<group>"; };
 		E0F4C67F1EDF0AE700402C15 /* Iron_Man_Experience.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Iron_Man_Experience.jpg; sourceTree = "<group>"; };
@@ -368,6 +374,7 @@
 				E0D816B91EFE8FD500FE04B2 /* ResultSearchEstateViewController.swift */,
 				E040448D1F079F500008F42C /* SeemoreViewController.swift */,
 				E0A1B1D51F0F969F009C01BD /* SearchValueViewController.swift */,
+				E0EDE6661F12377000A6F88A /* EditEstateViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -531,6 +538,8 @@
 				E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */,
 				E0229A8A1EE996510085283F /* DangMoi2CollectionViewCell.swift */,
 				E07915E61EF53F6E00256BCF /* ImageServerCollectionViewCell.swift */,
+				E0EDE6681F125C9100A6F88A /* ImageServer2CollectionViewCell.swift */,
+				E0EDE66A1F125CDB00A6F88A /* MyImage2CollectionViewCell.swift */,
 			);
 			name = CollectionViewCell;
 			sourceTree = "<group>";
@@ -787,6 +796,7 @@
 				E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */,
 				E0EBA5CB1EFFC02300F8726B /* ResultSearchTableViewCell.swift in Sources */,
 				E09C98161ED481660032C80B /* FullEstate.swift in Sources */,
+				E0EDE66B1F125CDB00A6F88A /* MyImage2CollectionViewCell.swift in Sources */,
 				E032979D1EFA5B6800032277 /* PostNewRegister.swift in Sources */,
 				E069E1421EDD4D69002B9E47 /* EstatePostNew.swift in Sources */,
 				E0B000CB1EE6CA1300426BFB /* Appointments.swift in Sources */,
@@ -815,6 +825,7 @@
 				E217EF871E93CE7200068876 /* CaiDatController.swift in Sources */,
 				E0EF6A111EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift in Sources */,
 				E0EF4B521EE33C1B009EFFA5 /* Appointment.swift in Sources */,
+				E0EDE6671F12377000A6F88A /* EditEstateViewController.swift in Sources */,
 				E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */,
 				E295D0841EBF06B800A746FA /* StartScreenCell2TableViewCell.swift in Sources */,
 				E09C98181ED482E80032C80B /* Estates.swift in Sources */,
@@ -829,6 +840,7 @@
 				E059EF6A1F0EAEFE001C606A /* SearchNewViewController.swift in Sources */,
 				E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */,
 				E02E48031EE7D08C00A571DE /* DatHenViewController.swift in Sources */,
+				E0EDE6691F125C9100A6F88A /* ImageServer2CollectionViewCell.swift in Sources */,
 				E040448E1F079F500008F42C /* SeemoreViewController.swift in Sources */,
 				E07993A71EEFD328002AA88E /* PhotoPostNew.swift in Sources */,
 				E02A282D1F0EBAFE00E63DEA /* SearchNewTableViewCell.swift in Sources */,

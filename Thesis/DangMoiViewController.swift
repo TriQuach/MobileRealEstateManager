@@ -18,7 +18,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     var loai:Int!
     var lat:Double!
     var lng:Double!
-    var idOwner:Int = 0
+    var idOwner:Int!
     var mangPhotos:[Photo] = []
     var mangWard:[String] = []
     var mangDistrict:[String] = [
@@ -342,6 +342,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     func postEstate()
     {
+        
         let owner:UserEstatePostNew = UserEstatePostNew(id: idOwner)
         
         let address:Address = Address(city: self.lblThanhPho.text!, district: self.lblQuan.text!, ward: self.lblPhuong.text!, address: self.edtSoNha.text!, id: 0)

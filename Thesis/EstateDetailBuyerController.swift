@@ -305,7 +305,13 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func DangBai()
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabbar = storyboard.instantiateViewController(withIdentifier: "DangBai") as! DangBaiViewController
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "EditEstateViewController") as! EditEstateViewController
+        tabbar.idUser = idUser
+        tabbar.idOwner = idOwner
+        tabbar.role = role
+        tabbar.isLogin = isLogin
+        tabbar.idEstate = idEstate
+        
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
     @IBAction func btnDatLichHen(_ sender: Any) {
@@ -317,6 +323,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
             //  tabbar.owner = passFullEstate.owner.fullName
             tabbar.idUser = idUser
             tabbar.idOwner = idOwner
+            tabbar.role = self.role
             tabbar.owner = self.passFullEstate.owner.fullName
             tabbar.datLichHen = passFullEstate.name
             tabbar.passAdress = passFullEstate.address.address + " " + passFullEstate.address.ward + " " + passFullEstate.address.district + " " + passFullEstate.address.city
@@ -718,5 +725,6 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
     
 }

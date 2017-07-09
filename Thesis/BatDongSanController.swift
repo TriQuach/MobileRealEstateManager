@@ -1005,7 +1005,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let tabbar = storyboard.instantiateViewController(withIdentifier: "DangMoi") as! DangMoiViewController
             
-            
+            tabbar.idOwner = idUser
             
             self.navigationController?.pushViewController(tabbar, animated: true)
         }
