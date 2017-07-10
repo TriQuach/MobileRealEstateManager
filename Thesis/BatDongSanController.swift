@@ -33,6 +33,27 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var nameOwner2:[String] = []
     var addressOwner2:[String] = []
     
+    var mangDistrict:[String] = [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "Thủ Đức",
+        "Gò Vấp",
+        "Bình Thạnh",
+        "Tân Bình",
+        "Tân Phú",
+        "Phú Nhuận",
+        "Bình Tân"
+    ]
     
     @IBOutlet weak var imgMore: UIImageView!
     
@@ -775,10 +796,18 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let data:Data = Data(base64Encoded: mang[indexPath.row].image)!
                     cell.myHouse.image = UIImage(data: data)
                     
-                    cell.lblGia.text = String(mang[indexPath.row].gia) + "tỷ"
-                    cell.lblDIenTich.text = String(mang[indexPath.row].dientich)
-                    cell.lblQuan.text = mang[indexPath.row].quan
-                    cell.lblDate.text = mang[indexPath.row].date
+                    cell.lblGia.text = String(mang[indexPath.row].gia) + " tỷ"
+                    cell.lblDIenTich.text = String(mang[indexPath.row].dientich) + " m2"
+                    if (check(x: mang[indexPath.row].quan))
+                    {
+                        cell.lblQuan.text = "Quận " + mang[indexPath.row].quan
+                    }
+                    else
+                    {
+                        cell.lblQuan.text = "Huyện " + mang[indexPath.row].quan
+                    }
+                    let parsed = parseDateTime(str: mang[indexPath.row].date)
+                    cell.lblDate.text = parsed
                     cell.lblTitle.text = mang[indexPath.row].title
                     
                     return cell
@@ -799,10 +828,19 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
                 let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
                 cell.myHouse.image = UIImage(data: data)
-                cell.lblGia.text = String(mang2[indexPath.row].gia)
-                cell.lblDIenTich.text = String(mang2[indexPath.row].dientich)
-                cell.lblQuan.text = mang2[indexPath.row].quan
-                cell.lblDate.text = mang2[indexPath.row].date
+                cell.lblGia.text = String(mang2[indexPath.row].gia) + " tỷ"
+                cell.lblDIenTich.text = String(mang2[indexPath.row].dientich) + " m2"
+            if (check(x: mang2[indexPath.row].quan))
+            {
+                cell.lblQuan.text = "Quận " + mang2[indexPath.row].quan
+            }
+            else
+            {
+                cell.lblQuan.text = "Huyện " + mang2[indexPath.row].quan
+            }
+            
+            let parsed = parseDateTime(str: mang2[indexPath.row].date)
+            cell.lblDate.text = parsed
                 cell.lblTitle.text = mang2[indexPath.row].title
                 return cell
             
@@ -825,9 +863,16 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             let data:Data = Data(base64Encoded: mang3[indexPath.row].image)!
             cell.myHouse.image = UIImage(data: data)
             
-            cell.lblGia.text = String(mang3[indexPath.row].gia) + "tỷ"
-            cell.lblDIenTich.text = String(mang3[indexPath.row].dientich)
-            cell.lblQuan.text = mang3[indexPath.row].quan
+            cell.lblGia.text = String(mang3[indexPath.row].gia) + " tỷ"
+            cell.lblDIenTich.text = String(mang3[indexPath.row].dientich) + " m2"
+            if (check(x: mang3[indexPath.row].quan))
+            {
+                cell.lblQuan.text = "Quận " + mang3[indexPath.row].quan
+            }
+            else
+            {
+                cell.lblQuan.text = "Huyện " + mang3[indexPath.row].quan
+            }
             cell.lblDate.text = mang3[indexPath.row].date
             cell.lblTitle.text = mang3[indexPath.row].title
             
@@ -1038,6 +1083,37 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         // Present the controller
         self.present(alertController, animated: true, completion: nil)
+    }
+    func check(x:String) -> Bool
+    {
+        for i in 0..<mangDistrict.count
+        {
+            if (x == mangDistrict[i])
+            {
+                return true
+                
+            }
+        }
+        return false
+    }
+    func parseDateTime(str: String) -> String
+    {
+        var count = 0
+        var str2:String = ""
+        for i in 0..<str.characters.count
+        {
+            let index = str.index(str.startIndex, offsetBy: i)
+            if (str[index] == " ")
+            {
+                count += 1
+            }
+            if (count == 3)
+            {
+                break
+            }
+            str2.append(str[index])
+        }
+        return str2
     }
     
     

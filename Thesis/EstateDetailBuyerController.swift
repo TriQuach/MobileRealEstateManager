@@ -57,6 +57,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     var passEstate:Estate!
     var passOwner:String!
     var passAdress:String!
+    var clickImgView:UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -244,6 +245,8 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                 else
                 {
                     let newImageView = UIImageView(image: self.mang[indexPath.row])
+                    
+                    
                     newImageView.frame = UIScreen.main.bounds
                     
                     newImageView.backgroundColor = .black
@@ -726,5 +729,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    @IBAction func remove(_ sender: Any) {
+        print ("fuck")
+    }
 }
