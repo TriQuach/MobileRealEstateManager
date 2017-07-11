@@ -745,7 +745,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
     }
     func searchGPS(address: String)
     {
-        let searchGPS:SearchGPS = SearchGPS(address: address)
+        let searchGPS:SearchGPS = SearchGPS(latitude: lat, longitude: long, distance: 0)
         
         
         let json2 = JSONSerializer.toJson(searchGPS)

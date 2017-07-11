@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewDelegate{
+class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate{
     
+    @IBOutlet weak var mySearchBar: UISearchBar!
     var isLogin:Bool = false
     
     var count2 = 3
@@ -74,8 +75,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
        // lblRole.text = temp
+        
+        navigationController?.navigationBar.barTintColor = UIColor(cgColor: #colorLiteral(red: 0.2352941176, green: 0.3529411765, blue: 0.6078431373, alpha: 1).cgColor)
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor)]
+        
+        
         self.navigationItem.title = "Bất động sản"
-
+        mySearchBar.delegate = self
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
         imgMore.isUserInteractionEnabled = true
         imgMore.addGestureRecognizer(tap)
@@ -147,6 +154,96 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             secondTab.idUser = idUser
             secondTab.role = self.role
         }
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print (mySearchBar.text!)
+        let urlString = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/searchText/" + mySearchBar.text! + "/0"
+        print (urlString)
+        
+        let escapedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let url = URL(string: escapedString!)
+        let req = URLRequest(url: url!)
+        
+        //let req = URLRequest(url: URL(string: urlString)!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+            do
+            {
+                // print ("asdasd")
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                let estates = json["estates"] as! [AnyObject]
+                for i in 0..<estates.count
+                {
+                    let id = estates[i]["id"] as! Int
+                    
+                    let date = estates[i]["postTime"] as! String
+                    let title = estates[i]["name"] as! String
+                    let price = estates[i]["price"] as! Double
+                    let area = estates[i]["area"] as! Double
+                    let address = estates[i]["address"] as! AnyObject
+                    
+                    let district = address["district"]
+                        as! String
+                    
+                    
+                    
+                    let owner = estates[i]["owner"] as! AnyObject
+                    let idOwner = owner["id"] as! Int
+                    
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
+                    
+                    
+                    
+                    
+                    self.mang.append(new_estate)
+                    
+                }
+                for i in 0..<self.mang.count
+                {
+                    print (self.mang[i].title)
+                }
+                
+                
+                
+                if ( json["statuskey"] as! Bool)
+                {
+                    DispatchQueue.main.async {
+                        self.loading.isHidden = true
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let tabbar = storyboard.instantiateViewController(withIdentifier: "ResultSearchEstateViewController") as! ResultSearchEstateViewController
+                        
+                        tabbar.mang = self.mang
+                        tabbar.idUser = self.idUser
+                        tabbar.typeSearch = 2
+                        tabbar.role = self.role
+                        tabbar.query = self.mySearchBar.text!
+                        self.navigationController?.pushViewController(tabbar, animated: true)
+                    }
+                }
+                else
+                {
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Alert", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        self.loading.stopAnimating()
+                        self.loading.isHidden = true
+                    }
+                }
+                
+                
+                
+            }catch{
+                print ("catch")
+                print (error)
+            }
+            
+            
+        }
+        task.resume()
     }
     
     func parseJsonToken(token: String)
@@ -460,48 +557,59 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 
                 let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
                 
-                let estates = json["estates"] as! [AnyObject]
-                for i in 0..<estates.count
+                if (json["message"] as! Bool)
                 {
-                    let id = estates[i]["id"] as! Int
                     
-                    let date = estates[i]["postTime"] as! String
-                    let title = estates[i]["name"] as! String
-                    let price = estates[i]["price"] as! Double
-                    let area = estates[i]["area"] as! Double
-                    let address = estates[i]["address"] as! AnyObject
+                    let estates = json["estates"] as! [AnyObject]
+                    for i in 0..<estates.count
+                    {
+                        let id = estates[i]["id"] as! Int
+                        
+                        let date = estates[i]["postTime"] as! String
+                        let title = estates[i]["name"] as! String
+                        let price = estates[i]["price"] as! Double
+                        let area = estates[i]["area"] as! Double
+                        let address = estates[i]["address"] as! AnyObject
+                        
+                        let district = address["district"]
+                            as! String
+                        
+                        let owner = estates[i]["owner"] as! AnyObject
+                        let idOwner = owner["id"] as! Int
+                        
+                        
+                        let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
+                        
+                        // print (id)
+                        //  self.mang.append(new_estate)
+                        self.mang3.append(new_estate)
+                        
+                        //  self.mang3.append(new_estate)
+                        
+                        
+                        
+                    }
                     
-                    let district = address["district"]
-                        as! String
-                    
-                    let owner = estates[i]["owner"] as! AnyObject
-                    let idOwner = owner["id"] as! Int
-                   
-                    
-                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
-                    
-                    // print (id)
-                    //  self.mang.append(new_estate)
-                    self.mang3.append(new_estate)
-                    
-                    //  self.mang3.append(new_estate)
+                    for i in 0..<self.mang3.count{
+                        print (self.mang3[i].quan)
+                    }
                     
                     
-                    
+                    DispatchQueue.main.async(execute: {
+                        self.myTbv.reloadData()
+                        self.parseImageGetByOwnerID()
+                        //self.parseImageInterested()
+                        //   self.parseImage()
+                    })
                 }
-                
-                for i in 0..<self.mang3.count{
-                    print (self.mang3[i].quan)
+                else
+                {
+                    let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
-                
-                
-                DispatchQueue.main.async(execute: {
-                    self.myTbv.reloadData()
-                    self.parseImageGetByOwnerID()
-                    //self.parseImageInterested()
-                    //   self.parseImage()
-                })
-            }catch{}
+                }catch{}
+            
         }
         task.resume()
     }

@@ -730,6 +730,6 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     
     @IBAction func remove(_ sender: Any) {
-        print ("fuck")
+        
     }
 }

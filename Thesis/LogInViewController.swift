@@ -31,6 +31,9 @@ class LogInViewController: UIViewController {
         
         self.navigationItem.setHidesBackButton(true, animated: true)
         
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         
         
@@ -234,6 +237,7 @@ class LogInViewController: UIViewController {
        
         
     }
+    
     class UnderlinedLabel: UILabel {
         
         override var text: String? {

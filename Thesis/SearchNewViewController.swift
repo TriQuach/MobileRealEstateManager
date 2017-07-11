@@ -18,6 +18,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var myTbv: UITableView!
     @IBOutlet weak var edtAddress: UITextField!
+    var formatted_address:String!
     let locationManager = CLLocationManager()
     var lat:Double!
     var long:Double!
@@ -185,6 +186,8 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         lblBanKinh.text = String(outletSliderBanKinh.value) + " km"
         loading.isHidden = true
         cbTimQuanhDay.checkState = .checked
+        myTbv.allowsSelection = false
+     //   myTbv.isHidden = true
 
     }
     
@@ -263,7 +266,8 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
                 let formatted_address = results[0]["formatted_address"] as! String
                 print (formatted_address)
                 DispatchQueue.main.async {
-                    self.searchGPS(address: formatted_address)
+                    //self.searchGPS(address: formatted_address)
+                    self.formatted_address = formatted_address
                     self.edtAddress.text = formatted_address
                 }
                 
@@ -296,14 +300,19 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
      //   index2 = indexPath.row
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabbar = storyboard.instantiateViewController(withIdentifier: "SearchValueViewController") as! SearchValueViewController
-        tabbar.index = indexPath.row
-        if (indexPath.row == 2)
+        if (cbTimDiaChi.checkState == .checked)
         {
-            tabbar.mangWard = self.mangWard
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabbar = storyboard.instantiateViewController(withIdentifier: "SearchValueViewController") as! SearchValueViewController
+            tabbar.index = indexPath.row
+            if (indexPath.row == 2)
+            {
+                tabbar.mangWard = self.mangWard
+            }
+            self.navigationController?.pushViewController(tabbar, animated: true)
         }
-        self.navigationController?.pushViewController(tabbar, animated: true)
+       
     }
     func sendRequestGetWard(idWard: Int)
     {
@@ -531,10 +540,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         }
         else
         {
-            locationManager.delegate = self;
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
+            self.searchGPS(address: formatted_address)
             //getLocationGoogleApi()
             
         }
@@ -543,16 +549,17 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
     }
     @IBAction func actionTimQuanhDay(_ sender: Any) {
         cbTimDiaChi.setCheckState(.unchecked, animated: true)
-        
+        myTbv.allowsSelection = false
     }
     
     @IBAction func actionTimDiaChi(_ sender: Any) {
         cbTimQuanhDay.setCheckState(.unchecked, animated: true)
+        myTbv.allowsSelection = true
         
     }
     func searchGPS(address: String)
     {
-        let searchGPS:SearchGPS = SearchGPS(address: address)
+        let searchGPS:SearchGPS = SearchGPS(latitude: lat, longitude: long, distance: Int(outletSliderBanKinh.value))
         
         
         let json2 = JSONSerializer.toJson(searchGPS)

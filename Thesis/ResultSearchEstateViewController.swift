@@ -20,6 +20,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
     var url:String!
     var typeSearch:Int! // 0: search thuong  1:GPS
     var role:Int!
+    var query:String!
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +30,19 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         
        spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: self.view.frame.width, height: CGFloat(44))
         
-        print ("json:" + json)
+       // print ("json:" + json)
         loading.startAnimating()
         if (typeSearch == 0)
         {
             url = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/search/"
         }
-        else
+        else if (typeSearch == 1)
         {
             url = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/searchGPS/"
+        }
+        else if (typeSearch == 2) // quick search
+        {
+            url = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/searchText/" + query + "/"
         }
         parseImageInterested()
     }
@@ -128,22 +133,32 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         
         
         print ("pages:" + String(pages))
-        let jsonObject = convertToDictionary(text: json)
-        
-        //  print (jsonObject)
         
         
-        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        var req:URLRequest!
+        if ( typeSearch == 0 || typeSearch == 1)
+        {
+             req = URLRequest(url: URL(string: url + String(pages))!)
         
+        }
+        else if (typeSearch == 2)
+        {
+            let escapedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            let url = URL(string: escapedString!)
+            req = URLRequest(url: url!)
+        }
         
-        var req = URLRequest(url: URL(string: url + String(pages))!)
-        
-        
-        
-        
-        req.httpMethod = "POST"
-        req.httpBody = jsonData
-        
+        if (typeSearch == 0 || typeSearch == 1)
+        {
+            let jsonObject = convertToDictionary(text: json)
+            
+            //  print (jsonObject)
+            
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+            req.httpMethod = "POST"
+            req.httpBody = jsonData
+        }
         let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
             
             

@@ -1190,7 +1190,7 @@
                             <constraint firstItem="keH-BG-MJ2" firstAttribute="top" secondItem="1tM-Lo-VmN" secondAttribute="bottom" id="f94-yX-96m"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cài đặt" image="settings2.png" id="Ugb-RG-6ql"/>
+                    <tabBarItem key="tabBarItem" title="Cài đặt" image="settings5.png" id="Ugb-RG-6ql"/>
                     <connections>
                         <outlet property="myTbv" destination="keH-BG-MJ2" id="EbE-0d-6vP"/>
                     </connections>
@@ -1347,12 +1347,12 @@
                                     <constraint firstAttribute="height" constant="28" id="W27-O7-EBg"/>
                                     <constraint firstAttribute="width" constant="28" id="h8X-4m-0m3"/>
                                 </constraints>
-                                <state key="normal" image="house-add.png"/>
+                                <state key="normal" image="house6.png"/>
                                 <connections>
                                     <action selector="actionDangBai:" destination="wdJ-Zi-fr9" eventType="touchUpInside" id="lJF-YS-yMr"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search5.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search6.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sX-mP-hfp">
                                 <rect key="frame" x="302" y="69" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Ig4-Oi-kq6"/>
@@ -1377,7 +1377,7 @@
                             <constraint firstItem="CJF-mx-0IC" firstAttribute="centerY" secondItem="wpe-eh-bTF" secondAttribute="centerY" id="xJd-wV-C3n"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="BĐS" image="bds2.png" id="agD-EI-9DN"/>
+                    <tabBarItem key="tabBarItem" title="BĐS" image="home5.png" id="agD-EI-9DN"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="S6I-wQ-qXN"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1385,6 +1385,7 @@
                         <outlet property="btnDangBai" destination="Mgo-VX-sjF" id="vjO-Fo-bBo"/>
                         <outlet property="imgMore" destination="6sX-mP-hfp" id="D2f-Bj-NJ7"/>
                         <outlet property="loading" destination="CJF-mx-0IC" id="IVh-wg-xpP"/>
+                        <outlet property="mySearchBar" destination="bi4-Tm-bhm" id="iza-k9-MgI"/>
                         <outlet property="myTbv" destination="wpe-eh-bTF" id="aub-YB-IHe"/>
                     </connections>
                 </viewController>
@@ -2043,25 +2044,25 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfG-KE-nq4">
                                                 <rect key="frame" x="124.5" y="368" width="41.5" height="41.5"/>
-                                                <state key="normal" image="placeholder2.png"/>
+                                                <state key="normal" image="placeholder-on-map-paper-in-perspective6.png"/>
                                                 <connections>
                                                     <action selector="actionMap:" destination="5ud-b0-AHN" eventType="touchUpInside" id="1pJ-vx-9TU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20o-Y1-XEp">
                                                 <rect key="frame" x="207.5" y="368" width="41.5" height="41.5"/>
-                                                <state key="normal" image="calendar3.png"/>
+                                                <state key="normal" image="calendar6.png"/>
                                                 <connections>
                                                     <action selector="btnDatLichHen:" destination="5ud-b0-AHN" eventType="touchUpInside" id="3ZW-AT-ttA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjm-QW-mJF">
                                                 <rect key="frame" x="290" y="368" width="41.5" height="41.5"/>
-                                                <state key="normal" image="house-of-your-dreams2.png"/>
+                                                <state key="normal" image="dream-house6.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItG-zP-7xf">
                                                 <rect key="frame" x="41.5" y="368" width="41.5" height="41.5"/>
-                                                <state key="normal" image="phone-receiver2.png"/>
+                                                <state key="normal" image="phone7.png"/>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onr-QU-F8M">
                                                 <rect key="frame" x="0.0" y="368" width="41.5" height="41.5"/>
@@ -2213,10 +2214,13 @@
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVQ-zV-tRY">
                                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="140"/>
                                                                 </imageView>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oql-qI-gRR">
-                                                                    <rect key="frame" x="10" y="10" width="46" height="30"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <state key="normal" title="Button"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oql-qI-gRR">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="20" id="7ka-Le-RRr"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="ymR-cl-x86"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="remove.png"/>
                                                                     <connections>
                                                                         <action selector="remove:" destination="5ud-b0-AHN" eventType="touchUpInside" id="lIl-R5-GpH"/>
                                                                     </connections>
@@ -2224,6 +2228,8 @@
                                                             </subviews>
                                                         </view>
                                                         <constraints>
+                                                            <constraint firstItem="oql-qI-gRR" firstAttribute="top" secondItem="zD4-1h-usr" secondAttribute="top" id="7lV-xU-mjK"/>
+                                                            <constraint firstItem="oql-qI-gRR" firstAttribute="leading" secondItem="zD4-1h-usr" secondAttribute="leading" id="CKs-Va-OP3"/>
                                                             <constraint firstItem="UVQ-zV-tRY" firstAttribute="top" secondItem="zD4-1h-usr" secondAttribute="top" id="Mfr-Ob-YgA"/>
                                                             <constraint firstAttribute="trailing" secondItem="UVQ-zV-tRY" secondAttribute="trailing" id="bdM-VL-OSS"/>
                                                             <constraint firstAttribute="bottom" secondItem="UVQ-zV-tRY" secondAttribute="bottom" id="lcc-Z7-Kzw"/>
@@ -3457,7 +3463,7 @@
                             <constraint firstItem="JlD-Cr-ChB" firstAttribute="top" secondItem="HA8-im-giY" secondAttribute="bottom" id="ri4-mT-Mf2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cuộc hẹn" image="appt.png" id="d7d-yL-NMX"/>
+                    <tabBarItem key="tabBarItem" title="Cuộc hẹn" image="calendar5.png" id="d7d-yL-NMX"/>
                     <connections>
                         <outlet property="loading" destination="9xP-JL-fpf" id="Et9-s8-Cdb"/>
                         <outlet property="myTbv" destination="HA8-im-giY" id="hbh-LX-x9S"/>
@@ -3480,7 +3486,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Thông báo" image="notification-bell.png" id="ZrJ-Wb-u3w"/>
+                    <tabBarItem key="tabBarItem" title="Thông báo" image="bell5.png" id="ZrJ-Wb-u3w"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dz4-F5-nfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4116,21 +4122,26 @@
         <image name="add.png" width="64" height="64"/>
         <image name="add4.png" width="256" height="256"/>
         <image name="alarm-clock.png" width="512" height="512"/>
-        <image name="appt.png" width="32" height="32"/>
-        <image name="bds2.png" width="32" height="32"/>
+        <image name="bell5.png" width="32" height="32"/>
         <image name="calendar3.png" width="64" height="64"/>
+        <image name="calendar5.png" width="32" height="32"/>
+        <image name="calendar6.png" width="32" height="32"/>
         <image name="default_image.jpg" width="640" height="480"/>
         <image name="directions2.png" width="512" height="512"/>
         <image name="down-arrow.png" width="16" height="16"/>
-        <image name="house-add.png" width="64" height="64"/>
+        <image name="dream-house6.png" width="32" height="32"/>
+        <image name="home5.png" width="32" height="32"/>
         <image name="house-of-your-dreams2.png" width="64" height="64"/>
+        <image name="house6.png" width="32" height="32"/>
         <image name="navigation.png" width="64" height="64"/>
-        <image name="notification-bell.png" width="32" height="32"/>
         <image name="phone-receiver2.png" width="64" height="64"/>
+        <image name="phone7.png" width="32" height="32"/>
+        <image name="placeholder-on-map-paper-in-perspective6.png" width="32" height="32"/>
         <image name="placeholder2.png" width="64" height="64"/>
+        <image name="remove.png" width="64" height="64"/>
         <image name="schedule.png" width="64" height="64"/>
-        <image name="search5.png" width="64" height="64"/>
-        <image name="settings2.png" width="32" height="32"/>
+        <image name="search6.png" width="32" height="32"/>
+        <image name="settings5.png" width="32" height="32"/>
         <image name="tag.png" width="512" height="512"/>
         <image name="user.png" width="512" height="512"/>
     </resources>

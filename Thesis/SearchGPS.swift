@@ -9,8 +9,14 @@
 import Foundation
 class SearchGPS
 {
-    var address:String
-    init(address:String) {
-        self.address = address
+    var latitude:Double
+    var longitude:Double
+    var distance:Int
+    init(latitude:Double, longitude:Double, distance:Int) {
+        self.latitude = latitude
+        self.longitude = longitude
+        self.distance = distance
     }
 }
+
+
