@@ -24,7 +24,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var mang:[Estate] = []
     var mang2:[Estate] = []
     var mang3:[Estate] = []
-    
+    var mang4:[Estate] = [] // mang quick search
     var mang_id1:[Int] = []
     var mang_id2:[Int] = []
     
@@ -157,6 +157,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print (mySearchBar.text!)
+        mang4 = []
+        self.mySearchBar.endEditing(true)
+        self.loading .isHidden = false
+        self.loading.startAnimating()
         let urlString = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/searchText/" + mySearchBar.text! + "/0"
         print (urlString)
         
@@ -197,12 +201,12 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     
                     
-                    self.mang.append(new_estate)
+                    self.mang4.append(new_estate)
                     
                 }
-                for i in 0..<self.mang.count
+                for i in 0..<self.mang4.count
                 {
-                    print (self.mang[i].title)
+                    print (self.mang4[i].title)
                 }
                 
                 
@@ -215,7 +219,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let tabbar = storyboard.instantiateViewController(withIdentifier: "ResultSearchEstateViewController") as! ResultSearchEstateViewController
                         
-                        tabbar.mang = self.mang
+                        tabbar.mang = self.mang4
                         tabbar.idUser = self.idUser
                         tabbar.typeSearch = 2
                         tabbar.role = self.role
