@@ -498,7 +498,8 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
                     //                    self.parseImageInterested()
                     //                    //   self.parseImage()
                     //                })
-                    
+                    if (self.mang.count > 0)
+                    {
                     if ( json["statuskey"] as! Bool)
                     {
                         DispatchQueue.main.async {
@@ -525,6 +526,14 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
                             self.loading.stopAnimating()
                             self.loading.isHidden = true
                         }
+                    }
+                    }
+                    else
+                    {
+                        let alert = UIAlertController(title: "Lỗi", message: "Không tìm thấy BĐS nào!", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        self.loading.isHidden = true
                     }
                     
                     
@@ -625,6 +634,8 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
                 
                 if ( json["statuskey"] as! Bool)
                 {
+                    if (self.mang.count > 0)
+                    {
                     DispatchQueue.main.async {
                         self.loading.isHidden = true
                         
@@ -637,6 +648,14 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
                         tabbar.typeSearch = 1
                         tabbar.role = self.role
                         self.navigationController?.pushViewController(tabbar, animated: true)
+                    }
+                    }
+                    else
+                    {
+                        let alert = UIAlertController(title: "Lỗi", message: "Không tìm thấy BĐS nào!", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        self.loading.isHidden = true
                     }
                 }
                 else

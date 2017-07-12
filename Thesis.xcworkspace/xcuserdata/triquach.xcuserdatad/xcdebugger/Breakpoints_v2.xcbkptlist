@@ -968,11 +968,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/SearchNewViewController.swift"
-            timestampString = "521456957.682405"
+            timestampString = "521480261.923843"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
             landmarkName = "actionSearch(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -984,11 +984,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/SearchNewViewController.swift"
-            timestampString = "521456981.073421"
+            timestampString = "521480261.923843"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "562"
-            endingLineNumber = "562"
+            startingLineNumber = "571"
+            endingLineNumber = "571"
             landmarkName = "searchGPS(address:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1006,6 +1006,22 @@
             startingLineNumber = "160"
             endingLineNumber = "160"
             landmarkName = "searchBarSearchButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thesis/ResultSearchEstateViewController.swift"
+            timestampString = "521567325.210722"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "requestSearchPage(url:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

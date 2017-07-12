@@ -119,6 +119,14 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
                                 
                             })
                         }
+                    else
+                        {
+                            DispatchQueue.main.async(execute: {
+                                
+                                self.loading.isHidden = true
+                                
+                            })
+                    }
                     
                 }catch{}
             }
@@ -143,9 +151,10 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         }
         else if (typeSearch == 2)
         {
-            let escapedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            let url = URL(string: escapedString!)
-            req = URLRequest(url: url!)
+            let url2 = url + String(pages)
+            let escapedString = url2.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            let url3 = URL(string: escapedString!)
+            req = URLRequest(url: url3!)
         }
         
         if (typeSearch == 0 || typeSearch == 1)
