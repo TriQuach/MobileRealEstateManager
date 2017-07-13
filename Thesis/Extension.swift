@@ -14,9 +14,9 @@ extension UIButton
     func ghostButton()
     {
         
-        self.layer.borderWidth = 2
-        self.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-        self.layer.cornerRadius = 4
+        self.layer.borderWidth = 1
+        self.layer.borderColor = #colorLiteral(red: 0.2352941176, green: 0.3529411765, blue: 0.6078431373, alpha: 1).cgColor
+        self.layer.cornerRadius = 5
         
     }
     func ghostButton(borderWidth: CGFloat, borderColor: UIColor, cornerRadius: CGFloat)

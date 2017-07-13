@@ -11,6 +11,7 @@ import UIKit
 import M13Checkbox
 class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var btnLike: UIButton!
     @IBOutlet weak var outletDatLichHen: UIButton!
     @IBOutlet weak var edtNote: UITextField!
     @IBOutlet weak var tvNote: UITextView!
@@ -731,5 +732,15 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func remove(_ sender: Any) {
         
+    }
+    @IBAction func actionLike(_ sender: Any) {
+        if (btnLike.isEnabled == true)
+        {
+            btnLike.isEnabled = false
+        }
+        else
+        {
+            btnLike.isEnabled = true
+        }
     }
 }

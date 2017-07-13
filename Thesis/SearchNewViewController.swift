@@ -11,6 +11,7 @@ import CoreLocation
 import M13Checkbox
 class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet weak var btnTimKiem: UIButton!
     @IBOutlet weak var outletSliderBanKinh: UISlider!
     @IBOutlet weak var lblBanKinh: UILabel!
     @IBOutlet weak var cbTimQuanhDay: M13Checkbox!
@@ -187,6 +188,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         loading.isHidden = true
         cbTimQuanhDay.checkState = .checked
         myTbv.allowsSelection = false
+        btnTimKiem.ghostButton()
      //   myTbv.isHidden = true
 
     }

@@ -35,6 +35,8 @@ class DetailCuocHenViewController: UIViewController {
         lblBdsLienQuan.isUserInteractionEnabled = true
         lblBdsLienQuan.addGestureRecognizer(tap)
         parseAppoint()
+        btnLeft.ghostButton()
+        btnRight.ghostButton()
         
     }
     func imgMoreTapped()
