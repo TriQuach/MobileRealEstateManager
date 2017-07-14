@@ -11,6 +11,8 @@ import UIKit
 import M13Checkbox
 class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var btnCapNhatGhiChu: UIButton!
+    @IBOutlet weak var btnDaBan: UIButton!
     @IBOutlet weak var btnLike: UIButton!
     @IBOutlet weak var outletDatLichHen: UIButton!
     @IBOutlet weak var edtNote: UITextField!
@@ -62,7 +64,9 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        btnDaBan.ghostButton()
+        btnCapNhatGhiChu.ghostButton()
+        navigationController?.delegate = self
         myClv.delegate = self
         myClv.dataSource = self
         
@@ -742,5 +746,9 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         {
             btnLike.isEnabled = true
         }
+    }
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+       
+       
     }
 }

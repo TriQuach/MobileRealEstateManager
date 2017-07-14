@@ -908,7 +908,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let data:Data = Data(base64Encoded: mang[indexPath.row].image)!
                     cell.myHouse.image = UIImage(data: data)
                     
-                    cell.lblGia.text = String(mang[indexPath.row].gia) + " tỷ"
+                    cell.lblGia.text = String(mang[indexPath.row].gia) + " triệu"
                     cell.lblDIenTich.text = String(mang[indexPath.row].dientich) + " m2"
                     if (check(x: mang[indexPath.row].quan))
                     {
@@ -940,7 +940,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
                 let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
                 cell.myHouse.image = UIImage(data: data)
-                cell.lblGia.text = String(mang2[indexPath.row].gia) + " tỷ"
+                cell.lblGia.text = String(mang2[indexPath.row].gia) + " triệu"
                 cell.lblDIenTich.text = String(mang2[indexPath.row].dientich) + " m2"
             if (check(x: mang2[indexPath.row].quan))
             {
@@ -975,7 +975,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             let data:Data = Data(base64Encoded: mang3[indexPath.row].image)!
             cell.myHouse.image = UIImage(data: data)
             
-            cell.lblGia.text = String(mang3[indexPath.row].gia) + " tỷ"
+            cell.lblGia.text = String(mang3[indexPath.row].gia) + " triệu"
             cell.lblDIenTich.text = String(mang3[indexPath.row].dientich) + " m2"
             if (check(x: mang3[indexPath.row].quan))
             {
