@@ -9,8 +9,9 @@
 import UIKit
 import CoreLocation
 import M13Checkbox
-class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource {
+class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var myClv: UICollectionView!
     @IBOutlet weak var btnTimKiem: UIButton!
     @IBOutlet weak var outletSliderBanKinh: UISlider!
     @IBOutlet weak var lblBanKinh: UILabel!
@@ -29,6 +30,15 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
     var idWard:Int!
     var idUser:Int!
     var role:Int!
+    var indexCheck:Int = 99
+    var mangBanKinh:[String] = [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+    ]
     var mangFristLabel:[String] = [
         "Tỉnh/Thành phố",
         "Quận/huyện",
@@ -66,12 +76,12 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         0
     ]
     var mangCity:[String] = [
-        "Không xác định",
+        "Tất cả",
         "Hồ Chí Minh"
     ]
     
     var mangDistrict:[String] = [
-        "Không xác định",
+        "Tất cả",
         "1",
         "2",
         "3",
@@ -99,7 +109,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
     ]
     
     var mangLoai:[String] = [
-        "Không xác định",
+        "Tất cả",
         "Căn hộ chung cư",
         "Nhà riêng",
         "Biệt thự",
@@ -112,7 +122,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         
     ]
     var mangDienTich:[String] = [
-        "Không xác định",
+        "Tất cả",
         "< 30",
         "30 - 50",
         "50 - 80",
@@ -123,7 +133,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         "> 500"
     ]
     var mangGia:[String] = [
-        "Không xác định",
+        "Tất cả",
         "< 500",
         "500 - 800",
         "800 - 1200",
@@ -137,7 +147,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
     ]
     
     var mangSoTang:[String] = [
-        "Không xác định",
+        "Tất cả",
         "0",
         "1",
         "1+",
@@ -147,7 +157,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         "5+"
     ]
     var mangSoPhongNgu:[String] = [
-        "Không xác định",
+        "Tất cả",
         "1",
         "1+",
         "2+",
@@ -156,7 +166,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         "5+"
     ]
     var mangSoPhongTam:[String] = [
-        "Không xác định",
+        "Tất cả",
         "1",
         "1+",
         "2+",
@@ -165,7 +175,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         "5+"
     ]
     var mangHuongNha:[String] = [
-        "Không xác định",
+        "Tất cả",
         "Đông",
         "Tây",
         "Nam",
@@ -175,20 +185,19 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         "Tây-Nam",
         "Đông-Nam"
     ]
-    var mangBanKinh:[String] = [
-        "2-5km",
-        "6-10km"
-    ]
+    
     var mang:[Estate] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         myTbv.delegate = self
         myTbv.dataSource = self
-        lblBanKinh.text = String(outletSliderBanKinh.value) + " km"
+        
         loading.isHidden = true
         cbTimQuanhDay.checkState = .checked
         myTbv.allowsSelection = false
         btnTimKiem.ghostButton()
+        myClv.dataSource = self
+        myClv.delegate = self
      //   myTbv.isHidden = true
 
     }
@@ -320,7 +329,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
     {
        
         self.mangWard = []
-        self.mangWard.append("Không xác định")
+        self.mangWard.append("Tất cả")
         
         let url = "http://rem-bt.azurewebsites.net/rem/rem_server/data/getWard/" + String(idWard)
         print (url)
@@ -368,7 +377,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
             var district = mangDistrict[mangIndex[1]]
             if (mangWard.count == 0)
             {
-                ward = "Không xác định"
+                ward = "Tất cả"
             }
             else
             {
@@ -388,23 +397,23 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
             var price = mangIndex[5]
             var area = mangIndex[4]
             
-            if (city == "Không xác định" )
+            if (city == "Tất cả" )
             {
                 city = ""
             }
-            if ( district == "Không xác định" )
+            if ( district == "Tất cả" )
             {
                 district = ""
             }
-            if ( ward == "Không xác định" )
+            if ( ward == "Tất cả" )
             {
                 ward = ""
             }
-            if ( type == "Không xác định" )
+            if ( type == "Tất cả" )
             {
                 type = ""
             }
-            if ( condition == "Không xác định" )
+            if ( condition == "Tất cả" )
             {
                 condition = ""
             }
@@ -570,7 +579,8 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
     }
     func searchGPS(address: String)
     {
-        let searchGPS:SearchGPS = SearchGPS(latitude: lat, longitude: long, distance: Int(outletSliderBanKinh.value))
+        
+        let searchGPS:SearchGPS = SearchGPS(latitude: lat, longitude: long, distance: Int(mangBanKinh[indexCheck])!)
         
         
         let json2 = JSONSerializer.toJson(searchGPS)
@@ -684,5 +694,44 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
     }
     @IBAction func sliderBanKinh(_ sender: Any) {
         lblBanKinh.text = String(Int(outletSliderBanKinh.value)) + " km"
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if (indexPath.row != indexCheck)
+        {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BanKinhCollectionViewCell
+            cell.layer.borderWidth = 1.0
+            cell.layer.borderColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1).cgColor
+            cell.layer.cornerRadius = 5
+            if (indexPath.row == mangBanKinh.count - 1)
+            {
+            cell.lblBanKinh2.text = mangBanKinh[indexPath.row] + "+"
+            }
+            else
+            {
+                cell.lblBanKinh2.text = mangBanKinh[indexPath.row]
+            }
+            return cell
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! BanKinh2CollectionViewCell
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1).cgColor
+        cell.layer.cornerRadius = 5
+        if (indexPath.row == mangBanKinh.count - 1)
+        {
+            cell.lblBanKinh3.text = mangBanKinh[indexPath.row] + "+"
+        }
+        else
+        {
+            cell.lblBanKinh3.text = mangBanKinh[indexPath.row]
+        }
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.indexCheck = indexPath.row
+        self.myClv.reloadData()
+        
     }
 }

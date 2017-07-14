@@ -80,7 +80,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
     var idUser:Int!
     var mangWard:[String] = []
     var mangDistrict:[String] = [
-        "Không xác định",
+        "Tất cả",
         "1",
         "2",
         "3",
@@ -108,7 +108,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
     ]
     
     var mangLoai:[String] = [
-        "Không xác định",
+        "Tất cả",
         "Căn hộ chung cư",
         "Nhà riêng",
         "Biệt thự",
@@ -121,7 +121,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
         
     ]
     var mangDienTich:[String] = [
-        "Không xác định",
+        "Tất cả",
         "< 30",
         "30 - 50",
         "50 - 80",
@@ -132,7 +132,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
         "> 500"
     ]
     var mangGia:[String] = [
-        "Không xác định",
+        "Tất cả",
         "< 500",
         "500 - 800",
         "800 - 1200",
@@ -146,7 +146,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
     ]
     
     var mangSoTang:[String] = [
-        "Không xác định",
+        "Tất cả",
         "0",
         "1",
         "1+",
@@ -156,7 +156,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
         "5+"
     ]
     var mangSoPhongNgu:[String] = [
-        "Không xác định",
+        "Tất cả",
         "1",
         "1+",
         "2+",
@@ -165,7 +165,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
         "5+"
     ]
     var mangSoPhongTam:[String] = [
-        "Không xác định",
+        "Tất cả",
         "1",
         "1+",
         "2+",
@@ -174,7 +174,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
         "5+"
     ]
     var mangHuongNha:[String] = [
-        "Không xác định",
+        "Tất cả",
         "Đông",
         "Tây",
         "Nam",
@@ -254,7 +254,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
             dropDown.anchorView = x // UIView or UIBarButtonItem
             
             dropDown.dataSource = [
-                "Không xác định",
+                "Tất cả",
                 "Hồ Chí Minh"
             ]
             dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
@@ -472,7 +472,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
     {
         self.lblPhuong.text = ""
         self.mangWard = []
-        self.mangWard.append("Không xác định")
+        self.mangWard.append("Tất cả")
         self.loading2.isHidden = false
         self.loading2.startAnimating()
         let url = "http://rem-bt.azurewebsites.net/rem/rem_server/data/getWard/" + String(idWard)
@@ -546,23 +546,23 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
             var price = indexGia
             var area = indexDienTich
             
-            if (city == "Không xác định" || city == nil)
+            if (city == "Tất cả" || city == nil)
             {
                 city = ""
             }
-            if ( district == "Không xác định" || district == nil)
+            if ( district == "Tất cả" || district == nil)
             {
                 district = ""
             }
-            if ( ward == "Không xác định" || ward == nil)
+            if ( ward == "Tất cả" || ward == nil)
             {
                 ward = ""
             }
-            if ( type == "Không xác định" || type == nil)
+            if ( type == "Tất cả" || type == nil)
             {
                 type = ""
             }
-            if ( condition == "Không xác định" || condition == nil)
+            if ( condition == "Tất cả" || condition == nil)
             {
                 condition = ""
             }

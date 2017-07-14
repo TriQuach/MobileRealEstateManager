@@ -634,7 +634,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     self.passFullEstate = newFullEstate
                     if (newFullEstate.detail.bathroom == 0 || newFullEstate.detail.bathroom == -1)
                     {
-                        self.lblSoPhongTam.text = "Không xác định"
+                        self.lblSoPhongTam.text = "Tất cả"
                     }
                     else
                     {
@@ -642,7 +642,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     }
                     if (newFullEstate.detail.bedroom == 0 || newFullEstate.detail.bedroom == -1)
                     {
-                        self.lblSoPhongNgu.text = "Không xác định"
+                        self.lblSoPhongNgu.text = "Tất cả"
                     }
                     else
                     {
@@ -652,7 +652,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     self.lblMoTa.text = newFullEstate.detail.description
                     if (newFullEstate.detail.floor == 0 || newFullEstate.detail.floor == -1)
                     {
-                        self.lblSoTang.text = "Không xác định"
+                        self.lblSoTang.text = "Tất cả"
                     }
                     else
                     {
@@ -660,7 +660,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     }
                     if (newFullEstate.detail.length == 0 || newFullEstate.detail.length == -1)
                     {
-                        self.lblDai.text = "Không xác định"
+                        self.lblDai.text = "Tất cả"
                     }
                     else
                     {
@@ -668,7 +668,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     }
                     if (newFullEstate.detail.width == 0 || newFullEstate.detail.width == -1)
                     {
-                        self.lblRong.text = "Không xác định"
+                        self.lblRong.text = "Tất cả"
                     }
                     else
                     {
@@ -683,7 +683,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     //self.idOwner = newFullEstate.owner.id
                     if (newFullEstate.area == 0 || newFullEstate.area == -1)
                     {
-                        self.lblDienTich.text = "Không xác định"
+                        self.lblDienTich.text = "Tất cả"
                     }
                     else
                     {

@@ -11,16 +11,16 @@ import UIKit
 class SearchValueViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate {
     
     
-    var value:String = "Không xác định"
+    var value:String = "Tất cả"
     var valueIndex:Int = 0
     var idWard:Int = 999
     var mangCity:[String] = [
-        "Không xác định",
+        "Tất cả",
         "Hồ Chí Minh"
     ]
     
     var mangDistrict:[String] = [
-        "Không xác định",
+        "Tất cả",
         "1",
         "2",
         "3",
@@ -48,7 +48,7 @@ class SearchValueViewController: UIViewController,UITableViewDataSource,UITableV
     ]
     var mangWard:[String] = []
     var mangLoai:[String] = [
-        "Không xác định",
+        "Tất cả",
         "Căn hộ chung cư",
         "Nhà riêng",
         "Biệt thự",
@@ -61,7 +61,7 @@ class SearchValueViewController: UIViewController,UITableViewDataSource,UITableV
         
     ]
     var mangDienTich:[String] = [
-        "Không xác định",
+        "Tất cả",
         "< 30",
         "30 - 50",
         "50 - 80",
@@ -72,7 +72,7 @@ class SearchValueViewController: UIViewController,UITableViewDataSource,UITableV
         "> 500"
     ]
     var mangGia:[String] = [
-        "Không xác định",
+        "Tất cả",
         "< 500",
         "500 - 800",
         "800 - 1200",
@@ -86,7 +86,7 @@ class SearchValueViewController: UIViewController,UITableViewDataSource,UITableV
     ]
     
     var mangSoTang:[String] = [
-        "Không xác định",
+        "Tất cả",
         "0",
         "1",
         "1+",
@@ -96,7 +96,7 @@ class SearchValueViewController: UIViewController,UITableViewDataSource,UITableV
         "5+"
     ]
     var mangSoPhongNgu:[String] = [
-        "Không xác định",
+        "Tất cả",
         "1",
         "1+",
         "2+",
@@ -105,7 +105,7 @@ class SearchValueViewController: UIViewController,UITableViewDataSource,UITableV
         "5+"
     ]
     var mangSoPhongTam:[String] = [
-        "Không xác định",
+        "Tất cả",
         "1",
         "1+",
         "2+",
@@ -114,7 +114,7 @@ class SearchValueViewController: UIViewController,UITableViewDataSource,UITableV
         "5+"
     ]
     var mangHuongNha:[String] = [
-        "Không xác định",
+        "Tất cả",
         "Đông",
         "Tây",
         "Nam",

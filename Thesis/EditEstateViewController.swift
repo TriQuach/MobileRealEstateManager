@@ -445,7 +445,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
                     self.passFullEstate = newFullEstate
                     if (newFullEstate.detail.bathroom == 0 || newFullEstate.detail.bathroom == -1)
                     {
-                        self.edtSoPhongTam.text = "Không xác định"
+                        self.edtSoPhongTam.text = "Tất cả"
                     }
                     else
                     {
@@ -453,7 +453,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
                     }
                     if (newFullEstate.detail.bedroom == 0 || newFullEstate.detail.bedroom == -1)
                     {
-                        self.edtSoPhongNgu.text = "Không xác định"
+                        self.edtSoPhongNgu.text = "Tất cả"
                     }
                     else
                     {
@@ -463,7 +463,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
                     self.edtMoTa.text = newFullEstate.detail.description
                     if (newFullEstate.detail.floor == 0 || newFullEstate.detail.floor == -1)
                     {
-                        self.edtSoTang.text = "Không xác định"
+                        self.edtSoTang.text = "Tất cả"
                     }
                     else
                     {
@@ -471,7 +471,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
                     }
                     if (newFullEstate.detail.length == 0 || newFullEstate.detail.length == -1)
                     {
-                        self.edtDai.text = "Không xác định"
+                        self.edtDai.text = "Tất cả"
                     }
                     else
                     {
@@ -479,7 +479,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
                     }
                     if (newFullEstate.detail.width == 0 || newFullEstate.detail.width == -1)
                     {
-                        self.edtRong.text = "Không xác định"
+                        self.edtRong.text = "Tất cả"
                     }
                     else
                     {
@@ -494,7 +494,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
                     //self.idOwner = newFullEstate.owner.id
                     if (newFullEstate.area == 0 || newFullEstate.area == -1)
                     {
-                        self.edtDienTich.text = "Không xác định"
+                        self.edtDienTich.text = "Tất cả"
                     }
                     else
                     {

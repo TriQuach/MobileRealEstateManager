@@ -10,6 +10,7 @@ import UIKit
 import M13Checkbox
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var outletDangNhap: UIButton!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var edtPass: UITextField!
     @IBOutlet weak var edtUserName: UITextField!
@@ -28,6 +29,7 @@ class LogInViewController: UIViewController {
         
         loading.isHidden = true
         loading.color = .black
+        outletDangNhap.ghostButton()
         
         self.navigationItem.setHidesBackButton(true, animated: true)
         

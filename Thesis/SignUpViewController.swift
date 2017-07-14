@@ -18,11 +18,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var cb2: M13Checkbox!
     @IBOutlet var loading: UIActivityIndicatorView!
 
+    @IBOutlet weak var outletDangKy: UIButton!
     var type:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         loading.isHidden = true
-        
+        outletDangKy.ghostButton()
         
         
             }
