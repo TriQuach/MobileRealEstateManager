@@ -10,6 +10,7 @@ import UIKit
 import DateTimePicker
 class DatHenViewController: UIViewController {
 
+    @IBOutlet weak var btnGuiYeuCau: UIButton!
     @IBOutlet weak var lblBDSLienQuan: UILabel!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var edtAddress: UITextField!
@@ -35,6 +36,7 @@ class DatHenViewController: UIViewController {
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
         lblBDSLienQuan.isUserInteractionEnabled = true
         lblBDSLienQuan.addGestureRecognizer(tap)
+        btnGuiYeuCau.ghostButton()
     }
 
     func imgMoreTapped()

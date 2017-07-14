@@ -130,6 +130,7 @@ class SearchValueViewController: UIViewController,UITableViewDataSource,UITableV
     ]
     
     var index:Int!
+    var nameTitle:String!
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +139,7 @@ class SearchValueViewController: UIViewController,UITableViewDataSource,UITableV
         myTbv.delegate = self
         print ("index in value:" + String(index))
         navigationController?.delegate = self
+        self.title = nameTitle
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

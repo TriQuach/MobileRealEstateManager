@@ -317,6 +317,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let tabbar = storyboard.instantiateViewController(withIdentifier: "SearchValueViewController") as! SearchValueViewController
             tabbar.index = indexPath.row
+            tabbar.nameTitle = mangFristLabel[indexPath.row]
             if (indexPath.row == 2)
             {
                 tabbar.mangWard = self.mangWard

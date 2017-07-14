@@ -37,6 +37,7 @@ class DetailCuocHenViewController: UIViewController {
         parseAppoint()
         btnLeft.ghostButton()
         btnRight.ghostButton()
+        self.title = "Chi tiết cuộc hẹn"
         
     }
     func imgMoreTapped()

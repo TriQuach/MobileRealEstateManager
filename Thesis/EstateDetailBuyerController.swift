@@ -88,6 +88,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
         print ("idEstate:" + String(idEstate))
         loading.startAnimating()
+        self.title = "Chi tiết BĐS"
        
        getAvatar()
         
