@@ -177,11 +177,11 @@ class LogInViewController: UIViewController {
                             self.loading.stopAnimating()
                             self.loading.isHidden = true
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            let tabbar = storyboard.instantiateViewController(withIdentifier: "DangMoi") as! DangMoiViewController
-                            
-                            tabbar.idOwner = json["id"] as! Int
-                            tabbar.flag2 = 1
-                            
+                            let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                            let login : BatDongSanController = tabbar.viewControllers?[0] as! BatDongSanController;
+                            login.isLogin = true
+                            login.role = 1
+                            login.idUser = json["id"] as! Int
                             self.navigationController?.pushViewController(tabbar, animated: true)
                             
                         }

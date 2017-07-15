@@ -561,7 +561,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 
                 let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
                 
-                if (json["message"] as! Bool)
+                if (json["statuskey"] as! Bool)
                 {
                     
                     let estates = json["estates"] as! [AnyObject]
@@ -658,6 +658,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     
     func parseImageGetByOwnerID()
     {
+        if (mang3.count == 0)
+        {
+            self.loading.isHidden = true
+        }
         for i in 0..<mang3.count
         {
             let id = mang3[i].ID

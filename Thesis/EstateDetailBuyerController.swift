@@ -11,6 +11,8 @@ import UIKit
 import M13Checkbox
 class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var btnDienTich: UIButton!
+    @IBOutlet weak var btnGia: UIButton!
     @IBOutlet weak var btnCapNhatGhiChu: UIButton!
     @IBOutlet weak var btnDaBan: UIButton!
     @IBOutlet weak var btnLike: UIButton!
@@ -65,6 +67,8 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         super.viewDidLoad()
         
         btnDaBan.ghostButton()
+        btnDienTich.ghostButton()
+        btnGia.ghostButton()
         btnCapNhatGhiChu.ghostButton()
         navigationController?.delegate = self
         myClv.delegate = self
@@ -157,8 +161,10 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func parsePassEstate()
     {
 
+        
         lblName.text = passEstate.title
-        lblDienTich.text = String(passEstate.dientich)
+        btnGia.setTitle(String(passEstate.gia), for: .normal)
+        btnDienTich.setTitle(String(passEstate.dientich), for: .normal)
         lblAdressEstate.text = passAdress
         lblOwner.text = passOwner
         let data:Data = Data(base64Encoded: passEstate.image)!
@@ -635,7 +641,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     self.passFullEstate = newFullEstate
                     if (newFullEstate.detail.bathroom == 0 || newFullEstate.detail.bathroom == -1)
                     {
-                        self.lblSoPhongTam.text = "Tất cả"
+                        self.lblSoPhongTam.text = "Không xác định"
                     }
                     else
                     {
@@ -643,7 +649,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     }
                     if (newFullEstate.detail.bedroom == 0 || newFullEstate.detail.bedroom == -1)
                     {
-                        self.lblSoPhongNgu.text = "Tất cả"
+                        self.lblSoPhongNgu.text = "Không xác định"
                     }
                     else
                     {
@@ -653,7 +659,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     self.lblMoTa.text = newFullEstate.detail.description
                     if (newFullEstate.detail.floor == 0 || newFullEstate.detail.floor == -1)
                     {
-                        self.lblSoTang.text = "Tất cả"
+                        self.lblSoTang.text = "Không xác định"
                     }
                     else
                     {
@@ -661,7 +667,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     }
                     if (newFullEstate.detail.length == 0 || newFullEstate.detail.length == -1)
                     {
-                        self.lblDai.text = "Tất cả"
+                        self.lblDai.text = "Không xác định"
                     }
                     else
                     {
@@ -669,7 +675,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     }
                     if (newFullEstate.detail.width == 0 || newFullEstate.detail.width == -1)
                     {
-                        self.lblRong.text = "Tất cả"
+                        self.lblRong.text = "Không xác định"
                     }
                     else
                     {
@@ -684,11 +690,19 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     //self.idOwner = newFullEstate.owner.id
                     if (newFullEstate.area == 0 || newFullEstate.area == -1)
                     {
-                        self.lblDienTich.text = "Tất cả"
+                        self.btnDienTich.setTitle("Không xác định", for: .normal)
                     }
                     else
                     {
-                    self.lblDienTich.text = String(newFullEstate.area) + " m2"
+                        self.btnDienTich.setTitle(String(newFullEstate.area) + " m2", for: .normal)
+                    }
+                    if (newFullEstate.price == 0 || newFullEstate.price == -1)
+                    {
+                        self.btnGia.setTitle("Không xác định", for: .normal)
+                    }
+                    else
+                    {
+                        self.btnGia.setTitle(String(newFullEstate.price) + " triệu", for: .normal)
                     }
                         self.getPhotoList()
                     
