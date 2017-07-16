@@ -113,6 +113,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//     //   mang = []
+//        
+//        parseJSONgetInterested()
+//    }
     
     func loadAfterGetAll()
     {
@@ -507,6 +512,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
                 
                 let estates = json["estates"] as! [AnyObject]
+                self.mang = []
                 for i in 0..<estates.count
                 {
                     let id = estates[i]["id"] as! Int

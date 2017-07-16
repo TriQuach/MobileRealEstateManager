@@ -63,6 +63,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     var passOwner:String!
     var passAdress:String!
     var clickImgView:UIImageView!
+    var isInterested:Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,7 +95,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         loading.startAnimating()
         self.title = "Chi tiết BĐS"
        
-       getAvatar()
+       checkInterested()
         
     }
     
@@ -636,6 +637,13 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                 
                 
                 DispatchQueue.main.async(execute: {
+                    if (newFullEstate.available == false)
+                    {
+                        self.btnCapNhatGhiChu.isEnabled = false
+                        self.tvNote.isEditable = false
+                        self.myClv.allowsSelection = false
+                        self.btnDaBan.isEnabled = false
+                    }
                   //  self.idOwner = newFullEstate.owner.id
                     self.outletDatLichHen.isEnabled = true
                     self.passFullEstate = newFullEstate
@@ -681,7 +689,14 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     {
                     self.lblRong.text = String(newFullEstate.detail.width)
                     }
+                    if (newFullEstate.available == false)
+                    {
+                        self.lblName.text = "Đã bán " + newFullEstate.name
+                    }
+                    else
+                    {
                         self.lblName.text = newFullEstate.name
+                    }
                     self.lblOwner.text = newFullEstate.owner.fullName
                     self.lblAdressEstate.text = newFullEstate.address.city
                     self.lblPosdate.text = newFullEstate.postTime
@@ -753,17 +768,90 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
     }
     @IBAction func actionLike(_ sender: Any) {
-        if (btnLike.isEnabled == true)
+        self.loading.isHidden = false
+        self.loading.startAnimating()
+        if (isInterested)
         {
-            btnLike.isEnabled = false
+            isInterested = false
+            self.btnLike.setImage(UIImage(named: "dream-house6.png"), for: .normal)
+            
         }
         else
         {
-            btnLike.isEnabled = true
+            isInterested = true
+            self.btnLike.setImage(UIImage(named: "liked.png"), for: .normal)
         }
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/setInterested/" + String(idUser) + "-" + String(idEstate) + "-3" )!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                if (json["statuskey"] as! Bool)
+                {
+                    DispatchQueue.main.async {
+                        self.loading.isHidden = true
+                    }
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                DispatchQueue.main.async {
+                    self.getAvatar()
+                }
+                
+            }catch{}
+        }
+        task.resume()
     }
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
        
        
+    }
+    func checkInterested()
+    {
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/checkInterested/"  + String(idUser) + "-" + String(idEstate))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                if (json["statuskey"] as! Bool)
+                {
+                    DispatchQueue.main.async {
+                        if (json["interested"] as! Bool)
+                        {
+                            self.isInterested = true
+                            self.btnLike.setImage(UIImage(named: "liked.png"), for: .normal)
+                        }
+                        else
+                        {
+                            self.isInterested = false
+                            self.btnLike.setImage(UIImage(named: "dream-house6.png"), for: .normal)
+                        }
+                    }
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                DispatchQueue.main.async {
+                    self.getAvatar()
+                }
+                
+            }catch{}
+        }
+        task.resume()
     }
 }
