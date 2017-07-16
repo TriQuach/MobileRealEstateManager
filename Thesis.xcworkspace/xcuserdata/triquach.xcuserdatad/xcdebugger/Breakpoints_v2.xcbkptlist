@@ -776,11 +776,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "521794875.51192"
+            timestampString = "521887898.181378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1081"
-            endingLineNumber = "1081"
+            startingLineNumber = "1112"
+            endingLineNumber = "1112"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1048,11 +1048,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "521796866.983224"
+            timestampString = "521887898.181378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1217"
-            endingLineNumber = "1217"
+            startingLineNumber = "1248"
+            endingLineNumber = "1248"
             landmarkName = "parseDateTime(str:)"
             landmarkType = "7">
          </BreakpointContent>

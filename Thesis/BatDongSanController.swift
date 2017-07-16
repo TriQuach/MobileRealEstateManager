@@ -923,7 +923,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         cell.lblQuan.text = "Huyện " + mang[indexPath.row].quan
                     }
                     let parsed = parseDateTime(str: mang[indexPath.row].date)
-                    cell.lblDate.text = parsed
+                    let start = changeFormatDateAfterParse(x: parsed)
+                    let end = getCurrentDate()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    let first:NSDate = dateFormatter.date(from: start) as! NSDate
+                    let second:NSDate = dateFormatter.date(from: end) as! NSDate
+                    let x = daysBetween(start: first as Date, end: second as Date)
+                    cell.lblDate.text = String(x) + " ngày trước"
                     cell.lblTitle.text = mang[indexPath.row].title
                     
                     return cell
@@ -956,7 +963,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             }
             
             let parsed = parseDateTime(str: mang2[indexPath.row].date)
-            cell.lblDate.text = parsed
+            let start = changeFormatDateAfterParse(x: parsed)
+            let end = getCurrentDate()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let first:NSDate = dateFormatter.date(from: start) as! NSDate
+            let second:NSDate = dateFormatter.date(from: end) as! NSDate
+            let x = daysBetween(start: first as Date, end: second as Date)
+            cell.lblDate.text = String(x) + " ngày trước"
                 cell.lblTitle.text = mang2[indexPath.row].title
                 return cell
             
@@ -989,23 +1003,40 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 cell.lblQuan.text = "Huyện " + mang3[indexPath.row].quan
             }
-            cell.lblDate.text = mang3[indexPath.row].date
+           // cell.lblDate.text = mang3[indexPath.row].date
+            let parsed = parseDateTime(str: mang3[indexPath.row].date)
+            let start = changeFormatDateAfterParse(x: parsed)
+            let end = getCurrentDate()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let first:NSDate = dateFormatter.date(from: start) as! NSDate
+            let second:NSDate = dateFormatter.date(from: end) as! NSDate
+            let x = daysBetween(start: first as Date, end: second as Date)
+            cell.lblDate.text = String(x) + " ngày trước"
             cell.lblTitle.text = mang3[indexPath.row].title
             
             return cell
             
         }
-      
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
-            //cell.myHouse.image = UIImage(named: mang2[indexPath.row].image + ".jpg")
-            let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
-            cell.myHouse.image = UIImage(data: data)
-            cell.lblGia.text = String(mang2[indexPath.row].gia)
-            cell.lblDIenTich.text = String(mang2[indexPath.row].dientich)
-            cell.lblQuan.text = mang2[indexPath.row].quan
-            cell.lblDate.text = mang2[indexPath.row].date
-            cell.lblTitle.text = mang2[indexPath.row].title
-            return cell
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
+        //cell.myHouse.image = UIImage(named: mang2[indexPath.row].image + ".jpg")
+        let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
+        cell.myHouse.image = UIImage(data: data)
+        cell.lblGia.text = String(mang2[indexPath.row].gia)
+        cell.lblDIenTich.text = String(mang2[indexPath.row].dientich)
+        cell.lblQuan.text = mang2[indexPath.row].quan
+        let parsed = parseDateTime(str: mang2[indexPath.row].date)
+        let start = changeFormatDateAfterParse(x: parsed)
+        let end = getCurrentDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let first:NSDate = dateFormatter.date(from: start) as! NSDate
+        let second:NSDate = dateFormatter.date(from: end) as! NSDate
+        let x = daysBetween(start: first as Date, end: second as Date)
+        cell.lblDate.text = String(x) + " ngày trước"
+        cell.lblTitle.text = mang2[indexPath.row].title
+        return cell
         
         
        
@@ -1230,6 +1261,26 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             str2.append(str[index])
         }
         return str2
+    }
+    func daysBetween(start: Date, end: Date) -> Int {
+        return Calendar.current.dateComponents([.day], from: start, to: end).day!
+    }
+    func changeFormatDateAfterParse(x: String) -> String
+    {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "MMM d, yyyy"
+        let showDate = inputFormatter.date(from: x)
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+        let resultString = inputFormatter.string(from: showDate!)
+        return resultString
+    }
+    func getCurrentDate() -> String
+    {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let end = formatter.string(from: date)
+        return end
     }
     
     
