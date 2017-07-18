@@ -1031,7 +1031,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         cell.myHouse.image = UIImage(data: data)
         cell.lblGia.text = String(mang2[indexPath.row].gia)
         cell.lblDIenTich.text = String(mang2[indexPath.row].dientich)
-        cell.lblQuan.text = mang2[indexPath.row].quan
+        if (check(x: mang2[indexPath.row].quan))
+        {
+            cell.lblQuan.text = "Quận " + mang2[indexPath.row].quan
+        }
+        else
+        {
+            cell.lblQuan.text = "Huyện " + mang2[indexPath.row].quan
+        }
         let parsed = parseDateTime(str: mang2[indexPath.row].date)
         let start = changeFormatDateAfterParse(x: parsed)
         let end = getCurrentDate()

@@ -94,7 +94,15 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         print ("idEstate:" + String(idEstate))
         loading.startAnimating()
         self.title = "Chi tiết BĐS"
-       
+        
+        if (self.role == 1 || self.role == 2)
+        {
+            if (idUser != idOwner)
+            {
+                self.btnDaBan.isEnabled = false
+            }
+        }
+        
        checkInterested()
         
     }
@@ -774,14 +782,19 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         {
             isInterested = false
             self.btnLike.setImage(UIImage(named: "dream-house6.png"), for: .normal)
-            
+            likeRequest(index: 0)
         }
         else
         {
             isInterested = true
             self.btnLike.setImage(UIImage(named: "liked.png"), for: .normal)
+            likeRequest(index: 3)
         }
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/setInterested/" + String(idUser) + "-" + String(idEstate) + "-3" )!)
+        
+    }
+    func likeRequest(index: Int)
+    {
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/setInterested/" + String(idUser) + "-" + String(idEstate) + "-" + String(index))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -853,5 +866,57 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
             }catch{}
         }
         task.resume()
+    }
+    @IBAction func actionDaBan(_ sender: Any) {
+        if (role == 0)
+        {
+            requestDaBanBuyer()
+        }
+        else
+        {
+            if (idUser == idOwner)
+            {
+                requestDaBanOwner()
+            }
+        }
+        
+        
+    }
+    func requestDaBanBuyer()
+    {
+        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/updateRequest/" + String(idUser) + "-" + String(idEstate))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                if (json["statuskey"] as! Bool)
+                {
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Thông báo", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+                else
+                {
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+                
+                
+            }catch{}
+        }
+        task.resume()
+    }
+    func requestDaBanOwner()
+    {
+        
     }
 }

@@ -10,6 +10,7 @@
 		4D95669C054C48BA66D1599A /* Pods_Thesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */; };
 		E00716FF1EEEDE0E0075A818 /* AppointmentPostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00716FE1EEEDE0E0075A818 /* AppointmentPostNew.swift */; };
 		E00F0E5F1EF180FC001D5F27 /* UserIdBookAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F0E5E1EF180FC001D5F27 /* UserIdBookAppointment.swift */; };
+		E010BD411F1CC50F00F26E37 /* TinNhanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E010BD401F1CC50F00F26E37 /* TinNhanTableViewCell.swift */; };
 		E0229A8B1EE996510085283F /* DangMoi2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0229A8A1EE996510085283F /* DangMoi2CollectionViewCell.swift */; };
 		E0267D2E1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */; };
 		E028803D1EDC7B9500BEC26A /* default_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E028803C1EDC7B9500BEC26A /* default_image.jpg */; };
@@ -50,6 +51,7 @@
 		E0562DCC1F17E07300B4784A /* placeholder-in-a-circle-outline7.png in Resources */ = {isa = PBXBuildFile; fileRef = E0562DC81F17E07300B4784A /* placeholder-in-a-circle-outline7.png */; };
 		E059EF6A1F0EAEFE001C606A /* SearchNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E059EF691F0EAEFE001C606A /* SearchNewViewController.swift */; };
 		E059EF6C1F0EAFCB001C606A /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = E059EF6B1F0EAFCB001C606A /* navigation.png */; };
+		E05D10101F1DF9B30004C36A /* Noti.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05D100F1F1DF9B30004C36A /* Noti.swift */; };
 		E05E120E1F13C811000AB69B /* cross-remove-sign.png in Resources */ = {isa = PBXBuildFile; fileRef = E05E120D1F13C811000AB69B /* cross-remove-sign.png */; };
 		E05E12101F13C908000AB69B /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = E05E120F1F13C908000AB69B /* remove.png */; };
 		E0648F861F0B77E600472D2D /* app icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0648F851F0B77E600472D2D /* app icon.png */; };
@@ -186,6 +188,7 @@
 		85D8C614D32A0E6E1FD8C904 /* Pods_Thesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00716FE1EEEDE0E0075A818 /* AppointmentPostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentPostNew.swift; sourceTree = "<group>"; };
 		E00F0E5E1EF180FC001D5F27 /* UserIdBookAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdBookAppointment.swift; sourceTree = "<group>"; };
+		E010BD401F1CC50F00F26E37 /* TinNhanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinNhanTableViewCell.swift; sourceTree = "<group>"; };
 		E0229A8A1EE996510085283F /* DangMoi2CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoi2CollectionViewCell.swift; sourceTree = "<group>"; };
 		E0267D2D1EDB28B8005CEB8C /* DangMoiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DangMoiCollectionViewCell.swift; sourceTree = "<group>"; };
 		E028803C1EDC7B9500BEC26A /* default_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_image.jpg; sourceTree = "<group>"; };
@@ -226,6 +229,7 @@
 		E0562DC81F17E07300B4784A /* placeholder-in-a-circle-outline7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-in-a-circle-outline7.png"; sourceTree = "<group>"; };
 		E059EF691F0EAEFE001C606A /* SearchNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SearchNewViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E059EF6B1F0EAFCB001C606A /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
+		E05D100F1F1DF9B30004C36A /* Noti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noti.swift; sourceTree = "<group>"; };
 		E05E120D1F13C811000AB69B /* cross-remove-sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross-remove-sign.png"; sourceTree = "<group>"; };
 		E05E120F1F13C908000AB69B /* remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remove.png; sourceTree = "<group>"; };
 		E0648F851F0B77E600472D2D /* app icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app icon.png"; sourceTree = "<group>"; };
@@ -531,6 +535,7 @@
 				E059EF691F0EAEFE001C606A /* SearchNewViewController.swift */,
 				E02A282C1F0EBAFE00E63DEA /* SearchNewTableViewCell.swift */,
 				E0A1B1D11F0F954C009C01BD /* SearchValueTableViewCell.swift */,
+				E010BD401F1CC50F00F26E37 /* TinNhanTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -627,6 +632,7 @@
 				E0E011231F014FA400D3BD4B /* PhotoNote.swift */,
 				E0556E4C1F09483D00010016 /* UnderlinedLabel.swift */,
 				E08B5B0C1F0C0AB7009DA829 /* SearchGPS.swift */,
+				E05D100F1F1DF9B30004C36A /* Noti.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -859,6 +865,7 @@
 				E08C64471F18E49200A1601B /* BanKinh2CollectionViewCell.swift in Sources */,
 				E217EF821E93CD0400068876 /* TinNhanController.swift in Sources */,
 				E03B4D141ED970E900C85430 /* DangMoiViewController.swift in Sources */,
+				E05D10101F1DF9B30004C36A /* Noti.swift in Sources */,
 				E212267F1EBA4DA500C530B5 /* BatDongSanControllerTableViewCell.swift in Sources */,
 				E2F8E9321EC76AF100EDD5F2 /* SignUpViewController.swift in Sources */,
 				E00716FF1EEEDE0E0075A818 /* AppointmentPostNew.swift in Sources */,
@@ -914,6 +921,7 @@
 				E02E48031EE7D08C00A571DE /* DatHenViewController.swift in Sources */,
 				E0EDE6691F125C9100A6F88A /* ImageServer2CollectionViewCell.swift in Sources */,
 				E040448E1F079F500008F42C /* SeemoreViewController.swift in Sources */,
+				E010BD411F1CC50F00F26E37 /* TinNhanTableViewCell.swift in Sources */,
 				E07993A71EEFD328002AA88E /* PhotoPostNew.swift in Sources */,
 				E02A282D1F0EBAFE00E63DEA /* SearchNewTableViewCell.swift in Sources */,
 				E04236101EF9450C001EE037 /* CaiDatTableViewCell.swift in Sources */,
