@@ -332,7 +332,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         self.mangWard = []
         self.mangWard.append("Tất cả")
         
-        let url = "http://rem-bt.azurewebsites.net/rem/rem_server/data/getWard/" + String(idWard)
+        let url = "http://35.189.190.170/rem/rem_server/data/getWard/" + String(idWard)
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         
@@ -460,7 +460,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
             let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
             
             
-            var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/search/0")!)
+            var req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/search/0")!)
             
             
             
@@ -599,7 +599,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         
         
         //  print (postString)
-        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/searchGPS/0")!)
+        var req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/searchGPS/0")!)
         
         req.httpMethod = "POST"
         req.httpBody = jsonData

@@ -94,7 +94,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
     func getEstateBaseOnID()
     {
         
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getDetail/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getDetail/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -122,7 +122,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
     func getPhotoList()
     {
         
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -152,7 +152,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
     }
     func getNote()
     {
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/getNote/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/getNote/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -177,7 +177,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
     {
         // self.mang = []
         
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/getPhotoNote/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/getPhotoNote/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -347,7 +347,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
     }
     func getAvatar()
     {
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -373,7 +373,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
     func getJsonEstate()
     {
         
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getByID/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getByID/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             

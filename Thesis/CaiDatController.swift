@@ -69,7 +69,7 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
     func parseJsonToken(token: String)
     {
         
-        let url = "http://rem-bt.azurewebsites.net/rem/rem_server/user/login/" + token
+        let url = "http://35.189.190.170/rem/rem_server/user/login/" + token
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         

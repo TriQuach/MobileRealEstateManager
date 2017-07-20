@@ -34,15 +34,15 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         loading.startAnimating()
         if (typeSearch == 0)
         {
-            url = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/search/"
+            url = "http://35.189.190.170/rem/rem_server/estate/search/"
         }
         else if (typeSearch == 1)
         {
-            url = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/searchGPS/"
+            url = "http://35.189.190.170/rem/rem_server/estate/searchGPS/"
         }
         else if (typeSearch == 2) // quick search
         {
-            url = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/searchText/" + query + "/"
+            url = "http://35.189.190.170/rem/rem_server/estate/searchText/" + query + "/"
         }
         parseImageInterested()
     }
@@ -97,7 +97,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         for i in 0..<mang.count
         {
             let id = mang[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 

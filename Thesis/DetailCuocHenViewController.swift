@@ -173,7 +173,7 @@ class DetailCuocHenViewController: UIViewController {
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/appointment/updateStatus")!)
+        var req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/appointment/updateStatus")!)
         
         
         

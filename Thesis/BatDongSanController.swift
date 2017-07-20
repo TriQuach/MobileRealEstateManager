@@ -166,7 +166,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         self.mySearchBar.endEditing(true)
         self.loading .isHidden = false
         self.loading.startAnimating()
-        let urlString = "http://rem-bt.azurewebsites.net/rem/rem_server/estate/searchText/" + mySearchBar.text! + "/0"
+        let urlString = "http://35.189.190.170/rem/rem_server/estate/searchText/" + mySearchBar.text! + "/0"
         print (urlString)
         
         let escapedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -259,7 +259,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     {
         print ("1")
         
-        let url = "http://rem-bt.azurewebsites.net/rem/rem_server/user/login/" + token
+        let url = "http://35.189.190.170/rem/rem_server/user/login/" + token
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         
@@ -449,7 +449,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONGetNew()
     {
        
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getNew/0")!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getNew/0")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -502,7 +502,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONgetInterested()
     {
        
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/getInterested/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/getInterested/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -558,7 +558,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJsonGetByOwnerID()
     {
         
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -631,7 +631,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang.count
         {
             let id = mang[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -671,7 +671,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang3.count
         {
             let id = mang3[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -705,7 +705,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang2.count
         {
             let id = mang2[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 

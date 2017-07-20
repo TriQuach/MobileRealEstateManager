@@ -104,7 +104,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         func parseJSONgetInterested()
         {
             
-            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/user/getInterested/" + String(idUser))!)
+            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/getInterested/" + String(idUser))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -156,7 +156,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
     func parseJsonGetByOwnerID()
     {
         
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -215,7 +215,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         for i in 0..<mang3.count
         {
             let id = mang3[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -249,7 +249,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         for i in 0..<mang.count
         {
             let id = mang[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -367,7 +367,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
     func parseJSONGetNew()
     {
         
-        let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getNew/4")!)
+        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getNew/4")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -420,7 +420,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         for i in 0..<mang2.count
         {
             let id = mang2[i].ID
-            let req = URLRequest(url: URL(string: "http://rem-bt.azurewebsites.net/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
