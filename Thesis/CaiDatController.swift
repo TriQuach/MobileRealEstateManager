@@ -15,6 +15,7 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
     var idUser:Int = 0
     var newUser:User!
     var isLogin:Bool!
+    var role:Int!
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +89,8 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
                 let name = json["name"] as! String
                 let typeId = json["typeId"] as! Int
                 let id = json["id"] as! Int
-                 let user:User = User(email: email, password: password, address: address, typeID: typeId, fullName: fullName, phone: phone, id: id, name: name)
+                let avatar = json["avatar"] as! String
+                 let user:User = User(email: email, password: password, address: address, typeID: typeId, fullName: fullName, phone: phone, id: id, name: name, avatar: avatar)
                 
                 DispatchQueue.main.async {
                     
@@ -98,7 +100,14 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
                     
                     self.idUser = id
                     self.newUser = user
-                    
+                    if (typeId == 1)
+                    {
+                        self.role = 0
+                    }
+                    else if (typeId == 2)
+                    {
+                        self.role = 1
+                    }
                     //
                     
                     
@@ -183,6 +192,7 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
                 let tabbar = storyboard.instantiateViewController(withIdentifier: "CaiDatTaiKhoanViewController") as! CaiDatTaiKhoanViewController
                 
                 tabbar.user = newUser
+                tabbar.role = self.role
                 
                 
                 self.navigationController?.pushViewController(tabbar, animated: true)

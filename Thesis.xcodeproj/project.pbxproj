@@ -81,6 +81,8 @@
 		E0ACCFA61F0383A70046A727 /* splash_screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0ACCFA51F0383A70046A727 /* splash_screen.jpg */; };
 		E0B000CB1EE6CA1300426BFB /* Appointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B000CA1EE6CA1300426BFB /* Appointments.swift */; };
 		E0B000CD1EE6D9AE00426BFB /* SimpleAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B000CC1EE6D9AE00426BFB /* SimpleAppointment.swift */; };
+		E0B8E6361F271C6400191F4B /* ProfileAvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B8E6351F271C6400191F4B /* ProfileAvatarTableViewCell.swift */; };
+		E0B8E6381F271DAE00191F4B /* ProfileLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B8E6371F271DAE00191F4B /* ProfileLabelTableViewCell.swift */; };
 		E0C7B46F1ED4452B008D7204 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7B46E1ED4452B008D7204 /* User.swift */; };
 		E0C7B4711ED44724008D7204 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7B4701ED44724008D7204 /* Address.swift */; };
 		E0CB675A1EE5C242005C9731 /* MainPageNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */; };
@@ -259,6 +261,8 @@
 		E0ACCFA51F0383A70046A727 /* splash_screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash_screen.jpg; sourceTree = "<group>"; };
 		E0B000CA1EE6CA1300426BFB /* Appointments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointments.swift; sourceTree = "<group>"; };
 		E0B000CC1EE6D9AE00426BFB /* SimpleAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAppointment.swift; sourceTree = "<group>"; };
+		E0B8E6351F271C6400191F4B /* ProfileAvatarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAvatarTableViewCell.swift; sourceTree = "<group>"; };
+		E0B8E6371F271DAE00191F4B /* ProfileLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileLabelTableViewCell.swift; sourceTree = "<group>"; };
 		E0C7B46E1ED4452B008D7204 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E0C7B4701ED44724008D7204 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		E0CB67591EE5C242005C9731 /* MainPageNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageNaviViewController.swift; sourceTree = "<group>"; };
@@ -536,6 +540,8 @@
 				E02A282C1F0EBAFE00E63DEA /* SearchNewTableViewCell.swift */,
 				E0A1B1D11F0F954C009C01BD /* SearchValueTableViewCell.swift */,
 				E010BD401F1CC50F00F26E37 /* TinNhanTableViewCell.swift */,
+				E0B8E6351F271C6400191F4B /* ProfileAvatarTableViewCell.swift */,
+				E0B8E6371F271DAE00191F4B /* ProfileLabelTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -870,6 +876,7 @@
 				E2F8E9321EC76AF100EDD5F2 /* SignUpViewController.swift in Sources */,
 				E00716FF1EEEDE0E0075A818 /* AppointmentPostNew.swift in Sources */,
 				E0E011221F01355000D3BD4B /* NoteUpdate.swift in Sources */,
+				E0B8E6381F271DAE00191F4B /* ProfileLabelTableViewCell.swift in Sources */,
 				E21226811EBA579800C530B5 /* EstateDetailControllerTableViewCell.swift in Sources */,
 				E0EBA5CB1EFFC02300F8726B /* ResultSearchTableViewCell.swift in Sources */,
 				E09C98161ED481660032C80B /* FullEstate.swift in Sources */,
@@ -881,6 +888,7 @@
 				E04236121EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift in Sources */,
 				E0A1B1D61F0F969F009C01BD /* SearchValueViewController.swift in Sources */,
 				E0E011241F014FA400D3BD4B /* PhotoNote.swift in Sources */,
+				E0B8E6361F271C6400191F4B /* ProfileAvatarTableViewCell.swift in Sources */,
 				E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */,
 				E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */,
 				E2472E941E954DE800FC95A8 /* BatDongSan3ControllerTableViewCell.swift in Sources */,

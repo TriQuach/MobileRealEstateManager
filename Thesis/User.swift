@@ -18,7 +18,8 @@ class User
     var phone:String
     var id:Int
     var name:String
-    init(email:String, password:String, address:String, typeID:Int, fullName:String, phone:String, id:Int, name:String) {
+    var avatar:String
+    init(email:String, password:String, address:String, typeID:Int, fullName:String, phone:String, id:Int, name:String, avatar:String) {
         self.email = email
         self.password = password
         self.address = address
@@ -27,5 +28,6 @@ class User
         self.phone = phone
         self.id = id
         self.name = name
+        self.avatar = avatar
     }
 }

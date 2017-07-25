@@ -393,7 +393,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
                 let id = user["id"] as! Int
                 let name = user["name"] as! String
                 //
-                let newUser:User = User(email: email, password: password, address: address, typeID: typeID, fullName: fullName,phone: phone, id: id, name: name)
+                let newUser:User = User(email: email, password: password, address: address, typeID: typeID, fullName: fullName,phone: phone, id: id, name: name, avatar: "")
                 
                 let detailAddress = json["address"] as AnyObject
                 let city = detailAddress["city"] as! String
