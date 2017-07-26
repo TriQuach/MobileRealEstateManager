@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "522060255.640293"
+            timestampString = "522780853.230982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "btnActionCamera(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,23 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "522060255.640293"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "458"
-            endingLineNumber = "458"
-            landmarkName = "photoNote()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "522060255.640293"
+            timestampString = "522780853.230982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "460"
@@ -586,12 +570,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "522060255.640293"
+            timestampString = "522780853.230982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "535"
-            endingLineNumber = "535"
-            landmarkName = "getPhotoNote()"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
+            landmarkName = "photoNote()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -602,7 +586,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "522060255.640293"
+            timestampString = "522780853.230982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "537"
@@ -618,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "522060255.640293"
+            timestampString = "522780853.230982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "537"
-            endingLineNumber = "537"
+            startingLineNumber = "539"
+            endingLineNumber = "539"
             landmarkName = "getPhotoNote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -634,11 +618,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "522060255.640293"
+            timestampString = "522780853.230982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
+            startingLineNumber = "539"
+            endingLineNumber = "539"
+            landmarkName = "getPhotoNote()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thesis/EstateDetailBuyerController.swift"
+            timestampString = "522780853.230982"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "396"
+            endingLineNumber = "396"
             landmarkName = "actionThemGhiChu(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -650,11 +650,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "522060255.640293"
+            timestampString = "522780853.230982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "404"
-            endingLineNumber = "404"
+            startingLineNumber = "406"
+            endingLineNumber = "406"
             landmarkName = "actionThemGhiChu(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -666,11 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "522060255.640293"
+            timestampString = "522780853.230982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "525"
-            endingLineNumber = "525"
+            startingLineNumber = "527"
+            endingLineNumber = "527"
             landmarkName = "getNote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -730,11 +730,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "522066690.564468"
+            timestampString = "522780853.230982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "923"
-            endingLineNumber = "923">
+            startingLineNumber = "925"
+            endingLineNumber = "925">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1060,7 +1060,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"

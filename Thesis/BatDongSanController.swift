@@ -819,7 +819,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         let view = UIView()
         
         
-        
+       // view.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         
         
         view.backgroundColor = UIColor(cgColor: #colorLiteral(red: 0.9395621827, green: 0.9395621827, blue: 0.9395621827, alpha: 1).cgColor)
@@ -829,22 +829,22 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         {
             if (section == 0)
             {
-                title.text = "Bất động sản đang quan tâm"
+                title.text = "ĐANG QUAN TÂM"
             }
             else if (section == 1)
             {
-                title.text = "Bất động sản mới nhất"
+                title.text = "MỚI NHẤT"
             }
         }
         else
         {
             if ( section == 0)
             {
-                title.text = "Bất động sản đang quản lý"
+                title.text = "ĐANG QUẢN LÝ"
             }
             else
             {
-                title.text = "Bất động sản mới nhất"
+                title.text = "MỚI NHẤT"
             }
         }
         title.frame = CGRect(x: 5, y: 5, width: self.view.frame.width * 0.75, height: 15)

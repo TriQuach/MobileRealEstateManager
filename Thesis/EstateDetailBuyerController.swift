@@ -11,6 +11,8 @@ import UIKit
 import M13Checkbox
 class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var lblDienTich: UILabel!
+    @IBOutlet weak var lblGia: UILabel!
     @IBOutlet weak var btnDienTich: UIButton!
     @IBOutlet weak var btnGia: UIButton!
     @IBOutlet weak var btnCapNhatGhiChu: UIButton!
@@ -33,7 +35,6 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var lblSoTang: UILabel!
     @IBOutlet weak var lblRong: UILabel!
     @IBOutlet weak var lblDai: UILabel!
-    @IBOutlet weak var lblDienTich: UILabel!
     @IBOutlet weak var lblAdressEstate: UILabel!
     @IBOutlet weak var lblOwner: UILabel!
     @IBOutlet weak var lblName: UILabel!
@@ -67,10 +68,9 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btnDaBan.ghostButton()
-        btnDienTich.ghostButton()
-        btnGia.ghostButton()
-        btnCapNhatGhiChu.ghostButton()
+      //  btnDaBan.ghostButton()
+        
+      //  btnCapNhatGhiChu.ghostButton()
         navigationController?.delegate = self
         myClv.delegate = self
         myClv.dataSource = self
@@ -172,8 +172,10 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
 
         
         lblName.text = passEstate.title
-        btnGia.setTitle(String(passEstate.gia), for: .normal)
-        btnDienTich.setTitle(String(passEstate.dientich), for: .normal)
+        //btnGia.setTitle(String(passEstate.gia), for: .normal)
+        lblGia.text = String(passEstate.gia)
+       // btnDienTich.setTitle(String(passEstate.dientich), for: .normal)
+        lblDienTich.text = String(passEstate.dientich)
         lblAdressEstate.text = passAdress
         lblOwner.text = passOwner
         let data:Data = Data(base64Encoded: passEstate.image)!
@@ -647,7 +649,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                 DispatchQueue.main.async(execute: {
                     if (newFullEstate.available == false)
                     {
-                        self.btnCapNhatGhiChu.isEnabled = false
+//                      //  self.btnCapNhatGhiChu.isEnabled = false
                         self.tvNote.isEditable = false
                         self.myClv.allowsSelection = false
                         self.btnDaBan.isEnabled = false
@@ -707,25 +709,25 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     }
                     self.lblOwner.text = newFullEstate.owner.fullName
                     self.lblAdressEstate.text = newFullEstate.address.city
-                    self.lblPosdate.text = newFullEstate.postTime
+                  //  self.lblPosdate.text = newFullEstate.postTime
                     self.lblEdit.text = newFullEstate.editTime
                     self.lblLoai.text = newFullEstate.type
                     //self.idOwner = newFullEstate.owner.id
                     if (newFullEstate.area == 0 || newFullEstate.area == -1)
                     {
-                        self.btnDienTich.setTitle("Không xác định", for: .normal)
+                        self.lblDienTich.text = "Không xác định"
                     }
                     else
                     {
-                        self.btnDienTich.setTitle(String(newFullEstate.area) + " m2", for: .normal)
+                        self.lblDienTich.text = String(newFullEstate.area) + " m2"
                     }
                     if (newFullEstate.price == 0 || newFullEstate.price == -1)
                     {
-                        self.btnGia.setTitle("Không xác định", for: .normal)
+                        self.lblGia.text = "Không xác định"
                     }
                     else
                     {
-                        self.btnGia.setTitle(String(newFullEstate.price) + " triệu", for: .normal)
+                        self.lblGia.text = String(newFullEstate.price) + " triệu"
                     }
                         self.getPhotoList()
                     
