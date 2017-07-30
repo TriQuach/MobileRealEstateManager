@@ -10,6 +10,8 @@ import UIKit
 import DateTimePicker
 class DatHenViewController: UIViewController {
 
+    @IBOutlet weak var lblNote: UILabel!
+    @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnGuiYeuCau: UIButton!
     @IBOutlet weak var lblBDSLienQuan: UILabel!
     @IBOutlet weak var loading: UIActivityIndicatorView!
@@ -29,7 +31,11 @@ class DatHenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        btnSave.ghostButton()
+        edtNote.isHidden = true
+        lblNote.isHidden = true
         loading.isHidden = true
+        btnSave.isHidden = true
         print ("user2" + String(idUser))
         // Do any additional setup after loading the view.
         parsePassObject()
@@ -161,5 +167,15 @@ class DatHenViewController: UIViewController {
             }
         }
         return nil
+    }
+    @IBAction func actionSave(_ sender: Any) {
+        edtNote.isHidden = true
+        lblNote.isHidden = false
+        lblNote.text = edtNote.text
+        btnSave.isHidden = true
+    }
+    @IBAction func actionNote(_ sender: Any) {
+        edtNote.isHidden = false
+        btnSave.isHidden = false
     }
 }

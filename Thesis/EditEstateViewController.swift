@@ -165,6 +165,7 @@ class EditEstateViewController: UIViewController, UICollectionViewDataSource, UI
                 
                 DispatchQueue.main.async {
                     self.tvNote.text = note
+                    
                     self.getPhotoNote()
                 }
                 

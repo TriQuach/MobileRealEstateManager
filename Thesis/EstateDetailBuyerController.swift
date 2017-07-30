@@ -11,6 +11,8 @@ import UIKit
 import M13Checkbox
 class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var lblNote: UILabel!
     @IBOutlet weak var lblDienTich: UILabel!
     @IBOutlet weak var lblGia: UILabel!
     @IBOutlet weak var btnDienTich: UIButton!
@@ -69,12 +71,14 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         super.viewDidLoad()
         
       //  btnDaBan.ghostButton()
-        
+        btnSave.ghostButton()
+        btnSave.isHidden = true
       //  btnCapNhatGhiChu.ghostButton()
         navigationController?.delegate = self
         myClv.delegate = self
         myClv.dataSource = self
-        
+        tvNote.isHidden = true
+        //lblNote.isHidden = true
         tvNote.layer.borderWidth = 1
         tvNote.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
         if ( !isLogin )
@@ -526,6 +530,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                 
                 DispatchQueue.main.async {
                     self.tvNote.text = note
+                    self.lblNote.text = note
                     self.getPhotoNote()
                 }
                 
@@ -783,13 +788,13 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         if (isInterested)
         {
             isInterested = false
-            self.btnLike.setImage(UIImage(named: "dream-house6.png"), for: .normal)
+            self.btnLike.setImage(UIImage(named: "like8.png"), for: .normal)
             likeRequest(index: 0)
         }
         else
         {
             isInterested = true
-            self.btnLike.setImage(UIImage(named: "liked.png"), for: .normal)
+            self.btnLike.setImage(UIImage(named: "like9.png"), for: .normal)
             likeRequest(index: 3)
         }
         
@@ -846,12 +851,12 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                         if (json["interested"] as! Bool)
                         {
                             self.isInterested = true
-                            self.btnLike.setImage(UIImage(named: "liked.png"), for: .normal)
+                            self.btnLike.setImage(UIImage(named: "like9.png"), for: .normal)
                         }
                         else
                         {
                             self.isInterested = false
-                            self.btnLike.setImage(UIImage(named: "dream-house6.png"), for: .normal)
+                            self.btnLike.setImage(UIImage(named: "like8.png"), for: .normal)
                         }
                     }
                 }
@@ -920,5 +925,18 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func requestDaBanOwner()
     {
         
+    }
+    
+    @IBAction func actionTakeNote(_ sender: Any) {
+        tvNote.isHidden = false
+        lblNote.isHidden = true
+        btnSave.isHidden = false
+    }
+    
+    @IBAction func actionSave(_ sender: Any) {
+        tvNote.isHidden = true
+        lblNote.isHidden = false
+        lblNote.text = tvNote.text
+        btnSave.isHidden = true
     }
 }

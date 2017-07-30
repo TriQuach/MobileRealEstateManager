@@ -32,6 +32,11 @@
 		E04236101EF9450C001EE037 /* CaiDatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */; };
 		E04236121EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */; };
 		E044E85D1EFC06D100728300 /* TimKiemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */; };
+		E04E78831F2B0FAD004FF20B /* sold.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E78821F2B0FAD004FF20B /* sold.png */; };
+		E04E78881F2B1054004FF20B /* like9.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E78841F2B1054004FF20B /* like9.png */; };
+		E04E78891F2B1054004FF20B /* like8.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E78851F2B1054004FF20B /* like8.png */; };
+		E04E788A1F2B1054004FF20B /* calendar8.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E78861F2B1054004FF20B /* calendar8.png */; };
+		E04E788B1F2B1054004FF20B /* phone-call8.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E78871F2B1054004FF20B /* phone-call8.png */; };
 		E0556E3F1F090E3600010016 /* bds.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E3E1F090E3600010016 /* bds.png */; };
 		E0556E411F090FD600010016 /* settings2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E401F090FD600010016 /* settings2.png */; };
 		E0556E451F09104100010016 /* appt.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E421F09104100010016 /* appt.png */; };
@@ -69,6 +74,7 @@
 		E08F968D1ED84807009D96D7 /* interested.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F96891ED84807009D96D7 /* interested.png */; };
 		E08F968F1ED84807009D96D7 /* phone-call.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968B1ED84807009D96D7 /* phone-call.png */; };
 		E08F96901ED84807009D96D7 /* schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968C1ED84807009D96D7 /* schedule.png */; };
+		E0916D3F1F2DE90B00C863E6 /* edit8.png in Resources */ = {isa = PBXBuildFile; fileRef = E0916D3E1F2DE90B00C863E6 /* edit8.png */; };
 		E09C98161ED481660032C80B /* FullEstate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C98151ED481660032C80B /* FullEstate.swift */; };
 		E09C98181ED482E80032C80B /* Estates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C98171ED482E80032C80B /* Estates.swift */; };
 		E0A1B1D21F0F954C009C01BD /* SearchValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A1B1D11F0F954C009C01BD /* SearchValueTableViewCell.swift */; };
@@ -212,6 +218,11 @@
 		E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTableViewCell.swift; sourceTree = "<group>"; };
 		E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTaiKhoanViewController.swift; sourceTree = "<group>"; };
 		E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimKiemTableViewCell.swift; sourceTree = "<group>"; };
+		E04E78821F2B0FAD004FF20B /* sold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sold.png; sourceTree = "<group>"; };
+		E04E78841F2B1054004FF20B /* like9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like9.png; sourceTree = "<group>"; };
+		E04E78851F2B1054004FF20B /* like8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like8.png; sourceTree = "<group>"; };
+		E04E78861F2B1054004FF20B /* calendar8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar8.png; sourceTree = "<group>"; };
+		E04E78871F2B1054004FF20B /* phone-call8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-call8.png"; sourceTree = "<group>"; };
 		E0556E3E1F090E3600010016 /* bds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bds.png; sourceTree = "<group>"; };
 		E0556E401F090FD600010016 /* settings2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings2.png; sourceTree = "<group>"; };
 		E0556E421F09104100010016 /* appt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appt.png; sourceTree = "<group>"; };
@@ -249,6 +260,7 @@
 		E08F96891ED84807009D96D7 /* interested.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interested.png; sourceTree = "<group>"; };
 		E08F968B1ED84807009D96D7 /* phone-call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-call.png"; sourceTree = "<group>"; };
 		E08F968C1ED84807009D96D7 /* schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule.png; sourceTree = "<group>"; };
+		E0916D3E1F2DE90B00C863E6 /* edit8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit8.png; sourceTree = "<group>"; };
 		E09C98151ED481660032C80B /* FullEstate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullEstate.swift; sourceTree = "<group>"; };
 		E09C98171ED482E80032C80B /* Estates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estates.swift; sourceTree = "<group>"; };
 		E0A1B1D11F0F954C009C01BD /* SearchValueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchValueTableViewCell.swift; sourceTree = "<group>"; };
@@ -426,6 +438,12 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0916D3E1F2DE90B00C863E6 /* edit8.png */,
+				E04E78841F2B1054004FF20B /* like9.png */,
+				E04E78851F2B1054004FF20B /* like8.png */,
+				E04E78861F2B1054004FF20B /* calendar8.png */,
+				E04E78871F2B1054004FF20B /* phone-call8.png */,
+				E04E78821F2B0FAD004FF20B /* sold.png */,
 				E084FB0C1F1B720F002DF3B8 /* liked.png */,
 				E0562DC51F17E07300B4784A /* clock7.png */,
 				E0562DC61F17E07300B4784A /* loading-process7.png */,
@@ -708,8 +726,10 @@
 			files = (
 				E0DE60221ECCBBC300076CF1 /* edit2.png in Resources */,
 				E0556E511F094A3000010016 /* calendar3.png in Resources */,
+				E04E78891F2B1054004FF20B /* like8.png in Resources */,
 				E0F9377E1EF6AB92003599A3 /* location3.png in Resources */,
 				E08F968F1ED84807009D96D7 /* phone-call.png in Resources */,
+				E04E78831F2B0FAD004FF20B /* sold.png in Resources */,
 				E0DE60261ECCBDD400076CF1 /* swift.png in Resources */,
 				E295D0861EBF095900A746FA /* Screen Shot 2017-05-07 at 2.50.22 PM.png in Resources */,
 				E21315471E97E735003E6BDE /* house3.jpg in Resources */,
@@ -730,6 +750,7 @@
 				E05E12101F13C908000AB69B /* remove.png in Resources */,
 				E0562DCC1F17E07300B4784A /* placeholder-in-a-circle-outline7.png in Resources */,
 				E028803D1EDC7B9500BEC26A /* default_image.jpg in Resources */,
+				E0916D3F1F2DE90B00C863E6 /* edit8.png in Resources */,
 				E0A29F561ED1A511005AE69A /* camera2.png in Resources */,
 				E2A478751E9139AB00F843BB /* LaunchScreen.storyboard in Resources */,
 				E2C702291E9932AF0056696E /* more-details-circular-button.png in Resources */,
@@ -758,6 +779,7 @@
 				E03B4D181ED97F1600C85430 /* tick.png in Resources */,
 				E2A478721E9139AB00F843BB /* Assets.xcassets in Resources */,
 				E0A721A81EF6A9D2002E01C4 /* tag.png in Resources */,
+				E04E788B1F2B1054004FF20B /* phone-call8.png in Resources */,
 				E0CD0CCD1F14C661003508F5 /* splash7.png in Resources */,
 				E2C7022B1E9933450056696E /* more-button-of-three-dots.png in Resources */,
 				E059EF6C1F0EAFCB001C606A /* navigation.png in Resources */,
@@ -766,6 +788,7 @@
 				E0556E491F0910E000010016 /* splash4.png in Resources */,
 				E0DE60281ECCBE4300076CF1 /* swift2.png in Resources */,
 				E2A2B5861EA2463100BE0FF9 /* beach.jpg in Resources */,
+				E04E788A1F2B1054004FF20B /* calendar8.png in Resources */,
 				E0F4C6801EDF0AE700402C15 /* Iron_Man_Experience.jpg in Resources */,
 				E0648F861F0B77E600472D2D /* app icon.png in Resources */,
 				E277859B1EC8BCF800B47FA5 /* house4.jpg in Resources */,
@@ -795,6 +818,7 @@
 				E22E8A581EBCB61000F1CC71 /* checked.png in Resources */,
 				E0556E4B1F09115700010016 /* house-add.png in Resources */,
 				E2A478701E9139AB00F843BB /* Main.storyboard in Resources */,
+				E04E78881F2B1054004FF20B /* like9.png in Resources */,
 				E0556E551F094B5B00010016 /* house-of-your-dreams2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
