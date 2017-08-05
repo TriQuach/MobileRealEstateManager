@@ -113,11 +113,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//     //   mang = []
-//        
-//        parseJSONgetInterested()
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+     //   mang = []
+        print ("fuck1")
+  //      parseJSONgetInterested()
+        mang = []
+        self.myTbv.reloadData()
+        parseJSONgetInterested()
+    }
     
     func loadAfterGetAll()
     {
@@ -166,7 +169,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         self.mySearchBar.endEditing(true)
         self.loading .isHidden = false
         self.loading.startAnimating()
-        let urlString = "http://35.189.190.170/rem/rem_server/estate/searchText/" + mySearchBar.text! + "/0"
+        let urlString = "http://35.194.220.127/rem/rem_server/estate/searchText/" + mySearchBar.text! + "/0"
         print (urlString)
         
         let escapedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -259,7 +262,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     {
         print ("1")
         
-        let url = "http://35.189.190.170/rem/rem_server/user/login/" + token
+        let url = "http://35.194.220.127/rem/rem_server/user/login/" + token
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         
@@ -449,7 +452,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONGetNew()
     {
        
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getNew/0")!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getNew/0")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -502,7 +505,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONgetInterested()
     {
        
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/getInterested/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/getInterested/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -558,7 +561,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJsonGetByOwnerID()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -631,7 +634,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang.count
         {
             let id = mang[i].ID
-            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -671,7 +674,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang3.count
         {
             let id = mang3[i].ID
-            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -705,7 +708,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang2.count
         {
             let id = mang2[i].ID
-            let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -824,6 +827,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         view.backgroundColor = UIColor(cgColor: #colorLiteral(red: 0.9395621827, green: 0.9395621827, blue: 0.9395621827, alpha: 1).cgColor)
         let title = UILabel()
+        title.textColor = UIColor(cgColor: #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1).cgColor)
         title.font = UIFont.boldSystemFont(ofSize: 16)
         if (role == 0)
         {
@@ -847,13 +851,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 title.text = "MỚI NHẤT"
             }
         }
-        title.frame = CGRect(x: 5, y: 5, width: self.view.frame.width * 0.75, height: 15)
+        title.frame = CGRect(x: 5, y: 7, width: self.view.frame.width * 0.75, height: 15)
         view.addSubview(title)
         
         
         let more = UILabel()
         more.text = ">"
-        more.frame = CGRect(x: self.view.frame.width - 20, y: 5, width: 10, height: 15)
+        more.textColor = UIColor(cgColor: #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1).cgColor)
+        more.frame = CGRect(x: self.view.frame.width - 20, y: 7, width: 10, height: 15)
         view.addSubview(more)
         
         if (section == 0)
@@ -900,7 +905,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 25
+        return 30
     }
     
     
@@ -1184,7 +1189,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
 //        navigationBarAppearace.barTintColor = UIColor(cgColor: #colorLiteral(red: 0.2352941176, green: 0.3529411765, blue: 0.6078431373, alpha: 1).cgColor)
 //        navigationBarAppearace.tintColor = UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor)
         // 3
-        
+        print ("fuck2")
         // 5
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit3.png"), style: .done, target: self, action: #selector(DangBai))
         
@@ -1295,7 +1300,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         let end = formatter.string(from: date)
         return end
     }
-    
+   
     
     
 }

@@ -71,6 +71,7 @@
 		E08B5B0D1F0C0AB7009DA829 /* SearchGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B5B0C1F0C0AB7009DA829 /* SearchGPS.swift */; };
 		E08C64451F18E21900A1601B /* BanKinhCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08C64441F18E21900A1601B /* BanKinhCollectionViewCell.swift */; };
 		E08C64471F18E49200A1601B /* BanKinh2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08C64461F18E49200A1601B /* BanKinh2CollectionViewCell.swift */; };
+		E08F8A1D1F35E8D0008C2733 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F8A1C1F35E8D0008C2733 /* check.png */; };
 		E08F968D1ED84807009D96D7 /* interested.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F96891ED84807009D96D7 /* interested.png */; };
 		E08F968F1ED84807009D96D7 /* phone-call.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968B1ED84807009D96D7 /* phone-call.png */; };
 		E08F96901ED84807009D96D7 /* schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968C1ED84807009D96D7 /* schedule.png */; };
@@ -214,7 +215,7 @@
 		E03B4D1D1ED9F26600C85430 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		E03B4D1F1ED9F2DE00C85430 /* add4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add4.png; sourceTree = "<group>"; };
 		E040448B1F079CFA0008F42C /* SeemoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeemoreTableViewCell.swift; sourceTree = "<group>"; };
-		E040448D1F079F500008F42C /* SeemoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeemoreViewController.swift; sourceTree = "<group>"; };
+		E040448D1F079F500008F42C /* SeemoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SeemoreViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTableViewCell.swift; sourceTree = "<group>"; };
 		E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTaiKhoanViewController.swift; sourceTree = "<group>"; };
 		E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimKiemTableViewCell.swift; sourceTree = "<group>"; };
@@ -257,6 +258,7 @@
 		E08B5B0C1F0C0AB7009DA829 /* SearchGPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGPS.swift; sourceTree = "<group>"; };
 		E08C64441F18E21900A1601B /* BanKinhCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BanKinhCollectionViewCell.swift; sourceTree = "<group>"; };
 		E08C64461F18E49200A1601B /* BanKinh2CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BanKinh2CollectionViewCell.swift; sourceTree = "<group>"; };
+		E08F8A1C1F35E8D0008C2733 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		E08F96891ED84807009D96D7 /* interested.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interested.png; sourceTree = "<group>"; };
 		E08F968B1ED84807009D96D7 /* phone-call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-call.png"; sourceTree = "<group>"; };
 		E08F968C1ED84807009D96D7 /* schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule.png; sourceTree = "<group>"; };
@@ -324,7 +326,7 @@
 		E21315411E97E735003E6BDE /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		E21315421E97E735003E6BDE /* speech-bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speech-bubble.png"; sourceTree = "<group>"; };
 		E213154C1E97F7AD003E6BDE /* EstateDetailBuyerControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailBuyerControllerTableViewCell.swift; sourceTree = "<group>"; };
-		E217EF811E93CD0400068876 /* TinNhanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinNhanController.swift; sourceTree = "<group>"; };
+		E217EF811E93CD0400068876 /* TinNhanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TinNhanController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E217EF841E93CDA700068876 /* CuocHenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CuocHenController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E217EF861E93CE7200068876 /* CaiDatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CaiDatController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E217EFA11E93D4EB00068876 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E08F8A1C1F35E8D0008C2733 /* check.png */,
 				E0916D3E1F2DE90B00C863E6 /* edit8.png */,
 				E04E78841F2B1054004FF20B /* like9.png */,
 				E04E78851F2B1054004FF20B /* like8.png */,
@@ -727,6 +730,7 @@
 				E0DE60221ECCBBC300076CF1 /* edit2.png in Resources */,
 				E0556E511F094A3000010016 /* calendar3.png in Resources */,
 				E04E78891F2B1054004FF20B /* like8.png in Resources */,
+				E08F8A1D1F35E8D0008C2733 /* check.png in Resources */,
 				E0F9377E1EF6AB92003599A3 /* location3.png in Resources */,
 				E08F968F1ED84807009D96D7 /* phone-call.png in Resources */,
 				E04E78831F2B0FAD004FF20B /* sold.png in Resources */,

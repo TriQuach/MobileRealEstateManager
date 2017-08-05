@@ -67,7 +67,7 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     func getNotiList()
     {
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/getNoti/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/getNoti/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -114,7 +114,7 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
     {
         print ("1")
         
-        let url = "http://35.189.190.170/rem/rem_server/user/login/" + token
+        let url = "http://35.194.220.127/rem/rem_server/user/login/" + token
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         
@@ -171,7 +171,7 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     func reportSpam(idRequest:Int, idNoti:Int)
     {
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/reportSpam/"  + String(idRequest) + "-" + String(idNoti))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/reportSpam/"  + String(idRequest) + "-" + String(idNoti))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -208,7 +208,7 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     func deleNoti(notiID: Int, idEstate: Int)
     {
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/deleteNoti/"  + String(notiID))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/deleteNoti/"  + String(notiID))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -245,7 +245,7 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     func updateStatus(idEstate:Int, status: Int)
     {
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/updateStatus/"  + String(idEstate) + "-" + String(status))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/updateStatus/"  + String(idEstate) + "-" + String(status))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             

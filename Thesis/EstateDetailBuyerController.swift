@@ -11,6 +11,7 @@ import UIKit
 import M13Checkbox
 class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var btnNote: UIButton!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var lblNote: UILabel!
     @IBOutlet weak var lblDienTich: UILabel!
@@ -67,12 +68,12 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     var passAdress:String!
     var clickImgView:UIImageView!
     var isInterested:Bool!
+    var isShownNote:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
       //  btnDaBan.ghostButton()
-        btnSave.ghostButton()
-        btnSave.isHidden = true
+       
       //  btnCapNhatGhiChu.ghostButton()
         navigationController?.delegate = self
         myClv.delegate = self
@@ -114,7 +115,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func getEstateBaseOnID()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getDetail/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getDetail/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -142,7 +143,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func getPhotoList()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -423,7 +424,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/updateNote")!)
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/updateNote")!)
         
         
         
@@ -475,7 +476,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/upPhotoNote")!)
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/upPhotoNote")!)
         
         
         
@@ -517,7 +518,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func getNote()
     {
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/getNote/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/getNote/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -543,7 +544,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     {
        // self.mang = []
         
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/getPhotoNote/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/getPhotoNote/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -585,7 +586,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func getJsonEstate()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getByID/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getByID/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -715,7 +716,8 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     self.lblOwner.text = newFullEstate.owner.fullName
                     self.lblAdressEstate.text = newFullEstate.address.city
                   //  self.lblPosdate.text = newFullEstate.postTime
-                    self.lblEdit.text = newFullEstate.editTime
+                    
+                    self.lblEdit.text = self.parseDateTime(str: newFullEstate.editTime)
                     self.lblLoai.text = newFullEstate.type
                     //self.idOwner = newFullEstate.owner.id
                     if (newFullEstate.area == 0 || newFullEstate.area == -1)
@@ -750,7 +752,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func getAvatar()
     {
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/estate/getRepresentPhoto/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -801,7 +803,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func likeRequest(index: Int)
     {
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/setInterested/" + String(idUser) + "-" + String(idEstate) + "-" + String(index))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/setInterested/" + String(idUser) + "-" + String(idEstate) + "-" + String(index))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -836,7 +838,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func checkInterested()
     {
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/checkInterested/"  + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/checkInterested/"  + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -891,7 +893,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func requestDaBanBuyer()
     {
-        let req = URLRequest(url: URL(string: "http://35.189.190.170/rem/rem_server/user/updateRequest/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/updateRequest/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -928,15 +930,114 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     
     @IBAction func actionTakeNote(_ sender: Any) {
-        tvNote.isHidden = false
-        lblNote.isHidden = true
-        btnSave.isHidden = false
+        
+        if (!isShownNote)
+        {
+            tvNote.isHidden = false
+            lblNote.isHidden = true
+            isShownNote = true
+            self.btnNote.setImage(UIImage(named: "check.png"), for: .normal)
+        }
+        else
+        {
+            
+            tvNote.isHidden = true
+            lblNote.isHidden = false
+            lblNote.text = tvNote.text
+            self.btnNote.setImage(UIImage(named: "edit8.png"), for: .normal)
+            isShownNote = false
+            self.themGhiChu()
+        }
     }
     
     @IBAction func actionSave(_ sender: Any) {
         tvNote.isHidden = true
         lblNote.isHidden = false
         lblNote.text = tvNote.text
-        btnSave.isHidden = true
+    }
+    func parseDateTime(str: String) -> String
+    {
+        var count = 0
+        var str2:String = ""
+        for i in 0..<str.characters.count
+        {
+            let index = str.index(str.startIndex, offsetBy: i)
+            if (str[index] == " ")
+            {
+                count += 1
+            }
+            if (count == 3)
+            {
+                break
+            }
+            str2.append(str[index])
+        }
+        return str2
+    }
+    func themGhiChu()
+    {
+        if (isLogin)
+        {
+            loading3.isHidden = false
+            loading3.startAnimating()
+            let Note = self.tvNote.text
+            print ("note:" + Note!)
+            let noteUpdate:NoteUpdate = NoteUpdate(userId: idUser, estateId: idEstate, note: Note!)
+            
+            //    let json = JSONSerializer.toJson(noteUpdate)
+            
+            
+            var jsonObject = Dictionary<String, Any>()
+            jsonObject["UserID"] = idUser
+            jsonObject["EstateID"] = idEstate
+            jsonObject["Note"] = Note
+            
+            
+            
+            
+            print (jsonObject)
+            
+            // let jsonObject = convertToDictionary(text: json)
+            
+            //  print (jsonObject)
+            
+            
+            let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+            
+            var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/updateNote")!)
+            
+            
+            
+            req.httpMethod = "POST"
+            req.httpBody = jsonData
+            
+            let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+                
+                
+                do
+                {
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                    
+                    print (json["message"] as! String)
+                    
+                    DispatchQueue.main.async {
+                        //self.loading3.isHidden = true
+                        self.photoNote()
+                    }
+                    
+                    
+                    
+                    
+                }catch{}
+                
+                
+            }
+            task.resume()
+            
+        }
+        else
+        {
+            login()
+        }
     }
 }
