@@ -2169,14 +2169,14 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="135" height="140"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add4.png" translatesAutoresizingMaskIntoConstraints="NO" id="8h9-Ou-GuM">
-                                                                    <rect key="frame" x="34" y="35" width="67.5" height="70"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8h9-Ou-GuM">
+                                                                    <rect key="frame" x="57.5" y="59.5" width="20.5" height="21"/>
                                                                 </imageView>
                                                             </subviews>
                                                         </view>
                                                         <constraints>
-                                                            <constraint firstItem="8h9-Ou-GuM" firstAttribute="height" secondItem="0xo-Nz-5hc" secondAttribute="height" multiplier="0.5" id="69b-nm-Ttc"/>
-                                                            <constraint firstItem="8h9-Ou-GuM" firstAttribute="width" secondItem="0xo-Nz-5hc" secondAttribute="width" multiplier="0.5" id="K8S-zq-HYK"/>
+                                                            <constraint firstItem="8h9-Ou-GuM" firstAttribute="height" secondItem="0xo-Nz-5hc" secondAttribute="height" multiplier="0.15" id="69b-nm-Ttc"/>
+                                                            <constraint firstItem="8h9-Ou-GuM" firstAttribute="width" secondItem="0xo-Nz-5hc" secondAttribute="width" multiplier="0.15" id="K8S-zq-HYK"/>
                                                             <constraint firstItem="8h9-Ou-GuM" firstAttribute="centerX" secondItem="0xo-Nz-5hc" secondAttribute="centerX" id="ild-Ba-qBz"/>
                                                             <constraint firstItem="8h9-Ou-GuM" firstAttribute="centerY" secondItem="0xo-Nz-5hc" secondAttribute="centerY" id="sqV-Rf-szQ"/>
                                                         </constraints>
@@ -2484,7 +2484,6 @@
                             <constraint firstItem="YsV-N5-QfA" firstAttribute="centerY" secondItem="TLa-Cz-5i7" secondAttribute="centerY" id="xpT-EM-WJU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2VK-rB-yWz"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
@@ -4295,6 +4294,7 @@
         <image name="phone-receiver2.png" width="64" height="64"/>
         <image name="placeholder-in-a-circle-outline7.png" width="32" height="32"/>
         <image name="placeholder2.png" width="64" height="64"/>
+        <image name="plus2.png" width="32" height="32"/>
         <image name="search6.png" width="32" height="32"/>
         <image name="settings5.png" width="32" height="32"/>
         <image name="sold.png" width="32" height="32"/>

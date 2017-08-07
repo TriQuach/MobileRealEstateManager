@@ -17,9 +17,12 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var count2 = 3
     var count:Int = 0
     var num_section:Int = 0
+    var isLike:Bool = false
+    //var test:Int = 0
     
     var passedObject:Estates!
     var idUser:Int = 0
+    
 
     var mang:[Estate] = []
     var mang2:[Estate] = []
@@ -93,6 +96,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
        
         loadAfterGetAll()
+        print ("isLike did load")
+        print (isLike)
         
         
        
@@ -115,11 +120,13 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     }
     override func viewWillAppear(_ animated: Bool) {
      //   mang = []
-        print ("fuck1")
+        print ("isLike will appear")
+        print (isLike)
+        
   //      parseJSONgetInterested()
-        mang = []
-        self.myTbv.reloadData()
-        parseJSONgetInterested()
+    //    mang = []
+     //   self.myTbv.reloadData()
+  //      parseJSONgetInterested()
     }
     
     func loadAfterGetAll()
@@ -1189,7 +1196,9 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
 //        navigationBarAppearace.barTintColor = UIColor(cgColor: #colorLiteral(red: 0.2352941176, green: 0.3529411765, blue: 0.6078431373, alpha: 1).cgColor)
 //        navigationBarAppearace.tintColor = UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor)
         // 3
-        print ("fuck2")
+        print ("isLike")
+        print (isLike)
+        //
         // 5
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit3.png"), style: .done, target: self, action: #selector(DangBai))
         

@@ -76,6 +76,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
        
       //  btnCapNhatGhiChu.ghostButton()
         navigationController?.delegate = self
+        
         myClv.delegate = self
         myClv.dataSource = self
         tvNote.isHidden = true
@@ -91,6 +92,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         outletDatLichHen.isEnabled = false
         
         arrayImage = []
+        self.mang.append(UIImage(named: "add4.png")!)
     //    parsePassedFullEstate()
         
         print ("owner" + String(idOwner))
@@ -213,9 +215,8 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         takenImage = (info[UIImagePickerControllerOriginalImage] as! UIImage?)!
         self.dismiss(animated: true, completion: nil)
         
-        self.mang.remove(at: mang.count-1)
+        
         self.mang.append(takenImage!)
-        self.mang.append(UIImage(named: "add4.png")!)
         self.myClv.reloadData()
     }
     
@@ -235,14 +236,14 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
       //  print(arrayImage?[indexPath.row])
         if ( collectionView.tag == 0)
         {
-            if ( indexPath.row == mang.count - 1)
+            if ( indexPath.row == 0)
             {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath)
                 return cell
             }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyImageCollectionViewCell
-        cell.myImg.image = mang[indexPath.row]
-        return cell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyImageCollectionViewCell
+            cell.myImg.image = mang[indexPath.row]
+            return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! ImageServerCollectionViewCell
         let data:Data = Data(base64Encoded: mangImage[indexPath.row])!
@@ -263,7 +264,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         {
             if ( self.isLogin )
             {
-                if (indexPath.row == mang.count - 1)
+                if (indexPath.row == 0)
                 {
                     let myPicker = UIImagePickerController()
                     myPicker.delegate = self
@@ -563,7 +564,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                 
                 DispatchQueue.main.async {
                     self.loading.isHidden = true
-                    self.mang.append(self.takenImage!)
+                 //   self.mang.append(self.takenImage!)
                    self.myClv.reloadData()
                     
                 }
@@ -833,8 +834,13 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         task.resume()
     }
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-       
-       
+        print ("clicked")
+        
+        
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print ("will disapear")
     }
     func checkInterested()
     {
@@ -1040,4 +1046,6 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
             login()
         }
     }
+    
+    
 }
