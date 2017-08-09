@@ -579,7 +579,14 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     self.loading.isHidden = true
                  //   self.mang.append(self.takenImage!)
                    self.myClv.reloadData()
-                    self.getComment()
+                    if (self.role == 0)
+                    {
+                        self.getComment()
+                    }
+                    else if ( self.role == 1 )
+                    {
+                        self.getCommentOwner()
+                    }
                     
                 }
                 
@@ -1075,6 +1082,56 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func getComment()
     {
         let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getCommentBuyer/" + String(idEstate) + "-" + String(idUser))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                if (json["statuskey"] as! Bool)
+                {
+                    let comments = json["comments"] as! [AnyObject]
+                    for i in 0..<comments.count
+                    {
+                        var answer:String = ""
+                        if let x = comments[i]["answer"] {
+                            if let a = x {
+                                answer = a as! String
+                            }
+                        }
+                        
+                        let question = comments[i]["question"] as! String
+                        
+                        let buyer = comments[i]["buyer"] as! String
+                        self.nameBuyer = buyer
+                        self.idBuyer = comments[i]["buyerId"] as! Int
+                        self.idOwner2 = comments[i]["ownerId"] as! Int
+                        self.idEstate2 = comments[i]["estateId"] as! Int
+                        self.mangBuyer.append(buyer)
+                        self.mangQuestion.append(question)
+                        self.mangAnswer.append(answer)
+                    }
+                    DispatchQueue.main.async {
+                        self.myTbv.reloadData()
+                    }
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+                
+            }catch{}
+        }
+        task.resume()
+    }
+    func getCommentOwner()
+    {
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getCommentOwner/" + String(idEstate) + "-" + String(idOwner))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             

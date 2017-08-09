@@ -18,6 +18,7 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var myTbv: UITableView!
     var temp:String?
     var idUser:Int = 0
+    var role:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -142,7 +143,17 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
                     
                     self.idUser = id
                     self.getNotiList()
-                    
+                    if ( typeId == 1)
+                    {
+                        self.role = 0
+                        
+                        
+                    }
+                    else if ( typeId == 2)
+                    {
+                        self.role = 1
+                        
+                    }
                     //
                     
                     
@@ -154,28 +165,43 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
         task.resume()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alertController = UIAlertController(title: "Thông báo", message: self.message, preferredStyle: .alert)
         
-        // Create the actions
-        let okAction = UIAlertAction(title: "Chấp nhận", style: UIAlertActionStyle.default) {
-            UIAlertAction in
-            self.loading.isHidden = false
-            self.loading.startAnimating()
-            self.deleNoti(notiID: self.mang[indexPath.row].idNoti, idEstate: self.mang[indexPath.row].idEstate)
+        if (mang[indexPath.row].typeNoti == 1)
+        {
+            let alertController = UIAlertController(title: "Thông báo", message: self.message, preferredStyle: .alert)
+            
+            // Create the actions
+            let okAction = UIAlertAction(title: "Chấp nhận", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                self.loading.isHidden = false
+                self.loading.startAnimating()
+                self.deleNoti(notiID: self.mang[indexPath.row].idNoti, idEstate: self.mang[indexPath.row].idEstate)
+            }
+            let cancelAction = UIAlertAction(title: "Từ chối", style: UIAlertActionStyle.cancel) {
+                UIAlertAction in
+                self.loading.isHidden = false
+                self.loading.startAnimating()
+                self.reportSpam(idRequest: self.mang[indexPath.row].idRequestUser, idNoti: self.mang[indexPath.row].idNoti)
+            }
+            
+            // Add the actions
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            
+            // Present the controller
+            self.present(alertController, animated: true, completion: nil)
         }
-        let cancelAction = UIAlertAction(title: "Từ chối", style: UIAlertActionStyle.cancel) {
-            UIAlertAction in
-            self.loading.isHidden = false
-            self.loading.startAnimating()
-            self.reportSpam(idRequest: self.mang[indexPath.row].idRequestUser, idNoti: self.mang[indexPath.row].idNoti)
+        else if (mang[indexPath.row].typeNoti == 2)
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let timkiem = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+            timkiem.idUser = idUser
+            timkiem.isLogin = true
+            timkiem.idEstate = mang[indexPath.row].idEstate
+            timkiem.idOwner = mang[indexPath.row].idRequestUser
+            timkiem.role = role
+            self.navigationController?.pushViewController(timkiem, animated: true)
         }
-        
-        // Add the actions
-        alertController.addAction(okAction)
-        alertController.addAction(cancelAction)
-        
-        // Present the controller
-        self.present(alertController, animated: true, completion: nil)
     }
     func reportSpam(idRequest:Int, idNoti:Int)
     {
