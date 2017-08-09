@@ -29,6 +29,7 @@
 		E03B4D201ED9F2DE00C85430 /* add4.png in Resources */ = {isa = PBXBuildFile; fileRef = E03B4D1F1ED9F2DE00C85430 /* add4.png */; };
 		E040448C1F079CFA0008F42C /* SeemoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040448B1F079CFA0008F42C /* SeemoreTableViewCell.swift */; };
 		E040448E1F079F500008F42C /* SeemoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E040448D1F079F500008F42C /* SeemoreViewController.swift */; };
+		E04203091F3A293900A5C121 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04203081F3A293900A5C121 /* CommentTableViewCell.swift */; };
 		E04236101EF9450C001EE037 /* CaiDatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */; };
 		E04236121EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */; };
 		E044E85D1EFC06D100728300 /* TimKiemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */; };
@@ -217,6 +218,7 @@
 		E03B4D1F1ED9F2DE00C85430 /* add4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add4.png; sourceTree = "<group>"; };
 		E040448B1F079CFA0008F42C /* SeemoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeemoreTableViewCell.swift; sourceTree = "<group>"; };
 		E040448D1F079F500008F42C /* SeemoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SeemoreViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E04203081F3A293900A5C121 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		E042360F1EF9450C001EE037 /* CaiDatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTableViewCell.swift; sourceTree = "<group>"; };
 		E04236111EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaiDatTaiKhoanViewController.swift; sourceTree = "<group>"; };
 		E044E85C1EFC06D100728300 /* TimKiemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimKiemTableViewCell.swift; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 				E010BD401F1CC50F00F26E37 /* TinNhanTableViewCell.swift */,
 				E0B8E6351F271C6400191F4B /* ProfileAvatarTableViewCell.swift */,
 				E0B8E6371F271DAE00191F4B /* ProfileLabelTableViewCell.swift */,
+				E04203081F3A293900A5C121 /* CommentTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				E217EF871E93CE7200068876 /* CaiDatController.swift in Sources */,
 				E0EF6A111EDEE508002C12C6 /* ChuaLogInBuyerTableViewCell.swift in Sources */,
 				E0EF4B521EE33C1B009EFFA5 /* Appointment.swift in Sources */,
+				E04203091F3A293900A5C121 /* CommentTableViewCell.swift in Sources */,
 				E0EDE6671F12377000A6F88A /* EditEstateViewController.swift in Sources */,
 				E217EFAE1E940E0600068876 /* BatDongSan2ControllerTableViewCell.swift in Sources */,
 				E295D0841EBF06B800A746FA /* StartScreenCell2TableViewCell.swift in Sources */,

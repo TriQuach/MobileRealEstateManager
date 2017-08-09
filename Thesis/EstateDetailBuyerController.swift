@@ -9,8 +9,12 @@
 import Foundation
 import UIKit
 import M13Checkbox
-class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
     
+    
+    @IBOutlet weak var lblRong2: UILabel!
+    @IBOutlet weak var lblDai2: UILabel!
+    @IBOutlet weak var myTbv: UITableView!
     @IBOutlet weak var btnNote: UIButton!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var lblNote: UILabel!
@@ -51,6 +55,9 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     var idOwner:Int!
     var idUser: Int!
     var idEstate:Int!
+    var mangBuyer:[String] = []
+    var mangQuestion:[String] = []
+    var mangAnswer:[String] = []
     var mangImage:[String] = []
     var photos:[Photo] = []
     var isLogin:Bool!
@@ -73,7 +80,8 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         super.viewDidLoad()
         
       //  btnDaBan.ghostButton()
-       
+       myTbv.dataSource = self
+        myTbv.delegate = self
       //  btnCapNhatGhiChu.ghostButton()
         navigationController?.delegate = self
         
@@ -510,7 +518,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func parseImageNote()
     {
-        for i in 0..<mang.count-1
+        for i in 1..<mang.count
         {
             let string = mang[i].base64(format: .jpeg(0.01))
             let photo:Photo = Photo(photo: string!)
@@ -566,6 +574,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     self.loading.isHidden = true
                  //   self.mang.append(self.takenImage!)
                    self.myClv.reloadData()
+                    self.getComment()
                     
                 }
                 
@@ -693,6 +702,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     if (newFullEstate.detail.length == 0 || newFullEstate.detail.length == -1)
                     {
                         self.lblDai.text = "Không xác định"
+                        self.lblDai.textColor = UIColor(cgColor: #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1).cgColor)
                     }
                     else
                     {
@@ -701,6 +711,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     if (newFullEstate.detail.width == 0 || newFullEstate.detail.width == -1)
                     {
                         self.lblRong.text = "Không xác định"
+                        self.lblRong.textColor = UIColor(cgColor: #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1).cgColor)
                     }
                     else
                     {
@@ -1046,6 +1057,60 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
             login()
         }
     }
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mangQuestion.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell5") as! CommentTableViewCell
+        cell.lblBuyer.text = mangBuyer[indexPath.row]
+        cell.lblAnswer.text = mangAnswer[indexPath.row]
+        cell.lblQuestion.text = mangQuestion[indexPath.row]
+        return cell
+    }
+    func getComment()
+    {
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getCommentBuyer/" + String(idEstate) + "-" + String(idUser))!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                if (json["statuskey"] as! Bool)
+                {
+                    let comments = json["comments"] as! [AnyObject]
+                    for i in 0..<comments.count
+                    {
+                        var answer:String = ""
+                        if let x = comments[i]["answer"] {
+                            if let a = x {
+                                answer = a as! String
+                            }
+                        }
+                        
+                        let question = comments[i]["question"] as! String
+                        let buyer = comments[i]["buyer"] as! String
+                        self.mangBuyer.append(buyer)
+                        self.mangQuestion.append(question)
+                        self.mangAnswer.append(answer)
+                    }
+                    DispatchQueue.main.async {
+                        self.myTbv.reloadData()
+                    }
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+                
+            }catch{}
+        }
+        task.resume()
+    }
     
 }
