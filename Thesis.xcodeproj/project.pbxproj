@@ -79,6 +79,8 @@
 		E0916D3F1F2DE90B00C863E6 /* edit8.png in Resources */ = {isa = PBXBuildFile; fileRef = E0916D3E1F2DE90B00C863E6 /* edit8.png */; };
 		E092F06F1F3B2529008639D5 /* edit9.png in Resources */ = {isa = PBXBuildFile; fileRef = E092F06E1F3B2529008639D5 /* edit9.png */; };
 		E092F0711F3B6B85008639D5 /* CommentPostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E092F0701F3B6B85008639D5 /* CommentPostNew.swift */; };
+		E092F0911F3B8E2C008639D5 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E092F0901F3B8E2C008639D5 /* AnswerTableViewCell.swift */; };
+		E092F0931F3B9747008639D5 /* AnswerPostNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E092F0921F3B9747008639D5 /* AnswerPostNew.swift */; };
 		E09C98161ED481660032C80B /* FullEstate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C98151ED481660032C80B /* FullEstate.swift */; };
 		E09C98181ED482E80032C80B /* Estates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C98171ED482E80032C80B /* Estates.swift */; };
 		E0A1B1D21F0F954C009C01BD /* SearchValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A1B1D11F0F954C009C01BD /* SearchValueTableViewCell.swift */; };
@@ -270,6 +272,8 @@
 		E0916D3E1F2DE90B00C863E6 /* edit8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit8.png; sourceTree = "<group>"; };
 		E092F06E1F3B2529008639D5 /* edit9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit9.png; sourceTree = "<group>"; };
 		E092F0701F3B6B85008639D5 /* CommentPostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentPostNew.swift; sourceTree = "<group>"; };
+		E092F0901F3B8E2C008639D5 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
+		E092F0921F3B9747008639D5 /* AnswerPostNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerPostNew.swift; sourceTree = "<group>"; };
 		E09C98151ED481660032C80B /* FullEstate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullEstate.swift; sourceTree = "<group>"; };
 		E09C98171ED482E80032C80B /* Estates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estates.swift; sourceTree = "<group>"; };
 		E0A1B1D11F0F954C009C01BD /* SearchValueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchValueTableViewCell.swift; sourceTree = "<group>"; };
@@ -574,6 +578,7 @@
 				E0B8E6351F271C6400191F4B /* ProfileAvatarTableViewCell.swift */,
 				E0B8E6371F271DAE00191F4B /* ProfileLabelTableViewCell.swift */,
 				E04203081F3A293900A5C121 /* CommentTableViewCell.swift */,
+				E092F0901F3B8E2C008639D5 /* AnswerTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -672,6 +677,7 @@
 				E08B5B0C1F0C0AB7009DA829 /* SearchGPS.swift */,
 				E05D100F1F1DF9B30004C36A /* Noti.swift */,
 				E092F0701F3B6B85008639D5 /* CommentPostNew.swift */,
+				E092F0921F3B9747008639D5 /* AnswerPostNew.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -972,6 +978,7 @@
 				E0DE601E1ECCB61F00076CF1 /* EstateDetailOwnerViewController.swift in Sources */,
 				E02E48031EE7D08C00A571DE /* DatHenViewController.swift in Sources */,
 				E0EDE6691F125C9100A6F88A /* ImageServer2CollectionViewCell.swift in Sources */,
+				E092F0911F3B8E2C008639D5 /* AnswerTableViewCell.swift in Sources */,
 				E040448E1F079F500008F42C /* SeemoreViewController.swift in Sources */,
 				E010BD411F1CC50F00F26E37 /* TinNhanTableViewCell.swift in Sources */,
 				E07993A71EEFD328002AA88E /* PhotoPostNew.swift in Sources */,
@@ -981,6 +988,7 @@
 				E0A1B1D21F0F954C009C01BD /* SearchValueTableViewCell.swift in Sources */,
 				E0D816B21EFE4FA000FE04B2 /* AddressSearch.swift in Sources */,
 				E0D816B61EFE74CA00FE04B2 /* PostNewSearch.swift in Sources */,
+				E092F0931F3B9747008639D5 /* AnswerPostNew.swift in Sources */,
 				E217EF851E93CDA700068876 /* CuocHenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

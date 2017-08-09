@@ -12,10 +12,14 @@ import M13Checkbox
 class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource,UIAlertViewDelegate {
     
     let alert = UIAlertView()
+    let alert2 = UIAlertView()
     var idBuyer:Int!
     var idOwner:Int!
     var idEstate2:Int!
     var nameBuyer:String!
+    var isAnswered:Bool = false
+    var idQuestion:Int!
+    var index:Int!
     
     @IBOutlet weak var lblRong2: UILabel!
     @IBOutlet weak var lblDai2: UILabel!
@@ -63,6 +67,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     var mangBuyer:[String] = []
     var mangQuestion:[String] = []
     var mangAnswer:[String] = []
+    var mangIdQuestion:[Int] = []
     var mangImage:[String] = []
     var photos:[Photo] = []
     var isLogin:Bool!
@@ -1073,11 +1078,27 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         return mangQuestion.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell5") as! CommentTableViewCell
-        cell.lblBuyer.text = mangBuyer[indexPath.row]
-        cell.lblAnswer.text = mangAnswer[indexPath.row]
-        cell.lblQuestion.text = mangQuestion[indexPath.row]
-        return cell
+       
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell5") as! CommentTableViewCell
+            cell.lblBuyer.text = mangBuyer[indexPath.row]
+            cell.lblAnswer.text = mangAnswer[indexPath.row]
+            cell.lblQuestion.text = mangQuestion[indexPath.row]
+            return cell
+        
+        
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (role == 1)
+        {
+            self.idQuestion = mangIdQuestion[indexPath.row]
+            self.index = indexPath.row
+            alert2.title = "Trả lời"
+            alert2.addButton(withTitle: "Hoàn tất")
+            alert2.alertViewStyle = UIAlertViewStyle.plainTextInput
+            alert2.addButton(withTitle: "Cancel")
+            alert2.delegate = self
+            alert2.show()
+        }
     }
     func getComment()
     {
@@ -1153,7 +1174,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                         }
                         
                         let question = comments[i]["question"] as! String
-                        
+                        let idQuestion = comments[i]["id"] as! Int
                         let buyer = comments[i]["buyer"] as! String
                         self.nameBuyer = buyer
                         self.idBuyer = comments[i]["buyerId"] as! Int
@@ -1162,6 +1183,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                         self.mangBuyer.append(buyer)
                         self.mangQuestion.append(question)
                         self.mangAnswer.append(answer)
+                        self.mangIdQuestion.append(idQuestion)
                     }
                     DispatchQueue.main.async {
                         self.myTbv.reloadData()
@@ -1198,6 +1220,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         alert.show()
     }
     func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
+        
         let buttonTitle = alertView.buttonTitle(at: buttonIndex)
         print("\(buttonTitle) pressed")
         if buttonTitle == "Xong" {
@@ -1206,6 +1229,14 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
             let textField = alert.textField(at: 0)
             apiPostComment(x: (textField?.text)!)
         }
+        if buttonTitle == "Hoàn tất" {
+            // This is not recommended behavior.  The user will interpret this as a crash.
+            print ("fuck2")
+            let textField = alert2.textField(at: 0)
+            apiPostAnswer(answer: (textField?.text)!, id: idQuestion, index: self.index)
+        
+        }
+        
     }
     func apiPostComment(x: String)
     {
@@ -1272,5 +1303,69 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         }
         task.resume()
     }
-    
+    func apiPostAnswer(answer: String, id:Int, index:Int)
+    {
+        
+        let answerPostNew:AnswerPostNew = AnswerPostNew(answer: answer, id: id)
+        
+        let json = JSONSerializer.toJson(answerPostNew)
+        //    print (json)
+        
+        let jsonObject = convertToDictionary(text: json)
+        
+        //  print (jsonObject)
+        
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/answerComment")!)
+        
+        
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+            //   print (data)
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+                //   print (json["statuskey"])
+                // print (json["name"])
+                
+                
+                DispatchQueue.main.async {
+                    if (json["statuskey"] as! Bool)
+                    {
+                        let alert = UIAlertController(title: "Thông báo", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                       // self.mangBuyer.append(self.nameBuyer)
+                    //    self.mangQuestion.append(x)
+                        self.mangAnswer[index] = answer
+                        self.myTbv.reloadData()
+                        
+                        
+                    }
+                    else
+                    {
+                        let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                    
+                    
+                }
+                
+                
+            }catch{}
+            
+            
+        }
+        task.resume()
+    }
 }

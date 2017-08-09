@@ -61,6 +61,10 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
         {
             cell.lblMessage.text = "Người dùng " + mang[indexPath.row].userFullName + " hỏi về BĐS " + mang[indexPath.row].nameEstate
         }
+        else if (mang[indexPath.row].typeNoti == 3)
+        {
+            cell.lblMessage.text = "Trả lời câu hỏi về bất động sản " + mang[indexPath.row].nameEstate
+        }
         let data:Data = Data(base64Encoded: mang[indexPath.row].avatar)!
         cell.myImg.image = UIImage(data: data)
         

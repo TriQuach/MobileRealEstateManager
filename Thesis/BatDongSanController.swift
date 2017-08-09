@@ -171,6 +171,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         }
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         print (mySearchBar.text!)
         mang4 = []
         self.mySearchBar.endEditing(true)
