@@ -2360,7 +2360,7 @@
                                                 <rect key="frame" x="177" y="845" width="20" height="20"/>
                                             </activityIndicatorView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OOo-2j-a2i">
-                                                <rect key="frame" x="0.0" y="1314.5" width="375" height="392"/>
+                                                <rect key="frame" x="0.0" y="1318.5" width="375" height="388"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell5" rowHeight="98" id="8mB-dw-cm4" customClass="CommentTableViewCell" customModule="Thesis" customModuleProvider="target">
@@ -2407,11 +2407,22 @@
                                                 </prototypes>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hỏi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znz-uT-UZ7">
-                                                <rect key="frame" x="10" y="1293.5" width="26" height="21"/>
+                                                <rect key="frame" x="10" y="1293.5" width="26" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JL-hO-Tmh">
+                                                <rect key="frame" x="340" y="1293.5" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="AWK-zE-nQe"/>
+                                                    <constraint firstAttribute="width" constant="25" id="ArL-tG-aDP"/>
+                                                </constraints>
+                                                <state key="normal" image="edit8.png"/>
+                                                <connections>
+                                                    <action selector="actionPostComment:" destination="5ud-b0-AHN" eventType="touchUpInside" id="nC5-3u-43V"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -2449,6 +2460,7 @@
                                             <constraint firstItem="lBr-ck-Ru2" firstAttribute="top" secondItem="Sw5-Np-iTX" secondAttribute="bottom" constant="10" id="F11-lK-O4X"/>
                                             <constraint firstItem="laT-S4-BkC" firstAttribute="top" secondItem="cbx-Bh-Ygm" secondAttribute="bottom" constant="10" id="FMR-Bc-4pL"/>
                                             <constraint firstItem="laT-S4-BkC" firstAttribute="trailing" secondItem="cbx-Bh-Ygm" secondAttribute="trailing" id="Fbw-3l-VS8"/>
+                                            <constraint firstAttribute="trailing" secondItem="2JL-hO-Tmh" secondAttribute="trailing" constant="10" id="GCG-JD-SRc"/>
                                             <constraint firstItem="Epl-Eu-9tF" firstAttribute="leading" secondItem="4ji-U5-5sp" secondAttribute="leading" id="GU8-wP-1OX"/>
                                             <constraint firstItem="DPK-no-AXA" firstAttribute="leading" secondItem="4ji-U5-5sp" secondAttribute="leading" id="GgK-rh-unE"/>
                                             <constraint firstItem="3ke-gl-Gsb" firstAttribute="leading" secondItem="kcN-JM-cw8" secondAttribute="leading" id="H9j-1D-Hso"/>
@@ -2476,6 +2488,7 @@
                                             <constraint firstAttribute="trailing" secondItem="CE4-G0-o49" secondAttribute="trailing" id="V3e-98-Uqp"/>
                                             <constraint firstItem="kcN-JM-cw8" firstAttribute="height" secondItem="fuZ-fB-4pD" secondAttribute="height" id="V9y-i8-pjY"/>
                                             <constraint firstItem="fuZ-fB-4pD" firstAttribute="leading" secondItem="4ji-U5-5sp" secondAttribute="leading" constant="10" id="WLS-CN-9Av"/>
+                                            <constraint firstItem="2JL-hO-Tmh" firstAttribute="top" secondItem="znz-uT-UZ7" secondAttribute="top" id="YJs-Sv-g26"/>
                                             <constraint firstItem="9Sb-JK-xUl" firstAttribute="top" secondItem="UDN-Sz-u4I" secondAttribute="bottom" constant="10" id="ZIS-l9-sc5"/>
                                             <constraint firstItem="o63-Ws-51E" firstAttribute="height" secondItem="q3w-dS-pqR" secondAttribute="height" id="ZOm-es-Cfi"/>
                                             <constraint firstAttribute="trailing" secondItem="5UM-sS-Awh" secondAttribute="trailing" constant="10" id="ZXT-1N-uy3"/>
@@ -2500,6 +2513,7 @@
                                             <constraint firstItem="OYG-Vf-VXM" firstAttribute="leading" secondItem="4ji-U5-5sp" secondAttribute="leading" constant="25" id="hVj-yv-544"/>
                                             <constraint firstItem="cAy-Ga-28D" firstAttribute="height" secondItem="ygy-U4-2e3" secondAttribute="height" id="hoY-Ss-Grb"/>
                                             <constraint firstItem="B1f-wC-hse" firstAttribute="top" secondItem="J6r-yQ-OJO" secondAttribute="bottom" constant="10" id="jLY-XK-fGY"/>
+                                            <constraint firstItem="2JL-hO-Tmh" firstAttribute="bottom" secondItem="znz-uT-UZ7" secondAttribute="bottom" id="jMl-Bi-t4T"/>
                                             <constraint firstItem="ktr-gZ-efQ" firstAttribute="leading" secondItem="4ji-U5-5sp" secondAttribute="leading" constant="10" id="jle-aj-23v"/>
                                             <constraint firstItem="CE4-G0-o49" firstAttribute="leading" secondItem="4ji-U5-5sp" secondAttribute="leading" id="kfh-5P-nak"/>
                                             <constraint firstItem="Irn-JH-2Nj" firstAttribute="top" secondItem="laT-S4-BkC" secondAttribute="bottom" constant="10" id="ksG-cP-DLV"/>

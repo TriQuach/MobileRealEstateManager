@@ -9,8 +9,13 @@
 import Foundation
 import UIKit
 import M13Checkbox
-class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
+class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource,UIAlertViewDelegate {
     
+    let alert = UIAlertView()
+    var idBuyer:Int!
+    var idOwner:Int!
+    var idEstate2:Int!
+    var nameBuyer:String!
     
     @IBOutlet weak var lblRong2: UILabel!
     @IBOutlet weak var lblDai2: UILabel!
@@ -52,7 +57,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var lblGhiChu: UILabel!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var lbl: UILabel!
-    var idOwner:Int!
+    var idOwner2:Int!
     var idUser: Int!
     var idEstate:Int!
     var mangBuyer:[String] = []
@@ -1091,7 +1096,12 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                         }
                         
                         let question = comments[i]["question"] as! String
+                        
                         let buyer = comments[i]["buyer"] as! String
+                        self.nameBuyer = buyer
+                        self.idBuyer = comments[i]["buyerId"] as! Int
+                        self.idOwner2 = comments[i]["ownerId"] as! Int
+                        self.idEstate2 = comments[i]["estateId"] as! Int
                         self.mangBuyer.append(buyer)
                         self.mangQuestion.append(question)
                         self.mangAnswer.append(answer)
@@ -1120,6 +1130,90 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         inputFormatter.dateFormat = "dd/MM/yyyy"
         let resultString = inputFormatter.string(from: showDate!)
         return resultString
+    }
+    
+    @IBAction func actionPostComment(_ sender: Any) {
+        alert.title = "Đặt câu hỏi"
+        alert.addButton(withTitle: "Xong")
+        alert.alertViewStyle = UIAlertViewStyle.plainTextInput
+        alert.addButton(withTitle: "Cancel")
+        alert.delegate = self
+        alert.show()
+    }
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
+        let buttonTitle = alertView.buttonTitle(at: buttonIndex)
+        print("\(buttonTitle) pressed")
+        if buttonTitle == "Xong" {
+            // This is not recommended behavior.  The user will interpret this as a crash.
+            print ("fuck")
+            let textField = alert.textField(at: 0)
+            apiPostComment(x: (textField?.text)!)
+        }
+    }
+    func apiPostComment(x: String)
+    {
+        
+        let commentPostNew:CommentPostNew = CommentPostNew(question: x, buyerId: self.idBuyer, ownerId: self.idOwner2, estateId: self.idEstate2)
+        
+        let json = JSONSerializer.toJson(commentPostNew)
+        //    print (json)
+        
+        let jsonObject = convertToDictionary(text: json)
+        
+        //  print (jsonObject)
+        
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/comment")!)
+        
+        
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+            //   print (data)
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+                //   print (json["statuskey"])
+                // print (json["name"])
+                
+                
+                DispatchQueue.main.async {
+                    if (json["statuskey"] as! Bool)
+                    {
+                        let alert = UIAlertController(title: "Thông báo", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        self.mangBuyer.append(self.nameBuyer)
+                        self.mangQuestion.append(x)
+                        self.mangAnswer.append("")
+                        self.myTbv.reloadData()
+                        
+                        
+                    }
+                    else
+                    {
+                        let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                    
+                    
+                }
+                
+                
+            }catch{}
+            
+            
+        }
+        task.resume()
     }
     
 }

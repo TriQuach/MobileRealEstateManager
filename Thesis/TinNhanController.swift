@@ -51,8 +51,15 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:
         "cell") as! TinNhanTableViewCell
-        cell.lblMessage.text = "Yêu cầu cập nhập đã bán bất động sản " + mang[indexPath.row].nameEstate + " bởi người dùng " + mang[indexPath.row].userFullName
-        self.message = "Yêu cầu cập nhập đã bán bất động sản " + mang[indexPath.row].nameEstate + " bởi người dùng " + mang[indexPath.row].userFullName
+        if (mang[indexPath.row].typeNoti == 1)
+        {
+            cell.lblMessage.text = "Yêu cầu cập nhập đã bán bất động sản " + mang[indexPath.row].nameEstate + " bởi người dùng " + mang[indexPath.row].userFullName
+            self.message = "Yêu cầu cập nhập đã bán bất động sản " + mang[indexPath.row].nameEstate + " bởi người dùng " + mang[indexPath.row].userFullName
+        }
+        else if (mang[indexPath.row].typeNoti == 2)
+        {
+            cell.lblMessage.text = "Người dùng " + mang[indexPath.row].userFullName + " hỏi về BĐS " + mang[indexPath.row].nameEstate
+        }
         let data:Data = Data(base64Encoded: mang[indexPath.row].avatar)!
         cell.myImg.image = UIImage(data: data)
         
@@ -90,7 +97,8 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
                         let idNoti = notifications[i]["id"] as! Int
                         let requestUser = notifications[i]["requestUser"] as! AnyObject
                         let requestUserId = requestUser["id"] as! Int
-                        let newNoti:Noti = Noti(nameEstate: name, userFullName: fullname, avatar: avatar, idNoti: idNoti, idRequestUser: requestUserId, idEstate: idEstate)
+                        let notiType = notifications[i]["notiType"] as! Int
+                        let newNoti:Noti = Noti(nameEstate: name, userFullName: fullname, avatar: avatar, idNoti: idNoti, idRequestUser: requestUserId, idEstate: idEstate, typeNoti: notiType)
                         self.mang.append(newNoti)
                     }
                     DispatchQueue.main.async {

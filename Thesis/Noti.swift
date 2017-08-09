@@ -15,12 +15,14 @@ class Noti
     var idNoti:Int
     var idRequestUser:Int
     var idEstate:Int
-    init(nameEstate:String, userFullName:String, avatar:String, idNoti:Int, idRequestUser:Int, idEstate:Int) {
+    var typeNoti:Int
+    init(nameEstate:String, userFullName:String, avatar:String, idNoti:Int, idRequestUser:Int, idEstate:Int, typeNoti:Int) {
         self.nameEstate = nameEstate
         self.userFullName = userFullName
         self.avatar = avatar
         self.idNoti = idNoti
         self.idRequestUser = idRequestUser
         self.idEstate = idEstate
+        self.typeNoti = typeNoti
     }
 }
