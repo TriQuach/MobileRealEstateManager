@@ -335,7 +335,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         {
             if (idUser == idOwner)
             {
-                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit3.png"), style: .done, target: self, action: #selector(DangBai))
+                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit9.png"), style: .done, target: self, action: #selector(DangBai))
             }
         }
         

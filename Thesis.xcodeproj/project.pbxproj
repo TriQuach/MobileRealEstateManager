@@ -77,6 +77,7 @@
 		E08F968F1ED84807009D96D7 /* phone-call.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968B1ED84807009D96D7 /* phone-call.png */; };
 		E08F96901ED84807009D96D7 /* schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = E08F968C1ED84807009D96D7 /* schedule.png */; };
 		E0916D3F1F2DE90B00C863E6 /* edit8.png in Resources */ = {isa = PBXBuildFile; fileRef = E0916D3E1F2DE90B00C863E6 /* edit8.png */; };
+		E092F06F1F3B2529008639D5 /* edit9.png in Resources */ = {isa = PBXBuildFile; fileRef = E092F06E1F3B2529008639D5 /* edit9.png */; };
 		E09C98161ED481660032C80B /* FullEstate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C98151ED481660032C80B /* FullEstate.swift */; };
 		E09C98181ED482E80032C80B /* Estates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09C98171ED482E80032C80B /* Estates.swift */; };
 		E0A1B1D21F0F954C009C01BD /* SearchValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A1B1D11F0F954C009C01BD /* SearchValueTableViewCell.swift */; };
@@ -266,6 +267,7 @@
 		E08F968B1ED84807009D96D7 /* phone-call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-call.png"; sourceTree = "<group>"; };
 		E08F968C1ED84807009D96D7 /* schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule.png; sourceTree = "<group>"; };
 		E0916D3E1F2DE90B00C863E6 /* edit8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit8.png; sourceTree = "<group>"; };
+		E092F06E1F3B2529008639D5 /* edit9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit9.png; sourceTree = "<group>"; };
 		E09C98151ED481660032C80B /* FullEstate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullEstate.swift; sourceTree = "<group>"; };
 		E09C98171ED482E80032C80B /* Estates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estates.swift; sourceTree = "<group>"; };
 		E0A1B1D11F0F954C009C01BD /* SearchValueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchValueTableViewCell.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 		E2472E951E9553A000FC95A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E092F06E1F3B2529008639D5 /* edit9.png */,
 				E0D90C681F38D124006107CD /* plus2.png */,
 				E08F8A1C1F35E8D0008C2733 /* check.png */,
 				E0916D3E1F2DE90B00C863E6 /* edit8.png */,
@@ -774,6 +777,7 @@
 				E2F8E90A1EC71F0500EDD5F2 /* google.png in Resources */,
 				E2A195DA1EC24B350080914E /* like.png in Resources */,
 				E2C8F2261EC4342E007D04BE /* camera.png in Resources */,
+				E092F06F1F3B2529008639D5 /* edit9.png in Resources */,
 				E0CD0CC91F14BE1D003508F5 /* phone-receiver6.png in Resources */,
 				E069E1661EDD60D1002B9E47 /* down-arrow.png in Resources */,
 				E21315491E97E735003E6BDE /* speech-bubble.png in Resources */,

@@ -481,8 +481,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let area = estates[i]["area"] as! Double
                     let address = estates[i]["address"] as! AnyObject
                     
-                    let district = address["district"]
-                        as! String
+                    let district = address["district"] as! String
                     
                     
                  
@@ -1041,8 +1040,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         //cell.myHouse.image = UIImage(named: mang2[indexPath.row].image + ".jpg")
         let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
         cell.myHouse.image = UIImage(data: data)
-        cell.lblGia.text = String(mang2[indexPath.row].gia)
-        cell.lblDIenTich.text = String(mang2[indexPath.row].dientich)
+        cell.lblGia.text = String(mang2[indexPath.row].gia) + " triệu"
+        cell.lblDIenTich.text = String(mang2[indexPath.row].dientich) + " m2"
         if (check(x: mang2[indexPath.row].quan))
         {
             cell.lblQuan.text = "Quận " + mang2[indexPath.row].quan

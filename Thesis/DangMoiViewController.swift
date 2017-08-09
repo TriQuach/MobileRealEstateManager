@@ -12,6 +12,7 @@ import M13Checkbox
 import DropDown
 class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    @IBOutlet weak var lblTinhTrang: UILabel!
     @IBOutlet weak var loading2: UIActivityIndicatorView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     var check:Int = 9999
@@ -22,30 +23,30 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     var mangPhotos:[Photo] = []
     var mangWard:[String] = []
     var mangDistrict:[String] = [
-        "Quận 1",
-        "Quận 2",
-        "Quận 3",
-        "Quận 4",
-        "Quận 5",
-        "Quận 6",
-        "Quận 7",
-        "Quận 8",
-        "Quận 9",
-        "Quận 10",
-        "Quận 11",
-        "Quận 12",
-        "Quận Thủ Đức",
-        "Quận Gò Vấp",
-        "Quận Bình Thạnh",
-        "Quận Tân Bình",
-        "Quận Tân Phú",
-        "Quận Phú Nhuận",
-        "Quận Bình Tân",
-        "Huyện Củ Chi",
-        "Huyện Hóc Môn",
-        "Huyện Bình Chánh",
-        "Huyện Nhà Bè",
-        "Huyện Cần Giờ"
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "Thủ Đức",
+        "Gò Vấp",
+        "Bình Thạnh",
+        "Tân Bình",
+        "Tân Phú",
+        "Phú Nhuận",
+        "Bình Tân",
+        "Củ Chi",
+        "Hóc Môn",
+        "Bình Chánh",
+        "Nhà Bè",
+        "Cần Giờ"
     ]
     var mangLoai:[String] = [
         "Căn hộ chung cư",
@@ -58,6 +59,17 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         "Khu nghỉ dưỡng",
         "Kho, xưởng"
     
+    ]
+    var mangHuongNha:[String] = [
+        "Tất cả",
+        "Đông",
+        "Tây",
+        "Nam",
+        "Bắc",
+        "Đông-Bắc",
+        "Tây-Bắc",
+        "Tây-Nam",
+        "Đông-Nam"
     ]
     var idEstate:Int = 0
     @IBOutlet weak var myClv: UICollectionView!
@@ -76,6 +88,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var dropPhuong: UIView!
     @IBOutlet weak var lblQuan: UILabel!
     @IBOutlet weak var lblPhuong: UILabel!
+    @IBOutlet weak var dropHuongNha: UIView!
     
     @IBOutlet weak var edtDienTich: UITextField!
     
@@ -95,6 +108,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     let dropDown2 = DropDown()
     let dropDown3 = DropDown()
     let dropDown4 = DropDown()
+    let dropDown5 = DropDown()
     var flag2:Int = 0
     var takenImage = UIImage(named: "add2.png")
     var mang:[UIImage] = []
@@ -108,7 +122,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         initDropDown(x: dropQuan)
         initDropDown(x: dropPhuong)
         initDropDown(x: dropLoai)
-        
+        initDropDown(x: dropHuongNha)
    
 
         myClv.delegate = self
@@ -164,7 +178,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
             dropDown.anchorView = x // UIView or UIBarButtonItem
             
             dropDown.dataSource = [
-                "Thành phố Hồ Chí Minh"
+                "Hồ Chí Minh"
             ]
             dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
                 self.lblThanhPho.text = item
@@ -227,6 +241,20 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
             x.isUserInteractionEnabled = true
             x.addGestureRecognizer(tap)
         }
+        else if (x.tag == 4)
+        {
+            dropDown5.anchorView = x
+            dropDown5.dataSource = self.mangHuongNha
+            dropDown5.selectionAction = { [unowned self] (index: Int, item: String) in
+                self.lblTinhTrang.text = item
+                
+                
+            }
+            
+            let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped6))
+            x.isUserInteractionEnabled = true
+            x.addGestureRecognizer(tap)
+        }
     }
     func showDrop(dropDown: DropDown, x:UIView, lbl:UILabel)
     {
@@ -256,6 +284,10 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
     func imgMoreTapped5()
     {
         dropDown4.show()
+    }
+    func imgMoreTapped6()
+    {
+        dropDown5.show()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -347,7 +379,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let address:Address = Address(city: self.lblThanhPho.text!, district: self.lblQuan.text!, ward: self.lblPhuong.text!, address: self.edtSoNha.text!, id: 0)
         
-        let detail:Detail = Detail(bathroom: Int(self.edtSoPhongNgu.text!)!, bedroom: Int(self.edtSoPhongTam.text!)!, condition: self.edtTinhTrang.text!, description: self.edtMoTa.text!, floor: Int(self.edtSoTang.text!)!, length: Double(self.edtChieuDai.text!)!, width: Double(self.edtChieuRong.text!)!, longitude: lng, latitude: lat, id: 0)
+        let detail:Detail = Detail(bathroom: Int(self.edtSoPhongNgu.text!)!, bedroom: Int(self.edtSoPhongTam.text!)!, condition: self.lblTinhTrang.text!, description: self.edtMoTa.text!, floor: Int(self.edtSoTang.text!)!, length: Double(self.edtChieuDai.text!)!, width: Double(self.edtChieuRong.text!)!, longitude: lng, latitude: lat, id: 0)
         
         
         let type = self.loai
@@ -388,14 +420,21 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
                 
                 
                 DispatchQueue.main.async {
-                    self.idEstate = json["id"] as! Int
-                    self.parseImageToArray()
-                    
-                    self.sendRequestImageApi()
-                    
-                    
-                    
-                    
+                    if (json["statuskey"] as! Bool)
+                    {
+                        self.idEstate = json["id"] as! Int
+                        self.parseImageToArray()
+                        
+                        self.sendRequestImageApi()
+                        
+                        
+                    }
+                    else
+                    {
+                        let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
                     
                     
                     
