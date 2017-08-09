@@ -636,7 +636,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseImageInterested()
     {
   
-        
+        if (mang.count == 0)
+        {
+            self.loading.isHidden = true
+        }
         for i in 0..<mang.count
         {
             let id = mang[i].ID

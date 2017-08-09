@@ -726,10 +726,10 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                         self.lblName.text = newFullEstate.name
                     }
                     self.lblOwner.text = newFullEstate.owner.fullName
-                    self.lblAdressEstate.text = newFullEstate.address.city
+                    self.lblAdressEstate.text = newFullEstate.address.address + " " + newFullEstate.address.ward + " " + newFullEstate.address.district + " " + newFullEstate.address.city
                   //  self.lblPosdate.text = newFullEstate.postTime
                     
-                    self.lblEdit.text = self.parseDateTime(str: newFullEstate.editTime)
+                    self.lblEdit.text = self.changeFormatDateAfterParse(x: self.parseDateTime(str: newFullEstate.editTime)) 
                     self.lblLoai.text = newFullEstate.type
                     //self.idOwner = newFullEstate.owner.id
                     if (newFullEstate.area == 0 || newFullEstate.area == -1)
@@ -1111,6 +1111,15 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
             }catch{}
         }
         task.resume()
+    }
+    func changeFormatDateAfterParse(x: String) -> String
+    {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "MMM d, yyyy"
+        let showDate = inputFormatter.date(from: x)
+        inputFormatter.dateFormat = "dd/MM/yyyy"
+        let resultString = inputFormatter.string(from: showDate!)
+        return resultString
     }
     
 }

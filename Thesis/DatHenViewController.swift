@@ -43,6 +43,7 @@ class DatHenViewController: UIViewController {
         lblBDSLienQuan.isUserInteractionEnabled = true
         lblBDSLienQuan.addGestureRecognizer(tap)
         btnGuiYeuCau.ghostButton()
+        self.title = "Đặt lịch hẹn"
     }
 
     func imgMoreTapped()

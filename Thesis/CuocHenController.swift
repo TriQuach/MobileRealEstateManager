@@ -221,7 +221,7 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DetailCuocHenTableViewCell
         cell.lblDiaChi.text = mang[indexPath.row].address
         cell.lblTieuDe.text = mang[indexPath.row].name
-        cell.lblThoiGian.text = mang[indexPath.row].time
+        cell.lblThoiGian.text = changeFormatDateAfterParse(x: mang[indexPath.row].time)
         if (mang[indexPath.row].status == 1)
         {
             cell.tinhTrang.text = "Đang chờ"
@@ -295,6 +295,15 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
 //        let tabbar = storyboard.instantiateViewController(withIdentifier: "DangBai") as! DangBaiViewController
 //        self.navigationController?.pushViewController(tabbar, animated: true)
 //    }
+    func changeFormatDateAfterParse(x: String) -> String
+    {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "MMM dd, yyyy hh:mm:ss aa"
+        let showDate = inputFormatter.date(from: x)
+        inputFormatter.dateFormat = "hh:mm:ss aa dd/MM/yyyy"
+        let resultString = inputFormatter.string(from: showDate!)
+        return resultString
+    }
     
     
 }
