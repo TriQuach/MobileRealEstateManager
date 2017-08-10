@@ -1,21 +1,32 @@
 PODS:
   - DateTimePicker (1.1.2)
   - DropDown (2)
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
   - LTMorphingLabel (0.4.0)
   - M13Checkbox (3.1.3)
 
 DEPENDENCIES:
   - DateTimePicker
   - DropDown
+  - GoogleMaps
+  - GooglePlaces
   - LTMorphingLabel
   - M13Checkbox
 
 SPEC CHECKSUMS:
   DateTimePicker: 518bffa5438ef83a7a687cc4d5e187e5c12012b8
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   LTMorphingLabel: d9a85f16ac306f0e07321d6819964deb2dc69638
   M13Checkbox: c132a7e0eb964731855eff67b883a0b21b7c0977
 
-PODFILE CHECKSUM: 309a6162fc51f660f40af2284edcf8f095c87eb5
+PODFILE CHECKSUM: 9cf701f95ee42ab62ff95b0ddfe795f253415c63
 
 COCOAPODS: 1.2.1

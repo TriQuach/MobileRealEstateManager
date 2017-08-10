@@ -10,4 +10,6 @@ pod 'M13Checkbox'
 pod 'LTMorphingLabel'
 pod 'DropDown'
 pod 'DateTimePicker'
+pod 'GoogleMaps'
+pod 'GooglePlaces'
 end

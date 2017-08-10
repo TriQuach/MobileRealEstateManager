@@ -7,72 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02CAE638EF1CEEBD6F5740498F9CA3F8 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBFA79159AEEE0B008F4F338F01A9EE /* DropDown.swift */; };
-		098F056D90AF9CD3FD60D8A81DF043B6 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E51B365E33D7353FAA09704855EF21 /* DropDownCell.swift */; };
+		02CAE638EF1CEEBD6F5740498F9CA3F8 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435ECF9C44E5F7C2D9D0B535FB807F85 /* DropDown.swift */; };
+		098F056D90AF9CD3FD60D8A81DF043B6 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A151435974A1EBEC03B908032574A2E /* DropDownCell.swift */; };
 		11E3AA50770E4F964EC4C25E7FB505FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB56A22A987E846FF65248DA108CAD2 /* Foundation.framework */; };
 		15FFB9A0EA34A068BEDEE0033DA818DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB56A22A987E846FF65248DA108CAD2 /* Foundation.framework */; };
-		1F72B13D64EB67F17BE4F6F1DA3A4898 /* DateTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C9B561CAF460B9E3AE45E093F53CD1 /* DateTimePicker.swift */; };
-		220A91F8CE8669B742B00CD3C81C3910 /* LTMorphingLabel+Anvil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFC49E484D47D7514281BF15DA383B4 /* LTMorphingLabel+Anvil.swift */; };
-		2534806772D59757EC8F1CC16528B9D1 /* LTStringDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0435C94563394502C48EFA99BB77D39 /* LTStringDiffResult.swift */; };
-		2E7E74DF0C455B0BC43BFDD1D0163E64 /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69E896C52126C349D33B7669B62C00E8 /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F72B13D64EB67F17BE4F6F1DA3A4898 /* DateTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCA5BC882294FAEBC7AABAAECF9A65E /* DateTimePicker.swift */; };
+		220A91F8CE8669B742B00CD3C81C3910 /* LTMorphingLabel+Anvil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512B13639E6D66CBA6801E37CBB02821 /* LTMorphingLabel+Anvil.swift */; };
+		2534806772D59757EC8F1CC16528B9D1 /* LTStringDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA8C3F5D0FC0C52996C5FC9AEA1A795 /* LTStringDiffResult.swift */; };
+		2E7E74DF0C455B0BC43BFDD1D0163E64 /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DCD6A1CC2FDCD5CEB6CADD66F32318C /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E9CD6F441E6B30601549781F5DB2D12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB56A22A987E846FF65248DA108CAD2 /* Foundation.framework */; };
-		3663AD5A53A399294F616BBB090BC98C /* LTMorphingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = F5430A414D6B3C97C28113023DC12621 /* LTMorphingLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		37C293AEA575D6E5186739D1B07805F2 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2933DC7D3741450E4EA185BAA44341 /* DropDownCell.xib */; };
-		3AFA54C6DC0961AD0F4CC8A4F1AF915E /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10CDC7932E9DEE81D2766804D17CF8 /* M13CheckboxDisclosurePathGenerator.swift */; };
+		3663AD5A53A399294F616BBB090BC98C /* LTMorphingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 69400EA2BAF776A9638386B28EA35BD1 /* LTMorphingLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37C293AEA575D6E5186739D1B07805F2 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31F95DFCE6F3F1CC08AC6F0EE1F8463 /* DropDownCell.xib */; };
+		3AFA54C6DC0961AD0F4CC8A4F1AF915E /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1658316C09154C42C9A5A22D45B9E /* M13CheckboxDisclosurePathGenerator.swift */; };
 		3CF10FD60028D33FEA60528B2101987C /* Pods-Thesis-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE6094DDE6EB40A24DD725E4EEE29853 /* Pods-Thesis-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3D976DD35C822B9B6971ED06121B4A44 /* M13CheckboxFlatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7FE9E564A66C04EA119DECD330C37 /* M13CheckboxFlatController.swift */; };
-		3E2FFD3C073383B859F71C2B1411FA89 /* M13Checkbox+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274283D349C9EC960B76324342646532 /* M13Checkbox+IB.swift */; };
-		3F8B0A80A2276127C916C8EF2CB92C07 /* LTMorphingLabel+Evaporate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DF885A1832118E2E8971E13F8DE456 /* LTMorphingLabel+Evaporate.swift */; };
-		40897730B01BE8C60FB61A02DD7A1F6A /* M13CheckboxStrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F4F7B9886C9979A5F0DB5C402A0535 /* M13CheckboxStrokeController.swift */; };
+		3D976DD35C822B9B6971ED06121B4A44 /* M13CheckboxFlatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61B4F42F8AED97E3318289C8F0DCC41 /* M13CheckboxFlatController.swift */; };
+		3E2FFD3C073383B859F71C2B1411FA89 /* M13Checkbox+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC90108B74FDBCAD073632513391968 /* M13Checkbox+IB.swift */; };
+		3F8B0A80A2276127C916C8EF2CB92C07 /* LTMorphingLabel+Evaporate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A59939A68E3F31B9898E95183F2D5D7 /* LTMorphingLabel+Evaporate.swift */; };
+		40897730B01BE8C60FB61A02DD7A1F6A /* M13CheckboxStrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0910CF3FE215D1D11D01082E0E250D /* M13CheckboxStrokeController.swift */; };
 		41A664722D0C1843EA4B040B0CFFF4E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBA94A94B982885ECCA1662BE8CD7CF /* UIKit.framework */; };
-		435090E3FE50A2A659F6F29E79B57B16 /* LTMorphingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0690CED07A8C19CB3F6FF56754006A16 /* LTMorphingEffect.swift */; };
-		442ADADA3215E1E5CA1557E708D4228C /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465712DA5BAC0F6E1FCB3E752674CEBA /* DropDown+Appearance.swift */; };
-		445378EF15B25DB3370FF77B2F6F42D7 /* M13Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FA46BF58B6D8773DB5280F871CBB8 /* M13Checkbox.swift */; };
-		4E58438F8BB95D98711E246F4516F17A /* StepCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F58D02895AB253612BF5B80E11E08 /* StepCollectionViewFlowLayout.swift */; };
-		503F70FCC6E8D6394B5243A4FA2BB520 /* LTMorphingLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 786F611C4519A382E28CDB8361B18162 /* LTMorphingLabel-dummy.m */; };
-		556D33B99B64976B2F45B25C99B5923E /* LTMorphingLabel+Burn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6AFE7CC01D307690185613D39CF59 /* LTMorphingLabel+Burn.swift */; };
+		435090E3FE50A2A659F6F29E79B57B16 /* LTMorphingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B912C7EEED07977FEB6670C92D004D /* LTMorphingEffect.swift */; };
+		442ADADA3215E1E5CA1557E708D4228C /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1E8A58B39A54C84964B80D5965BABB /* DropDown+Appearance.swift */; };
+		445378EF15B25DB3370FF77B2F6F42D7 /* M13Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D01F246C5CB8F2190C25B78DF1190B7 /* M13Checkbox.swift */; };
+		4E58438F8BB95D98711E246F4516F17A /* StepCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99099F891AC4099B0AB7F56BC3A1F8A2 /* StepCollectionViewFlowLayout.swift */; };
+		503F70FCC6E8D6394B5243A4FA2BB520 /* LTMorphingLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6460EFF72D416B031814511C123CAC40 /* LTMorphingLabel-dummy.m */; };
+		556D33B99B64976B2F45B25C99B5923E /* LTMorphingLabel+Burn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8EBF21C3D71DB641C1DDB7B7A01D8 /* LTMorphingLabel+Burn.swift */; };
 		582750E7830B8AB9CE781B5E29894B5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F748DA8F98E61F788C3488D6BA25DD /* QuartzCore.framework */; };
-		5A0F18538C3064600098A17B11F383CF /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C24A35E55427B65FD4E9E992AC5CF87 /* Sparkle.png */; };
-		6B7F6283CE6F6418FD195E43D2216FBF /* M13Checkbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F78FA05E4CBB9CE1A0377BE81387B75 /* M13Checkbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C2F96F1D97CEE4C463FF67DE81791A2 /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7602E831432634EA320F92D39CC1308 /* LTMorphingLabel+Sparkle.swift */; };
-		6C4F33723E922B3668D02B9DB0DDA879 /* LTEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EFF360BAF62172FC57ECE717777F5 /* LTEmitterView.swift */; };
-		713768DA2CB74E729CF215D49E6B6005 /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9820E8DA9D5BDE1187E3234FDDBCB4B3 /* LTCharacterLimbo.swift */; };
+		5A0F18538C3064600098A17B11F383CF /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 77067DAA9874C09A313C94657D795D31 /* Sparkle.png */; };
+		6B7F6283CE6F6418FD195E43D2216FBF /* M13Checkbox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A4ED3449A1E1F68D21A466DAAE4DFECD /* M13Checkbox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C2F96F1D97CEE4C463FF67DE81791A2 /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05427BC612E02A796784B346F3AEE3E5 /* LTMorphingLabel+Sparkle.swift */; };
+		6C4F33723E922B3668D02B9DB0DDA879 /* LTEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DDA9CFA76DCBB3C9306D81BC724CE0 /* LTEmitterView.swift */; };
+		713768DA2CB74E729CF215D49E6B6005 /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6931EDC87E6D48CE487C5BE2058911BE /* LTCharacterLimbo.swift */; };
 		7366FCE474FD9C23B4C81A54DD560A0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBA94A94B982885ECCA1662BE8CD7CF /* UIKit.framework */; };
-		76D3E2602CFAE6474D2DFA89F5328A24 /* M13CheckboxPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA66ADB22D5AFDFA24FFADBDF40D6AD /* M13CheckboxPathGenerator.swift */; };
-		7B2F6DED93FECE00717FCF5AAD0A74FF /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = E3E2C1DFFA51C6D0E9C654DFC6A8A096 /* Fragment.png */; };
-		7D15D8DD9BC19EAF886F9E3BF14279DD /* LTCharacterDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA36E72DFBBECC948D362EBB4876AEB /* LTCharacterDiffResult.swift */; };
-		80CD994ABA1A2B01AD1838A4D4BB794C /* M13CheckboxFillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9EBF718D19DDBD0A458427A8B416E4 /* M13CheckboxFillController.swift */; };
-		80E34254247C5B1984E2FB9EC58774E4 /* M13CheckboxDotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1687E9891B023F62F97DDD3E41CDB /* M13CheckboxDotController.swift */; };
-		85CB53B9E438E280DA1690CCFD778689 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC92F1F4E3E4F01375ACE7C65D63D5C1 /* M13CheckboxRadioPathGenerator.swift */; };
-		861281D2AED3C4F7A05C98BD2E496575 /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC13FF4F77312CB16A457CEBA75562EC /* LTEasing.swift */; };
+		76D3E2602CFAE6474D2DFA89F5328A24 /* M13CheckboxPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7D7D67CBE0900B8B2C2D1FF156F71 /* M13CheckboxPathGenerator.swift */; };
+		7B2F6DED93FECE00717FCF5AAD0A74FF /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = 95358ED3C37C921B88B88A8C4F0BB7E5 /* Fragment.png */; };
+		7D15D8DD9BC19EAF886F9E3BF14279DD /* LTCharacterDiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2C3C8DC1D391DACE830DD699D42860 /* LTCharacterDiffResult.swift */; };
+		80CD994ABA1A2B01AD1838A4D4BB794C /* M13CheckboxFillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6EB12BAF232177819EE528C0140F0 /* M13CheckboxFillController.swift */; };
+		80E34254247C5B1984E2FB9EC58774E4 /* M13CheckboxDotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8F0919E8499B1F273EC3FB98EA9AEF /* M13CheckboxDotController.swift */; };
+		85CB53B9E438E280DA1690CCFD778689 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929512062D9058BB9A4F4244E0DF219 /* M13CheckboxRadioPathGenerator.swift */; };
+		861281D2AED3C4F7A05C98BD2E496575 /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC89D3E5BC59CF4D5293B5911946C9F /* LTEasing.swift */; };
 		89B06DD536188A5C0ED962A319D33CDA /* Pods-Thesis-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D08B1248E1B7EEFC22BD2952FBC669BC /* Pods-Thesis-dummy.m */; };
-		8CADCF3303FB981E9F1D4670B540AEB8 /* DateTimePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9DD52065B7FAD68D11B62FAF2E6D61D /* DateTimePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8ED3FB14D1852DD05FDF6E23E94A4657 /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981897387D2254C4F84BF03830DCD9F /* M13CheckboxAddRemovePathGenerator.swift */; };
+		8CADCF3303FB981E9F1D4670B540AEB8 /* DateTimePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C878A8978008C0BA89D0CC32CE1E38C9 /* DateTimePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8ED3FB14D1852DD05FDF6E23E94A4657 /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7805EAF0931496B5C6794282005C83 /* M13CheckboxAddRemovePathGenerator.swift */; };
 		900B6F52434A35E9F88CE6D22F0E5160 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB56A22A987E846FF65248DA108CAD2 /* Foundation.framework */; };
 		92AFFB45085BA809F46F186B6496ADE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBA94A94B982885ECCA1662BE8CD7CF /* UIKit.framework */; };
-		9C1F2A5C483E99BD4D1C7E2ABF21B5FC /* LTMorphingLabel+Fall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8324AB68B4BBA4433E1F170AF2BD7557 /* LTMorphingLabel+Fall.swift */; };
-		9D0221E27E37CDA9DF26DD3CFA56D75B /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B75BC54A0526BFFB5275E94CC9A1199 /* DPDKeyboardListener.swift */; };
-		A2EFE55E2C0A1C10C7A5367B47C7D562 /* LTMorphingLabel+Pixelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E24E32BDD059E752294728F15D37 /* LTMorphingLabel+Pixelate.swift */; };
-		A401CF18D15DF246F40FAC4E8F06CBC7 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA24173A40022A8C1FE469F4D84ADF4 /* DPDUIView+Extension.swift */; };
-		A812E7811821F66B3B7499F6F1B513BA /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF60966CA37C0B27F31FB8286742AEE /* DPDConstants.swift */; };
-		AAE54CDA46FD620F4BC54BC583EA255C /* M13Checkbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D91C7BA794C624FA5873864F0765455 /* M13Checkbox-dummy.m */; };
-		AC6581D9387744158B44BE683403C3BC /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DABF101D3A5111D05C68EEC5D0F07D7 /* DropDown-dummy.m */; };
-		B03B5CC4D259EEC129F8DCF35675ECDD /* LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1375BEB22826B3B291F835A6ABA69657 /* LTMorphingLabel.swift */; };
-		BB2873D1E6440D5510A3E40A1F0D38A3 /* LTMorphingLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0CE6D6793E75DB6D6B72D15346532F1 /* LTMorphingLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BCB82BDDA7C30F0B0AFE479CC479B522 /* M13CheckboxExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D178F55163AEA10F5096719E7EBAF8 /* M13CheckboxExpandController.swift */; };
-		C277B9EAC728D880FF1F15EE98C8B200 /* M13CheckboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F616CD133E5A24030644DBA2E2D11 /* M13CheckboxController.swift */; };
-		C33B83A0DF5502DFFA0E1BEEA8074686 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BF40CA2081B430962CACF9189201F7 /* DateCollectionViewCell.swift */; };
-		C6D0B50C214C9E7CC815F2773D702779 /* M13CheckboxAnimationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E34CA846083E6945AB0B35394E9C72 /* M13CheckboxAnimationGenerator.swift */; };
-		C8D41C0D4E89BE8510BA40F04EFF4FA8 /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1CFAF0D64490DCD7320FB360BC7ED /* M13CheckboxCheckPathGenerator.swift */; };
-		D6039515F84B2167BBAC8D1CE12A5F4E /* M13CheckboxGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0667AF3BFEB5D0D3D4CAFB56C2AF9B /* M13CheckboxGestureRecognizer.swift */; };
+		9C1F2A5C483E99BD4D1C7E2ABF21B5FC /* LTMorphingLabel+Fall.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9568557FAA9DEC1556B5AB5875A881 /* LTMorphingLabel+Fall.swift */; };
+		9D0221E27E37CDA9DF26DD3CFA56D75B /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59AA3657314E7FF1AA27CCE2DCA7CD /* DPDKeyboardListener.swift */; };
+		A2EFE55E2C0A1C10C7A5367B47C7D562 /* LTMorphingLabel+Pixelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F2968882AE6DCFF249B743811B7F0A /* LTMorphingLabel+Pixelate.swift */; };
+		A401CF18D15DF246F40FAC4E8F06CBC7 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBE0C2FCF88ECE3114CE770CC6FB60E /* DPDUIView+Extension.swift */; };
+		A812E7811821F66B3B7499F6F1B513BA /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2B750E80371F8A6BEA3BCBD3624D55 /* DPDConstants.swift */; };
+		AAE54CDA46FD620F4BC54BC583EA255C /* M13Checkbox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E211F63BBF9F2CC2B53EAA61F54E1F /* M13Checkbox-dummy.m */; };
+		AC6581D9387744158B44BE683403C3BC /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3807209B462DD4D2CBA0D7DEFD57899 /* DropDown-dummy.m */; };
+		B03B5CC4D259EEC129F8DCF35675ECDD /* LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CDDED9D3235598F3E317C815DF6752 /* LTMorphingLabel.swift */; };
+		BB2873D1E6440D5510A3E40A1F0D38A3 /* LTMorphingLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A6E73A1B9A71C1BBD1AE6493A23B662 /* LTMorphingLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BCB82BDDA7C30F0B0AFE479CC479B522 /* M13CheckboxExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339D3E5BEC8093DF5C7E6BC6B03E0EA /* M13CheckboxExpandController.swift */; };
+		C277B9EAC728D880FF1F15EE98C8B200 /* M13CheckboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585345DF183D2A0001BCBBF8088CEF /* M13CheckboxController.swift */; };
+		C33B83A0DF5502DFFA0E1BEEA8074686 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63EAC5D73F37ED91D6662A75759225 /* DateCollectionViewCell.swift */; };
+		C6D0B50C214C9E7CC815F2773D702779 /* M13CheckboxAnimationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C660475AC9BD68C292439EF73CDB8 /* M13CheckboxAnimationGenerator.swift */; };
+		C8D41C0D4E89BE8510BA40F04EFF4FA8 /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C046D27D8F91E55DA847BCCB702CD9F /* M13CheckboxCheckPathGenerator.swift */; };
+		D6039515F84B2167BBAC8D1CE12A5F4E /* M13CheckboxGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F234F017B1B0841CB5833D8E03D490 /* M13CheckboxGestureRecognizer.swift */; };
 		DABDCA7CE194CD3751F71A36A1646795 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB56A22A987E846FF65248DA108CAD2 /* Foundation.framework */; };
-		DC5265617A5609213FCFF90275216F9C /* DateTimePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1720779DD9E9CCCE37D22AD5EEA38B0 /* DateTimePicker-dummy.m */; };
-		E250AA9522C3A393033ECF5CB29E1449 /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8ACFF6D4C92892F05095676F144BA0 /* Fire.png */; };
+		DC5265617A5609213FCFF90275216F9C /* DateTimePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF97CD985825E71A211572DB07993BA /* DateTimePicker-dummy.m */; };
+		E250AA9522C3A393033ECF5CB29E1449 /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D654E7C107E71849F18863E76602BE /* Fire.png */; };
 		EAFC0EA4762962766C946FC37569310A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3292CC8DBF6352C2BF2B949CB548248F /* CoreGraphics.framework */; };
-		F7A5B0214108C732898DD2C00BA6FE56 /* M13CheckboxBounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC0E3CDFC00DEF70E1A121DD6780DD /* M13CheckboxBounceController.swift */; };
-		FA2B271AAF040F6C1B860C6C3DF0558F /* M13CheckboxSpiralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336BD8E4A5D67978E6684486383A0B17 /* M13CheckboxSpiralController.swift */; };
-		FBAEB0A61D7D3D4DD723D11671A814BB /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 926F7C6B62686C59A9B881E9976FC836 /* Smoke.png */; };
-		FFF489DE367C237C0E8F7E4442DA06D7 /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E4329D3D97D9689AF95DF93361043F /* M13CheckboxFadeController.swift */; };
+		F7A5B0214108C732898DD2C00BA6FE56 /* M13CheckboxBounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7824ED3FE23F31BC64534204D02C85 /* M13CheckboxBounceController.swift */; };
+		FA2B271AAF040F6C1B860C6C3DF0558F /* M13CheckboxSpiralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F51286C108409EC2CE8322B5CD4444 /* M13CheckboxSpiralController.swift */; };
+		FBAEB0A61D7D3D4DD723D11671A814BB /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBA110816B8A192E03D3FEC5569EA7 /* Smoke.png */; };
+		FFF489DE367C237C0E8F7E4442DA06D7 /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A7226E808E7F42B268A192E1A9D7D8 /* M13CheckboxFadeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,95 +107,101 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01E51B365E33D7353FAA09704855EF21 /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
-		027F58D02895AB253612BF5B80E11E08 /* StepCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepCollectionViewFlowLayout.swift; path = Source/StepCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		0690CED07A8C19CB3F6FF56754006A16 /* LTMorphingEffect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTMorphingEffect.swift; path = LTMorphingLabel/LTMorphingEffect.swift; sourceTree = "<group>"; };
-		07E34CA846083E6945AB0B35394E9C72 /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
-		0B75BC54A0526BFFB5275E94CC9A1199 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
-		0BA36E72DFBBECC948D362EBB4876AEB /* LTCharacterDiffResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTCharacterDiffResult.swift; path = LTMorphingLabel/LTCharacterDiffResult.swift; sourceTree = "<group>"; };
-		10D6AFE7CC01D307690185613D39CF59 /* LTMorphingLabel+Burn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Burn.swift"; path = "LTMorphingLabel/LTMorphingLabel+Burn.swift"; sourceTree = "<group>"; };
-		1375BEB22826B3B291F835A6ABA69657 /* LTMorphingLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTMorphingLabel.swift; path = LTMorphingLabel/LTMorphingLabel.swift; sourceTree = "<group>"; };
-		164EFF360BAF62172FC57ECE717777F5 /* LTEmitterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTEmitterView.swift; path = LTMorphingLabel/LTEmitterView.swift; sourceTree = "<group>"; };
-		19517EB8787BF505D2BB66CDA1670B1F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C24A35E55427B65FD4E9E992AC5CF87 /* Sparkle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Sparkle.png; path = LTMorphingLabel/Particles/Sparkle.png; sourceTree = "<group>"; };
-		1CF1687E9891B023F62F97DDD3E41CDB /* M13CheckboxDotController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDotController.swift; path = Sources/Managers/M13CheckboxDotController.swift; sourceTree = "<group>"; };
-		1F8ACFF6D4C92892F05095676F144BA0 /* Fire.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Fire.png; path = LTMorphingLabel/Particles/Fire.png; sourceTree = "<group>"; };
-		25D178F55163AEA10F5096719E7EBAF8 /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandController.swift; path = Sources/Managers/M13CheckboxExpandController.swift; sourceTree = "<group>"; };
-		26C9B561CAF460B9E3AE45E093F53CD1 /* DateTimePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTimePicker.swift; path = Source/DateTimePicker.swift; sourceTree = "<group>"; };
-		274283D349C9EC960B76324342646532 /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
+		05427BC612E02A796784B346F3AEE3E5 /* LTMorphingLabel+Sparkle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Sparkle.swift"; path = "LTMorphingLabel/LTMorphingLabel+Sparkle.swift"; sourceTree = "<group>"; };
+		0768A2C50BB50658E9772C1F856B262A /* DateTimePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DateTimePicker.modulemap; sourceTree = "<group>"; };
+		0A151435974A1EBEC03B908032574A2E /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
+		115CDBD9EE5E359D35FD377C9AC95DFC /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		1415C65B39C2E37CBE95E8564FF531CC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19A7226E808E7F42B268A192E1A9D7D8 /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
+		1DCD6A1CC2FDCD5CEB6CADD66F32318C /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
+		1DD7D7D67CBE0900B8B2C2D1FF156F71 /* M13CheckboxPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxPathGenerator.swift; path = Sources/Paths/M13CheckboxPathGenerator.swift; sourceTree = "<group>"; };
+		245539058BC43FE363D74DED8C38FD48 /* DropDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.xcconfig; sourceTree = "<group>"; };
+		26DDA9CFA76DCBB3C9306D81BC724CE0 /* LTEmitterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTEmitterView.swift; path = LTMorphingLabel/LTEmitterView.swift; sourceTree = "<group>"; };
+		2A59939A68E3F31B9898E95183F2D5D7 /* LTMorphingLabel+Evaporate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Evaporate.swift"; path = "LTMorphingLabel/LTMorphingLabel+Evaporate.swift"; sourceTree = "<group>"; };
+		2C8F0919E8499B1F273EC3FB98EA9AEF /* M13CheckboxDotController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDotController.swift; path = Sources/Managers/M13CheckboxDotController.swift; sourceTree = "<group>"; };
+		2EC90108B74FDBCAD073632513391968 /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
+		2FB8EBF21C3D71DB641C1DDB7B7A01D8 /* LTMorphingLabel+Burn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Burn.swift"; path = "LTMorphingLabel/LTMorphingLabel+Burn.swift"; sourceTree = "<group>"; };
 		3292CC8DBF6352C2BF2B949CB548248F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		336BD8E4A5D67978E6684486383A0B17 /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
-		3D2933DC7D3741450E4EA185BAA44341 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
-		3EF60966CA37C0B27F31FB8286742AEE /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
-		3F78FA05E4CBB9CE1A0377BE81387B75 /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
-		40AC0E3CDFC00DEF70E1A121DD6780DD /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxBounceController.swift; path = Sources/Managers/M13CheckboxBounceController.swift; sourceTree = "<group>"; };
-		40DF885A1832118E2E8971E13F8DE456 /* LTMorphingLabel+Evaporate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Evaporate.swift"; path = "LTMorphingLabel/LTMorphingLabel+Evaporate.swift"; sourceTree = "<group>"; };
-		422BE132705D781D39EF8BB25842BE7F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44B1CFAF0D64490DCD7320FB360BC7ED /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxCheckPathGenerator.swift; path = Sources/Paths/M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
-		465712DA5BAC0F6E1FCB3E752674CEBA /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		34D654E7C107E71849F18863E76602BE /* Fire.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Fire.png; path = LTMorphingLabel/Particles/Fire.png; sourceTree = "<group>"; };
+		3A6E73A1B9A71C1BBD1AE6493A23B662 /* LTMorphingLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LTMorphingLabel-umbrella.h"; sourceTree = "<group>"; };
+		3D01F246C5CB8F2190C25B78DF1190B7 /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
+		40E211F63BBF9F2CC2B53EAA61F54E1F /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
+		435ECF9C44E5F7C2D9D0B535FB807F85 /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
+		48F76EC6DEB0A1C14FFE9E7675E446F0 /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
 		4C06572EDA3CECF81FD4153C7332D4C5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E10CDC7932E9DEE81D2766804D17CF8 /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
-		501ADC331D7B824BB53256C2B122674A /* LTMorphingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LTMorphingLabel-prefix.pch"; sourceTree = "<group>"; };
-		5A1DAE742B39C3EB83F1B766098BEB6F /* DateTimePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DateTimePicker.xcconfig; sourceTree = "<group>"; };
+		4D4B37BB4099682DCC9BE4A286A3CC8F /* LTMorphingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LTMorphingLabel-prefix.pch"; sourceTree = "<group>"; };
+		512B13639E6D66CBA6801E37CBB02821 /* LTMorphingLabel+Anvil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Anvil.swift"; path = "LTMorphingLabel/LTMorphingLabel+Anvil.swift"; sourceTree = "<group>"; };
+		5929512062D9058BB9A4F4244E0DF219 /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
 		5BDCC2994A885BF6C43FEC0A1A6168F3 /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M13Checkbox.framework; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCF5C1C19F879DE9392E62611E386E4 /* Pods_Thesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Thesis.framework; path = "Pods-Thesis.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D2D314DCDAFD631EF12FF3ACF8637FF /* M13Checkbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-prefix.pch"; sourceTree = "<group>"; };
-		5D91C7BA794C624FA5873864F0765455 /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
-		5EFC49E484D47D7514281BF15DA383B4 /* LTMorphingLabel+Anvil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Anvil.swift"; path = "LTMorphingLabel/LTMorphingLabel+Anvil.swift"; sourceTree = "<group>"; };
+		5DA1658316C09154C42C9A5A22D45B9E /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDisclosurePathGenerator.swift; path = Sources/Paths/M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
+		60F6593C8AF07C3676CCE92BA3D49AD1 /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
+		63F234F017B1B0841CB5833D8E03D490 /* M13CheckboxGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxGestureRecognizer.swift; path = Sources/M13CheckboxGestureRecognizer.swift; sourceTree = "<group>"; };
 		643C00BB571CCDC37CAACB18CC19E428 /* LTMorphingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LTMorphingLabel.framework; path = LTMorphingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		69E896C52126C349D33B7669B62C00E8 /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
-		6C9EBF718D19DDBD0A458427A8B416E4 /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
+		6460EFF72D416B031814511C123CAC40 /* LTMorphingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LTMorphingLabel-dummy.m"; sourceTree = "<group>"; };
+		6931EDC87E6D48CE487C5BE2058911BE /* LTCharacterLimbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTCharacterLimbo.swift; path = LTMorphingLabel/LTCharacterLimbo.swift; sourceTree = "<group>"; };
+		69400EA2BAF776A9638386B28EA35BD1 /* LTMorphingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LTMorphingLabel.h; path = LTMorphingLabel/LTMorphingLabel.h; sourceTree = "<group>"; };
 		7025351BD626F302BA8F904E5C11B0CD /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropDown.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		723C660475AC9BD68C292439EF73CDB8 /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAnimationGenerator.swift; path = Sources/M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
 		732F5B16C61CB05E22B182FE0CC6A09F /* Pods-Thesis-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Thesis-resources.sh"; sourceTree = "<group>"; };
+		77067DAA9874C09A313C94657D795D31 /* Sparkle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Sparkle.png; path = LTMorphingLabel/Particles/Sparkle.png; sourceTree = "<group>"; };
 		7770AD12D2C9B4FEC35AF8FCCE864290 /* Pods-Thesis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Thesis.debug.xcconfig"; sourceTree = "<group>"; };
-		786F611C4519A382E28CDB8361B18162 /* LTMorphingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LTMorphingLabel-dummy.m"; sourceTree = "<group>"; };
-		7B0667AF3BFEB5D0D3D4CAFB56C2AF9B /* M13CheckboxGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxGestureRecognizer.swift; path = Sources/M13CheckboxGestureRecognizer.swift; sourceTree = "<group>"; };
-		7B767E1DF960C99EA6D5220FB2395995 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		796761F03E13B37307600C931EC8318A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E2C3C8DC1D391DACE830DD699D42860 /* LTCharacterDiffResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTCharacterDiffResult.swift; path = LTMorphingLabel/LTCharacterDiffResult.swift; sourceTree = "<group>"; };
 		7F355122CDF3AF6AB1B8D545FFB5E742 /* DateTimePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DateTimePicker.framework; path = DateTimePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8324AB68B4BBA4433E1F170AF2BD7557 /* LTMorphingLabel+Fall.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Fall.swift"; path = "LTMorphingLabel/LTMorphingLabel+Fall.swift"; sourceTree = "<group>"; };
-		8521218DA486C2C4B37AF425EF0038C8 /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
+		8AA8C3F5D0FC0C52996C5FC9AEA1A795 /* LTStringDiffResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTStringDiffResult.swift; path = LTMorphingLabel/LTStringDiffResult.swift; sourceTree = "<group>"; };
 		8B28E43A6413058EC4767FEFB78765D8 /* Pods-Thesis-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Thesis-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8CF7FE9E564A66C04EA119DECD330C37 /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatController.swift; path = Sources/Managers/M13CheckboxFlatController.swift; sourceTree = "<group>"; };
-		8DABF101D3A5111D05C68EEC5D0F07D7 /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
-		926F7C6B62686C59A9B881E9976FC836 /* Smoke.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Smoke.png; path = LTMorphingLabel/Particles/Smoke.png; sourceTree = "<group>"; };
+		8C7805EAF0931496B5C6794282005C83 /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
+		8CCA5BC882294FAEBC7AABAAECF9A65E /* DateTimePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTimePicker.swift; path = Source/DateTimePicker.swift; sourceTree = "<group>"; };
+		8D2B750E80371F8A6BEA3BCBD3624D55 /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
+		8FFBA110816B8A192E03D3FEC5569EA7 /* Smoke.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Smoke.png; path = LTMorphingLabel/Particles/Smoke.png; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94670F3E76D899DBDF3789DB5F807AB0 /* Pods-Thesis-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Thesis-frameworks.sh"; sourceTree = "<group>"; };
-		9820E8DA9D5BDE1187E3234FDDBCB4B3 /* LTCharacterLimbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTCharacterLimbo.swift; path = LTMorphingLabel/LTCharacterLimbo.swift; sourceTree = "<group>"; };
-		9A26B5609E1774130840395F0CFAA452 /* M13Checkbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.xcconfig; sourceTree = "<group>"; };
-		9DA66ADB22D5AFDFA24FFADBDF40D6AD /* M13CheckboxPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxPathGenerator.swift; path = Sources/Paths/M13CheckboxPathGenerator.swift; sourceTree = "<group>"; };
-		A00BBA9845407B8C7813581444C98531 /* DateTimePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DateTimePicker.modulemap; sourceTree = "<group>"; };
+		95358ED3C37C921B88B88A8C4F0BB7E5 /* Fragment.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Fragment.png; path = LTMorphingLabel/Particles/Fragment.png; sourceTree = "<group>"; };
+		96566543E6E802F954FCF41BAC4F99F3 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		97CD609819B4CFE6F6A848B5D13D09D0 /* DateTimePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DateTimePicker.xcconfig; sourceTree = "<group>"; };
+		98435CA68D044E7FF88CA14E2F853900 /* LTMorphingLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LTMorphingLabel.modulemap; sourceTree = "<group>"; };
+		99099F891AC4099B0AB7F56BC3A1F8A2 /* StepCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepCollectionViewFlowLayout.swift; path = Source/StepCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		9C046D27D8F91E55DA847BCCB702CD9F /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxCheckPathGenerator.swift; path = Sources/Paths/M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
+		9CC89B0D6ACA9228A448648C940125C6 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		9DD0F4F52F004F9907247512F2AE5445 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		9E7824ED3FE23F31BC64534204D02C85 /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxBounceController.swift; path = Sources/Managers/M13CheckboxBounceController.swift; sourceTree = "<group>"; };
 		A1073ECEF3D9903AAD028E6B588FA088 /* Pods-Thesis-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Thesis-acknowledgements.plist"; sourceTree = "<group>"; };
-		A16D1A64D888D6420995AB5AF0F1BF29 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A72F616CD133E5A24030644DBA2E2D11 /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
-		A9F4F7B9886C9979A5F0DB5C402A0535 /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeController.swift; path = Sources/Managers/M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
-		AF14E24E32BDD059E752294728F15D37 /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Pixelate.swift"; path = "LTMorphingLabel/LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
-		B1720779DD9E9CCCE37D22AD5EEA38B0 /* DateTimePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DateTimePicker-dummy.m"; sourceTree = "<group>"; };
-		B21FA46BF58B6D8773DB5280F871CBB8 /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
-		B652AE52374E05F1DC5473A58E6D47ED /* LTMorphingLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LTMorphingLabel.xcconfig; sourceTree = "<group>"; };
-		B981897387D2254C4F84BF03830DCD9F /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxAddRemovePathGenerator.swift; path = Sources/Paths/M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
-		BC7040A8DC503190326279E2998304EC /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
-		BC92F1F4E3E4F01375ACE7C65D63D5C1 /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxRadioPathGenerator.swift; path = Sources/Paths/M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
+		A2B912C7EEED07977FEB6670C92D004D /* LTMorphingEffect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTMorphingEffect.swift; path = LTMorphingLabel/LTMorphingEffect.swift; sourceTree = "<group>"; };
+		A4ED3449A1E1F68D21A466DAAE4DFECD /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
+		AC1E8A58B39A54C84964B80D5965BABB /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		AD59AA3657314E7FF1AA27CCE2DCA7CD /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
+		BD98A010022250B3F28A43CB63D649B8 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		BE9FFF14F5F8F95B62B49304802B2B8E /* Pods-Thesis.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Thesis.modulemap"; sourceTree = "<group>"; };
-		C0435C94563394502C48EFA99BB77D39 /* LTStringDiffResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTStringDiffResult.swift; path = LTMorphingLabel/LTStringDiffResult.swift; sourceTree = "<group>"; };
-		C111E4AE96541770A66FF0EB67F7A1FD /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DropDown.modulemap; sourceTree = "<group>"; };
-		C7602E831432634EA320F92D39CC1308 /* LTMorphingLabel+Sparkle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Sparkle.swift"; path = "LTMorphingLabel/LTMorphingLabel+Sparkle.swift"; sourceTree = "<group>"; };
-		C7E4329D3D97D9689AF95DF93361043F /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeController.swift; path = Sources/Managers/M13CheckboxFadeController.swift; sourceTree = "<group>"; };
-		CC13FF4F77312CB16A457CEBA75562EC /* LTEasing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTEasing.swift; path = LTMorphingLabel/LTEasing.swift; sourceTree = "<group>"; };
-		CDA24173A40022A8C1FE469F4D84ADF4 /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		C14C2FBAF9E79179DFEC479C85882620 /* M13Checkbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-prefix.pch"; sourceTree = "<group>"; };
+		C3807209B462DD4D2CBA0D7DEFD57899 /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
+		C61B4F42F8AED97E3318289C8F0DCC41 /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatController.swift; path = Sources/Managers/M13CheckboxFlatController.swift; sourceTree = "<group>"; };
+		C878A8978008C0BA89D0CC32CE1E38C9 /* DateTimePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTimePicker-umbrella.h"; sourceTree = "<group>"; };
+		CC9568557FAA9DEC1556B5AB5875A881 /* LTMorphingLabel+Fall.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Fall.swift"; path = "LTMorphingLabel/LTMorphingLabel+Fall.swift"; sourceTree = "<group>"; };
 		D08B1248E1B7EEFC22BD2952FBC669BC /* Pods-Thesis-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Thesis-dummy.m"; sourceTree = "<group>"; };
-		D0CE6D6793E75DB6D6B72D15346532F1 /* LTMorphingLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LTMorphingLabel-umbrella.h"; sourceTree = "<group>"; };
-		D1753051FC6DCBE95A6BA67259B51050 /* DateTimePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTimePicker-prefix.pch"; sourceTree = "<group>"; };
-		DB9C90CDAC84D837A7C8A613D5C8FE9E /* DropDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.xcconfig; sourceTree = "<group>"; };
+		D0F14C9B443E2A55D519ABE3C0D229E9 /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DropDown.modulemap; sourceTree = "<group>"; };
+		D6CDDED9D3235598F3E317C815DF6752 /* LTMorphingLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTMorphingLabel.swift; path = LTMorphingLabel/LTMorphingLabel.swift; sourceTree = "<group>"; };
+		DA63EAC5D73F37ED91D6662A75759225 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = Source/DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		DBBE0C2FCF88ECE3114CE770CC6FB60E /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		DD0CF6D6DA81D2B777516A17300C7C67 /* LTMorphingLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LTMorphingLabel.xcconfig; sourceTree = "<group>"; };
+		E06B908122A494BFED188389CD91DD50 /* DateTimePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTimePicker-prefix.pch"; sourceTree = "<group>"; };
+		E0C6EB12BAF232177819EE528C0140F0 /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillController.swift; path = Sources/Managers/M13CheckboxFillController.swift; sourceTree = "<group>"; };
+		E31F95DFCE6F3F1CC08AC6F0EE1F8463 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
 		E328446E6519000C42D7D5966AC715EA /* Pods-Thesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Thesis.release.xcconfig"; sourceTree = "<group>"; };
-		E3E2C1DFFA51C6D0E9C654DFC6A8A096 /* Fragment.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Fragment.png; path = LTMorphingLabel/Particles/Fragment.png; sourceTree = "<group>"; };
-		E4DD981DD11E452E12983E57CEDC4942 /* LTMorphingLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LTMorphingLabel.modulemap; sourceTree = "<group>"; };
+		E339D3E5BEC8093DF5C7E6BC6B03E0EA /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandController.swift; path = Sources/Managers/M13CheckboxExpandController.swift; sourceTree = "<group>"; };
 		E5F748DA8F98E61F788C3488D6BA25DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		EAC89D3E5BC59CF4D5293B5911946C9F /* LTEasing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTEasing.swift; path = LTMorphingLabel/LTEasing.swift; sourceTree = "<group>"; };
+		EBBB1AA7CA6FBE0496825B8B0D310A40 /* M13Checkbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.xcconfig; sourceTree = "<group>"; };
+		EC0910CF3FE215D1D11D01082E0E250D /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeController.swift; path = Sources/Managers/M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
 		ECB56A22A987E846FF65248DA108CAD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		F5430A414D6B3C97C28113023DC12621 /* LTMorphingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LTMorphingLabel.h; path = LTMorphingLabel/LTMorphingLabel.h; sourceTree = "<group>"; };
-		F8BF40CA2081B430962CACF9189201F7 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = Source/DateCollectionViewCell.swift; sourceTree = "<group>"; };
-		F9DD52065B7FAD68D11B62FAF2E6D61D /* DateTimePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DateTimePicker-umbrella.h"; sourceTree = "<group>"; };
-		FCBFA79159AEEE0B008F4F338F01A9EE /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
+		ECD8A0D403375BC79BB8ED1D2E8A0C7D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0F51286C108409EC2CE8322B5CD4444 /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralController.swift; path = Sources/Managers/M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
+		F3F2968882AE6DCFF249B743811B7F0A /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LTMorphingLabel+Pixelate.swift"; path = "LTMorphingLabel/LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
+		FA5C2B94F58B972B0A47B50A462C9036 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB7A545862A51199B8E3CD2EC6245834 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		FD585345DF183D2A0001BCBBF8088CEF /* M13CheckboxController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxController.swift; path = Sources/M13CheckboxController.swift; sourceTree = "<group>"; };
 		FDBA94A94B982885ECCA1662BE8CD7CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		FDF97CD985825E71A211572DB07993BA /* DateTimePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DateTimePicker-dummy.m"; sourceTree = "<group>"; };
 		FE6094DDE6EB40A24DD725E4EEE29853 /* Pods-Thesis-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Thesis-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +254,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03371496CCAEDD286BD2E3898EDC8CF8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E31F95DFCE6F3F1CC08AC6F0EE1F8463 /* DropDownCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0A03A895A02FF95B75341E15C29FACDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAFC69913D62C1E3C80BF084F2C497D3 /* DateTimePicker */,
+				EC41F17FDD11ACBA8186E93DEE04D000 /* DropDown */,
+				6117424CF638F32C735F8461235829FB /* GoogleMaps */,
+				251ABE1848871173DE612A14270DEA86 /* GooglePlaces */,
+				7D9BE36E6763C1029837E27D2D9193EE /* LTMorphingLabel */,
+				C2B63962F0377D96DD814A1456263701 /* M13Checkbox */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		0C18A302B28C0966F88066499F632ED7 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,16 +283,18 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		10F4BE85CFB8145F42507C8F19EB5C18 /* DateTimePicker */ = {
+		10BA29E55DDD268ECFE87D259CC80EDA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F8BF40CA2081B430962CACF9189201F7 /* DateCollectionViewCell.swift */,
-				26C9B561CAF460B9E3AE45E093F53CD1 /* DateTimePicker.swift */,
-				027F58D02895AB253612BF5B80E11E08 /* StepCollectionViewFlowLayout.swift */,
-				1ACD5B99A708DEEDD9B875F9CB2118C5 /* Support Files */,
+				0768A2C50BB50658E9772C1F856B262A /* DateTimePicker.modulemap */,
+				97CD609819B4CFE6F6A848B5D13D09D0 /* DateTimePicker.xcconfig */,
+				FDF97CD985825E71A211572DB07993BA /* DateTimePicker-dummy.m */,
+				E06B908122A494BFED188389CD91DD50 /* DateTimePicker-prefix.pch */,
+				C878A8978008C0BA89D0CC32CE1E38C9 /* DateTimePicker-umbrella.h */,
+				1415C65B39C2E37CBE95E8564FF531CC /* Info.plist */,
 			);
-			name = DateTimePicker;
-			path = DateTimePicker;
+			name = "Support Files";
+			path = "../Target Support Files/DateTimePicker";
 			sourceTree = "<group>";
 		};
 		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
@@ -274,20 +303,6 @@
 				8F8FEF3140598EAB2B3D56BB84B5389A /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1ACD5B99A708DEEDD9B875F9CB2118C5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A00BBA9845407B8C7813581444C98531 /* DateTimePicker.modulemap */,
-				5A1DAE742B39C3EB83F1B766098BEB6F /* DateTimePicker.xcconfig */,
-				B1720779DD9E9CCCE37D22AD5EEA38B0 /* DateTimePicker-dummy.m */,
-				D1753051FC6DCBE95A6BA67259B51050 /* DateTimePicker-prefix.pch */,
-				F9DD52065B7FAD68D11B62FAF2E6D61D /* DateTimePicker-umbrella.h */,
-				19517EB8787BF505D2BB66CDA1670B1F /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/DateTimePicker";
 			sourceTree = "<group>";
 		};
 		1C07B76A24DC101DC9F4AD6DEBCC80BA /* Products */ = {
@@ -302,52 +317,136 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3ABEC1E08C50D1F207A8F671F7C5D1D1 /* DropDown */ = {
+		21062D282D9316FC2FBFEEA183668940 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				3EF60966CA37C0B27F31FB8286742AEE /* DPDConstants.swift */,
-				0B75BC54A0526BFFB5275E94CC9A1199 /* DPDKeyboardListener.swift */,
-				CDA24173A40022A8C1FE469F4D84ADF4 /* DPDUIView+Extension.swift */,
-				FCBFA79159AEEE0B008F4F338F01A9EE /* DropDown.swift */,
-				465712DA5BAC0F6E1FCB3E752674CEBA /* DropDown+Appearance.swift */,
-				01E51B365E33D7353FAA09704855EF21 /* DropDownCell.swift */,
-				6E0147FF122D8ED7AF7EBAD38A2761DB /* Resources */,
-				EE7B32C4F260D3AFEB1C20AE126A5ECF /* Support Files */,
+				D94FC507C72B58C4DB9A98BB9AC490ED /* Frameworks */,
+				5A28477191B5B22E82542B42FCE3470F /* Resources */,
 			);
-			name = DropDown;
-			path = DropDown;
+			name = Maps;
 			sourceTree = "<group>";
 		};
-		4FF79A3E74AB2E56C11D3D8E5ADA6245 /* LTMorphingLabel */ = {
+		251ABE1848871173DE612A14270DEA86 /* GooglePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				0BA36E72DFBBECC948D362EBB4876AEB /* LTCharacterDiffResult.swift */,
-				9820E8DA9D5BDE1187E3234FDDBCB4B3 /* LTCharacterLimbo.swift */,
-				CC13FF4F77312CB16A457CEBA75562EC /* LTEasing.swift */,
-				164EFF360BAF62172FC57ECE717777F5 /* LTEmitterView.swift */,
-				0690CED07A8C19CB3F6FF56754006A16 /* LTMorphingEffect.swift */,
-				F5430A414D6B3C97C28113023DC12621 /* LTMorphingLabel.h */,
-				1375BEB22826B3B291F835A6ABA69657 /* LTMorphingLabel.swift */,
-				5EFC49E484D47D7514281BF15DA383B4 /* LTMorphingLabel+Anvil.swift */,
-				10D6AFE7CC01D307690185613D39CF59 /* LTMorphingLabel+Burn.swift */,
-				40DF885A1832118E2E8971E13F8DE456 /* LTMorphingLabel+Evaporate.swift */,
-				8324AB68B4BBA4433E1F170AF2BD7557 /* LTMorphingLabel+Fall.swift */,
-				AF14E24E32BDD059E752294728F15D37 /* LTMorphingLabel+Pixelate.swift */,
-				C7602E831432634EA320F92D39CC1308 /* LTMorphingLabel+Sparkle.swift */,
-				C0435C94563394502C48EFA99BB77D39 /* LTStringDiffResult.swift */,
-				AA6092D9D8340C976D8ADFAD16C4A352 /* Resources */,
-				84C9AD98FABAC6CD394665E2DD372D02 /* Support Files */,
+				67FA711E76572E8B81E9967149E53831 /* Frameworks */,
+				5243D2C4B480C94263EF9E824410EA46 /* Resources */,
+			);
+			name = GooglePlaces;
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		3006647D057276661978ACD1C7A7697F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				61F177C928A1DEB2CF2329EA99E9DCE1 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		453F98437FD88D315312F027A91C1CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34D654E7C107E71849F18863E76602BE /* Fire.png */,
+				95358ED3C37C921B88B88A8C4F0BB7E5 /* Fragment.png */,
+				8FFBA110816B8A192E03D3FEC5569EA7 /* Smoke.png */,
+				77067DAA9874C09A313C94657D795D31 /* Sparkle.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5243D2C4B480C94263EF9E824410EA46 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				115CDBD9EE5E359D35FD377C9AC95DFC /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5A28477191B5B22E82542B42FCE3470F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9CC89B0D6ACA9228A448648C940125C6 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6117424CF638F32C735F8461235829FB /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				3006647D057276661978ACD1C7A7697F /* Base */,
+				21062D282D9316FC2FBFEEA183668940 /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		61F177C928A1DEB2CF2329EA99E9DCE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD98A010022250B3F28A43CB63D649B8 /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67FA711E76572E8B81E9967149E53831 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB7A545862A51199B8E3CD2EC6245834 /* GooglePlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D409185A65B2EE4635EB599A4EE0315 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0F14C9B443E2A55D519ABE3C0D229E9 /* DropDown.modulemap */,
+				245539058BC43FE363D74DED8C38FD48 /* DropDown.xcconfig */,
+				C3807209B462DD4D2CBA0D7DEFD57899 /* DropDown-dummy.m */,
+				48F76EC6DEB0A1C14FFE9E7675E446F0 /* DropDown-prefix.pch */,
+				1DCD6A1CC2FDCD5CEB6CADD66F32318C /* DropDown-umbrella.h */,
+				796761F03E13B37307600C931EC8318A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DropDown";
+			sourceTree = "<group>";
+		};
+		78B9EAEE86D3C73ADABB13658CA092F2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA5C2B94F58B972B0A47B50A462C9036 /* Info.plist */,
+				60F6593C8AF07C3676CCE92BA3D49AD1 /* M13Checkbox.modulemap */,
+				EBBB1AA7CA6FBE0496825B8B0D310A40 /* M13Checkbox.xcconfig */,
+				40E211F63BBF9F2CC2B53EAA61F54E1F /* M13Checkbox-dummy.m */,
+				C14C2FBAF9E79179DFEC479C85882620 /* M13Checkbox-prefix.pch */,
+				A4ED3449A1E1F68D21A466DAAE4DFECD /* M13Checkbox-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/M13Checkbox";
+			sourceTree = "<group>";
+		};
+		7D9BE36E6763C1029837E27D2D9193EE /* LTMorphingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				7E2C3C8DC1D391DACE830DD699D42860 /* LTCharacterDiffResult.swift */,
+				6931EDC87E6D48CE487C5BE2058911BE /* LTCharacterLimbo.swift */,
+				EAC89D3E5BC59CF4D5293B5911946C9F /* LTEasing.swift */,
+				26DDA9CFA76DCBB3C9306D81BC724CE0 /* LTEmitterView.swift */,
+				A2B912C7EEED07977FEB6670C92D004D /* LTMorphingEffect.swift */,
+				69400EA2BAF776A9638386B28EA35BD1 /* LTMorphingLabel.h */,
+				D6CDDED9D3235598F3E317C815DF6752 /* LTMorphingLabel.swift */,
+				512B13639E6D66CBA6801E37CBB02821 /* LTMorphingLabel+Anvil.swift */,
+				2FB8EBF21C3D71DB641C1DDB7B7A01D8 /* LTMorphingLabel+Burn.swift */,
+				2A59939A68E3F31B9898E95183F2D5D7 /* LTMorphingLabel+Evaporate.swift */,
+				CC9568557FAA9DEC1556B5AB5875A881 /* LTMorphingLabel+Fall.swift */,
+				F3F2968882AE6DCFF249B743811B7F0A /* LTMorphingLabel+Pixelate.swift */,
+				05427BC612E02A796784B346F3AEE3E5 /* LTMorphingLabel+Sparkle.swift */,
+				8AA8C3F5D0FC0C52996C5FC9AEA1A795 /* LTStringDiffResult.swift */,
+				453F98437FD88D315312F027A91C1CEA /* Resources */,
+				87159F03E171B49E4575782E704EA7C5 /* Support Files */,
 			);
 			name = LTMorphingLabel;
 			path = LTMorphingLabel;
-			sourceTree = "<group>";
-		};
-		6E0147FF122D8ED7AF7EBAD38A2761DB /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				3D2933DC7D3741450E4EA185BAA44341 /* DropDownCell.xib */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -355,51 +454,24 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				DF6D7AB8854107CCBC6343CF300AA050 /* Pods */,
+				0A03A895A02FF95B75341E15C29FACDC /* Pods */,
 				1C07B76A24DC101DC9F4AD6DEBCC80BA /* Products */,
 				0C18A302B28C0966F88066499F632ED7 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		84C9AD98FABAC6CD394665E2DD372D02 /* Support Files */ = {
+		87159F03E171B49E4575782E704EA7C5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7B767E1DF960C99EA6D5220FB2395995 /* Info.plist */,
-				E4DD981DD11E452E12983E57CEDC4942 /* LTMorphingLabel.modulemap */,
-				B652AE52374E05F1DC5473A58E6D47ED /* LTMorphingLabel.xcconfig */,
-				786F611C4519A382E28CDB8361B18162 /* LTMorphingLabel-dummy.m */,
-				501ADC331D7B824BB53256C2B122674A /* LTMorphingLabel-prefix.pch */,
-				D0CE6D6793E75DB6D6B72D15346532F1 /* LTMorphingLabel-umbrella.h */,
+				ECD8A0D403375BC79BB8ED1D2E8A0C7D /* Info.plist */,
+				98435CA68D044E7FF88CA14E2F853900 /* LTMorphingLabel.modulemap */,
+				DD0CF6D6DA81D2B777516A17300C7C67 /* LTMorphingLabel.xcconfig */,
+				6460EFF72D416B031814511C123CAC40 /* LTMorphingLabel-dummy.m */,
+				4D4B37BB4099682DCC9BE4A286A3CC8F /* LTMorphingLabel-prefix.pch */,
+				3A6E73A1B9A71C1BBD1AE6493A23B662 /* LTMorphingLabel-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/LTMorphingLabel";
-			sourceTree = "<group>";
-		};
-		8A37129D959CBF67009BD8CF439497E0 /* M13Checkbox */ = {
-			isa = PBXGroup;
-			children = (
-				B21FA46BF58B6D8773DB5280F871CBB8 /* M13Checkbox.swift */,
-				274283D349C9EC960B76324342646532 /* M13Checkbox+IB.swift */,
-				B981897387D2254C4F84BF03830DCD9F /* M13CheckboxAddRemovePathGenerator.swift */,
-				07E34CA846083E6945AB0B35394E9C72 /* M13CheckboxAnimationGenerator.swift */,
-				40AC0E3CDFC00DEF70E1A121DD6780DD /* M13CheckboxBounceController.swift */,
-				44B1CFAF0D64490DCD7320FB360BC7ED /* M13CheckboxCheckPathGenerator.swift */,
-				A72F616CD133E5A24030644DBA2E2D11 /* M13CheckboxController.swift */,
-				4E10CDC7932E9DEE81D2766804D17CF8 /* M13CheckboxDisclosurePathGenerator.swift */,
-				1CF1687E9891B023F62F97DDD3E41CDB /* M13CheckboxDotController.swift */,
-				25D178F55163AEA10F5096719E7EBAF8 /* M13CheckboxExpandController.swift */,
-				C7E4329D3D97D9689AF95DF93361043F /* M13CheckboxFadeController.swift */,
-				6C9EBF718D19DDBD0A458427A8B416E4 /* M13CheckboxFillController.swift */,
-				8CF7FE9E564A66C04EA119DECD330C37 /* M13CheckboxFlatController.swift */,
-				7B0667AF3BFEB5D0D3D4CAFB56C2AF9B /* M13CheckboxGestureRecognizer.swift */,
-				9DA66ADB22D5AFDFA24FFADBDF40D6AD /* M13CheckboxPathGenerator.swift */,
-				BC92F1F4E3E4F01375ACE7C65D63D5C1 /* M13CheckboxRadioPathGenerator.swift */,
-				336BD8E4A5D67978E6684486383A0B17 /* M13CheckboxSpiralController.swift */,
-				A9F4F7B9886C9979A5F0DB5C402A0535 /* M13CheckboxStrokeController.swift */,
-				C57C6E7F4A5153AC4319D4C2A1EAB891 /* Support Files */,
-			);
-			name = M13Checkbox;
-			path = M13Checkbox;
 			sourceTree = "<group>";
 		};
 		8F8FEF3140598EAB2B3D56BB84B5389A /* iOS */ = {
@@ -411,17 +483,6 @@
 				FDBA94A94B982885ECCA1662BE8CD7CF /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		AA6092D9D8340C976D8ADFAD16C4A352 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1F8ACFF6D4C92892F05095676F144BA0 /* Fire.png */,
-				E3E2C1DFFA51C6D0E9C654DFC6A8A096 /* Fragment.png */,
-				926F7C6B62686C59A9B881E9976FC836 /* Smoke.png */,
-				1C24A35E55427B65FD4E9E992AC5CF87 /* Sparkle.png */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		BC65C781B6240E39AF3CED6A888B28E1 /* Pods-Thesis */ = {
@@ -442,43 +503,68 @@
 			path = "Target Support Files/Pods-Thesis";
 			sourceTree = "<group>";
 		};
-		C57C6E7F4A5153AC4319D4C2A1EAB891 /* Support Files */ = {
+		C2B63962F0377D96DD814A1456263701 /* M13Checkbox */ = {
 			isa = PBXGroup;
 			children = (
-				A16D1A64D888D6420995AB5AF0F1BF29 /* Info.plist */,
-				BC7040A8DC503190326279E2998304EC /* M13Checkbox.modulemap */,
-				9A26B5609E1774130840395F0CFAA452 /* M13Checkbox.xcconfig */,
-				5D91C7BA794C624FA5873864F0765455 /* M13Checkbox-dummy.m */,
-				5D2D314DCDAFD631EF12FF3ACF8637FF /* M13Checkbox-prefix.pch */,
-				3F78FA05E4CBB9CE1A0377BE81387B75 /* M13Checkbox-umbrella.h */,
+				3D01F246C5CB8F2190C25B78DF1190B7 /* M13Checkbox.swift */,
+				2EC90108B74FDBCAD073632513391968 /* M13Checkbox+IB.swift */,
+				8C7805EAF0931496B5C6794282005C83 /* M13CheckboxAddRemovePathGenerator.swift */,
+				723C660475AC9BD68C292439EF73CDB8 /* M13CheckboxAnimationGenerator.swift */,
+				9E7824ED3FE23F31BC64534204D02C85 /* M13CheckboxBounceController.swift */,
+				9C046D27D8F91E55DA847BCCB702CD9F /* M13CheckboxCheckPathGenerator.swift */,
+				FD585345DF183D2A0001BCBBF8088CEF /* M13CheckboxController.swift */,
+				5DA1658316C09154C42C9A5A22D45B9E /* M13CheckboxDisclosurePathGenerator.swift */,
+				2C8F0919E8499B1F273EC3FB98EA9AEF /* M13CheckboxDotController.swift */,
+				E339D3E5BEC8093DF5C7E6BC6B03E0EA /* M13CheckboxExpandController.swift */,
+				19A7226E808E7F42B268A192E1A9D7D8 /* M13CheckboxFadeController.swift */,
+				E0C6EB12BAF232177819EE528C0140F0 /* M13CheckboxFillController.swift */,
+				C61B4F42F8AED97E3318289C8F0DCC41 /* M13CheckboxFlatController.swift */,
+				63F234F017B1B0841CB5833D8E03D490 /* M13CheckboxGestureRecognizer.swift */,
+				1DD7D7D67CBE0900B8B2C2D1FF156F71 /* M13CheckboxPathGenerator.swift */,
+				5929512062D9058BB9A4F4244E0DF219 /* M13CheckboxRadioPathGenerator.swift */,
+				F0F51286C108409EC2CE8322B5CD4444 /* M13CheckboxSpiralController.swift */,
+				EC0910CF3FE215D1D11D01082E0E250D /* M13CheckboxStrokeController.swift */,
+				78B9EAEE86D3C73ADABB13658CA092F2 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/M13Checkbox";
+			name = M13Checkbox;
+			path = M13Checkbox;
 			sourceTree = "<group>";
 		};
-		DF6D7AB8854107CCBC6343CF300AA050 /* Pods */ = {
+		CAFC69913D62C1E3C80BF084F2C497D3 /* DateTimePicker */ = {
 			isa = PBXGroup;
 			children = (
-				10F4BE85CFB8145F42507C8F19EB5C18 /* DateTimePicker */,
-				3ABEC1E08C50D1F207A8F671F7C5D1D1 /* DropDown */,
-				4FF79A3E74AB2E56C11D3D8E5ADA6245 /* LTMorphingLabel */,
-				8A37129D959CBF67009BD8CF439497E0 /* M13Checkbox */,
+				DA63EAC5D73F37ED91D6662A75759225 /* DateCollectionViewCell.swift */,
+				8CCA5BC882294FAEBC7AABAAECF9A65E /* DateTimePicker.swift */,
+				99099F891AC4099B0AB7F56BC3A1F8A2 /* StepCollectionViewFlowLayout.swift */,
+				10BA29E55DDD268ECFE87D259CC80EDA /* Support Files */,
 			);
-			name = Pods;
+			name = DateTimePicker;
+			path = DateTimePicker;
 			sourceTree = "<group>";
 		};
-		EE7B32C4F260D3AFEB1C20AE126A5ECF /* Support Files */ = {
+		D94FC507C72B58C4DB9A98BB9AC490ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C111E4AE96541770A66FF0EB67F7A1FD /* DropDown.modulemap */,
-				DB9C90CDAC84D837A7C8A613D5C8FE9E /* DropDown.xcconfig */,
-				8DABF101D3A5111D05C68EEC5D0F07D7 /* DropDown-dummy.m */,
-				8521218DA486C2C4B37AF425EF0038C8 /* DropDown-prefix.pch */,
-				69E896C52126C349D33B7669B62C00E8 /* DropDown-umbrella.h */,
-				422BE132705D781D39EF8BB25842BE7F /* Info.plist */,
+				96566543E6E802F954FCF41BAC4F99F3 /* GoogleMaps.framework */,
+				9DD0F4F52F004F9907247512F2AE5445 /* GoogleMapsCore.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/DropDown";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC41F17FDD11ACBA8186E93DEE04D000 /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				8D2B750E80371F8A6BEA3BCBD3624D55 /* DPDConstants.swift */,
+				AD59AA3657314E7FF1AA27CCE2DCA7CD /* DPDKeyboardListener.swift */,
+				DBBE0C2FCF88ECE3114CE770CC6FB60E /* DPDUIView+Extension.swift */,
+				435ECF9C44E5F7C2D9D0B535FB807F85 /* DropDown.swift */,
+				AC1E8A58B39A54C84964B80D5965BABB /* DropDown+Appearance.swift */,
+				0A151435974A1EBEC03B908032574A2E /* DropDownCell.swift */,
+				03371496CCAEDD286BD2E3898EDC8CF8 /* Resources */,
+				6D409185A65B2EE4635EB599A4EE0315 /* Support Files */,
+			);
+			name = DropDown;
+			path = DropDown;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -784,7 +870,7 @@
 /* Begin XCBuildConfiguration section */
 		145888EF983B5C8BE8A9CAD4F98F5ED6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B652AE52374E05F1DC5473A58E6D47ED /* LTMorphingLabel.xcconfig */;
+			baseConfigurationReference = DD0CF6D6DA81D2B777516A17300C7C67 /* LTMorphingLabel.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -867,7 +953,7 @@
 		};
 		25795E5BF2D286C8E10EE113B8AA49EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A1DAE742B39C3EB83F1B766098BEB6F /* DateTimePicker.xcconfig */;
+			baseConfigurationReference = 97CD609819B4CFE6F6A848B5D13D09D0 /* DateTimePicker.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -941,7 +1027,7 @@
 		};
 		33500B15AAB7BF8E5545B49B5F3C5832 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B652AE52374E05F1DC5473A58E6D47ED /* LTMorphingLabel.xcconfig */;
+			baseConfigurationReference = DD0CF6D6DA81D2B777516A17300C7C67 /* LTMorphingLabel.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -975,7 +1061,7 @@
 		};
 		5B817DFC476867BD02DA7E3B92FA88A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A26B5609E1774130840395F0CFAA452 /* M13Checkbox.xcconfig */;
+			baseConfigurationReference = EBBB1AA7CA6FBE0496825B8B0D310A40 /* M13Checkbox.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1053,7 +1139,7 @@
 		};
 		7D9CF2A8F360170BB840BB40EF7CC4FE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB9C90CDAC84D837A7C8A613D5C8FE9E /* DropDown.xcconfig */;
+			baseConfigurationReference = 245539058BC43FE363D74DED8C38FD48 /* DropDown.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1088,7 +1174,7 @@
 		};
 		9F7AA469D5B3C0204DF47697C2977D5D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A26B5609E1774130840395F0CFAA452 /* M13Checkbox.xcconfig */;
+			baseConfigurationReference = EBBB1AA7CA6FBE0496825B8B0D310A40 /* M13Checkbox.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1123,7 +1209,7 @@
 		};
 		BA7BBE085D54802B63F70B0B4D25863F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A1DAE742B39C3EB83F1B766098BEB6F /* DateTimePicker.xcconfig */;
+			baseConfigurationReference = 97CD609819B4CFE6F6A848B5D13D09D0 /* DateTimePicker.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1195,7 +1281,7 @@
 		};
 		F031A80BACE40595BD74CA9AB53A2EEB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB9C90CDAC84D837A7C8A613D5C8FE9E /* DropDown.xcconfig */;
+			baseConfigurationReference = 245539058BC43FE363D74DED8C38FD48 /* DropDown.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

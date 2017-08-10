@@ -735,4 +735,11 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
         self.myClv.reloadData()
         
     }
+    @IBAction func actionSearchMap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        
+        
+        self.navigationController?.pushViewController(tabbar, animated: true)
+    }
 }

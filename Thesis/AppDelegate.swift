@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
+        GMSServices.provideAPIKey("AIzaSyCdSLJkWQu896W9_uRPf8AR4HMsazn-qWs")
         do {
             let data = try String(contentsOfFile: "/Users/triquach/Documents/check.txt", encoding: .utf8)
             

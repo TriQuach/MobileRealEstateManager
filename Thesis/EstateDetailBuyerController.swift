@@ -61,6 +61,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var lblGhiChu: UILabel!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var lbl: UILabel!
+    //var passFullEstate:FullEstate!
     var idOwner2:Int!
     var idUser: Int!
     var idEstate:Int!
@@ -98,6 +99,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         myClv.delegate = self
         myClv.dataSource = self
         tvNote.isHidden = true
+        
         //lblNote.isHidden = true
         tvNote.layer.borderWidth = 1
         tvNote.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
@@ -1241,7 +1243,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func apiPostComment(x: String)
     {
         
-        let commentPostNew:CommentPostNew = CommentPostNew(question: x, buyerId: self.idBuyer, ownerId: self.idOwner2, estateId: self.idEstate2)
+        let commentPostNew:CommentPostNew = CommentPostNew(question: x, buyerId: self.idUser, ownerId: self.idOwner, estateId: self.idEstate)
         
         let json = JSONSerializer.toJson(commentPostNew)
         //    print (json)

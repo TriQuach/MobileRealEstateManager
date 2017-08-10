@@ -22,7 +22,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     
     var passedObject:Estates!
     var idUser:Int = 0
-    
+    var fullname:String!
 
     var mang:[Estate] = []
     var mang2:[Estate] = []
@@ -287,7 +287,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 {
                     let typeId = json["typeId"] as! Int
                     let id = json["id"] as! Int
-                    
+                     self.fullname = json["fullName"] as! String
                     print (typeId)
                     
                     DispatchQueue.main.async {
