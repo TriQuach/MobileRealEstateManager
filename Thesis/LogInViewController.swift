@@ -8,7 +8,7 @@
 
 import UIKit
 import M13Checkbox
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var outletDangNhap: UIButton!
     @IBOutlet weak var loading: UIActivityIndicatorView!
@@ -23,6 +23,8 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        edtUserName.delegate = self
+        edtPass.delegate = self
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         lblSignUp.isUserInteractionEnabled = true
         lblSignUp.addGestureRecognizer(tap)
@@ -145,7 +147,7 @@ class LogInViewController: UIViewController {
         req.httpMethod = "POST"
         req.httpBody = jsonData
         
-        
+        let defaults = UserDefaults.standard
         let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
             
             do
@@ -158,15 +160,17 @@ class LogInViewController: UIViewController {
                 {
                     print (json["statuskey"])
                     let token = json["token"] as! String
-                    do
-                    {
-                        try token.write(toFile: "/Users/triquach/Documents/token.txt", atomically: false, encoding: .utf8)
-                    }catch{}
+//                    do
+//                    {
+//                        try token.write(toFile: "/Users/triquach/Documents/token.txt", atomically: false, encoding: .utf8)
+//                    }catch{}
+                    defaults.set(token, forKey: "token")
                     let check = "false"
-                    do
-                    {
-                        try check.write(toFile: "/Users/triquach/Documents/check.txt", atomically: false, encoding: .utf8)
-                    }catch{}
+                    defaults.set(check, forKey: "check")
+//                    do
+//                    {
+//                        try check.write(toFile: "/Users/triquach/Documents/check.txt", atomically: false, encoding: .utf8)
+//                    }catch{}
                     
                     DispatchQueue.main.async {
                         
@@ -239,7 +243,11 @@ class LogInViewController: UIViewController {
        
         
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+
+    }
     class UnderlinedLabel: UILabel {
         
         override var text: String? {
@@ -253,5 +261,6 @@ class LogInViewController: UIViewController {
             }
         }
     }
+    
 
 }

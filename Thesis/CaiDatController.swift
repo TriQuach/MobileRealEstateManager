@@ -20,25 +20,38 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        do {
-            let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
-            
+        let defaults = UserDefaults.standard
+        if let data = defaults.string(forKey: "token")
+        {
             isLogin = true
             
             parseJsonToken(token: data)
-            
-            
-            
-            
-        } catch {
+        }
+        else
+        {
             myTbv.dataSource = self
             myTbv.delegate = self
             isLogin = false
             login()
             mang[mang.count-1] = "Đăng nhập"
         }
+//        do {
+//            let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
+//            
+//            isLogin = true
+//            
+//            parseJsonToken(token: data)
+//            
+//            
+//            
+//            
+//        } catch {
+//            myTbv.dataSource = self
+//            myTbv.delegate = self
+//            isLogin = false
+//            login()
+//            mang[mang.count-1] = "Đăng nhập"
+//        }
         
         
     }
@@ -137,10 +150,12 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
         if ( indexPath.row == mang.count - 1)
         {
             let check = "true"
-            do
-            {
-                try check.write(toFile: "/Users/triquach/Documents/check.txt", atomically: false, encoding: .utf8)
-            }catch{}
+            let defaults = UserDefaults.standard
+            defaults.set(check, forKey: "check")
+//            do
+//            {
+//                try check.write(toFile: "/Users/triquach/Documents/check.txt", atomically: false, encoding: .utf8)
+//            }catch{}
             
             let alertController = UIAlertController(title: "Thông báo", message: "Bạn chắc chắn muốn đăng xuất? ", preferredStyle: .alert)
             
@@ -209,10 +224,12 @@ class CaiDatController: UIViewController, UITableViewDataSource,UITableViewDeleg
     @IBAction func btnLogOut(_ sender: Any) {
         
         let check = "true"
-        do
-        {
-            try check.write(toFile: "/Users/triquach/Documents/check.txt", atomically: false, encoding: .utf8)
-        }catch{}
+        let defaults = UserDefaults.standard
+        defaults.set(check, forKey: "check")
+//        do
+//        {
+//            try check.write(toFile: "/Users/triquach/Documents/check.txt", atomically: false, encoding: .utf8)
+//        }catch{}
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "login") as! LogInViewController
         tabbar.storyboardID = "LogOut"

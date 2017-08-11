@@ -11,7 +11,7 @@ import UIKit
 import DropDown
 import M13Checkbox
 import CoreLocation
-class TimKiemController: UIViewController,CLLocationManagerDelegate {
+class TimKiemController: UIViewController,CLLocationManagerDelegate, UITextFieldDelegate {
     
     var mang:[Estate] = []
     var mang2:[Estate] = []
@@ -196,7 +196,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        edtDiaChi.delegate = self
         initDropDown(x: dropThanhPho)
         initDropDown(x: dropQuan)
         initDropDown(x: dropPhuong)
@@ -881,6 +881,10 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate {
         self.edtDiaChi.isEnabled = true
         self.dropBanKinh.isUserInteractionEnabled = false
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+        
+    }
     
 }

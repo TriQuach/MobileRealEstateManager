@@ -31,23 +31,31 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
         
         loading.color = .black
         loading.startAnimating()
+        let defaults = UserDefaults.standard
         
         if (idUser==0)
         {
-            
-            do {
-                let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
-                
-                
-                
+            if let data = defaults.string(forKey: "token")
+            {
                 parseJsonToken(token: data)
-                
-                
-                
-                
-            } catch {
+            }
+            else
+            {
                 login()
             }
+//            do {
+//                let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
+//                
+//                
+//                
+//                parseJsonToken(token: data)
+//                
+//                
+//                
+//                
+//            } catch {
+//                login()
+//            }
             
             
         }

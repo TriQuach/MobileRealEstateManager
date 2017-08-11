@@ -748,7 +748,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     self.lblAdressEstate.text = newFullEstate.address.address + " " + newFullEstate.address.ward + " " + newFullEstate.address.district + " " + newFullEstate.address.city
                   //  self.lblPosdate.text = newFullEstate.postTime
                     
-                    self.lblEdit.text = self.changeFormatDateAfterParse(x: self.parseDateTime(str: newFullEstate.editTime)) 
+                    self.lblEdit.text = newFullEstate.editTime
                     self.lblLoai.text = newFullEstate.type
                     //self.idOwner = newFullEstate.owner.id
                     if (newFullEstate.area == 0 || newFullEstate.area == -1)

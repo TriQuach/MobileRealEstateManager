@@ -8,7 +8,7 @@
 
 import UIKit
 import DateTimePicker
-class DatHenViewController: UIViewController {
+class DatHenViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var lblNote: UILabel!
     @IBOutlet weak var btnSave: UIButton!
@@ -44,6 +44,7 @@ class DatHenViewController: UIViewController {
         lblBDSLienQuan.addGestureRecognizer(tap)
         btnGuiYeuCau.ghostButton()
         self.title = "Đặt lịch hẹn"
+        edtNote.delegate = self
     }
 
     func imgMoreTapped()
@@ -178,5 +179,10 @@ class DatHenViewController: UIViewController {
     @IBAction func actionNote(_ sender: Any) {
         edtNote.isHidden = false
         btnSave.isHidden = false
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+        
     }
 }
