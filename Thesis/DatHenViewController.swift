@@ -81,13 +81,13 @@ class DatHenViewController: UIViewController, UITextFieldDelegate {
         
        // picker.todayButtonTitle = "Today"
       //  picker.is12HourFormat = true
-        picker.dateFormat = "hh:mm aa dd/MM/YYYY"
+        picker.dateFormat = "hh:mm a dd/MM/YYYY"
         
         
         picker.completionHandler = { date in
             // do something after tapping done
             let formatter = DateFormatter()
-            formatter.dateFormat = "hh:mm aa dd/MM/YYYY"
+            formatter.dateFormat = "h:mm a dd/MM/YYYY"
             
             self.lblTime.text = formatter.string(from: date)
         }

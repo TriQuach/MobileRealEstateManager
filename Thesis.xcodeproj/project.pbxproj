@@ -111,6 +111,7 @@
 		E0CD0CCA1F14BE1D003508F5 /* placeholder-on-map-paper-in-perspective6.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CD0CC61F14BE1D003508F5 /* placeholder-on-map-paper-in-perspective6.png */; };
 		E0CD0CCD1F14C661003508F5 /* splash7.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CD0CCB1F14C661003508F5 /* splash7.png */; };
 		E0CD0CCE1F14C661003508F5 /* phone7.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CD0CCC1F14C661003508F5 /* phone7.png */; };
+		E0D0611E1F3F5ECA00287BF8 /* Estate_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D0611D1F3F5ECA00287BF8 /* Estate_New.swift */; };
 		E0D816B21EFE4FA000FE04B2 /* AddressSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D816B11EFE4FA000FE04B2 /* AddressSearch.swift */; };
 		E0D816B41EFE738600FE04B2 /* DetailSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D816B31EFE738600FE04B2 /* DetailSearch.swift */; };
 		E0D816B61EFE74CA00FE04B2 /* PostNewSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D816B51EFE74CA00FE04B2 /* PostNewSearch.swift */; };
@@ -308,6 +309,7 @@
 		E0CD0CC61F14BE1D003508F5 /* placeholder-on-map-paper-in-perspective6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-on-map-paper-in-perspective6.png"; sourceTree = "<group>"; };
 		E0CD0CCB1F14C661003508F5 /* splash7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash7.png; sourceTree = "<group>"; };
 		E0CD0CCC1F14C661003508F5 /* phone7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone7.png; sourceTree = "<group>"; };
+		E0D0611D1F3F5ECA00287BF8 /* Estate_New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estate_New.swift; sourceTree = "<group>"; };
 		E0D816B11EFE4FA000FE04B2 /* AddressSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressSearch.swift; sourceTree = "<group>"; };
 		E0D816B31EFE738600FE04B2 /* DetailSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSearch.swift; sourceTree = "<group>"; };
 		E0D816B51EFE74CA00FE04B2 /* PostNewSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNewSearch.swift; sourceTree = "<group>"; };
@@ -690,6 +692,7 @@
 				E05D100F1F1DF9B30004C36A /* Noti.swift */,
 				E092F0701F3B6B85008639D5 /* CommentPostNew.swift */,
 				E092F0921F3B9747008639D5 /* AnswerPostNew.swift */,
+				E0D0611D1F3F5ECA00287BF8 /* Estate_New.swift */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -951,6 +954,7 @@
 				E04236121EF95B05001EE037 /* CaiDatTaiKhoanViewController.swift in Sources */,
 				E0A1B1D61F0F969F009C01BD /* SearchValueViewController.swift in Sources */,
 				E0E011241F014FA400D3BD4B /* PhotoNote.swift in Sources */,
+				E0D0611E1F3F5ECA00287BF8 /* Estate_New.swift in Sources */,
 				E0B8E6361F271C6400191F4B /* ProfileAvatarTableViewCell.swift in Sources */,
 				E2E1C4341E9660AA0008D0B3 /* EstateDetailOwnerController.swift in Sources */,
 				E217EFA21E93D4EB00068876 /* TabBarController.swift in Sources */,
