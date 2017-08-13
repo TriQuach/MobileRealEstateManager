@@ -1,4 +1,4 @@
-//
+ //
 //  MapViewController.swift
 //  Thesis
 //
@@ -11,12 +11,18 @@ import GoogleMaps
 class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
     var lat:Double!
     var long:Double!
+    var lat2:Double!
+    var long2:Double!
     var mang:[Estate_New] = []
     var formatted_address:String!
     var bankinh:UILabel = UILabel()
     var bankinh_search:Int!
     let locationManager = CLLocationManager()
     var check:Bool = true
+    var count:Int = 0
+    var checkSearchBanKinh:Bool = false
+    var searchType:Int! // 0: GPS    1: specific location
+    var marker:GMSMarker = GMSMarker()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +44,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     }
     func buttonAction(sender: UIButton!) {
         print("Button tapped")
-        
+        searchType = 0
         self.check = true
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -62,13 +68,24 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         
     }
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        
+        searchType = 1
         print (coordinate.latitude)
-        print (coordinate.latitude)
+        print (coordinate.longitude)
+        self.lat2 = coordinate.latitude
+        self.long2 = coordinate.longitude
+        
+        if (count >= 1)
+        {
+            self.marker.map = nil
+        }
         
         let position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
         let marker = GMSMarker(position: position)
+        self.marker = marker
         marker.title = "Hello World"
         marker.map = mapView
+        count += 1
         
         
     }
@@ -94,6 +111,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     func sliderBanKinh(sender: UISlider!)
     {
         print ("hihi")
+        
         bankinh_search = Int(sender.value)
         bankinh.text = String(Int(sender.value)) + " km"
         self.view.addSubview(bankinh)
@@ -110,7 +128,15 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     }
     func actionSearch(sender: UISlider!)
     {
-        searchGPS(address: self.formatted_address)
+        if (searchType == 0)
+        {
+            searchGPS(lat: lat, long: long)
+        }
+        else if (searchType == 1)
+        {
+            getLocationGoogleApi2()
+        }
+        
     }
     func getLocationGoogleApi()
     {
@@ -157,9 +183,42 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         }
         task.resume()
     }
-    func searchGPS(address: String)
+    func getLocationGoogleApi2()
     {
+        let url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + String(lat2) + "," + String(long2) + "&key=AIzaSyBQrSLHhtVml0KSdfz7px3fmwwlH-XdauA"
+        // print (url)
+        let req = URLRequest(url: URL(string: url)!)
         
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let results = json["results"] as! [AnyObject]
+                let formatted_address = results[0]["formatted_address"] as! String
+                print (formatted_address)
+                DispatchQueue.main.async {
+                    //self.searchGPS(address: formatted_address)
+                    self.formatted_address = formatted_address
+                    
+                   self.searchGPS(lat: self.lat2, long: self.long2)
+                    
+                }
+                
+                
+                
+                
+            }catch{}
+        }
+        task.resume()
+    }
+    func searchGPS(lat:Double, long:Double)
+    {
+        self.mang = []
         let searchGPS:SearchGPS = SearchGPS(latitude: lat, longitude: long, distance: bankinh_search)
         
         
@@ -229,7 +288,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
                     if (self.mang.count > 0)
                     {
                         DispatchQueue.main.async {
-                            self.markerSearchResult()
+                            self.markerSearchResult(lat: lat, long: long)
                             
                             
                         }
@@ -274,9 +333,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         }
         return nil
     }
-    func markerSearchResult()
+    func markerSearchResult(lat:Double, long:Double)
     {
-        let camera = GMSCameraPosition.camera(withLatitude: self.lat, longitude: self.long, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
         
         
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
