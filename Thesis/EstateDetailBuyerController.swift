@@ -20,6 +20,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     var isAnswered:Bool = false
     var idQuestion:Int!
     var index:Int!
+    var fullEstate:FullEstate!
     
     @IBOutlet weak var lblRong2: UILabel!
     @IBOutlet weak var lblDai2: UILabel!
@@ -275,7 +276,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         let itemsPerRow:CGFloat = 2.5
         let hardCodedPadding:CGFloat = 5
         let itemWidth = (collectionView.bounds.width / itemsPerRow) - hardCodedPadding
-        let itemHeight = collectionView.bounds.height - (2 * hardCodedPadding)
+        let itemHeight = collectionView.bounds.height - (7 * hardCodedPadding)
         return CGSize(width: itemWidth, height: itemHeight)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -674,6 +675,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                 let name3 = json["name"] as! String
                 
                 let newFullEstate:FullEstate = FullEstate(owner: newUser, address: newAdress, detail: newDetail, available: available, type: type, postTime: postTime, editTime: editTime, price: price, area: area, id: id3, name: name3)
+                self.fullEstate = newFullEstate
                 
                 //   self.mang.append(newFullEstate)
                 
@@ -1369,5 +1371,9 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
             
         }
         task.resume()
+    }
+    @IBAction func actionCall(_ sender: Any) {
+        guard let number = URL(string: "tel://" + fullEstate.owner.phone) else { return }
+        UIApplication.shared.open(number)
     }
 }
