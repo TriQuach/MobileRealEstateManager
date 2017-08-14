@@ -23,11 +23,12 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var passedObject:Estates!
     var idUser:Int = 0
     var fullname:String!
-
+    
     var mang:[Estate] = []
     var mang2:[Estate] = []
     var mang3:[Estate] = []
     var mang4:[Estate] = [] // mang quick search
+    var mang5:[Estate] = [] // mangSuggest
     var mang_id1:[Int] = []
     var mang_id2:[Int] = []
     
@@ -77,7 +78,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       // lblRole.text = temp
+        // lblRole.text = temp
         
         navigationController?.navigationBar.barTintColor = UIColor(cgColor: #colorLiteral(red: 0.2352941176, green: 0.3529411765, blue: 0.6078431373, alpha: 1).cgColor)
         
@@ -94,24 +95,24 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         loading.startAnimating()
         
-       
+        
         loadAfterGetAll()
         print ("isLike did load")
         print (isLike)
         
         
-       
-   //     print (x.listEstates[0].address)
         
-    //    parseJSONGetTopRate()
+        //     print (x.listEstates[0].address)
+        
+        //    parseJSONGetTopRate()
         
         
         //sleep(5)
-   // parseImage()
-     //   print (mang[0].image)
+        // parseImage()
+        //   print (mang[0].image)
         
         
-       
+        
         
         
         
@@ -119,14 +120,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
     }
     override func viewWillAppear(_ animated: Bool) {
-     //   mang = []
+        //   mang = []
         print ("isLike will appear")
         print (isLike)
         
-  //      parseJSONgetInterested()
-    //    mang = []
-     //   self.myTbv.reloadData()
-  //      parseJSONgetInterested()
+        //      parseJSONgetInterested()
+        //    mang = []
+        //   self.myTbv.reloadData()
+        //      parseJSONgetInterested()
     }
     
     func loadAfterGetAll()
@@ -144,31 +145,31 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             myTbv.dataSource = self
             myTbv.delegate = self
         }
-//        do {
-//            let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
-//            
-//            isLogin = true
-//            
-//            parseJsonToken(token: data)
-//            print ("idUser:" + String(idUser))
-//            
-//            
-//            
-//            
-//        } catch {
-//            //            print("2")
-//            //            self.window = UIWindow(frame: UIScreen.main.bounds)
-//            //
-//            //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            //
-//            //            let initialViewController = storyboard.instantiateViewController(withIdentifier: "start")
-//            //
-//            //            self.window?.rootViewController = initialViewController
-//            //            self.window?.makeKeyAndVisible()
-//            
-//            myTbv.dataSource = self
-//            myTbv.delegate = self
-//        }
+        //        do {
+        //            let data = try String(contentsOfFile: "/Users/triquach/Documents/token.txt", encoding: .utf8)
+        //
+        //            isLogin = true
+        //
+        //            parseJsonToken(token: data)
+        //            print ("idUser:" + String(idUser))
+        //
+        //
+        //
+        //
+        //        } catch {
+        //            //            print("2")
+        //            //            self.window = UIWindow(frame: UIScreen.main.bounds)
+        //            //
+        //            //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //            //
+        //            //            let initialViewController = storyboard.instantiateViewController(withIdentifier: "start")
+        //            //
+        //            //            self.window?.rootViewController = initialViewController
+        //            //            self.window?.makeKeyAndVisible()
+        //
+        //            myTbv.dataSource = self
+        //            myTbv.delegate = self
+        //        }
         
         
         
@@ -300,7 +301,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 {
                     let typeId = json["typeId"] as! Int
                     let id = json["id"] as! Int
-                     self.fullname = json["fullName"] as! String
+                    self.fullname = json["fullName"] as! String
                     print (typeId)
                     
                     DispatchQueue.main.async {
@@ -357,7 +358,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                         
                         // Add the actions
                         alertController.addAction(okAction)
-                       
+                        
                         
                         // Present the controller
                         self.present(alertController, animated: true, completion: nil)
@@ -379,7 +380,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseUser(url: String)
     {
         var listFullEstates:[FullEstate] = []
-      //  var newEstates:Estates!
+        //  var newEstates:Estates!
         
         let req = URLRequest(url: URL(string: url)!)
         
@@ -400,7 +401,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let phone = user["phone"] as! String
                     let id = user["id"] as! Int
                     let name = user["name"] as! String
-//
+                    //
                     let newUser:User = User(email: email, password: password, address: address, typeID: typeID, fullName: fullName,phone: phone, id: id, name: name, avatar: "")
                     
                     let detailAddress = listEstates[i]["address"] as AnyObject
@@ -426,7 +427,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     let newDetail:Detail = Detail(bathroom: bathroom, bedroom: bedroom, condition: condition, description: description, floor: floor, length: length, width: width, longitude: longitude, latitude: latitude, id: id)
                     
-               //    print (newDetail.description)
+                    //    print (newDetail.description)
                     
                     
                     
@@ -443,23 +444,23 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     
                     
-                  //  print (newFullEstate.address.street)
+                    //  print (newFullEstate.address.street)
                     listFullEstates.append(newFullEstate)
-                  //  print (listFullEstates[i].detail.floor)
+                    //  print (listFullEstates[i].detail.floor)
                     
                     
                     
-
+                    
                 }
                 let statuskey = json["statuskey"] as! Bool
-               // print (listFullEstates[1].postTime)
+                // print (listFullEstates[1].postTime)
                 DispatchQueue.main.async {
-                      self.newEstates = Estates(listEstates: listFullEstates, statuskey: statuskey)
+                    self.newEstates = Estates(listEstates: listFullEstates, statuskey: statuskey)
                     self.loadAfterGetAll()
-                   // print ( self.newEstates.statuskey)
+                    // print ( self.newEstates.statuskey)
                 }
                 
-             //   Estates.statuskey = statuskey
+                //   Estates.statuskey = statuskey
                 
                 
                 
@@ -469,10 +470,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
         
-       }
+    }
     func parseJSONGetNew()
     {
-       
+        
         let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getNew/0")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
@@ -482,7 +483,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 
                 let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
-            
+                
                 
                 let estates = json["estates"] as! [AnyObject]
                 for i in 0..<estates.count
@@ -498,17 +499,17 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let district = address["district"] as! String
                     
                     
-                 
+                    
                     let owner = estates[i]["owner"] as! AnyObject
                     let idOwner = owner["id"] as! Int
                     let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
                     self.mang_id2.append(idOwner)
                     
                     self.mang2.append(new_estate)
-                   
+                    
                     self.nameOwner2.append(owner["fullName"] as! String)
                     self.addressOwner2.append(owner["address"] as! String)
-                
+                    
                 }
                 
                 
@@ -524,7 +525,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     
     func parseJSONgetInterested()
     {
-       
+        
         let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/getInterested/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
@@ -561,17 +562,74 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     
                     
-                  
+                    
                     self.mang.append(new_estate)
                     
-                                 }
+                }
                 
                 
                 DispatchQueue.main.async(execute: {
                     self.myTbv.reloadData()
                     
                     self.parseImageInterested()
-                 //   self.parseImage()
+                    //   self.parseImage()
+                })
+            }catch{}
+        }
+        task.resume()
+    }
+    func parseJSONgetSuggested()
+    {
+        
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/getSuggested/" + String(idUser))!)
+        
+        
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                let estates = json["estates"] as! [AnyObject]
+                self.mang5 = []
+                for i in 0..<estates.count
+                {
+                    let id = estates[i]["id"] as! Int
+                    
+                    let date = estates[i]["postTime"] as! String
+                    let title = estates[i]["name"] as! String
+                    let price = estates[i]["price"] as! Double
+                    let area = estates[i]["area"] as! Double
+                    let address = estates[i]["address"] as! AnyObject
+                    
+                    let district = address["district"]
+                        as! String
+                    
+                    
+                    
+                    let owner = estates[i]["owner"] as! AnyObject
+                    let idOwner = owner["id"] as! Int
+                    let new_estate = Estate(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner)
+                    self.mang_id1.append(idOwner)
+                    self.nameOwner.append(owner["fullName"] as! String)
+                    self.addressOwner.append(owner["address"] as! String)
+                    
+                    
+                    
+                    
+                    
+                    self.mang5.append(new_estate)
+                    
+                }
+                
+                
+                DispatchQueue.main.async(execute: {
+                    self.myTbv.reloadData()
+                    
+                    self.parseImageSuggested()
+                    //   self.parseImage()
                 })
             }catch{}
         }
@@ -641,15 +699,54 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
-                }catch{}
+            }catch{}
             
         }
         task.resume()
     }
-    
+    func parseImageSuggested()
+    {
+        
+        if (mang5.count == 0)
+        {
+            self.loading.isHidden = true
+        }
+        for i in 0..<mang5.count
+        {
+            let id = mang5[i].ID
+            let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            
+            let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+                
+                do
+                {
+                    
+                    let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                    if (json["statuskey"] as! Bool)
+                    {
+                        let photo = json["photo"] as! String
+                        //print (photo)
+                        
+                        self.mang5[i].image = photo
+                        
+                        
+                        DispatchQueue.main.async(execute: {
+                            self.myTbv.reloadData()
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
+                        })
+                    }
+                }catch{}
+            }
+            task.resume()
+        }
+        
+        
+        
+    }
     func parseImageInterested()
     {
-  
+        
         if (mang.count == 0)
         {
             self.loading.isHidden = true
@@ -667,17 +764,18 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
                     if (json["statuskey"] as! Bool)
                     {
-                    let photo = json["photo"] as! String
-                    //print (photo)
+                        let photo = json["photo"] as! String
+                        //print (photo)
                         
                         self.mang[i].image = photo
-                    
-                    
-                    DispatchQueue.main.async(execute: {
-                        self.myTbv.reloadData()
-                        self.loading.stopAnimating()
-                        self.loading.isHidden = true
-                    })
+                        
+                        
+                        DispatchQueue.main.async(execute: {
+                            self.myTbv.reloadData()
+                            self.loading.stopAnimating()
+                            self.loading.isHidden = true
+                            self.parseJSONgetSuggested()
+                        })
                     }
                 }catch{}
             }
@@ -685,7 +783,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         }
         
         
-       
+        
     }
     
     func parseImageGetByOwnerID()
@@ -784,10 +882,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-            return 2
-        }
+        return 3
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         
         if ( role == 0)
         {
@@ -800,8 +898,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 return mang.count
             }
             
+            else if (section == 1)
+            {
                 return mang2.count
-           
+            }
+            return mang5.count
             
         }
         if ( section == 0)
@@ -812,40 +913,42 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             }
             return mang3.count
         }
-        
+        else if (section == 1)
+        {
             return mang2.count
+        }
+        return mang5.count
         
-       
     }
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if (role == 0)
-//        {
-//            if (section == 0)
-//            {
-//                return "Bất động sản đang quan tâm"
-//            }
-//            else if (section == 1)
-//            {
-//                return "Bất động sản mới nhất"
-//            }
-//            return "Bất động sản được quan tâm nhiều"
-//        }
-//        
-//            if (section == 0)
-//            {
-//                return "Bất động sản đang quản lý"
-//            }
-//        
-//                return "Bất động sản mới nhất"
-//            
-//        
-//        
-//    }
+    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    //        if (role == 0)
+    //        {
+    //            if (section == 0)
+    //            {
+    //                return "Bất động sản đang quan tâm"
+    //            }
+    //            else if (section == 1)
+    //            {
+    //                return "Bất động sản mới nhất"
+    //            }
+    //            return "Bất động sản được quan tâm nhiều"
+    //        }
+    //
+    //            if (section == 0)
+    //            {
+    //                return "Bất động sản đang quản lý"
+    //            }
+    //
+    //                return "Bất động sản mới nhất"
+    //
+    //
+    //
+    //    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         
         
-       // view.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        // view.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         
         
         view.backgroundColor = UIColor(cgColor: #colorLiteral(red: 0.9395621827, green: 0.9395621827, blue: 0.9395621827, alpha: 1).cgColor)
@@ -862,6 +965,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 title.text = "MỚI NHẤT"
             }
+            else if (section == 2)
+            {
+                title.text = "ĐỀ XUẤT"
+            }
         }
         else
         {
@@ -869,9 +976,13 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 title.text = "ĐANG QUẢN LÝ"
             }
-            else
+            else if (section == 1)
             {
                 title.text = "MỚI NHẤT"
+            }
+            else
+            {
+                title.text = "ĐỀ XUẤT"
             }
         }
         title.frame = CGRect(x: 5, y: 7, width: self.view.frame.width * 0.75, height: 15)
@@ -886,11 +997,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         if (section == 0)
         {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-       // tapRecognizer.delegate = self
-        tapRecognizer.numberOfTapsRequired = 1
-        tapRecognizer.numberOfTouchesRequired = 1
-        view.addGestureRecognizer(tapRecognizer)
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+            // tapRecognizer.delegate = self
+            tapRecognizer.numberOfTapsRequired = 1
+            tapRecognizer.numberOfTouchesRequired = 1
+            view.addGestureRecognizer(tapRecognizer)
         }
         else
         {
@@ -956,15 +1067,15 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     {
                         cell.lblQuan.text = "Huyện " + mang[indexPath.row].quan
                     }
-//                    let parsed = parseDateTime(str: mang[indexPath.row].date)
-//                    let start = changeFormatDateAfterParse(x: parsed)
-//                    let end = getCurrentDate()
-//                    let dateFormatter = DateFormatter()
-//                    dateFormatter.dateFormat = "yyyy-MM-dd"
-//                    let first:NSDate = dateFormatter.date(from: start) as! NSDate
-//                    let second:NSDate = dateFormatter.date(from: end) as! NSDate
-//                    let x = daysBetween(start: first as Date, end: second as Date)
-                   // cell.lblDate.text = String(x) + " ngày trước"
+                    //                    let parsed = parseDateTime(str: mang[indexPath.row].date)
+                    //                    let start = changeFormatDateAfterParse(x: parsed)
+                    //                    let end = getCurrentDate()
+                    //                    let dateFormatter = DateFormatter()
+                    //                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    //                    let first:NSDate = dateFormatter.date(from: start) as! NSDate
+                    //                    let second:NSDate = dateFormatter.date(from: end) as! NSDate
+                    //                    let x = daysBetween(start: first as Date, end: second as Date)
+                    // cell.lblDate.text = String(x) + " ngày trước"
                     cell.lblDate.text = mang[indexPath.row].date
                     cell.lblTitle.text = mang[indexPath.row].title
                     
@@ -974,48 +1085,76 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! ChuaLogInBuyerTableViewCell
                 
                 
-              
+                
                 
                 return cell
                 
                 
                 
             }
-            
+            else if (indexPath.section == 1)
+            {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
                 //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
                 let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
                 cell.myHouse.image = UIImage(data: data)
                 cell.lblGia.text = String(mang2[indexPath.row].gia) + " triệu"
                 cell.lblDIenTich.text = String(mang2[indexPath.row].dientich) + " m2"
-            if (check(x: mang2[indexPath.row].quan))
+                if (check(x: mang2[indexPath.row].quan))
+                {
+                    cell.lblQuan.text = "Quận " + mang2[indexPath.row].quan
+                }
+                else
+                {
+                    cell.lblQuan.text = "Huyện " + mang2[indexPath.row].quan
+                }
+                
+                //            let parsed = parseDateTime(str: mang2[indexPath.row].date)
+                //            let start = changeFormatDateAfterParse(x: parsed)
+                //            let end = getCurrentDate()
+                //            let dateFormatter = DateFormatter()
+                //            dateFormatter.dateFormat = "yyyy-MM-dd"
+                //            let first:NSDate = dateFormatter.date(from: start) as! NSDate
+                //            let second:NSDate = dateFormatter.date(from: end) as! NSDate
+                //            let x = daysBetween(start: first as Date, end: second as Date)
+                //            cell.lblDate.text = String(x) + " ngày trước"
+                cell.lblDate.text = mang2[indexPath.row].date
+                cell.lblTitle.text = mang2[indexPath.row].title
+                return cell
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
+            //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
+            let data:Data = Data(base64Encoded: mang5[indexPath.row].image)!
+            cell.myHouse.image = UIImage(data: data)
+            cell.lblGia.text = String(mang5[indexPath.row].gia) + " triệu"
+            cell.lblDIenTich.text = String(mang5[indexPath.row].dientich) + " m2"
+            if (check(x: mang5[indexPath.row].quan))
             {
-                cell.lblQuan.text = "Quận " + mang2[indexPath.row].quan
+                cell.lblQuan.text = "Quận " + mang5[indexPath.row].quan
             }
             else
             {
-                cell.lblQuan.text = "Huyện " + mang2[indexPath.row].quan
+                cell.lblQuan.text = "Huyện " + mang5[indexPath.row].quan
             }
             
-//            let parsed = parseDateTime(str: mang2[indexPath.row].date)
-//            let start = changeFormatDateAfterParse(x: parsed)
-//            let end = getCurrentDate()
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = "yyyy-MM-dd"
-//            let first:NSDate = dateFormatter.date(from: start) as! NSDate
-//            let second:NSDate = dateFormatter.date(from: end) as! NSDate
-//            let x = daysBetween(start: first as Date, end: second as Date)
-//            cell.lblDate.text = String(x) + " ngày trước"
-            cell.lblDate.text = mang2[indexPath.row].date
-            cell.lblTitle.text = mang2[indexPath.row].title
-                return cell
+            //            let parsed = parseDateTime(str: mang2[indexPath.row].date)
+            //            let start = changeFormatDateAfterParse(x: parsed)
+            //            let end = getCurrentDate()
+            //            let dateFormatter = DateFormatter()
+            //            dateFormatter.dateFormat = "yyyy-MM-dd"
+            //            let first:NSDate = dateFormatter.date(from: start) as! NSDate
+            //            let second:NSDate = dateFormatter.date(from: end) as! NSDate
+            //            let x = daysBetween(start: first as Date, end: second as Date)
+            //            cell.lblDate.text = String(x) + " ngày trước"
+            cell.lblDate.text = mang5[indexPath.row].date
+            cell.lblTitle.text = mang5[indexPath.row].title
+            return cell
             
-           
             
         }
         
-       
-       
+        
+        
         if ( indexPath.section == 0)
         {
             if (!isLogin)
@@ -1039,52 +1178,81 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 cell.lblQuan.text = "Huyện " + mang3[indexPath.row].quan
             }
-           // cell.lblDate.text = mang3[indexPath.row].date
-//            let parsed = parseDateTime(str: mang3[indexPath.row].date)
-//            let start = changeFormatDateAfterParse(x: parsed)
-//            let end = getCurrentDate()
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = "yyyy-MM-dd"
-//            let first:NSDate = dateFormatter.date(from: start) as! NSDate
-//            let second:NSDate = dateFormatter.date(from: end) as! NSDate
-//            let x = daysBetween(start: first as Date, end: second as Date)
-//            cell.lblDate.text = String(x) + " ngày trước"
+            // cell.lblDate.text = mang3[indexPath.row].date
+            //            let parsed = parseDateTime(str: mang3[indexPath.row].date)
+            //            let start = changeFormatDateAfterParse(x: parsed)
+            //            let end = getCurrentDate()
+            //            let dateFormatter = DateFormatter()
+            //            dateFormatter.dateFormat = "yyyy-MM-dd"
+            //            let first:NSDate = dateFormatter.date(from: start) as! NSDate
+            //            let second:NSDate = dateFormatter.date(from: end) as! NSDate
+            //            let x = daysBetween(start: first as Date, end: second as Date)
+            //            cell.lblDate.text = String(x) + " ngày trước"
             cell.lblDate.text = mang3[indexPath.row].date
             cell.lblTitle.text = mang3[indexPath.row].title
             
             return cell
             
         }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
-        //cell.myHouse.image = UIImage(named: mang2[indexPath.row].image + ".jpg")
-        let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
-        cell.myHouse.image = UIImage(data: data)
-        cell.lblGia.text = String(mang2[indexPath.row].gia) + " triệu"
-        cell.lblDIenTich.text = String(mang2[indexPath.row].dientich) + " m2"
-        if (check(x: mang2[indexPath.row].quan))
+        else if (indexPath.section == 1)
         {
-            cell.lblQuan.text = "Quận " + mang2[indexPath.row].quan
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
+            //cell.myHouse.image = UIImage(named: mang2[indexPath.row].image + ".jpg")
+            let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
+            cell.myHouse.image = UIImage(data: data)
+            cell.lblGia.text = String(mang2[indexPath.row].gia) + " triệu"
+            cell.lblDIenTich.text = String(mang2[indexPath.row].dientich) + " m2"
+            if (check(x: mang2[indexPath.row].quan))
+            {
+                cell.lblQuan.text = "Quận " + mang2[indexPath.row].quan
+            }
+            else
+            {
+                cell.lblQuan.text = "Huyện " + mang2[indexPath.row].quan
+            }
+            //        let parsed = parseDateTime(str: mang2[indexPath.row].date)
+            //        let start = changeFormatDateAfterParse(x: parsed)
+            //        let end = getCurrentDate()
+            //        let dateFormatter = DateFormatter()
+            //        dateFormatter.dateFormat = "yyyy-MM-dd"
+            //        let first:NSDate = dateFormatter.date(from: start) as! NSDate
+            //        let second:NSDate = dateFormatter.date(from: end) as! NSDate
+            //        let x = daysBetween(start: first as Date, end: second as Date)
+            //  cell.lblDate.text = String(x) + " ngày trước"
+            cell.lblDate.text = mang2[indexPath.row].date
+            cell.lblTitle.text = mang2[indexPath.row].title
+            return cell
+            
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BatDongSanControllerTableViewCell
+        //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
+        let data:Data = Data(base64Encoded: mang5[indexPath.row].image)!
+        cell.myHouse.image = UIImage(data: data)
+        cell.lblGia.text = String(mang5[indexPath.row].gia) + " triệu"
+        cell.lblDIenTich.text = String(mang5[indexPath.row].dientich) + " m2"
+        if (check(x: mang5[indexPath.row].quan))
+        {
+            cell.lblQuan.text = "Quận " + mang5[indexPath.row].quan
         }
         else
         {
-            cell.lblQuan.text = "Huyện " + mang2[indexPath.row].quan
+            cell.lblQuan.text = "Huyện " + mang5[indexPath.row].quan
         }
-//        let parsed = parseDateTime(str: mang2[indexPath.row].date)
-//        let start = changeFormatDateAfterParse(x: parsed)
-//        let end = getCurrentDate()
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        let first:NSDate = dateFormatter.date(from: start) as! NSDate
-//        let second:NSDate = dateFormatter.date(from: end) as! NSDate
-//        let x = daysBetween(start: first as Date, end: second as Date)
-      //  cell.lblDate.text = String(x) + " ngày trước"
-        cell.lblDate.text = mang2[indexPath.row].date
-        cell.lblTitle.text = mang2[indexPath.row].title
+        
+        //            let parsed = parseDateTime(str: mang2[indexPath.row].date)
+        //            let start = changeFormatDateAfterParse(x: parsed)
+        //            let end = getCurrentDate()
+        //            let dateFormatter = DateFormatter()
+        //            dateFormatter.dateFormat = "yyyy-MM-dd"
+        //            let first:NSDate = dateFormatter.date(from: start) as! NSDate
+        //            let second:NSDate = dateFormatter.date(from: end) as! NSDate
+        //            let x = daysBetween(start: first as Date, end: second as Date)
+        //            cell.lblDate.text = String(x) + " ngày trước"
+        cell.lblDate.text = mang5[indexPath.row].date
+        cell.lblTitle.text = mang5[indexPath.row].title
         return cell
         
         
-       
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -1114,13 +1282,13 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     tabbar.passAdress = addressOwner[indexPath.row]
                     tabbar.isLogin = isLogin
                     tabbar.role = self.role
-                   
+                    
                     
                     
                     self.navigationController?.pushViewController(tabbar, animated: true)
                 }
             }
-            else
+            else if (indexPath.section == 1)
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
@@ -1136,8 +1304,24 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 
                 self.navigationController?.pushViewController(tabbar, animated: true)
             }
+            else
+            {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+                tabbar.idOwner = mang5[indexPath.row].idOwner
+                tabbar.idEstate = mang5[indexPath.row].ID
+                tabbar.idUser = idUser
+                //   tabbar.status = temp!
+                tabbar.passEstate = mang5[indexPath.row]
+                tabbar.passOwner = nameOwner2[indexPath.row]
+                tabbar.passAdress = addressOwner2[indexPath.row]
+                tabbar.isLogin = self.isLogin
+                tabbar.role = role
+                
+                self.navigationController?.pushViewController(tabbar, animated: true)
+            }
         }
-        
+            
         else
         {
             if (indexPath.section == 0)
@@ -1180,7 +1364,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         }
         
         
-    
+        
         
     }
     
@@ -1189,7 +1373,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let xoa = UITableViewRowAction(style: .default, title: "xoa") { (action:UITableViewRowAction, index:IndexPath) in
-           // print ("fuck")
+            // print ("fuck")
             
             if (index.section == 0)
             {
@@ -1202,7 +1386,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 self.myTbv.deleteRows(at: [index], with: .fade)
             }
             
-           
+            
             
         }
         
@@ -1211,10 +1395,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     
     
     override func viewDidAppear(_ animated: Bool) {
-//        var navigationBarAppearace = UINavigationBar.appearance()
-//        
-//        navigationBarAppearace.barTintColor = UIColor(cgColor: #colorLiteral(red: 0.2352941176, green: 0.3529411765, blue: 0.6078431373, alpha: 1).cgColor)
-//        navigationBarAppearace.tintColor = UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor)
+        //        var navigationBarAppearace = UINavigationBar.appearance()
+        //
+        //        navigationBarAppearace.barTintColor = UIColor(cgColor: #colorLiteral(red: 0.2352941176, green: 0.3529411765, blue: 0.6078431373, alpha: 1).cgColor)
+        //        navigationBarAppearace.tintColor = UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor)
         // 3
         print ("isLike")
         print (isLike)
@@ -1329,7 +1513,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         let end = formatter.string(from: date)
         return end
     }
-   
+    
     
     
 }

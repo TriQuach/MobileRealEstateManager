@@ -444,7 +444,7 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
             
             let detail:DetailSearch = DetailSearch(bathroom: bathroom, bedroom: bedroom, condition: condition, floor: floor)
             
-            let postNewSearch:PostNewSearch = PostNewSearch(address: addressSearch, detail: detail, type: type, price: price, area: area)
+            let postNewSearch:PostNewSearch = PostNewSearch(address: addressSearch, detail: detail, type: type, price: price, area: area, userID: idUser)
             
             
             let json2 = JSONSerializer.toJson(postNewSearch)

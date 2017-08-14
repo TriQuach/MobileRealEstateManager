@@ -14,11 +14,13 @@ class PostNewSearch
     var type:String
     var price:Int
     var area:Int
-    init(address:AddressSearch, detail:DetailSearch, type:String, price:Int, area:Int) {
+    var userID:Int
+    init(address:AddressSearch, detail:DetailSearch, type:String, price:Int, area:Int, userID:Int) {
         self.address = address
         self.detail = detail
         self.type = type
         self.price = price
         self.area = area
+        self.userID = userID
     }
 }
