@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
+            startingLineNumber = "515"
+            endingLineNumber = "515"
             landmarkName = "parseJSONGetNew()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "503"
-            endingLineNumber = "503"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
             landmarkName = "parseJSONGetNew()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524426908.218072"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "765"
-            endingLineNumber = "765"
+            startingLineNumber = "772"
+            endingLineNumber = "772"
             landmarkName = "parseImageInterested()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "489"
-            endingLineNumber = "489"
+            startingLineNumber = "496"
+            endingLineNumber = "496"
             landmarkName = "parseJSONGetNew()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "476"
-            endingLineNumber = "476"
+            startingLineNumber = "483"
+            endingLineNumber = "483"
             landmarkName = "parseJSONGetNew()"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
             landmarkName = "parseUser(url:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
+            startingLineNumber = "389"
+            endingLineNumber = "389"
             landmarkName = "parseUser(url:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "396"
-            endingLineNumber = "396"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
             landmarkName = "parseUser(url:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
             landmarkName = "parseUser(url:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524426908.218072"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "707"
-            endingLineNumber = "707"
+            startingLineNumber = "714"
+            endingLineNumber = "714"
             landmarkName = "parseImageSuggested()"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524427076.964417"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "923"
-            endingLineNumber = "923"
+            startingLineNumber = "930"
+            endingLineNumber = "930"
             landmarkName = "BatDongSanController"
             landmarkType = "3">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524426908.218072"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "684"
-            endingLineNumber = "684"
+            startingLineNumber = "691"
+            endingLineNumber = "691"
             landmarkName = "parseJsonGetByOwnerID()"
             landmarkType = "7">
             <Locations>
@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "loadAfterGetAll()"
             landmarkType = "7">
          </BreakpointContent>
@@ -714,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
             landmarkName = "parseJsonToken(token:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -730,11 +730,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/DatHenViewController.swift"
-            timestampString = "524162930.53306"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "sendRequest(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -762,11 +762,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524427076.964417"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1325"
-            endingLineNumber = "1325"
+            startingLineNumber = "1328"
+            endingLineNumber = "1328"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -906,11 +906,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
             landmarkName = "parseUser(url:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -986,11 +986,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1034,12 +1034,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524427076.964417"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1463"
-            endingLineNumber = "1463"
-            landmarkName = "parseDateTime(str:)"
+            startingLineNumber = "1478"
+            endingLineNumber = "1478"
+            landmarkName = "login()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1066,11 +1066,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1114,11 +1114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524311131.203159"
+            timestampString = "524677836.115352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1107"
-            endingLineNumber = "1107"
+            startingLineNumber = "1141"
+            endingLineNumber = "1141"
             landmarkName = "getComment()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1130,11 +1130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524311131.203159"
+            timestampString = "524677836.115352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1109"
-            endingLineNumber = "1109"
+            startingLineNumber = "1143"
+            endingLineNumber = "1143"
             landmarkName = "getComment()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1146,11 +1146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524311131.203159"
+            timestampString = "524677836.115352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1121"
-            endingLineNumber = "1121"
+            startingLineNumber = "1155"
+            endingLineNumber = "1155"
             landmarkName = "getComment()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1162,11 +1162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524311131.203159"
+            timestampString = "524677836.115352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1142"
-            endingLineNumber = "1142"
+            startingLineNumber = "1176"
+            endingLineNumber = "1176"
             landmarkName = "getComment()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1178,11 +1178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524311131.203159"
+            timestampString = "524677836.115352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1123"
-            endingLineNumber = "1123"
+            startingLineNumber = "1157"
+            endingLineNumber = "1157"
             landmarkName = "getComment()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1210,23 +1210,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "loadAfterGetAll()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
@@ -1242,27 +1226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
-            landmarkName = "parseJsonToken(token:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "loadAfterGetAll()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1274,11 +1242,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524423786.858694"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "parseJsonToken(token:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thesis/BatDongSanController.swift"
+            timestampString = "524677256.591167"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "loadAfterGetAll()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Thesis/BatDongSanController.swift"
+            timestampString = "524677256.591167"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "parseJsonToken(token:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1480,11 +1480,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524427076.964417"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1125"
-            endingLineNumber = "1125"
+            startingLineNumber = "1132"
+            endingLineNumber = "1132"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1496,11 +1496,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524426908.218072"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "585"
-            endingLineNumber = "585"
+            startingLineNumber = "592"
+            endingLineNumber = "592"
             landmarkName = "parseJSONgetSuggested()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1512,11 +1512,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524426891.590503"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "583"
-            endingLineNumber = "583"
+            startingLineNumber = "590"
+            endingLineNumber = "590"
             landmarkName = "parseJSONgetSuggested()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1528,11 +1528,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524426895.798429"
+            timestampString = "524677256.591167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "629"
-            endingLineNumber = "629"
+            startingLineNumber = "636"
+            endingLineNumber = "636"
             landmarkName = "parseJSONgetSuggested()"
             landmarkType = "7">
          </BreakpointContent>

@@ -110,6 +110,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         //sleep(5)
         // parseImage()
         //   print (mang[0].image)
+   //     let tap2: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        
+      //  view.addGestureRecognizer(tap2)
         
         
         
@@ -117,7 +121,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         
         
         
-        
+    }
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     override func viewWillAppear(_ animated: Bool) {
         //   mang = []
@@ -1308,15 +1315,11 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-                tabbar.idOwner = mang5[indexPath.row].idOwner
-                tabbar.idEstate = mang5[indexPath.row].ID
-                tabbar.idUser = idUser
-                //   tabbar.status = temp!
-                tabbar.passEstate = mang5[indexPath.row]
-                tabbar.passOwner = nameOwner2[indexPath.row]
-                tabbar.passAdress = addressOwner2[indexPath.row]
-                tabbar.isLogin = self.isLogin
-                tabbar.role = role
+                    tabbar.idUser = idUser
+                    tabbar.isLogin = true
+                    tabbar.idEstate = mang5[indexPath.row].ID
+                    tabbar.idOwner = mang5[indexPath.row].idOwner
+                    tabbar.role = role
                 
                 self.navigationController?.pushViewController(tabbar, animated: true)
             }
@@ -1348,7 +1351,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     self.navigationController?.pushViewController(tabbar, animated: true)
                 }
             }
-            else
+            else if (indexPath.section == 1)
             {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
@@ -1357,6 +1360,18 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 tabbar.idOwner = mang2[indexPath.row].idOwner
                 tabbar.isLogin = self.isLogin
                 tabbar.idUser = idUser
+                tabbar.role = role
+                
+                self.navigationController?.pushViewController(tabbar, animated: true)
+            }
+            else
+            {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabbar = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+                tabbar.idUser = idUser
+                tabbar.isLogin = true
+                tabbar.idEstate = mang5[indexPath.row].ID
+                tabbar.idOwner = mang5[indexPath.row].idOwner
                 tabbar.role = role
                 
                 self.navigationController?.pushViewController(tabbar, animated: true)

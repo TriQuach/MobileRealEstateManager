@@ -91,7 +91,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     }
     func createGPS()
     {
-        let button = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 40, y: UIScreen.main.bounds.height - 55, width: 20, height: 20))
+        let button = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 40, y: UIScreen.main.bounds.height - 55, width: 30, height: 30))
         button.setImage(UIImage(named: "gps.png"), for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         self.view.addSubview(button)
@@ -237,7 +237,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         
         
         //  print (postString)
-        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/searchGPS/0")!)
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/searchGPSAll")!)
         
         req.httpMethod = "POST"
         req.httpBody = jsonData
@@ -335,7 +335,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     }
     func markerSearchResult(lat:Double, long:Double)
     {
-        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
+        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 13.0)
         
         
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)

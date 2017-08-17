@@ -917,13 +917,47 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     @IBAction func actionDaBan(_ sender: Any) {
         if (role == 0)
         {
-            requestDaBanBuyer()
+            let alertController = UIAlertController(title: "Thông báo", message: "Bạn có muốn yêu cầu cập nhập đã bán bất động sản này? ", preferredStyle: .alert)
+            
+            // Create the actions
+            let okAction = UIAlertAction(title: "Đã bán", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                self.requestDaBanBuyer()
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+                UIAlertAction in
+                NSLog("Cancel Pressed")
+            }
+            
+            // Add the actions
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            
+            // Present the controller
+            self.present(alertController, animated: true, completion: nil)
         }
         else
         {
             if (idUser == idOwner)
             {
-                requestDaBanOwner()
+                let alertController = UIAlertController(title: "Thông báo", message: "Bạn có muốn yêu cầu cập nhập đã bán bất động sản này? ", preferredStyle: .alert)
+                
+                // Create the actions
+                let okAction = UIAlertAction(title: "Đã bán", style: UIAlertActionStyle.default) {
+                    UIAlertAction in
+                    self.requestDaBanOwner()
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+                    UIAlertAction in
+                    NSLog("Cancel Pressed")
+                }
+                
+                // Add the actions
+                alertController.addAction(okAction)
+                alertController.addAction(cancelAction)
+                
+                // Present the controller
+                self.present(alertController, animated: true, completion: nil)
             }
         }
         

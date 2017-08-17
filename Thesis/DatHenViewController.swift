@@ -31,6 +31,7 @@ class DatHenViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        lblTime.text = ""
         btnSave.ghostButton()
         edtNote.isHidden = true
         lblNote.isHidden = true
@@ -45,6 +46,21 @@ class DatHenViewController: UIViewController, UITextFieldDelegate {
         btnGuiYeuCau.ghostButton()
         self.title = "Đặt lịch hẹn"
         edtNote.delegate = self
+        let tap2: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        
+        view.addGestureRecognizer(tap2)
+        
+        
+        
+        
+        
+        
+        
+    }
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     func imgMoreTapped()
