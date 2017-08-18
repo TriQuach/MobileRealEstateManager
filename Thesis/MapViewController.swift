@@ -23,6 +23,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     var checkSearchBanKinh:Bool = false
     var searchType:Int! // 0: GPS    1: specific location
     var marker:GMSMarker = GMSMarker()
+    var viewContain:UIView = UIView()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,12 +31,12 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.delegate = self
         view = mapView
-        bankinh = UILabel(frame: CGRect(x: 10 + UIScreen.main.bounds.width / 4, y: UIScreen.main.bounds.height - 30, width: 40, height: 21))
-        createGPS()
+        bankinh = UILabel(frame: CGRect(x: 10 + UIScreen.main.bounds.width / 4, y: 28, width: 40, height: 21))
+      //  createGPS()
         //print (UIScreen.main.bounds.width)
-        createSlider()
-        createSearchButton()
-        
+      //  createSlider()
+       // createSearchButton()
+        createViewContain()
         
         
         
@@ -91,18 +92,18 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     }
     func createGPS()
     {
-        let button = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 40, y: UIScreen.main.bounds.height - 55, width: 30, height: 30))
+        let button = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 40, y: 10, width: 20, height: 20))
         button.setImage(UIImage(named: "gps.png"), for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        self.view.addSubview(button)
+        self.viewContain.addSubview(button)
     }
     func createSlider()
     {
-        let slider:UISlider = UISlider(frame: CGRect(x: 20, y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width / 2, height: 10))
+        let slider:UISlider = UISlider(frame: CGRect(x: 20, y: 15, width: UIScreen.main.bounds.width / 2, height: 5))
         slider.minimumValue = 0
         slider.maximumValue = 10
         slider.addTarget(self, action: #selector(sliderBanKinh), for: .valueChanged)
-        self.view.addSubview(slider)
+        self.viewContain.addSubview(slider)
     }
     func createBanKinh()
     {
@@ -114,17 +115,17 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         
         bankinh_search = Int(sender.value)
         bankinh.text = String(Int(sender.value)) + " km"
-        self.view.addSubview(bankinh)
+        self.viewContain.addSubview(bankinh)
         
     
     }
     
     func createSearchButton()
     {
-        let button = UIButton(frame: CGRect(x: 20 +  UIScreen.main.bounds.width / 2 + 10, y: UIScreen.main.bounds.height - 55, width: 20, height: 20))
+        let button = UIButton(frame: CGRect(x: 20 +  UIScreen.main.bounds.width / 2 + 10, y: 10, width: 20, height: 20))
         button.setImage(UIImage(named: "search6.png"), for: .normal)
          button.addTarget(self, action: #selector(actionSearch), for: .touchUpInside)
-        self.view.addSubview(button)
+        self.viewContain.addSubview(button)
     }
     func actionSearch(sender: UISlider!)
     {
@@ -169,10 +170,12 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
                     marker.title = formatted_address
                     marker.map = mapView
                     
-                    self.createGPS()
-                    self.createSlider()
-                    self.createBanKinh()
-                    self.createSearchButton()
+                    self.createViewContain()
+                    
+                //    self.createGPS()
+                 //   self.createSlider()
+                   // self.createBanKinh()
+                   // self.createSearchButton()
                     
                 }
                 
@@ -356,5 +359,16 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         self.createSlider()
         self.createBanKinh()
         self.createSearchButton()
+    }
+    func createViewContain()
+    {
+        viewContain = UIView()
+        viewContain.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width, height: 50)
+        viewContain.backgroundColor = UIColor(cgColor: #colorLiteral(red: 0.9395621827, green: 0.9395621827, blue: 0.9395621827, alpha: 1).cgColor)
+        self.view.addSubview(viewContain)
+        createGPS()
+        createSlider()
+        createSearchButton()
+        createBanKinh()
     }
 }
