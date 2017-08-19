@@ -20,7 +20,8 @@ class Estate_New
     var lat:Double
     var long:Double
     var name:String
-    init(ID:Int, image:String,title:String, gia:Double, dientich:Double, quan:String, date:String,idOwner:Int, lat:Double, long:Double, name:String) {
+    var avatar:String
+    init(ID:Int, image:String,title:String, gia:Double, dientich:Double, quan:String, date:String,idOwner:Int, lat:Double, long:Double, name:String, avatar:String) {
         self.ID = ID
         self.image = image
         self.title = title
@@ -32,6 +33,7 @@ class Estate_New
         self.lat = lat
         self.long = long
         self.name = name
+        self.avatar = avatar
     }
     
     

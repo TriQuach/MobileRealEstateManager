@@ -24,6 +24,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     var searchType:Int! // 0: GPS    1: specific location
     var marker:GMSMarker = GMSMarker()
     var viewContain:UIView = UIView()
+    var avatar:UIImageView = UIImageView()
+    var avatarButton:UIButton!
+    var indexAvatar:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -273,8 +276,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
                     
                     let owner = estates[i]["owner"] as! AnyObject
                     let idOwner = owner["id"] as! Int
+                    let avatar = estates[i]["avatar"] as! String
                     
-                    let new_estate = Estate_New(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner, lat: lat, long: long, name: name)
+                    let new_estate = Estate_New(ID: id,image: "", title: title, gia: price, dientich: area, quan: district, date: date, idOwner: idOwner, lat: lat, long: long, name: name, avatar: avatar)
                     
                     
                     
@@ -338,6 +342,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     }
     func markerSearchResult(lat:Double, long:Double)
     {
+        
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 13.0)
         
         
@@ -355,10 +360,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
             marker.title = mang[i].name
             marker.map = mapView
         }
-        self.createGPS()
-        self.createSlider()
-        self.createBanKinh()
-        self.createSearchButton()
+//        self.createGPS()
+//        self.createSlider()
+//        self.createBanKinh()
+//        self.createSearchButton()
+        createViewContain()
     }
     func createViewContain()
     {
@@ -370,5 +376,55 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         createSlider()
         createSearchButton()
         createBanKinh()
+    }
+    func createImageAvatar()
+    {
+        avatarButton = UIButton()
+        //avatar = UIImageView()
+        let data:Data = Data(base64Encoded: mang[indexAvatar].avatar)!
+//        avatar.image = UIImage(data: data)
+//        avatar.frame = CGRect(x: 20 +  UIScreen.main.bounds.width / 2 + 10 + 45, y: 10, width: 35, height: 35)
+//        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imgMoreTapped))
+//        avatar.isUserInteractionEnabled = true
+//        avatar.addGestureRecognizer(tap)
+//        self.viewContain.addSubview(avatar)
+//        self.viewContain.bringSubview(toFront: avatar)
+        
+        
+        avatarButton.frame = CGRect(x: 20 +  UIScreen.main.bounds.width / 2 + 10 + 35, y: 10, width: 35, height: 35)
+        avatarButton.setImage(UIImage(data: data), for: .normal)
+        avatarButton.addTarget(self, action: #selector(actionAvatar), for: .touchUpInside)
+        self.viewContain.addSubview(avatarButton)
+        
+        
+        
+        
+    }
+    func actionAvatar(sender: UISlider!)
+    {
+        print ("fuck")
+        
+    }
+    
+    func imgMoreTapped()
+    {
+        print ("asdas")
+    }
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        indexAvatar = getIndexMarker(title: marker.title!)
+        createImageAvatar()
+        return true
+    }
+    func getIndexMarker(title: String) -> Int
+    {
+        for i in 0..<mang.count
+        {
+            if ( mang[i].name == title )
+            {
+                return i
+            }
+        }
+        return 0
     }
 }
