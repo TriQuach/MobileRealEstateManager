@@ -738,7 +738,8 @@ class SearchNewViewController: UIViewController,CLLocationManagerDelegate,UITabl
     @IBAction func actionSearchMap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-        
+        tabbar.idUser = idUser
+        tabbar.role = role
         
         self.navigationController?.pushViewController(tabbar, animated: true)
     }

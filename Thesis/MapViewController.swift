@@ -27,6 +27,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     var avatar:UIImageView = UIImageView()
     var avatarButton:UIButton!
     var indexAvatar:Int!
+    var idUser:Int!
+    var role:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -391,7 +393,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
 //        self.viewContain.bringSubview(toFront: avatar)
         
         
-        avatarButton.frame = CGRect(x: 20 +  UIScreen.main.bounds.width / 2 + 10 + 35, y: 10, width: 35, height: 35)
+        avatarButton.frame = CGRect(x: 20 +  UIScreen.main.bounds.width / 2 + 10 + 38, y: 10, width: 35, height: 35)
         avatarButton.setImage(UIImage(data: data), for: .normal)
         avatarButton.addTarget(self, action: #selector(actionAvatar), for: .touchUpInside)
         self.viewContain.addSubview(avatarButton)
@@ -402,7 +404,14 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     }
     func actionAvatar(sender: UISlider!)
     {
-        print ("fuck")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let timkiem = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+        timkiem.idUser = idUser
+        timkiem.isLogin = true
+        timkiem.idEstate = mang[indexAvatar].ID
+        timkiem.idOwner = mang[indexAvatar].idOwner
+        timkiem.role = role
+        self.navigationController?.pushViewController(timkiem, animated: true)
         
     }
     
