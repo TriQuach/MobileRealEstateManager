@@ -21,6 +21,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     var idQuestion:Int!
     var index:Int!
     var fullEstate:FullEstate!
+    var isSold:Bool = true
     
     @IBOutlet weak var lblRong2: UILabel!
     @IBOutlet weak var lblDai2: UILabel!
@@ -249,6 +250,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
             return mang.count
         }
         return mangImage.count
+        
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -690,6 +692,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                         self.tvNote.isEditable = false
                         self.myClv.allowsSelection = false
                         self.btnDaBan.isEnabled = false
+                        self.isSold = false
                     }
                   //  self.idOwner = newFullEstate.owner.id
                     self.outletDatLichHen.isEnabled = true
@@ -1003,22 +1006,33 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func actionTakeNote(_ sender: Any) {
         
-        if (!isShownNote)
+        if (isSold)
         {
-            tvNote.isHidden = false
-            lblNote.isHidden = true
-            isShownNote = true
-            self.btnNote.setImage(UIImage(named: "check.png"), for: .normal)
+            if (!isShownNote)
+            {
+                tvNote.isHidden = false
+                lblNote.isHidden = true
+                isShownNote = true
+                self.btnNote.setImage(UIImage(named: "check.png"), for: .normal)
+            }
+            else
+            {
+                
+                tvNote.isHidden = true
+                lblNote.isHidden = false
+                lblNote.text = tvNote.text
+                self.btnNote.setImage(UIImage(named: "edit8.png"), for: .normal)
+                isShownNote = false
+                self.themGhiChu()
+            }
         }
         else
         {
-            
-            tvNote.isHidden = true
-            lblNote.isHidden = false
-            lblNote.text = tvNote.text
-            self.btnNote.setImage(UIImage(named: "edit8.png"), for: .normal)
-            isShownNote = false
-            self.themGhiChu()
+            let alert = UIAlertController(title: "Lỗi", message: "BĐS đã được bán", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            self.loading.stopAnimating()
+            self.loading.isHidden = true
         }
     }
     

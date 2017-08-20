@@ -42,6 +42,7 @@
 		E04E78891F2B1054004FF20B /* like8.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E78851F2B1054004FF20B /* like8.png */; };
 		E04E788A1F2B1054004FF20B /* calendar8.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E78861F2B1054004FF20B /* calendar8.png */; };
 		E04E788B1F2B1054004FF20B /* phone-call8.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E78871F2B1054004FF20B /* phone-call8.png */; };
+		E0531DFE1F495D91005189FC /* EstateDetailOwner2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0531DFD1F495D91005189FC /* EstateDetailOwner2ViewController.swift */; };
 		E0556E3F1F090E3600010016 /* bds.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E3E1F090E3600010016 /* bds.png */; };
 		E0556E411F090FD600010016 /* settings2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E401F090FD600010016 /* settings2.png */; };
 		E0556E451F09104100010016 /* appt.png in Resources */ = {isa = PBXBuildFile; fileRef = E0556E421F09104100010016 /* appt.png */; };
@@ -240,6 +241,7 @@
 		E04E78851F2B1054004FF20B /* like8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like8.png; sourceTree = "<group>"; };
 		E04E78861F2B1054004FF20B /* calendar8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar8.png; sourceTree = "<group>"; };
 		E04E78871F2B1054004FF20B /* phone-call8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone-call8.png"; sourceTree = "<group>"; };
+		E0531DFD1F495D91005189FC /* EstateDetailOwner2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstateDetailOwner2ViewController.swift; sourceTree = "<group>"; };
 		E0556E3E1F090E3600010016 /* bds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bds.png; sourceTree = "<group>"; };
 		E0556E401F090FD600010016 /* settings2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings2.png; sourceTree = "<group>"; };
 		E0556E421F09104100010016 /* appt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appt.png; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				E0A1B1D51F0F969F009C01BD /* SearchValueViewController.swift */,
 				E0EDE6661F12377000A6F88A /* EditEstateViewController.swift */,
 				E03D2B2D1F3CC91D00074829 /* MapViewController.swift */,
+				E0531DFD1F495D91005189FC /* EstateDetailOwner2ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -926,6 +929,7 @@
 				E0E7EB631ED7571D009DEE2E /* Detail.swift in Sources */,
 				E27785941EC8B55700B47FA5 /* Estate.swift in Sources */,
 				E2F8E90E1EC7328100EDD5F2 /* MyImageTableViewCell.swift in Sources */,
+				E0531DFE1F495D91005189FC /* EstateDetailOwner2ViewController.swift in Sources */,
 				E08B5B0D1F0C0AB7009DA829 /* SearchGPS.swift in Sources */,
 				E0229A8B1EE996510085283F /* DangMoi2CollectionViewCell.swift in Sources */,
 				E2E1C4361E96751B0008D0B3 /* EstateDetailBuyerController.swift in Sources */,
