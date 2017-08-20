@@ -10,6 +10,7 @@ import UIKit
 import DateTimePicker
 class DatHenViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var btnNote: UIButton!
     @IBOutlet weak var lblNote: UILabel!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnGuiYeuCau: UIButton!
@@ -27,16 +28,17 @@ class DatHenViewController: UIViewController, UITextFieldDelegate {
     var passAdress:String!
     var role:Int!
     var idEstate:Int!
+    var isShownNote:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         lblTime.text = ""
-        btnSave.ghostButton()
+        //btnSave.ghostButton()
         edtNote.isHidden = true
         lblNote.isHidden = true
         loading.isHidden = true
-        btnSave.isHidden = true
+     //   btnSave.isHidden = true
         print ("user2" + String(idUser))
         // Do any additional setup after loading the view.
         parsePassObject()
@@ -46,10 +48,10 @@ class DatHenViewController: UIViewController, UITextFieldDelegate {
         btnGuiYeuCau.ghostButton()
         self.title = "Đặt lịch hẹn"
         edtNote.delegate = self
-        let tap2: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        
-        
-        view.addGestureRecognizer(tap2)
+//        let tap2: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+//        
+//        
+//        view.addGestureRecognizer(tap2)
         
         
         
@@ -58,20 +60,25 @@ class DatHenViewController: UIViewController, UITextFieldDelegate {
         
         
     }
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
+//    func dismissKeyboard() {
+//        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+//        view.endEditing(true)
+//    }
 
     func imgMoreTapped()
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let timkiem = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-        timkiem.idUser = idUser
+        timkiem.idUser = self.idUser
         timkiem.isLogin = true
-        timkiem.idEstate = idEstate
-        timkiem.idOwner = idOwner
-        timkiem.role = role
+        timkiem.idEstate = self.idEstate
+        timkiem.idOwner = self.idOwner
+        timkiem.role = self.role
+        
+        
+                
+        
+        
         self.navigationController?.pushViewController(timkiem, animated: true)
     }
     override func didReceiveMemoryWarning() {
@@ -193,8 +200,23 @@ class DatHenViewController: UIViewController, UITextFieldDelegate {
         btnSave.isHidden = true
     }
     @IBAction func actionNote(_ sender: Any) {
-        edtNote.isHidden = false
-        btnSave.isHidden = false
+        if (!isShownNote)
+        {
+            edtNote.isHidden = false
+            lblNote.isHidden = true
+            isShownNote = true
+            self.btnNote.setImage(UIImage(named: "check.png"), for: .normal)
+        }
+        else
+        {
+            
+            edtNote.isHidden = true
+            lblNote.isHidden = false
+            lblNote.text = edtNote.text
+            self.btnNote.setImage(UIImage(named: "edit8.png"), for: .normal)
+            isShownNote = false
+            
+        }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

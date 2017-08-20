@@ -16,7 +16,7 @@ class DetailCuocHenViewController: UIViewController {
     var idUser:Int!
     var idEstate:Int!
     var name:String!
-    
+    var idOwner:Int!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var lblNote: UILabel!
     @IBOutlet weak var lblUser2: UILabel!
@@ -44,9 +44,12 @@ class DetailCuocHenViewController: UIViewController {
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let timkiem = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-        timkiem.idUser = idUser
+        timkiem.idUser = self.idUser
         timkiem.isLogin = true
-        timkiem.idEstate = idEstate
+        timkiem.idEstate = self.idEstate
+        timkiem.idOwner = self.idOwner
+        timkiem.role = self.role
+        
         
         self.navigationController?.pushViewController(timkiem, animated: true)
     }

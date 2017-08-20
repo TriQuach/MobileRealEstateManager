@@ -373,6 +373,9 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "DatHen") as! DatHenViewController
         
+        
+       
+        
         if ( isLogin )
         {
             //  tabbar.owner = passFullEstate.owner.fullName

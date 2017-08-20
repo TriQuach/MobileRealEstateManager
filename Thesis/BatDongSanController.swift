@@ -781,7 +781,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                             self.myTbv.reloadData()
                             self.loading.stopAnimating()
                             self.loading.isHidden = true
-                            self.parseJSONgetSuggested()
+                       //     self.parseJSONgetSuggested()
                         })
                     }
                 }catch{}

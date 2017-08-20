@@ -18,7 +18,8 @@ class SimpleAppointment
     var note:String
     var estate:Int
     var id:Int
-    init(address:String, time:String, status:Int, name:String, user1:String, user2:String, note:String,estate:Int, id:Int) {
+    var idOwner:Int
+    init(address:String, time:String, status:Int, name:String, user1:String, user2:String, note:String,estate:Int, id:Int, idOwner:Int) {
         self.address = address
         self.time = time
         self.status = status
@@ -28,5 +29,6 @@ class SimpleAppointment
         self.estate = estate
         self.note = note
         self.id = id
+        self.idOwner = idOwner
     }
 }

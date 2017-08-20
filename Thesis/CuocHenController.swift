@@ -129,10 +129,10 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
                     let user2 = appointments[i]["user2"] as! AnyObject
                     
                     let newUser2Name = user2["fullName"] as! String
+                    let idOwner = user2["id"] as! Int
                     
                     
-                    
-                    let newSimpleAppointment:SimpleAppointment = SimpleAppointment(address: address, time: time, status: status, name: name, user1: newUser1Name, user2: newUser2Name, note: note, estate: estate, id: id)
+                    let newSimpleAppointment:SimpleAppointment = SimpleAppointment(address: address, time: time, status: status, name: name, user1: newUser1Name, user2: newUser2Name, note: note, estate: estate, id: id, idOwner: idOwner)
      
                     
                     self.mang.append(newSimpleAppointment)
@@ -264,6 +264,7 @@ class CuocHenController: UIViewController,UITableViewDataSource,UITableViewDeleg
         tabbar.idUser = idUser
         tabbar.idEstate = mang[indexPath.row].estate
         tabbar.name = mang[indexPath.row].name
+        tabbar.idOwner = mang[indexPath.row].idOwner
         self.navigationController?.pushViewController(tabbar, animated: true)
     }
     
