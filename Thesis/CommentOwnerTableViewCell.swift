@@ -1,19 +1,15 @@
 //
-//  CommentTableViewCell.swift
+//  CommentOwnerTableViewCell.swift
 //  Thesis
 //
-//  Created by Tri Quach on 8/9/17.
+//  Created by Tri Quach on 8/20/17.
 //  Copyright © 2017 TriQuach. All rights reserved.
 //
 
 import UIKit
 
-class CommentTableViewCell: UITableViewCell {
+class CommentOwnerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var edtAnswer: UITextField!
-    @IBOutlet weak var lblAnswer: UILabel!
-    @IBOutlet weak var lblQuestion: UILabel!
-    @IBOutlet weak var lblBuyer: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

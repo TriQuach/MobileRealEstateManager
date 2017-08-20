@@ -133,8 +133,24 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         }
         
        checkInterested()
+       // self.navigationItem.leftBarButtonItem =
         
     }
+    
+    
+    
+    
+    ////
+//    func leftMenuButtonDidTapped(sender: id) {
+//        let index = self.navigationController!.viewControllers.index(of: self)
+//        let vc = self.navigationController!.viewControllers[index-1] as! BatDongSanController
+//        vc.islike
+//        
+//        self.pop
+//        
+//    }
+    
+    
     
     func getEstateBaseOnID()
     {
@@ -873,7 +889,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         print ("clicked")
-        
+        (viewController as? BatDongSanController)?.isLike = true
         
         
     }
@@ -1137,6 +1153,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell5") as! CommentTableViewCell
             cell.lblBuyer.text = mangBuyer[indexPath.row]
             cell.lblAnswer.text = mangAnswer[indexPath.row]
+            //cell.edtAnswer.text = mangAnswer[indexPath.row]
             cell.lblQuestion.text = mangQuestion[indexPath.row]
             return cell
         

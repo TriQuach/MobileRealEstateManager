@@ -37,7 +37,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     
     var nameOwner2:[String] = []
     var addressOwner2:[String] = []
-    
+    var checkInterested:Int = 0 //0:unlike   1:liked
     var mangDistrict:[String] = [
         "1",
         "2",
@@ -127,14 +127,8 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         view.endEditing(true)
     }
     override func viewWillAppear(_ animated: Bool) {
-        //   mang = []
-        print ("isLike will appear")
+        print ("islike will appear:")
         print (isLike)
-        
-        //      parseJSONgetInterested()
-        //    mang = []
-        //   self.myTbv.reloadData()
-        //      parseJSONgetInterested()
     }
     
     func loadAfterGetAll()

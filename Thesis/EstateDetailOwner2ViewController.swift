@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource,UIAlertViewDelegate {
+class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource,UIAlertViewDelegate, UITextFieldDelegate {
 
   
     
@@ -22,6 +22,7 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
     var idQuestion:Int!
     var index:Int!
     var fullEstate:FullEstate!
+    
     
     @IBOutlet weak var lblRong2: UILabel!
     @IBOutlet weak var lblDai2: UILabel!
@@ -407,7 +408,10 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell5") as! CommentTableViewCell
         cell.lblBuyer.text = mangBuyer[indexPath.row]
-        cell.lblAnswer.text = mangAnswer[indexPath.row]
+        //cell.lblAnswer.text = mangAnswer[indexPath.row]
+        cell.edtAnswer.delegate = self
+        cell.edtAnswer.tag = indexPath.row
+        cell.edtAnswer.text = mangAnswer[indexPath.row]
         cell.lblQuestion.text = mangQuestion[indexPath.row]
         return cell
     }
@@ -586,6 +590,90 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
         }
         task.resume()
     }
-    
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        
+//        mangAnswer[textField.tag] = textField.text!
+//    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        mangAnswer[textField.tag] = textField.text!
+        self.view.endEditing(true)
+        apiPostAnswer(answer: textField.text!, id: mangIdQuestion[textField.tag], index: 0)
+        return false
+    }
+    func apiPostAnswer(answer: String, id:Int, index:Int)
+    {
+        
+        let answerPostNew:AnswerPostNew = AnswerPostNew(answer: answer, id: id)
+        
+        let json = JSONSerializer.toJson(answerPostNew)
+        //    print (json)
+        
+        let jsonObject = convertToDictionary(text: json)
+        
+        //  print (jsonObject)
+        
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
+        
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/answerComment")!)
+        
+        
+        
+        req.httpMethod = "POST"
+        req.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: req) { (data, response, error) in
+            
+            
+            //   print (data)
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+                
+                //   print (json["statuskey"])
+                // print (json["name"])
+                
+                
+                DispatchQueue.main.async {
+                    if (json["statuskey"] as! Bool)
+                    {
+                        let alert = UIAlertController(title: "Thông báo", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        // self.mangBuyer.append(self.nameBuyer)
+                        //    self.mangQuestion.append(x)
+                       
+                        self.myTbv.reloadData()
+                        
+                        
+                    }
+                    else
+                    {
+                        let alert = UIAlertController(title: "Lỗi", message: json["message"] as! String, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                    
+                    
+                }
+                
+                
+            }catch{}
+            
+            
+        }
+        task.resume()
+    }
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
 
 }
