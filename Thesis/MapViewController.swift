@@ -423,8 +423,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         
         indexAvatar = getIndexMarker(title: marker.title!)
         createImageAvatar()
-        return true
+        return false
     }
+   
+    
     func getIndexMarker(title: String) -> Int
     {
         for i in 0..<mang.count

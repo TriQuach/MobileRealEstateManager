@@ -22,6 +22,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     var index:Int!
     var fullEstate:FullEstate!
     var isSold:Bool = true
+    var flag = false
     
     @IBOutlet weak var lblRong2: UILabel!
     @IBOutlet weak var lblDai2: UILabel!
@@ -840,6 +841,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
     }
     @IBAction func actionLike(_ sender: Any) {
+        flag = true
         self.loading.isHidden = false
         self.loading.startAnimating()
         if (isInterested)
@@ -889,7 +891,16 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         print ("clicked")
-        (viewController as? BatDongSanController)?.isLike = true
+        
+        if (flag)
+        {
+            if viewController.isKind(of: TabBarController.self) {
+                let vc = (viewController as! TabBarController ).viewControllers![0] as! BatDongSanController
+                vc.isLike = isInterested
+            }
+        }
+        
+        
         
         
     }

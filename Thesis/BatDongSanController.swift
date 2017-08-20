@@ -17,7 +17,12 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     var count2 = 3
     var count:Int = 0
     var num_section:Int = 0
-    var isLike:Bool = false
+    var isLike:Bool! {
+        didSet {
+            
+            parseJSONgetInterested()
+        }
+    }
     //var test:Int = 0
     
     var passedObject:Estates!
