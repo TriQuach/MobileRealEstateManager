@@ -252,6 +252,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
         takenImage = (info[UIImagePickerControllerOriginalImage] as! UIImage?)!
         self.dismiss(animated: true, completion: nil)
         
@@ -309,7 +310,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                 {
                     let myPicker = UIImagePickerController()
                     myPicker.delegate = self
-                    myPicker.sourceType = .photoLibrary
+                    myPicker.sourceType = .camera
                     present(myPicker, animated: true, completion: nil)
                 }
                 else

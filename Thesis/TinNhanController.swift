@@ -205,14 +205,28 @@ class TinNhanController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         else if (mang[indexPath.row].typeNoti == 2)
         {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let timkiem = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
-            timkiem.idUser = idUser
-            timkiem.isLogin = true
-            timkiem.idEstate = mang[indexPath.row].idEstate
-            timkiem.idOwner = mang[indexPath.row].idRequestUser
-            timkiem.role = role
-            self.navigationController?.pushViewController(timkiem, animated: true)
+            if (role == 0)
+            {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let timkiem = storyboard.instantiateViewController(withIdentifier: "EstateDetailBuyer") as! EstateDetailBuyerController
+                timkiem.idUser = idUser
+                timkiem.isLogin = true
+                timkiem.idEstate = mang[indexPath.row].idEstate
+                timkiem.idOwner = mang[indexPath.row].idRequestUser
+                timkiem.role = role
+                self.navigationController?.pushViewController(timkiem, animated: true)
+            }
+            else if (role == 1)
+            {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let timkiem = storyboard.instantiateViewController(withIdentifier: "EstateDetailOwner2ViewController") as! EstateDetailOwner2ViewController
+                timkiem.idUser = idUser
+                timkiem.isLogin = true
+                timkiem.idEstate = mang[indexPath.row].idEstate
+                timkiem.idOwner = mang[indexPath.row].idRequestUser
+                timkiem.role = role
+                self.navigationController?.pushViewController(timkiem, animated: true)
+            }
         }
     }
     func reportSpam(idRequest:Int, idNoti:Int)
