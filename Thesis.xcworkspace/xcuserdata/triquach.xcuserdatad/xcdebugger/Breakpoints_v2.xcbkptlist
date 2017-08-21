@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "btnActionCamera(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/ResultSearchEstateViewController.swift"
-            timestampString = "521463814.061447"
+            timestampString = "525000951.914985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,11 +554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "509"
-            endingLineNumber = "509"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
             landmarkName = "photoNote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,11 +570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "511"
-            endingLineNumber = "511"
+            startingLineNumber = "512"
+            endingLineNumber = "512"
             landmarkName = "photoNote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "587"
-            endingLineNumber = "587"
+            startingLineNumber = "588"
+            endingLineNumber = "588"
             landmarkName = "getPhotoNote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -602,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "589"
-            endingLineNumber = "589"
+            startingLineNumber = "590"
+            endingLineNumber = "590"
             landmarkName = "getPhotoNote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -618,11 +618,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "589"
-            endingLineNumber = "589"
+            startingLineNumber = "590"
+            endingLineNumber = "590"
             landmarkName = "getPhotoNote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -634,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "445"
-            endingLineNumber = "445"
+            startingLineNumber = "446"
+            endingLineNumber = "446"
             landmarkName = "actionThemGhiChu(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -650,11 +650,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "455"
-            endingLineNumber = "455"
+            startingLineNumber = "456"
+            endingLineNumber = "456"
             landmarkName = "actionThemGhiChu(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -666,11 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "576"
-            endingLineNumber = "576"
+            startingLineNumber = "577"
+            endingLineNumber = "577"
             landmarkName = "getNote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -762,11 +762,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524949088.161976"
+            timestampString = "525000324.167392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1327"
-            endingLineNumber = "1327"
+            startingLineNumber = "1369"
+            endingLineNumber = "1369"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1002,11 +1002,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/ResultSearchEstateViewController.swift"
-            timestampString = "521567325.210722"
+            timestampString = "525000951.914985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "requestSearchPage(url:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1034,11 +1034,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524949088.161976"
+            timestampString = "525000324.167392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1477"
-            endingLineNumber = "1477"
+            startingLineNumber = "1519"
+            endingLineNumber = "1519"
             landmarkName = "login()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1050,11 +1050,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "parsePassEstate()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1114,11 +1114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1186"
-            endingLineNumber = "1186"
+            startingLineNumber = "1187"
+            endingLineNumber = "1187"
             landmarkName = "getComment()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1130,11 +1130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1188"
-            endingLineNumber = "1188"
+            startingLineNumber = "1189"
+            endingLineNumber = "1189"
             landmarkName = "getComment()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1146,11 +1146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1200"
-            endingLineNumber = "1200"
+            startingLineNumber = "1201"
+            endingLineNumber = "1201"
             landmarkName = "getComment()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1162,11 +1162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1221"
-            endingLineNumber = "1221"
+            startingLineNumber = "1222"
+            endingLineNumber = "1222"
             landmarkName = "getComment()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1178,11 +1178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/EstateDetailBuyerController.swift"
-            timestampString = "524948771.545222"
+            timestampString = "524999668.726127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1202"
-            endingLineNumber = "1202"
+            startingLineNumber = "1203"
+            endingLineNumber = "1203"
             landmarkName = "getComment()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1464,11 +1464,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thesis/BatDongSanController.swift"
-            timestampString = "524949088.161976"
+            timestampString = "525000324.167392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1131"
-            endingLineNumber = "1131"
+            startingLineNumber = "1145"
+            endingLineNumber = "1145"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

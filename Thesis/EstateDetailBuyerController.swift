@@ -134,6 +134,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         }
         
        checkInterested()
+        loadNameUser()
        // self.navigationItem.leftBarButtonItem =
         
     }
@@ -156,7 +157,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func getEstateBaseOnID()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getDetail/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getDetail/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -184,7 +185,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func getPhotoList()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -468,7 +469,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/updateNote")!)
+        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/updateNote")!)
         
         
         
@@ -520,7 +521,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/upPhotoNote")!)
+        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/upPhotoNote")!)
         
         
         
@@ -562,7 +563,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func getNote()
     {
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/getNote/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/getNote/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -588,7 +589,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     {
        // self.mang = []
         
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/getPhotoNote/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/getPhotoNote/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -638,7 +639,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     func getJsonEstate()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getByID/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getByID/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -773,7 +774,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     self.lblAdressEstate.text = newFullEstate.address.address + " " + newFullEstate.address.ward + " " + newFullEstate.address.district + " " + newFullEstate.address.city
                   //  self.lblPosdate.text = newFullEstate.postTime
                     
-                    self.lblEdit.text = newFullEstate.editTime
+                    self.lblEdit.text = self.parseDateTime(str: newFullEstate.editTime)
                     self.lblLoai.text = newFullEstate.type
                     //self.idOwner = newFullEstate.owner.id
                     if (newFullEstate.area == 0 || newFullEstate.area == -1)
@@ -808,7 +809,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func getAvatar()
     {
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getRepresentPhoto/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -860,7 +861,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func likeRequest(index: Int)
     {
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/setInterested/" + String(idUser) + "-" + String(idEstate) + "-" + String(index))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/setInterested/" + String(idUser) + "-" + String(idEstate) + "-" + String(index))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -909,7 +910,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func checkInterested()
     {
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/checkInterested/"  + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/checkInterested/"  + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -998,7 +999,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func requestDaBanBuyer()
     {
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/updateRequest/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/updateRequest/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -1120,7 +1121,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
             
             let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
             
-            var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/updateNote")!)
+            var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/updateNote")!)
             
             
             
@@ -1185,7 +1186,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func getComment()
     {
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getCommentBuyer/" + String(idEstate) + "-" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getCommentBuyer/" + String(idEstate) + "-" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -1235,7 +1236,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     }
     func getCommentOwner()
     {
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getCommentOwner/" + String(idEstate) + "-" + String(idOwner))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getCommentOwner/" + String(idEstate) + "-" + String(idOwner))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -1336,7 +1337,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/comment")!)
+        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/comment")!)
         
         
         
@@ -1401,7 +1402,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/answerComment")!)
+        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/answerComment")!)
         
         
         
@@ -1454,5 +1455,49 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
     @IBAction func actionCall(_ sender: Any) {
         guard let number = URL(string: "tel://" + fullEstate.owner.phone) else { return }
         UIApplication.shared.open(number)
+    }
+    func parseJsonToken(token: String)
+    {
+        print ("1")
+        
+        let url = "http://192.168.1.10:8080/rem/rem_server/user/login/" + token
+        print (url)
+        let req = URLRequest(url: URL(string: url)!)
+        
+        let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
+            
+            do
+            {
+                print ("error:")
+                print (e)
+                let json = try JSONSerialization.jsonObject(with: d!, options: .allowFragments) as! AnyObject
+                
+                
+                if (json["statuskey"] as! Bool)
+                {
+                    let nameBuyer = json["fullName"] as! String
+                    self.nameBuyer = nameBuyer
+                    
+                }
+                
+                
+            }catch{
+                print ("catch:")
+                print (error)
+                
+            }
+        }
+        task.resume()
+    }
+    func loadNameUser()
+    {
+        let defaults = UserDefaults.standard
+        if let data = defaults.string(forKey: "token")
+        {
+            isLogin = true
+            print (data)
+            parseJsonToken(token: data)
+           // print ("idUser:" + String(idUser))
+        }
     }
 }

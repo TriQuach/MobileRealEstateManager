@@ -245,7 +245,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         
         
         //  print (postString)
-        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/searchGPSAll")!)
+        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/searchGPSAll")!)
         
         req.httpMethod = "POST"
         req.httpBody = jsonData

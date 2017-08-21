@@ -21,6 +21,27 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
     var typeSearch:Int! // 0: search thuong  1:GPS
     var role:Int!
     var query:String!
+    var mangDistrict:[String] = [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "Thủ Đức",
+        "Gò Vấp",
+        "Bình Thạnh",
+        "Tân Bình",
+        "Tân Phú",
+        "Phú Nhuận",
+        "Bình Tân"
+    ]
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +55,15 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         loading.startAnimating()
         if (typeSearch == 0)
         {
-            url = "http://35.194.220.127/rem/rem_server/estate/search/"
+            url = "http://192.168.1.10:8080/rem/rem_server/estate/search/"
         }
         else if (typeSearch == 1)
         {
-            url = "http://35.194.220.127/rem/rem_server/estate/searchGPS/"
+            url = "http://192.168.1.10:8080/rem/rem_server/estate/searchGPS/"
         }
         else if (typeSearch == 2) // quick search
         {
-            url = "http://35.194.220.127/rem/rem_server/estate/searchText/" + query + "/"
+            url = "http://192.168.1.10:8080/rem/rem_server/estate/searchText/" + query + "/"
         }
         parseImageInterested()
     }
@@ -60,10 +81,32 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         cell.myHouse.image = UIImage(data: data)
         
         cell.lblTitle.text = mang[indexPath.row].title
-        cell.lblGia.text = String(mang[indexPath.row].gia) + " tỷ"
+        if (mang[indexPath.row].gia < 1000)
+        {
+            cell.lblGia.text = String(mang[indexPath.row].gia) + " triệu"
+        }
+        else
+        {
+            cell.lblGia.text = String(mang[indexPath.row].gia / 1000) + " tỷ"
+        }
         cell.lblDIenTich.text = String(mang[indexPath.row].dientich) + " m2"
-        cell.lblQuan.text = "Quận " + mang[indexPath.row].quan
-        cell.lblPostDate.text = mang[indexPath.row].date
+        if (check(x: mang[indexPath.row].quan))
+        {
+            cell.lblQuan.text = "Quận " + mang[indexPath.row].quan
+        }
+        else
+        {
+            cell.lblQuan.text = "Huyện " + mang[indexPath.row].quan
+        }
+        let parsed = parseDateTime(str: mang[indexPath.row].date)
+        let start = changeFormatDateAfterParse(x: parsed)
+        let end = getCurrentDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let first:NSDate = dateFormatter.date(from: start) as! NSDate
+        let second:NSDate = dateFormatter.date(from: end) as! NSDate
+        let x = daysBetween(start: first as Date, end: second as Date)
+        cell.lblPostDate.text = String(x) + " ngày trước"
         
         if ( !self.loadingData && indexPath.row == mang.count - 1)
         {
@@ -97,7 +140,7 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
         for i in 0..<mang.count
         {
             let id = mang[i].ID
-            let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -261,6 +304,57 @@ class ResultSearchEstateViewController: UIViewController, UITableViewDataSource,
             }
         }
         return nil
+    }
+    func parseDateTime(str: String) -> String
+    {
+        var count = 0
+        var str2:String = ""
+        for i in 0..<str.characters.count
+        {
+            let index = str.index(str.startIndex, offsetBy: i)
+            if (str[index] == " ")
+            {
+                count += 1
+            }
+            if (count == 3)
+            {
+                break
+            }
+            str2.append(str[index])
+        }
+        return str2
+    }
+    func daysBetween(start: Date, end: Date) -> Int {
+        return Calendar.current.dateComponents([.day], from: start, to: end).day!
+    }
+    func changeFormatDateAfterParse(x: String) -> String
+    {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "MMM d, yyyy"
+        let showDate = inputFormatter.date(from: x)
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+        let resultString = inputFormatter.string(from: showDate!)
+        return resultString
+    }
+    func getCurrentDate() -> String
+    {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let end = formatter.string(from: date)
+        return end
+    }
+    func check(x:String) -> Bool
+    {
+        for i in 0..<mangDistrict.count
+        {
+            if (x == mangDistrict[i])
+            {
+                return true
+                
+            }
+        }
+        return false
     }
    
 

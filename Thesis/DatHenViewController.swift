@@ -135,7 +135,7 @@ class DatHenViewController: UIViewController, UITextFieldDelegate {
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/appointment/book")!)
+        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/appointment/book")!)
         
         
         

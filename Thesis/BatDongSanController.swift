@@ -197,7 +197,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         self.mySearchBar.endEditing(true)
         self.loading .isHidden = false
         self.loading.startAnimating()
-        let urlString = "http://35.194.220.127/rem/rem_server/estate/searchText/" + mySearchBar.text! + "/0"
+        let urlString = "http://192.168.1.10:8080/rem/rem_server/estate/searchText/" + mySearchBar.text! + "/0"
         print (urlString)
         
         let escapedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -290,7 +290,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     {
         print ("1")
         
-        let url = "http://35.194.220.127/rem/rem_server/user/login/" + token
+        let url = "http://192.168.1.10:8080/rem/rem_server/user/login/" + token
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         
@@ -480,7 +480,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONGetNew()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getNew/0")!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getNew/0")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -532,7 +532,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONgetInterested()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/getInterested/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/getInterested/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -587,7 +587,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJSONgetSuggested()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/getSuggested/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/getSuggested/" + String(idUser))!)
         
         
         
@@ -645,7 +645,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
     func parseJsonGetByOwnerID()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getByOwnerID/" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -720,7 +720,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang5.count
         {
             let id = mang5[i].ID
-            let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -760,7 +760,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang.count
         {
             let id = mang[i].ID
-            let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -780,7 +780,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                             self.myTbv.reloadData()
                             self.loading.stopAnimating()
                             self.loading.isHidden = true
-                       //     self.parseJSONgetSuggested()
+                            self.parseJSONgetSuggested()
                         })
                     }
                 }catch{}
@@ -801,7 +801,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang3.count
         {
             let id = mang3[i].ID
-            let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -835,7 +835,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         for i in 0..<mang2.count
         {
             let id = mang2[i].ID
-            let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
+            let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getRepresentPhoto/" + String(id))!)
             
             let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
                 
@@ -1062,8 +1062,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     
                     let data:Data = Data(base64Encoded: mang[indexPath.row].image)!
                     cell.myHouse.image = UIImage(data: data)
-                    
-                    cell.lblGia.text = String(mang[indexPath.row].gia) + " triệu"
+                    if (mang[indexPath.row].gia < 1000)
+                    {
+                        cell.lblGia.text = String(mang[indexPath.row].gia) + " triệu"
+                    }
+                    else
+                    {
+                       cell.lblGia.text = String(mang[indexPath.row].gia / 1000) + " tỷ"
+                    }
                     cell.lblDIenTich.text = String(mang[indexPath.row].dientich) + " m2"
                     if (check(x: mang[indexPath.row].quan))
                     {
@@ -1104,7 +1110,15 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
                 let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
                 cell.myHouse.image = UIImage(data: data)
-                cell.lblGia.text = String(mang2[indexPath.row].gia) + " triệu"
+                
+                if (mang2[indexPath.row].gia < 1000)
+                {
+                    cell.lblGia.text = String(mang2[indexPath.row].gia) + " triệu"
+                }
+                else
+                {
+                    cell.lblGia.text = String(mang2[indexPath.row].gia / 1000) + " tỷ"
+                }
                 cell.lblDIenTich.text = String(mang2[indexPath.row].dientich) + " m2"
                 if (check(x: mang2[indexPath.row].quan))
                 {
@@ -1132,7 +1146,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
             let data:Data = Data(base64Encoded: mang5[indexPath.row].image)!
             cell.myHouse.image = UIImage(data: data)
-            cell.lblGia.text = String(mang5[indexPath.row].gia) + " triệu"
+            if (mang5[indexPath.row].gia < 1000)
+            {
+                cell.lblGia.text = String(mang5[indexPath.row].gia) + " triệu"
+            }
+            else
+            {
+                cell.lblGia.text = String(mang5[indexPath.row].gia / 1000) + " tỷ"
+            }
             cell.lblDIenTich.text = String(mang5[indexPath.row].dientich) + " m2"
             if (check(x: mang5[indexPath.row].quan))
             {
@@ -1174,7 +1195,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             let data:Data = Data(base64Encoded: mang3[indexPath.row].image)!
             cell.myHouse.image = UIImage(data: data)
             
-            cell.lblGia.text = String(mang3[indexPath.row].gia) + " triệu"
+            if (mang3[indexPath.row].gia < 1000)
+            {
+                cell.lblGia.text = String(mang3[indexPath.row].gia) + " triệu"
+            }
+            else
+            {
+                cell.lblGia.text = String(mang3[indexPath.row].gia / 1000) + " tỷ"
+            }
             cell.lblDIenTich.text = String(mang3[indexPath.row].dientich) + " m2"
             if (check(x: mang3[indexPath.row].quan))
             {
@@ -1206,7 +1234,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             //cell.myHouse.image = UIImage(named: mang2[indexPath.row].image + ".jpg")
             let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
             cell.myHouse.image = UIImage(data: data)
-            cell.lblGia.text = String(mang2[indexPath.row].gia) + " triệu"
+            if (mang2[indexPath.row].gia < 1000)
+            {
+                cell.lblGia.text = String(mang2[indexPath.row].gia) + " triệu"
+            }
+            else
+            {
+                cell.lblGia.text = String(mang2[indexPath.row].gia / 1000) + " tỷ"
+            }
             cell.lblDIenTich.text = String(mang2[indexPath.row].dientich) + " m2"
             if (check(x: mang2[indexPath.row].quan))
             {
@@ -1234,7 +1269,14 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
         let data:Data = Data(base64Encoded: mang5[indexPath.row].image)!
         cell.myHouse.image = UIImage(data: data)
-        cell.lblGia.text = String(mang5[indexPath.row].gia) + " triệu"
+        if (mang5[indexPath.row].gia < 1000)
+        {
+            cell.lblGia.text = String(mang5[indexPath.row].gia) + " triệu"
+        }
+        else
+        {
+            cell.lblGia.text = String(mang5[indexPath.row].gia / 1000) + " tỷ"
+        }
         cell.lblDIenTich.text = String(mang5[indexPath.row].dientich) + " m2"
         if (check(x: mang5[indexPath.row].quan))
         {
