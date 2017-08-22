@@ -270,6 +270,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
         
         self.mang.append(takenImage!)
         self.myClv.reloadData()
+        self.photoNote()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -1151,7 +1152,7 @@ class EstateDetailBuyerController: UIViewController, UIImagePickerControllerDele
                     
                     DispatchQueue.main.async {
                         //self.loading3.isHidden = true
-                        self.photoNote()
+                        
                     }
                     
                     

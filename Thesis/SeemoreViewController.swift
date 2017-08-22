@@ -17,6 +17,27 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
     var url:String = ""
     var mang3:[Estate] = []
     var mang2:[Estate] = []
+    var mangDistrict:[String] = [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "Thủ Đức",
+        "Gò Vấp",
+        "Bình Thạnh",
+        "Tân Bình",
+        "Tân Phú",
+        "Phú Nhuận",
+        "Bình Tân"
+    ]
     @IBOutlet weak var myTbv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,10 +85,32 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SeemoreTableViewCell
         let data:Data = Data(base64Encoded: mang[indexPath.row].image)!
         cell.myHouse.image = UIImage(data: data)
-        cell.lblGia.text = String(mang[indexPath.row].gia) + "tỷ"
-        cell.lblDIenTich.text = String(mang[indexPath.row].dientich)
-        cell.lblQuan.text = mang[indexPath.row].quan
-        cell.lblDate.text = mang[indexPath.row].date
+            if (mang[indexPath.row].gia < 1000)
+            {
+                cell.lblGia.text = String(mang[indexPath.row].gia) + " triệu"
+            }
+            else
+            {
+                cell.lblGia.text = String(mang[indexPath.row].gia / 1000) + " tỷ"
+            }
+        cell.lblDIenTich.text = String(mang[indexPath.row].dientich) + " m2"
+            if (check(x: mang[indexPath.row].quan))
+            {
+                cell.lblQuan.text = "Quận " + mang[indexPath.row].quan
+            }
+            else
+            {
+                cell.lblQuan.text = "Huyện " + mang[indexPath.row].quan
+            }
+            let parsed = parseDateTime(str: mang[indexPath.row].date)
+            let start = changeFormatDateAfterParse(x: parsed)
+            let end = getCurrentDate()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let first:NSDate = dateFormatter.date(from: start) as! NSDate
+            let second:NSDate = dateFormatter.date(from: end) as! NSDate
+            let x = daysBetween(start: first as Date, end: second as Date)
+            cell.lblDate.text = String(x) + " ngày trước"
         cell.lblTitle.text = mang[indexPath.row].title
         return cell
         
@@ -80,10 +123,32 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
             let data:Data = Data(base64Encoded: mang3[indexPath.row].image)!
             cell.myHouse.image = UIImage(data: data)
             
-            cell.lblGia.text = String(mang3[indexPath.row].gia) + "tỷ"
-            cell.lblDIenTich.text = String(mang3[indexPath.row].dientich)
-            cell.lblQuan.text = mang3[indexPath.row].quan
-            cell.lblDate.text = mang3[indexPath.row].date
+            if (mang3[indexPath.row].gia < 1000)
+            {
+                cell.lblGia.text = String(mang3[indexPath.row].gia) + " triệu"
+            }
+            else
+            {
+                cell.lblGia.text = String(mang3[indexPath.row].gia / 1000) + " tỷ"
+            }
+            cell.lblDIenTich.text = String(mang3[indexPath.row].dientich) + " m2"
+            if (check(x: mang3[indexPath.row].quan))
+            {
+                cell.lblQuan.text = "Quận " + mang3[indexPath.row].quan
+            }
+            else
+            {
+                cell.lblQuan.text = "Huyện " + mang3[indexPath.row].quan
+            }
+            let parsed = parseDateTime(str: mang3[indexPath.row].date)
+            let start = changeFormatDateAfterParse(x: parsed)
+            let end = getCurrentDate()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let first:NSDate = dateFormatter.date(from: start) as! NSDate
+            let second:NSDate = dateFormatter.date(from: end) as! NSDate
+            let x = daysBetween(start: first as Date, end: second as Date)
+            cell.lblDate.text = String(x) + " ngày trước"
             cell.lblTitle.text = mang3[indexPath.row].title
             
             return cell
@@ -92,10 +157,32 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
         //cell.myHouse.image = UIImage(named: zzzsmang2[indexPath.row].image + ".jpg")
         let data:Data = Data(base64Encoded: mang2[indexPath.row].image)!
         cell.myHouse.image = UIImage(data: data)
-        cell.lblGia.text = String(mang2[indexPath.row].gia)
-        cell.lblDIenTich.text = String(mang2[indexPath.row].dientich)
-        cell.lblQuan.text = mang2[indexPath.row].quan
-        cell.lblDate.text = mang2[indexPath.row].date
+        if (mang2[indexPath.row].gia < 1000)
+        {
+            cell.lblGia.text = String(mang2[indexPath.row].gia) + " triệu"
+        }
+        else
+        {
+            cell.lblGia.text = String(mang2[indexPath.row].gia / 1000) + " tỷ"
+        }
+        cell.lblDIenTich.text = String(mang2[indexPath.row].dientich) + " m2"
+        if (check(x: mang2[indexPath.row].quan))
+        {
+            cell.lblQuan.text = "Quận " + mang2[indexPath.row].quan
+        }
+        else
+        {
+            cell.lblQuan.text = "Huyện " + mang2[indexPath.row].quan
+        }
+        let parsed = parseDateTime(str: mang2[indexPath.row].date)
+        let start = changeFormatDateAfterParse(x: parsed)
+        let end = getCurrentDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let first:NSDate = dateFormatter.date(from: start) as! NSDate
+        let second:NSDate = dateFormatter.date(from: end) as! NSDate
+        let x = daysBetween(start: first as Date, end: second as Date)
+        cell.lblDate.text = String(x) + " ngày trước"
         cell.lblTitle.text = mang2[indexPath.row].title
         return cell
     }
@@ -367,7 +454,7 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
     func parseJSONGetNew()
     {
         
-        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getNew/4")!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getNew/0")!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -474,6 +561,57 @@ class SeemoreViewController: UIViewController, UITableViewDelegate, UITableViewD
             tabbar.idUser = self.idUser
         }
         self.navigationController?.pushViewController(tabbar, animated: true)
+    }
+    func check(x:String) -> Bool
+    {
+        for i in 0..<mangDistrict.count
+        {
+            if (x == mangDistrict[i])
+            {
+                return true
+                
+            }
+        }
+        return false
+    }
+    func parseDateTime(str: String) -> String
+    {
+        var count = 0
+        var str2:String = ""
+        for i in 0..<str.characters.count
+        {
+            let index = str.index(str.startIndex, offsetBy: i)
+            if (str[index] == " ")
+            {
+                count += 1
+            }
+            if (count == 3)
+            {
+                break
+            }
+            str2.append(str[index])
+        }
+        return str2
+    }
+    func daysBetween(start: Date, end: Date) -> Int {
+        return Calendar.current.dateComponents([.day], from: start, to: end).day!
+    }
+    func changeFormatDateAfterParse(x: String) -> String
+    {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "MMM d, yyyy"
+        let showDate = inputFormatter.date(from: x)
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+        let resultString = inputFormatter.string(from: showDate!)
+        return resultString
+    }
+    func getCurrentDate() -> String
+    {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let end = formatter.string(from: date)
+        return end
     }
 
 }

@@ -901,14 +901,26 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                 {
                     return 1
                 }
-                return mang.count
+                if (mang.count <= 3)
+                {
+                    return mang.count
+                }
+                return 3
             }
             
             else if (section == 1)
             {
-                return mang2.count
+                if (mang2.count <= 3)
+                {
+                    return mang2.count
+                }
+                return 3
             }
-            return mang5.count
+            if (mang5.count <= 3)
+            {
+                return mang5.count
+            }
+            return 3
             
         }
         if ( section == 0)
@@ -917,13 +929,25 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             {
                 return 1
             }
-            return mang3.count
+            if (mang3.count <= 3)
+            {
+                return mang3.count
+            }
+            return 3
         }
         else if (section == 1)
         {
-            return mang2.count
+            if (mang2.count <= 3)
+            {
+                return mang2.count
+            }
+            return 3
         }
-        return mang5.count
+        if ( mang5.count <= 3 )
+        {
+            return mang5.count
+        }
+        return 3
         
     }
     //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -999,7 +1023,10 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
         more.text = ">"
         more.textColor = UIColor(cgColor: #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1).cgColor)
         more.frame = CGRect(x: self.view.frame.width - 20, y: 7, width: 10, height: 15)
-        view.addSubview(more)
+        if (section == 0 || section == 1)
+        {
+            view.addSubview(more)
+        }
         
         if (section == 0)
         {
@@ -1009,7 +1036,7 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
             tapRecognizer.numberOfTouchesRequired = 1
             view.addGestureRecognizer(tapRecognizer)
         }
-        else
+        else if (section == 1)
         {
             let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap2))
             // tapRecognizer.delegate = self
@@ -1079,16 +1106,16 @@ class BatDongSanController: UIViewController, UITableViewDataSource,UITableViewD
                     {
                         cell.lblQuan.text = "Huyện " + mang[indexPath.row].quan
                     }
-                                        let parsed = parseDateTime(str: mang[indexPath.row].date)
-                                        let start = changeFormatDateAfterParse(x: parsed)
-                                        let end = getCurrentDate()
-                                        let dateFormatter = DateFormatter()
-                                        dateFormatter.dateFormat = "yyyy-MM-dd"
-                                        let first:NSDate = dateFormatter.date(from: start) as! NSDate
-                                        let second:NSDate = dateFormatter.date(from: end) as! NSDate
-                                        let x = daysBetween(start: first as Date, end: second as Date)
-                     cell.lblDate.text = String(x) + " ngày trước"
-                   // cell.lblDate.text = mang[indexPath.row].date
+                    let parsed = parseDateTime(str: mang[indexPath.row].date)
+                    let start = changeFormatDateAfterParse(x: parsed)
+                    let end = getCurrentDate()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    let first:NSDate = dateFormatter.date(from: start) as! NSDate
+                    let second:NSDate = dateFormatter.date(from: end) as! NSDate
+                    let x = daysBetween(start: first as Date, end: second as Date)
+                    cell.lblDate.text = String(x) + " ngày trước"
+                    // cell.lblDate.text = mang[indexPath.row].date
                     cell.lblTitle.text = mang[indexPath.row].title
                     
                     return cell
