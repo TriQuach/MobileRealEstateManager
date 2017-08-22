@@ -61,7 +61,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
             print ("1")
             
-            let url = "http://192.168.1.10:8080/rem/rem_server/user/login/" + token
+            let url = "http://35.194.220.127/rem/rem_server/user/login/" + token
             print (url)
             let req = URLRequest(url: URL(string: url)!)
             
@@ -142,7 +142,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
         
         //  print (postString)
-        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/login")!)
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/login")!)
         
         req.httpMethod = "POST"
         req.httpBody = jsonData

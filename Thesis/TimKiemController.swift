@@ -475,7 +475,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate, UITextField
         self.mangWard.append("Tất cả")
         self.loading2.isHidden = false
         self.loading2.startAnimating()
-        let url = "http://192.168.1.10:8080/rem/rem_server/data/getWard/" + String(idWard)
+        let url = "http://35.194.220.127/rem/rem_server/data/getWard/" + String(idWard)
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         
@@ -608,7 +608,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate, UITextField
             let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
             
             
-            var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/search/0")!)
+            var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/search/0")!)
             
             
             
@@ -763,7 +763,7 @@ class TimKiemController: UIViewController,CLLocationManagerDelegate, UITextField
         
         
         //  print (postString)
-        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/searchGPS/0")!)
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/searchGPS/0")!)
         
         req.httpMethod = "POST"
         req.httpBody = jsonData

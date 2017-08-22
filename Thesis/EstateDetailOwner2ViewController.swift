@@ -135,7 +135,7 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
     
     func getAvatar()
     {
-        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getRepresentPhoto/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getRepresentPhoto/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -161,7 +161,7 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
     func getJsonEstate()
     {
         
-        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getByID/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getByID/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -330,7 +330,7 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
     func getPhotoList()
     {
         
-        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getPhotoList/" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -361,7 +361,7 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
     }
     func getCommentOwner()
     {
-        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getCommentOwner/" + String(idEstate) + "-" + String(idOwner))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getCommentOwner/" + String(idEstate) + "-" + String(idOwner))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -436,7 +436,7 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
     }
     func getComment()
     {
-        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/getCommentBuyer/" + String(idEstate) + "-" + String(idUser))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/getCommentBuyer/" + String(idEstate) + "-" + String(idUser))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -535,7 +535,7 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
     }
     func requestDaBanBuyer()
     {
-        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/user/updateRequest/" + String(idUser) + "-" + String(idEstate))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/user/updateRequest/" + String(idUser) + "-" + String(idEstate))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -568,7 +568,7 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
     }
     func requestDaBanOwner()
     {
-        let req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/updateStatus/" + String(self.idEstate) + "-" + String(2))!)
+        let req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/updateStatus/" + String(self.idEstate) + "-" + String(2))!)
         
         let task = URLSession.shared.dataTask(with: req) { (d, u, e) in
             
@@ -624,7 +624,7 @@ class EstateDetailOwner2ViewController: UIViewController, UIImagePickerControlle
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/answerComment")!)
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/answerComment")!)
         
         
         

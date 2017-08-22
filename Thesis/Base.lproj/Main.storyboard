@@ -3778,7 +3778,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navi3" automaticallyAdjustsScrollViewInsets="NO" id="93P-OD-JwY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cjc-6d-pIw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cjc-6d-pIw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3795,7 +3795,7 @@
         <scene sceneID="QH6-8e-Zv9">
             <objects>
                 <navigationController storyboardIdentifier="navi" id="xp7-04-SgS" customClass="MainPageNaviViewController" customModule="Thesis" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dOR-AP-jTb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dOR-AP-jTb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

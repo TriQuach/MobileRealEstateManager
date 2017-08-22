@@ -29,6 +29,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     var indexAvatar:Int!
     var idUser:Int!
     var role:Int!
+    var isClickedGPS = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +50,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         //         Do any additional setup after loading the view.
     }
     func buttonAction(sender: UIButton!) {
+        isClickedGPS = true
         print("Button tapped")
         searchType = 0
         self.check = true
@@ -134,13 +136,23 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     }
     func actionSearch(sender: UISlider!)
     {
-        if (searchType == 0)
+        if (isClickedGPS)
         {
-            searchGPS(lat: lat, long: long)
+            if (searchType == 0)
+            {
+                searchGPS(lat: lat, long: long)
+            }
+            else if (searchType == 1)
+            {
+                getLocationGoogleApi2()
+            }
         }
-        else if (searchType == 1)
+        else
         {
-            getLocationGoogleApi2()
+            let alert = UIAlertController(title: "Lỗi", message: "Bạn chưa định vị!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
         }
         
     }
@@ -245,7 +257,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
         
         
         //  print (postString)
-        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/searchGPSAll")!)
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/searchGPSAll")!)
         
         req.httpMethod = "POST"
         req.httpBody = jsonData
@@ -422,7 +434,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDe
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         
         indexAvatar = getIndexMarker(title: marker.title!)
-        createImageAvatar()
+        if (indexAvatar != 0)
+        {
+            createImageAvatar()
+        }
         return false
     }
    

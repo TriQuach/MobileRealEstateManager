@@ -400,7 +400,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/post")!)
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/post")!)
         
         
         
@@ -470,7 +470,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject)
         
-        var req = URLRequest(url: URL(string: "http://192.168.1.10:8080/rem/rem_server/estate/upPhotoList")!)
+        var req = URLRequest(url: URL(string: "http://35.194.220.127/rem/rem_server/estate/upPhotoList")!)
         
         
         
@@ -517,7 +517,7 @@ class DangMoiViewController: UIViewController, UICollectionViewDataSource, UICol
         self.mangWard = []
         self.loading2.isHidden = false
         self.loading2.startAnimating()
-        let url = "http://192.168.1.10:8080/rem/rem_server/data/getWard/" + String(idWard + 1)
+        let url = "http://35.194.220.127/rem/rem_server/data/getWard/" + String(idWard + 1)
         print (url)
         let req = URLRequest(url: URL(string: url)!)
         
